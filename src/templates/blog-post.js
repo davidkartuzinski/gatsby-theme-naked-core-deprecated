@@ -9,11 +9,13 @@ import Categories from "../components/categories"
 import TalkYardComments from "../components/talkYardComments"
 import Header from "../components/header"
 import Aside from "../components/aside"
+import { Link } from "gatsby"
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data, pageContext }) => {
   const post = data.markdownRemark
   const site = data.site
   const shareUrl = `${site.siteMetadata.websiteUrl}${post.frontmatter.slug}`
+  const { next, previous } = pageContext
 
   return (
     <div>
@@ -36,6 +38,21 @@ const BlogPost = ({ data }) => {
         <MailChimpSignUp />
         <Categories categories={data.markdownRemark.frontmatter.categories} />
         <Tags tags={data.markdownRemark.frontmatter.tags} />
+        <p>=======================================================</p>
+        <div>
+          {previous && (
+            <Link to={previous.frontmatter.slug} style={{ maxWidth: "25%" }}>
+              <strong>Previous Article</strong> <br />
+              {previous.frontmatter.title}
+            </Link>
+          )}
+          {next && (
+            <Link to={next.frontmatter.slug} style={{ maxWidth: "25%" }}>
+              <strong>Next Article</strong> <br />
+              {next.frontmatter.title}
+            </Link>
+          )}
+        </div>
         <TalkYardComments />
         <Aside />
       </div>
@@ -48,6 +65,9 @@ export default BlogPost
 export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      fields {
+        slug
+      }
       html
       frontmatter {
         author

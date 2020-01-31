@@ -41,6 +41,18 @@ exports.createPages = async ({ graphql, actions }) => {
               categories
             }
           }
+          next {
+            frontmatter {
+              slug
+              title
+            }
+          }
+          previous {
+            frontmatter {
+              slug
+              title
+            }
+          }
         }
       }
       tagsGroup: allMarkdownRemark(limit: 2000) {
@@ -64,7 +76,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   const posts = result.data.postsRemark.edges
-  posts.forEach(({ node }) => {
+  posts.forEach(({ node, next, previous }) => {
     createPage({
       path: node.fields.slug,
       component: blogPostTemplate,
@@ -72,6 +84,10 @@ exports.createPages = async ({ graphql, actions }) => {
         // Data passed to context is available
         // in page queries as GraphQL variables.
         slug: node.fields.slug,
+
+        // https://toripugh.com/blog/gatsby-blog--next-and-previous-links
+        next,
+        previous,
       },
     })
   })

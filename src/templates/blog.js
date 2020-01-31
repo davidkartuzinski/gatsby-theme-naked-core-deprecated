@@ -79,14 +79,6 @@ export const query = graphql`
           }
         }
       }
-      cats: group(field: frontmatter___categories) {
-        fieldValue
-        totalCount
-      }
-      tags: group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
-      }
     }
     site {
       siteMetadata {
