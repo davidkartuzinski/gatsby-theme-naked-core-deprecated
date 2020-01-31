@@ -1,7 +1,8 @@
 const path = require(`path`)
-const _ = require("lodash")
+const _ = require(`lodash`)
 
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { paginate } = require(`gatsby-awesome-pagination`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
@@ -22,6 +23,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
   const tagTemplate = path.resolve(`./src/templates/tags.js`)
   const categoriesTemplate = path.resolve(`./src/templates/categories.js`)
+  // const blogListTemplate = path.resolve(`./src/templates/blog.js`)
 
   const result = await graphql(`
     query {
@@ -72,6 +74,16 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: node.fields.slug,
       },
     })
+  })
+
+  // http://codekarate.com/daily-dose-of-drupal/gatsby-pagination-gatsby-awesome-pagination
+
+  paginate({
+    createPage,
+    items: posts,
+    itemsPerPage: 2, // number of pages
+    pathPrefix: "/blog",
+    component: path.resolve(`./src/templates/blog.js`),
   })
 
   // extract tag data from the query
