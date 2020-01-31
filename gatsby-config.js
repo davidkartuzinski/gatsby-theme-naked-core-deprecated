@@ -63,6 +63,39 @@ module.exports = {
           "https://kaidawei.us3.list-manage.com/subscribe/post?u=b96fce7934d3d67838002705e&amp;id=87c55442ce", // add your MC list endpoint here; see instructions below
       },
     },
+    {
+      resolve: "@debiki/gatsby-plugin-talkyard",
+      options: {
+        talkyardServerUrl: "https://comments-for-1001teafacts-com.talkyard.net",
+      },
+    },
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        // Fields to index
+        fields: [`title`, `tags`, `description`, `categories`, `excerpt`],
+        // How to resolve each field`s value for a supported node type
+        resolvers: {
+          // For any node of type MarkdownRemark, list how to resolve the fields` values
+          MarkdownRemark: {
+            title: node => node.frontmatter.title,
+            tags: node => node.frontmatter.tags,
+            description: node => node.frontmatter.description,
+            categories: node => node.frontmatter.categories,
+            path: node => node.frontmatter.path,
+            excerpt: node => node.excerpt,
+          },
+        },
+        // Optional filter to limit indexed nodes
+        filter: (node, getNode) => node.frontmatter.tags !== "exempt",
+      },
+    },
+    {
+      resolve: `gatsby-source-instagram-all`,
+      options: {
+        access_token: "17406723570.1677ed0.e1b51a7da4ab4e0094db3cb8c679c9f3",
+      },
+    },
     `gatsby-plugin-offline`,
   ],
 }

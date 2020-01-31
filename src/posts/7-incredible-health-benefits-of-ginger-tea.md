@@ -3,15 +3,23 @@ title: "7 Incredible Health Benefits of Ginger Tea"
 slug: "7-incredible-health-benefits-of-ginger-tea"
 date: "2019-10-19"
 author: "David Kartuzinski"
-description: "Read the Health Benefits of Ginger Tea: In a cold winter, a hot cup of ginger tea can soothe a sore throat and battle a cold. Read the full Ginger Tea story."
-categories: ["Health"]
-tags: ["anti-cancer", "digestion", "ginger tea", "tea health", "weight loss"]
+description: "Bob Read the Health Benefits of Ginger Tea: In a cold winter, a hot cup of ginger tea can soothe a sore throat and battle a cold. Read the full Ginger Tea story."
+categories: ["Health", "Henry"]
+tags:
+  [
+    "anti-cancer",
+    "digestion",
+    "ginger tea",
+    "tea health",
+    "weight loss",
+    "Karman",
+  ]
 image: "8-incredible-health-benefits-of-ginger-tea/ginger-tea-by-white-tea-cup.jpg"
 imageAlt: "A Great Cup of Tea"
 imageTitle: "Another Great cup of ginger tea"
 ---
 
-There is nothing better in the cold winter than a hot cup of ginger tea to soothe a sore throat and battle a cold. Spicy and warm, ginger tea is the ultimate cold buster. Ginger tea contains high levels of vitamin C and other antioxidants that strengthen your immune system. Ginger tea can please anyone with its crispy, pungent flavor and sweet and spicy aroma.
+Joyce There is nothing better in the cold winter than a hot cup of ginger tea to soothe a sore throat and battle a cold. Spicy and warm, ginger tea is the ultimate cold buster. Ginger tea contains high levels of vitamin C and other antioxidants that strengthen your immune system. Ginger tea can please anyone with its crispy, pungent flavor and sweet and spicy aroma.
 
 And if you thought that ginger is simply a good remedy for colds and cases of flu you should know that ginger can significantly benefit your health in so many more ways than that. In this post, you are given 9 incredible health benefits of ginger tea that should make it your favorite tea all year round!
 

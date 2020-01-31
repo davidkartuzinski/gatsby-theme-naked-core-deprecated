@@ -6,6 +6,9 @@ import SocialShare from "../components/socialShare"
 import MailChimpSignUp from "../components/mailChimpSignUp"
 import Tags from "../components/tags"
 import Categories from "../components/categories"
+import TalkYardComments from "../components/talkYardComments"
+import Header from "../components/header"
+import Aside from "../components/aside"
 
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark
@@ -15,6 +18,7 @@ const BlogPost = ({ data }) => {
   return (
     <div>
       <div>
+        <Header />
         <h1>{post.frontmatter.title}</h1>
 
         <ResponsiveImage
@@ -32,6 +36,8 @@ const BlogPost = ({ data }) => {
         <MailChimpSignUp />
         <Categories categories={data.markdownRemark.frontmatter.categories} />
         <Tags tags={data.markdownRemark.frontmatter.tags} />
+        <TalkYardComments />
+        <Aside />
       </div>
     </div>
   )
@@ -61,6 +67,7 @@ export const query = graphql`
         imageTitle
         imageAlt
       }
+      id
     }
     site {
       siteMetadata {

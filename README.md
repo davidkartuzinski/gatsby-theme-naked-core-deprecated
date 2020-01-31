@@ -1,1 +1,1 @@
-# 1001 Tea Facts theme
+# 1001 Tea Facts website

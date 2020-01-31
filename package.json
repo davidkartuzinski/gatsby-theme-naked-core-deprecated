@@ -14,11 +14,14 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@debiki/gatsby-plugin-talkyard": "^0.5.8",
+    "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.3.0",
     "@mdx-js/mdx": "^1.5.5",
     "@mdx-js/react": "^1.5.5",
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
+    "gatsby-plugin-flexsearch": "^1.0.3",
     "gatsby-plugin-mailchimp": "^5.1.2",
     "gatsby-plugin-manifest": "^2.2.39",
     "gatsby-plugin-offline": "^3.0.32",
@@ -26,6 +29,7 @@
     "gatsby-plugin-sharp": "^2.4.4",
     "gatsby-plugin-styled-components": "^3.1.18",
     "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-source-instagram-all": "^2.0.5",
     "gatsby-transformer-remark": "^2.6.48",
     "gatsby-transformer-sharp": "^2.3.13",
     "react": "^16.12.0",
