@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import slugify from "react-slugify"
 
 export default props => {
-  // data.markdownRemark.frontmatter.tags
+  // data.markdownRemark.frontmatter.categories
   const categories = props.categories
   const categoryCount = categories.length
 
