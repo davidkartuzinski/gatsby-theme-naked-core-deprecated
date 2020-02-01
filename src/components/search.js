@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Index } from "elasticlunr"
 import { Link } from "gatsby"
+import { IoIosSearch } from "react-icons/io"
 
 // Search component
 export default class Search extends Component {
@@ -15,6 +16,9 @@ export default class Search extends Component {
   render() {
     return (
       <div>
+        <span>
+          Search <IoIosSearch />
+        </span>
         <input type="text" value={this.state.query} onChange={this.search} />
         <ul>
           {this.state.results.map(page => (

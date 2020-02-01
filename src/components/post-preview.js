@@ -2,6 +2,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
+import {
+  IoIosArrowDropright,
+  IoIosFolder,
+  IoIosPricetags,
+  IoMdCalendar,
+  IoIosPerson,
+} from "react-icons/io"
 
 // Utilities
 import kebabCase from "lodash/kebabCase"
@@ -26,13 +33,17 @@ const PostPreview = ({
       <h2>{title}</h2>
     </Link>
     <span>
-      Published on {date}, written by {author}
+      <IoMdCalendar /> Published on {date}, written by <IoIosPerson /> {author}
     </span>
 
     <p>{excerpt}</p>
-    <Link to={slug}>Read the rest...</Link>
+    <Link to={slug}>
+      Read the rest <IoIosArrowDropright />
+    </Link>
     <ul>
-      <span>Blog Post Categories</span>
+      <span>
+        <IoIosFolder /> Blog Post Categories
+      </span>
       {cats.map(cat => (
         <li key={cat}>
           <Link to={`/categories/${kebabCase(cat)}/`}>{cat}</Link>
@@ -40,7 +51,10 @@ const PostPreview = ({
       ))}
     </ul>
     <ul>
-      <span>Blog Post tags</span>
+      <span>
+        <IoIosPricetags />
+        Blog Post tags
+      </span>
       {tags.map(tag => (
         <li key={tag}>
           <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>

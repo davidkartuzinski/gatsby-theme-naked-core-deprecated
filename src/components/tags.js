@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import slugify from "react-slugify"
+import { IoIosPricetags } from "react-icons/io"
 
 export default props => {
   // data.markdownRemark.frontmatter.tags
@@ -13,12 +14,15 @@ export default props => {
 
   return (
     <>
-      <h3>{tagHeader}</h3>
+      <h3>
+        <IoIosPricetags />
+        {tagHeader}
+      </h3>
       <ul>
         {tags.map(tag => {
           let tagSlug = slugify(tag)
           let tagUrl = `/tags/${tagSlug}`
-          console.log(tagUrl)
+
           return (
             <li key="tag.id">
               <Link to={tagUrl}>{tag}</Link>

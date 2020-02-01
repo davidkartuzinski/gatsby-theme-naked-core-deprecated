@@ -10,6 +10,12 @@ import TalkYardComments from "../components/talkYardComments"
 import Header from "../components/header"
 import Aside from "../components/aside"
 import { Link } from "gatsby"
+import {
+  IoMdCalendar,
+  IoIosPerson,
+  IoIosArrowBack,
+  IoIosArrowForward,
+} from "react-icons/io"
 
 const BlogPost = ({ data, pageContext }) => {
   const post = data.markdownRemark
@@ -30,7 +36,8 @@ const BlogPost = ({ data, pageContext }) => {
         />
 
         <p>
-          {post.frontmatter.date}, written by {post.frontmatter.author}
+          <IoMdCalendar /> {post.frontmatter.date}, written by <IoIosPerson />
+          {post.frontmatter.author}
         </p>
         <AffiliateDisclaimer />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -38,17 +45,24 @@ const BlogPost = ({ data, pageContext }) => {
         <MailChimpSignUp />
         <Categories categories={data.markdownRemark.frontmatter.categories} />
         <Tags tags={data.markdownRemark.frontmatter.tags} />
-        <p>=======================================================</p>
+
         <div>
           {previous && (
             <Link to={previous.frontmatter.slug} style={{ maxWidth: "25%" }}>
-              <strong>Previous Article</strong> <br />
+              <strong>
+                <IoIosArrowBack />
+                Previous Article
+              </strong>{" "}
+              <br />
               {previous.frontmatter.title}
             </Link>
           )}
           {next && (
             <Link to={next.frontmatter.slug} style={{ maxWidth: "25%" }}>
-              <strong>Next Article</strong> <br />
+              <strong>
+                Next Article <IoIosArrowForward />
+              </strong>{" "}
+              <br />
               {next.frontmatter.title}
             </Link>
           )}

@@ -1,6 +1,7 @@
 import React from "react"
 import Image from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
+// import { IoLogoInstagram } from "react-icons/io"
 
 const Instagram = () => {
   const { instagram } = useStaticQuery(

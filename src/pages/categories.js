@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { IoIosFolder } from "react-icons/io"
 
 // Utilities
 import kebabCase from "lodash/kebabCase"
@@ -19,7 +20,9 @@ const CategoriesPage = ({
   <div>
     <Helmet title={title} />
     <div>
-      <h1>Categories</h1>
+      <h1>
+        <IoIosFolder /> Categories
+      </h1>
       <ul>
         {group.map(category => (
           <li key={category.fieldValue}>

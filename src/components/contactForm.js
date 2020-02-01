@@ -2,6 +2,14 @@ import React from "react"
 import Input from "../components/global/input"
 import TextArea from "../components/global/textArea"
 import Button from "../components/global/button"
+import { IoIosPerson } from "react-icons/io"
+import { IoIosMail } from "react-icons/io"
+import { IoMdBook } from "react-icons/io"
+import { IoIosBrush } from "react-icons/io"
+import { IoIosSend } from "react-icons/io"
+
+import { IoIosRocket } from "react-icons/io"
+import { IoIosNuclear } from "react-icons/io"
 
 export default class ContactForm extends React.Component {
   constructor(props) {
@@ -22,25 +30,39 @@ export default class ContactForm extends React.Component {
       >
         <Input type="text" name="_gotcha" style={{ display: `none` }} />
         <label htmlFor="name">
-          Name
+          <IoIosPerson /> Name
           <Input type="text" name="name" id="name" />
         </label>
         <label htmlFor="email">
-          Email
+          <IoIosMail /> Email
           <Input type="email" name="email" id="email" />
         </label>
         <label htmlFor="subject">
-          Subject
+          <IoMdBook /> Subject
           <Input type="text" name="subject" id="subject" />
         </label>
         <label htmlFor="message">
+          <IoIosBrush />
           Message
           <TextArea name="message" id="message" rows="5" />
         </label>
 
         <Input type="reset" value="Clear" />
-        {status === "SUCCESS" ? <p>Thanks!</p> : <Button>Submit</Button>}
-        {status === "ERROR" && <p>Ooops! There was an error.</p>}
+        {status === "SUCCESS" ? (
+          <p>
+            <IoIosRocket /> Thanks!
+          </p>
+        ) : (
+          <Button>
+            <IoIosSend />
+            Submit
+          </Button>
+        )}
+        {status === "ERROR" && (
+          <p>
+            <IoIosNuclear /> Ooops! There was an error.
+          </p>
+        )}
       </form>
     )
   }

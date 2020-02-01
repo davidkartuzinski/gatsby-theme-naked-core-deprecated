@@ -15,7 +15,6 @@ const Header = () => (
     `}
     render={data => (
       <header>
-        ... header stuff...
         <Search searchIndex={data.siteSearchIndex.index} />
       </header>
     )}

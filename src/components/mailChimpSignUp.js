@@ -3,6 +3,7 @@ import addToMailchimp from "gatsby-plugin-mailchimp"
 import Button from "../components/global/button"
 import Input from "../components/global/input"
 import styled from "styled-components"
+import { IoIosMail, IoIosSend, IoIosLeaf } from "react-icons/io"
 
 const Section = styled.section`
   background-color: #111;
@@ -82,7 +83,7 @@ export default class MailChimpComponent extends React.Component {
           <div>
             <form className="form-form" onSubmit={this._handleSubmit}>
               <label className="form-label" htmlFor="email">
-                <span>*</span>Email
+                <IoIosMail /> Email<span>*</span>
               </label>
               <Input
                 type="email"
@@ -98,10 +99,13 @@ export default class MailChimpComponent extends React.Component {
                 email safely with only us. You can unsusbcribe easily at any
                 time.
               </p>
-              <Button type="submit">Sign up now</Button>
+              <Button type="submit">
+                <IoIosSend />
+                Sign up now
+              </Button>
               <p className="form-p">
                 <small>
-                  <span>*</span>
+                  <IoIosLeaf />
                   Strict No Spam Policy. No Sharing of your data - EVER!
                 </small>
               </p>
