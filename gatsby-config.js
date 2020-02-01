@@ -100,5 +100,13 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-advanced-sitemap`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://1001teafacts.com",
+        sitemap: "https://www.1001teafacts.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
   ],
 }
