@@ -14,7 +14,7 @@ import { Link } from "gatsby"
 const BlogPost = ({ data, pageContext }) => {
   const post = data.markdownRemark
   const site = data.site
-  const shareUrl = `${site.siteMetadata.websiteUrl}${post.frontmatter.slug}`
+  const shareUrl = `${site.siteMetadata.siteUrl}${post.frontmatter.slug}`
   const { next, previous } = pageContext
 
   return (
@@ -91,7 +91,7 @@ export const query = graphql`
     }
     site {
       siteMetadata {
-        websiteUrl
+        siteUrl
       }
     }
   }

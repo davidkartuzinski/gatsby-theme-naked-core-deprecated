@@ -23,6 +23,7 @@
     "gatsby-awesome-pagination": "^0.3.5",
     "gatsby-image": "^2.2.39",
     "gatsby-paginate": "^1.1.1",
+    "gatsby-plugin-advanced-sitemap": "^1.4.5",
     "gatsby-plugin-flexsearch": "^1.0.3",
     "gatsby-plugin-mailchimp": "^5.1.2",
     "gatsby-plugin-manifest": "^2.2.39",

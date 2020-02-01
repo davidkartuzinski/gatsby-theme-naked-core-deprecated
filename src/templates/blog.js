@@ -11,7 +11,7 @@ import PageNavigation from "../components/page-navigation"
 const BlogList = ({ data, pageContext }) => {
   const posts = data.posts
   const site = data.site
-  const shareUrl = `${site.siteMetadata.websiteUrl}/blog`
+  const shareUrl = `${site.siteMetadata.siteUrl}/blog`
 
   return (
     <div>
@@ -82,7 +82,7 @@ export const query = graphql`
     }
     site {
       siteMetadata {
-        websiteUrl
+        siteUrl
       }
     }
   }

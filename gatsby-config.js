@@ -3,7 +3,7 @@ module.exports = {
     title: `Healthy Tea | 1001 Tea Facts`,
     description: `Discover 1001 Tea Facts and discover the spiritual and healthy ways of tea. Discover how you can choose the right tea for your needs and wants.`,
     author: `David Kartuzinski`,
-    websiteUrl: `https://1001teafacts.com/`,
+    siteUrl: `https://1001teafacts.com/`,
     newsletterHeadline: `Sign up and get exclusive content delivered to your inbox`,
     newsletterTagLine: `Aside from exclusive content, get occasional deals, new product alerts, and tea-related news. No spam. Just occasional emails for stuff you probably want to get.`,
     newsletterButtonText: `Sign up now`,
@@ -97,5 +97,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    `gatsby-plugin-advanced-sitemap`,
   ],
 }
