@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Header from "../components/header"
 import Aside from "../components/aside"
 import SocialShare from "../components/social-share"
-
+import SiteMetaData from "../components/site-metadata"
 import PostPreview from "../components/post-preview"
 import PageNavigation from "../components/page-navigation"
 
@@ -16,6 +16,7 @@ const BlogList = ({ data, pageContext }) => {
   return (
     <div>
       <div>
+        <SiteMetaData />
         <Header />
         <h1>Blog Posts</h1>
 
@@ -83,6 +84,7 @@ export const query = graphql`
     site {
       siteMetadata {
         siteUrl
+        description
       }
     }
   }

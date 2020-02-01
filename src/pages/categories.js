@@ -1,12 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
+import SiteMetaData from "../components/site-metadata"
+
 import { IoIosFolder } from "react-icons/io"
 
 // Utilities
 import kebabCase from "lodash/kebabCase"
 
 // Components
-import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 
 const CategoriesPage = ({
@@ -18,7 +19,7 @@ const CategoriesPage = ({
   },
 }) => (
   <div>
-    <Helmet title={title} />
+    <SiteMetaData />
     <div>
       <h1>
         <IoIosFolder /> Categories

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Healthy Tea | 1001 Tea Facts`,
+    title: `1001 Tea Facts`,
     description: `Discover 1001 Tea Facts and discover the spiritual and healthy ways of tea. Discover how you can choose the right tea for your needs and wants.`,
     author: `David Kartuzinski`,
     siteUrl: `https://1001teafacts.com/`,
@@ -9,6 +9,8 @@ module.exports = {
     newsletterButtonText: `Sign up now`,
     newsletterPrivacyText: `We promise to make the best content possible and to keep your email safely with only us. You can unsusbcribe easily at any time.`,
     newsletterPrivacyReminder: `Strict No Spam Policy. No Sharing of your data - EVER!`,
+    twitter: `1001_teafacts`,
+    locale: `en`,
   },
   plugins: [
     {

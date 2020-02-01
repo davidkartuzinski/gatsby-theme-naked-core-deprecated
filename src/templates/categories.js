@@ -1,6 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
+import SiteMetaData from "../components/site-metadata"
 
+import { IoIosFolder } from "react-icons/io"
 import { Link, graphql } from "gatsby"
 
 const Categories = ({ pageContext, data }) => {
@@ -12,7 +14,11 @@ const Categories = ({ pageContext, data }) => {
 
   return (
     <div>
-      <h1>{categoryHeader}</h1>
+      <SiteMetaData />
+      <h1>
+        <IoIosFolder />
+        {categoryHeader}
+      </h1>
       <ul>
         {edges.map(({ node }) => {
           const { slug } = node.fields

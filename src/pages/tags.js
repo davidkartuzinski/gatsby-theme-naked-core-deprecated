@@ -1,12 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { IoIosPricetags } from "react-icons/io"
+import SiteMetaData from "../components/site-metadata"
 
 // Utilities
 import kebabCase from "lodash/kebabCase"
 
 // Components
-import { Helmet } from "react-helmet"
+
 import { Link, graphql } from "gatsby"
 
 const TagsPage = ({
@@ -18,7 +19,7 @@ const TagsPage = ({
   },
 }) => (
   <div>
-    <Helmet title={title} />
+    <SiteMetaData />
     <div>
       <h1>
         <IoIosPricetags />

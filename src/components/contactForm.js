@@ -28,7 +28,9 @@ export default class ContactForm extends React.Component {
         action="https://formspree.io/xqkqkzqr"
         method="POST"
       >
-        <Input type="text" name="_gotcha" style={{ display: `none` }} />
+        <label htmlFor="_gotcha">
+          <Input type="text" name="_gotcha" style={{ display: `none` }} />
+        </label>
         <label htmlFor="name">
           <IoIosPerson /> Name
           <Input type="text" name="name" id="name" />

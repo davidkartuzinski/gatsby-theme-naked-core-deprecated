@@ -40,21 +40,22 @@ const PostPreview = ({
     <Link to={slug}>
       Read the rest <IoIosArrowDropright />
     </Link>
+
+    <h3>
+      <IoIosFolder /> Blog Post Categories
+    </h3>
     <ul>
-      <span>
-        <IoIosFolder /> Blog Post Categories
-      </span>
       {cats.map(cat => (
         <li key={cat}>
           <Link to={`/categories/${kebabCase(cat)}/`}>{cat}</Link>
         </li>
       ))}
     </ul>
+    <h3>
+      <IoIosPricetags />
+      Blog Post tags
+    </h3>
     <ul>
-      <span>
-        <IoIosPricetags />
-        Blog Post tags
-      </span>
       {tags.map(tag => (
         <li key={tag}>
           <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>

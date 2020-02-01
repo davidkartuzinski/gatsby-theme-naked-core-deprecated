@@ -1,5 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
+import SiteMetaData from "../components/site-metadata"
+import { IoIosPricetags } from "react-icons/io"
 
 import { Link, graphql } from "gatsby"
 
@@ -12,7 +14,11 @@ const Tags = ({ pageContext, data }) => {
 
   return (
     <div>
-      <h1>{tagHeader}</h1>
+      <SiteMetaData />
+      <h1>
+        <IoIosPricetags />
+        {tagHeader}
+      </h1>
       <ul>
         {edges.map(({ node }) => {
           const { slug } = node.fields
