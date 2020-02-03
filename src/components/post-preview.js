@@ -73,7 +73,6 @@ PostPreview.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  excerpt: PropTypes.string.isRequired,
   cats: PropTypes.objectOf(
     PropTypes.shape({
       fieldValue: PropTypes.string.isRequired,

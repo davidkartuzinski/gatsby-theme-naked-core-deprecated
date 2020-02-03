@@ -29,7 +29,6 @@ const BlogList = ({ data, pageContext }) => {
             title={post.node.frontmatter.title}
             date={post.node.frontmatter.date}
             author={post.node.frontmatter.author}
-            excerpt={post.node.excerpt}
             cats={post.node.frontmatter.categories}
             tags={post.node.frontmatter.tags}
           />

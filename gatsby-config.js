@@ -75,6 +75,18 @@ module.exports = {
             },
           },
           { resolve: "gatsby-remark-responsive-iframe" },
+          {
+            // https://dev.to/niklasmtj/implement-prismjs-in-gatsbyjs-fff
+            // https://prismjs.com/index.html#supported-languages
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              aliases: {
+                sh: "bash",
+                js: "javascript", // can add additional languages
+              },
+              showLineNumbers: true,
+            },
+          },
         ],
       },
     },
