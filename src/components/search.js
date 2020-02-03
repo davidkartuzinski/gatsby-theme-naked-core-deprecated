@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { Index } from "elasticlunr"
 import { Link } from "gatsby"
 import { IoIosSearch } from "react-icons/io"
+import slugify from "react-slugify"
 
 // Search component
 export default class Search extends Component {
@@ -21,12 +22,15 @@ export default class Search extends Component {
         </span>
         <input type="text" value={this.state.query} onChange={this.search} />
         <ul>
-          {this.state.results.map(page => (
-            <li key={page.id}>
-              <Link to={"/" + page.path}>{page.title}</Link>
-              {": " + page.tags.join(`,`)}
-            </li>
-          ))}
+          {this.state.results.map(page => {
+            let searchSlug = slugify(page.title)
+            return (
+              <li key={page.id}>
+                <Link to={"/" + searchSlug}>{page.title}</Link>
+                {": " + page.tags.join(`,`)}
+              </li>
+            )
+          })}
         </ul>
       </div>
     )

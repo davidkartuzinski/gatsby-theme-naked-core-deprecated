@@ -15,17 +15,17 @@ const Instagram = () => {
               }
               localImage {
                 childImageSharp {
-                  fluid(maxHeight: 250, maxWidth: 250, quality: 90) {
+                  fluid(maxHeight: 500, maxWidth: 500, quality: 50) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
                 }
               }
+              id
               images {
                 standard_resolution {
                   url
                 }
               }
-              id
             }
           }
         }
@@ -50,6 +50,7 @@ const Instagram = () => {
           </div>
         )
       })}
+      <p>Instagram</p>
     </div>
   )
 }

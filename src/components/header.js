@@ -20,6 +20,7 @@ const Header = () => (
         </header>
       )}
     />
+    <p>Header</p>
   </>
 )
 

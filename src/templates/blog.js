@@ -51,8 +51,8 @@ BlogList.propTypes = {
 
 export const query = graphql`
   query($skip: Int!, $limit: Int!) {
-    posts: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+    posts: allMdx(
+      sort: { fields: frontmatter___date, order: DESC }
       skip: $skip
       limit: $limit
     ) {
@@ -63,7 +63,9 @@ export const query = graphql`
             slug
           }
           frontmatter {
+            slug
             date(formatString: "MMMM DD, YYYY")
+            description
             image {
               childImageSharp {
                 fixed(height: 200, width: 320) {
@@ -72,11 +74,14 @@ export const query = graphql`
               }
             }
             title
-            imageAlt
-            imageTitle
-            categories
             tags
+            imageTitle
+            imageAlt
+            categories
             author
+          }
+          fields {
+            slug
           }
         }
       }

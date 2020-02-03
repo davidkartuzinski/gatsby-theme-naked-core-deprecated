@@ -18,9 +18,10 @@ import {
   IoIosArrowBack,
   IoIosArrowForward,
 } from "react-icons/io"
+import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 
 const BlogPost = ({ data, pageContext }) => {
-  const post = data.markdownRemark
+  const post = data.mdx
   const site = data.site
   const shareUrl = `${site.siteMetadata.siteUrl}${post.frontmatter.slug}`
   const { next, previous } = pageContext
@@ -70,11 +71,11 @@ const BlogPost = ({ data, pageContext }) => {
           {post.frontmatter.author}
         </p>
         <AffiliateDisclaimer />
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <MDXRenderer>{post.body}</MDXRenderer>
         <SocialShare shareUrl={shareUrl} title={post.frontmatter.description} />
         <MailChimpSignUp />
-        <Categories categories={data.markdownRemark.frontmatter.categories} />
-        <Tags tags={data.markdownRemark.frontmatter.tags} />
+        <Categories categories={data.mdx.frontmatter.categories} />
+        <Tags tags={data.mdx.frontmatter.tags} />
 
         <div>
           {previous && (
@@ -108,11 +109,11 @@ export default BlogPost
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       fields {
         slug
       }
-      html
+      body
       frontmatter {
         author
         date(formatString: "MMMM DD, YYYY")
@@ -128,8 +129,8 @@ export const query = graphql`
         title
         categories
         tags
-        imageTitle
         imageAlt
+        imageTitle
       }
       id
     }

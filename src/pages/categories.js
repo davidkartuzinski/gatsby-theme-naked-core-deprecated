@@ -12,7 +12,7 @@ import { Link, graphql } from "gatsby"
 
 const CategoriesPage = ({
   data: {
-    allMarkdownRemark: { group },
+    allMdx: { group },
     site: {
       siteMetadata: { title },
     },
@@ -64,7 +64,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(limit: 2000) {
+    allMdx(limit: 2000) {
       group(field: frontmatter___categories) {
         fieldValue
         totalCount

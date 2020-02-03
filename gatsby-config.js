@@ -20,7 +20,20 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-remark`,
+    // Reminder (https://github.com/gatsbyjs/gatsby/issues/15486#issuecomment-509405867)
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -42,6 +55,27 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`],
+        defaultLayouts: {
+          posts: require.resolve("./src/templates/blog-post.js"),
+          default: require.resolve("./src/templates/blog-post.js"),
+        },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 590,
+              linkImagesToOriginal: false,
+              withWebp: true,
+            },
+          },
+          { resolve: "gatsby-remark-responsive-iframe" },
+        ],
       },
     },
     {
@@ -79,7 +113,7 @@ module.exports = {
         // How to resolve each field`s value for a supported node type
         resolvers: {
           // For any node of type MarkdownRemark, list how to resolve the fields` values
-          MarkdownRemark: {
+          Mdx: {
             title: node => node.frontmatter.title,
             tags: node => node.frontmatter.tags,
             description: node => node.frontmatter.description,
