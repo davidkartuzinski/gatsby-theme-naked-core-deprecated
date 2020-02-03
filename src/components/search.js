@@ -17,10 +17,16 @@ export default class Search extends Component {
   render() {
     return (
       <div>
-        <span>
+        <label htmlFor="search-field">
           Search <IoIosSearch />
-        </span>
-        <input type="text" value={this.state.query} onChange={this.search} />
+          <input
+            type="text"
+            value={this.state.query}
+            onChange={this.search}
+            name="search-field"
+            id="search-field"
+          />
+        </label>
         <ul>
           {this.state.results.map(page => {
             let searchSlug = slugify(page.title)

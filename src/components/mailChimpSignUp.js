@@ -84,16 +84,16 @@ export default class MailChimpComponent extends React.Component {
             <form className="form-form" onSubmit={this._handleSubmit}>
               <label className="form-label" htmlFor="email">
                 <IoIosMail /> Email<span>*</span>
+                <Input
+                  type="email"
+                  onChange={this._handleChange}
+                  placeholder="Your Email Address"
+                  name="email"
+                  id="email"
+                  pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                  required
+                />
               </label>
-              <Input
-                type="email"
-                onChange={this._handleChange}
-                placeholder="Your Email Address"
-                name="email"
-                id="email"
-                pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-                required
-              />
               <p className="form-p">
                 We promise to make the best content possible and to keep your
                 email safely with only us. You can unsusbcribe easily at any

@@ -29,8 +29,8 @@ export default props => {
             </li>
           )
         })}
-        <Link to="/tags">See all tags</Link>
       </ul>
+      <Link to="/tags">See all tags</Link>
     </>
   )
 }

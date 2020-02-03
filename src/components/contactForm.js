@@ -28,9 +28,6 @@ export default class ContactForm extends React.Component {
         action="https://formspree.io/xqkqkzqr"
         method="POST"
       >
-        <label htmlFor="_gotcha">
-          <Input type="text" name="_gotcha" style={{ display: `none` }} />
-        </label>
         <label htmlFor="name">
           <IoIosPerson /> Name
           <Input type="text" name="name" id="name" />
@@ -48,8 +45,9 @@ export default class ContactForm extends React.Component {
           Message
           <TextArea name="message" id="message" rows="5" />
         </label>
-
-        <Input type="reset" value="Clear" />
+        <label htmlFor="reset">
+          <Input type="reset" name="reset" value="Clear" />
+        </label>
         {status === "SUCCESS" ? (
           <p>
             <IoIosRocket /> Thanks!

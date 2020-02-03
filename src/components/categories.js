@@ -21,15 +21,14 @@ export default props => {
         {categories.map(category => {
           let categorySlug = slugify(category)
           let categoryUrl = `/categories/${categorySlug}`
-
           return (
             <li key="category.id">
               <Link to={categoryUrl}>{category}</Link>
             </li>
           )
         })}
-        <Link to="/categories">See all categories</Link>
       </ul>
+      <Link to="/categories">See all categories</Link>
     </>
   )
 }
