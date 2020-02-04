@@ -19,13 +19,21 @@ import {
   IoIosArrowForward,
 } from "react-icons/io"
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
+import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
-const BlogPost = ({ data, pageContext }) => {
+const BlogPost = ({ data, pageContext, location }) => {
   const post = data.mdx
   const site = data.site
-  const shareUrl = `${site.siteMetadata.siteUrl}${post.frontmatter.slug}`
-  const { next, previous } = pageContext
+  const shareUrl = `${site.siteMetadata.siteUrl}/${post.frontmatter.slug}`
+  const {
+    next,
+    previous,
+    breadcrumb: { crumbs },
+  } = pageContext
+
   const defaultTitle = `${post.frontmatter.title} | ${site.siteMetadata.title}`
+
+  const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
 
   return (
     <div>
@@ -49,7 +57,7 @@ const BlogPost = ({ data, pageContext }) => {
           <meta property="og:site_name" content={site.siteMetadata.title} />
           <meta
             property="og:image"
-            content={`${site.siteMetadata.siteUrl}${siteIcon}`}
+            content={`${site.siteMetadata.siteUrl}/${siteIcon}`}
           />
           <meta property="og:image:width" content="512" />
           <meta property="og:image:height" content="512" />
@@ -58,6 +66,15 @@ const BlogPost = ({ data, pageContext }) => {
         </Helmet>
 
         <Header />
+        <div>
+          {" "}
+          You are here:
+          <Breadcrumb
+            crumbs={crumbs}
+            crumbSeparator=""
+            crumbLabel={customCrumbLabel}
+          />
+        </div>
         <h1>{post.frontmatter.title}</h1>
 
         <ResponsiveImage

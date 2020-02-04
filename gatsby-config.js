@@ -3,7 +3,7 @@ module.exports = {
     title: `1001 Tea Facts`,
     description: `Discover 1001 Tea Facts and discover the spiritual and healthy ways of tea. Discover how you can choose the right tea for your needs and wants.`,
     author: `David Kartuzinski`,
-    siteUrl: `https://1001teafacts.com/`,
+    siteUrl: `https://1001teafacts.com`,
     newsletterHeadline: `Sign up and get exclusive content delivered to your inbox`,
     newsletterTagLine: `Aside from exclusive content, get occasional deals, new product alerts, and tea-related news. No spam. Just occasional emails for stuff you probably want to get.`,
     newsletterButtonText: `Sign up now`,
@@ -17,6 +17,36 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // add any options here
+      },
+    },
+    {
+      resolve: `gatsby-plugin-breadcrumb`,
+      options: {
+        // useAutoGen: required 'true' to use autogen
+        useAutoGen: true,
+        // autoGenHomeLabel: optional 'Home' is default
+        autoGenHomeLabel: `HOME`,
+        // exlude: optional, include to overwrite these default excluded pages
+        exclude: [
+          `/dev-404-page`,
+          `/404`,
+          `/404.html`,
+          `/offline-plugin-app-shell-fallback`,
+        ],
+        // crumbLabelUpdates: optional, update specific crumbLabels in the path
+        crumbLabelUpdates: [
+          {
+            pathname: "/book",
+            crumbLabel: "Books",
+            crumbStyle: { color: "blue" },
+            crumbActiveStyle: { color: "red" },
+          },
+        ],
+        // optional: switch to className styling
+        // see `useClassNames example with `AutoGen` below
+        useClassNames: true,
+        // optional: if you are using path prefix
+        // usePathPrefix: '/blog',
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -88,6 +118,8 @@ module.exports = {
             },
           },
         ],
+        // https://github.com/gatsbyjs/gatsby/issues/15486#issuecomment-510153237
+        plugins: [`gatsby-remark-images`],
       },
     },
     {
@@ -156,3 +188,35 @@ module.exports = {
     },
   ],
 }
+
+// SEO needs: https://moz.com/blog/seo-2020
+// 1. Titles, metas, headers, image alts, site speed, robots.txt, sitemaps, UX, analytics
+// 2. Schema Mark-up, breadcrumbs, FAQ Schema, News schema, Business info
+// 3. Research what matters for your industry
+// 4. E-A-T Google Factors ?? // BERT   // Searcher Intent
+// 5. Favicons
+// 6. Entity and Topical integration - part of the keyword buckets
+// 7. Featured Snippets (how to do)
+// 8. Invest in visuals
+// 9. Cultivate engagement with comments
+// 10. Repurpose Content
+// 11. Prune and / or improve thin / low quality pages
+// 12. Customer insigts - https://sparktoro.com/
+// 13. Find Keyword opportunities in Google Search Console //facets by google
+// 14. target link-intent keyword ____ facts, ____ statistics, to naturally build links
+// 15. Provide unique research w/ visuals
+
+// Structured data schema.org
+// https://www.youtube.com/watch?v=xQeRA-Ojq5c
+// https://developers.google.com/search/docs/guides/sd-policies
+// https://jsonld.com/blog/
+// custom HTML
+// A recipe page with both recipe text and an accompanying video. Mark the text and video separately with schema.org/Recipe and schema.org/VideoObject respectively.
+//A category page listing several different products (or recipes, videos, or any other type). Each entity should be marked up using the relevant schema.org type, such as schema.org/Product for product category pages. However, if one item is marked, all items should be marked. Also, unless this is a carousel page, the marked items should not link out to separate details pages.
+
+// A video play page with related videos embedded in a separate section on the page. In this case, mark up the main video and related videos individually.
+
+// Some Datatype
+// WebSite, Organization, BlogPosting, VideoObject, BreadCrumbs
+
+// https://search.google.com/structured-data/testing-tool/u/0/#url=kdworld.com.tw

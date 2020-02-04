@@ -7,17 +7,34 @@ import SocialShare from "../components/social-share"
 import SiteMetaData from "../components/site-metadata"
 import PostPreview from "../components/post-preview"
 import PageNavigation from "../components/page-navigation"
+import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
-const BlogList = ({ data, pageContext }) => {
+const BlogList = ({ data, pageContext, location }) => {
   const posts = data.posts
   const site = data.site
   const shareUrl = `${site.siteMetadata.siteUrl}/blog`
+
+  const {
+    breadcrumb: { crumbs },
+  } = pageContext
+
+  const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
 
   return (
     <div>
       <div>
         <SiteMetaData />
         <Header />
+
+        <div>
+          {" "}
+          You are here:
+          <Breadcrumb
+            crumbs={crumbs}
+            crumbSeparator=""
+            crumbLabel={customCrumbLabel}
+          />
+        </div>
         <h1>Blog Posts</h1>
 
         {posts.edges.map(post => (

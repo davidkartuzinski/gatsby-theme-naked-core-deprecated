@@ -5,16 +5,34 @@ import SiteMetaData from "../components/site-metadata"
 import { IoIosFolder } from "react-icons/io"
 import { Link, graphql } from "gatsby"
 
-const Categories = ({ pageContext, data }) => {
-  const { category } = pageContext
+import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+
+const Categories = ({ data, pageContext, location }) => {
+  const {
+    category,
+    breadcrumb: { crumbs },
+  } = pageContext
   const { edges, totalCount } = data.allMdx
   const categoryHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${category}"`
 
+  const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
+
   return (
     <div>
       <SiteMetaData />
+
+      <div>
+        {" "}
+        You are here:
+        <Breadcrumb
+          crumbs={crumbs}
+          crumbSeparator=""
+          crumbLabel={customCrumbLabel}
+        />
+      </div>
+
       <h1>
         <IoIosFolder />
         {categoryHeader}

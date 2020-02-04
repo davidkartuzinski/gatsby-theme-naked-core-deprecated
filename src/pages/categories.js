@@ -10,6 +10,8 @@ import kebabCase from "lodash/kebabCase"
 // Components
 import { Link, graphql } from "gatsby"
 
+import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+
 const CategoriesPage = ({
   data: {
     allMdx: { group },
@@ -17,25 +19,43 @@ const CategoriesPage = ({
       siteMetadata: { title },
     },
   },
-}) => (
-  <div>
-    <SiteMetaData />
+  pageContext,
+  location,
+}) => {
+  const {
+    breadcrumb: { crumbs },
+  } = pageContext
+
+  const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
+  return (
     <div>
-      <h1>
-        <IoIosFolder /> Categories
-      </h1>
-      <ul>
-        {group.map(category => (
-          <li key={category.fieldValue}>
-            <Link to={`/categories/${kebabCase(category.fieldValue)}/`}>
-              {category.fieldValue} ({category.totalCount})
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <SiteMetaData />
+      <div>
+        {" "}
+        You are here:
+        <Breadcrumb
+          crumbs={crumbs}
+          crumbSeparator=""
+          crumbLabel={customCrumbLabel}
+        />
+      </div>
+      <div>
+        <h1>
+          <IoIosFolder /> Categories
+        </h1>
+        <ul>
+          {group.map(category => (
+            <li key={category.fieldValue}>
+              <Link to={`/categories/${kebabCase(category.fieldValue)}/`}>
+                {category.fieldValue} ({category.totalCount})
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 CategoriesPage.propTypes = {
   data: PropTypes.shape({

@@ -4,13 +4,20 @@ import SiteMetaData from "../components/site-metadata"
 import { IoIosPricetags } from "react-icons/io"
 
 import { Link, graphql } from "gatsby"
+import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
-const Tags = ({ pageContext, data }) => {
+const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMdx
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
+
+  const {
+    breadcrumb: { crumbs },
+  } = pageContext
+
+  const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
 
   return (
     <div>
@@ -19,6 +26,16 @@ const Tags = ({ pageContext, data }) => {
         <IoIosPricetags />
         {tagHeader}
       </h1>
+
+      <div>
+        {" "}
+        You are here:
+        <Breadcrumb
+          crumbs={crumbs}
+          crumbSeparator=""
+          crumbLabel={customCrumbLabel}
+        />
+      </div>
       <ul>
         {edges.map(({ node }) => {
           const { slug } = node.fields
@@ -30,7 +47,6 @@ const Tags = ({ pageContext, data }) => {
           )
         })}
       </ul>
-      {/* Links to a page that does not exist quite yet... */}
       <Link to="/tags">See all tags</Link>
     </div>
   )
