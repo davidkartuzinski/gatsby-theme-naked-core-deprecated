@@ -17,7 +17,9 @@ const Categories = ({ data, pageContext, location }) => {
     totalCount === 1 ? "" : "s"
   } tagged with "${category}"`
 
-  const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
+  // const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
+
+  const [, , customCrumbLabel] = location.pathname.split("/")
 
   return (
     <div>
@@ -28,7 +30,7 @@ const Categories = ({ data, pageContext, location }) => {
         You are here:
         <Breadcrumb
           crumbs={crumbs}
-          crumbSeparator=""
+          crumbSeparator=" > "
           crumbLabel={customCrumbLabel}
         />
       </div>

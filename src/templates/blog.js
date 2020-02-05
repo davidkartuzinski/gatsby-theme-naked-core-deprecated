@@ -18,7 +18,9 @@ const BlogList = ({ data, pageContext, location }) => {
     breadcrumb: { crumbs },
   } = pageContext
 
-  const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
+  const [, , preCrumbLabel] = location.pathname.split("/")
+
+  const customCrumbLabel = "page-" + preCrumbLabel
 
   return (
     <div>
@@ -31,7 +33,7 @@ const BlogList = ({ data, pageContext, location }) => {
           You are here:
           <Breadcrumb
             crumbs={crumbs}
-            crumbSeparator=""
+            crumbSeparator=" > "
             crumbLabel={customCrumbLabel}
           />
         </div>

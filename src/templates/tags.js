@@ -7,8 +7,16 @@ import { Link, graphql } from "gatsby"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
 const Tags = ({ pageContext, data, location }) => {
+  // console.log("location -> ", location)
+  // console.log(typeof location)
+
   const { tag } = pageContext
+
+  // console.log("pageContext -> ", pageContext)
+  // console.log(typeof pageContext)
+
   const { edges, totalCount } = data.allMdx
+
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
@@ -17,7 +25,13 @@ const Tags = ({ pageContext, data, location }) => {
     breadcrumb: { crumbs },
   } = pageContext
 
-  const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
+  // console.log("crumbs ->", crumbs)
+  // console.log(typeof crumbs)
+  const [, , customCrumbLabel] = location.pathname.split("/")
+
+  // const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
+  // console.log("location.pathname ->", location.pathname)
+  // console.log(typeof location.pathname)
 
   return (
     <div>
@@ -32,7 +46,7 @@ const Tags = ({ pageContext, data, location }) => {
         You are here:
         <Breadcrumb
           crumbs={crumbs}
-          crumbSeparator=""
+          crumbSeparator=" > "
           crumbLabel={customCrumbLabel}
         />
       </div>

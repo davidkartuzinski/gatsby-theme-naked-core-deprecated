@@ -80,3 +80,21 @@ a {
 .command-line-prompt > span[data-prompt]:before {
   content: attr(data-prompt);
 }
+
+/* Notes:
+
+Libraries: 
+
+https://redd.gitbook.io/atomic-layout/
+https://ant.design/
+https://bulma.io/
+https://chakra-ui.com/
+https://react-bootstrap.github.io/
+
+
+Tools: 
+https://coolors.co/
+
+
+
+*/
