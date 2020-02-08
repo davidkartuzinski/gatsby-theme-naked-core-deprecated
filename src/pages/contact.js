@@ -1,6 +1,6 @@
 import React from "react"
 import ContactForm from "../components/contactForm"
-import SiteMetaData from "../components/site-metadata"
+import SEO from "../components/SEO"
 
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
@@ -13,7 +13,7 @@ export default ({ pageContext, location }) => {
 
   return (
     <>
-      <SiteMetaData />
+      <SEO />
 
       <div>
         {" "}

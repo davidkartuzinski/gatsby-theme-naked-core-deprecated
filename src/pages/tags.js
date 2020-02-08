@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { IoIosPricetags } from "react-icons/io"
-import SiteMetaData from "../components/site-metadata"
+import SEO from "../components/SEO"
 
 // Utilities
 import kebabCase from "lodash/kebabCase"
@@ -28,7 +28,7 @@ const TagsPage = ({
   const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
   return (
     <div>
-      <SiteMetaData />
+      <SEO />
       <div>
         <div>
           {" "}

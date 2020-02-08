@@ -1,5 +1,5 @@
 import React from "react"
-import SiteMetaData from "../components/site-metadata"
+import SEO from "../components/SEO"
 
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
@@ -10,7 +10,7 @@ export default ({ pageContext }) => {
 
   return (
     <>
-      <SiteMetaData />
+      <SEO />
 
       <div>
         {" "}

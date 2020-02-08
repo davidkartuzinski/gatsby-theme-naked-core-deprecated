@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
-import SiteMetaData from "../components/site-metadata"
+import SEO from "../components/SEO"
+
 import { IoIosPricetags } from "react-icons/io"
 
 import { Link, graphql } from "gatsby"
@@ -35,7 +36,7 @@ const Tags = ({ pageContext, data, location }) => {
 
   return (
     <div>
-      <SiteMetaData />
+      <SEO />
       <h1>
         <IoIosPricetags />
         {tagHeader}

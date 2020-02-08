@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Helmet } from "react-helmet"
 import AffiliateDisclaimer from "../components/affiliateDisclaimer"
 import ResponsiveImage from "../components/responsiveImage"
 import SocialShare from "../components/social-share"
@@ -9,7 +8,8 @@ import Tags from "../components/tags"
 import Categories from "../components/categories"
 import TalkYardComments from "../components/talkYardComments"
 import Header from "../components/header"
-import siteIcon from "../images/icon.png"
+import SEO from "../components/SEO"
+// import siteIcon from "../images/icon.png"
 import Aside from "../components/aside"
 import { Link } from "gatsby"
 import {
@@ -31,39 +31,22 @@ const BlogPost = ({ data, pageContext, location }) => {
     breadcrumb: { crumbs },
   } = pageContext
 
-  const defaultTitle = `${post.frontmatter.title} | ${site.siteMetadata.title}`
+  const defaultTitle = `${post.frontmatter.title} | '' ` // Will be blank if not set
 
   const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
 
   return (
     <div>
       <div>
-        <Helmet
-          defer={false}
-          defaultTitle={defaultTitle}
-          titleTemplate={`%s | ${post.frontmatter.title}`}
-        >
-          <html lang={site.siteMetadata.locale} />
-          <link rel="canonical" href={`${shareUrl}`} />
-          <meta name="docsearch:version" content="2.0" />
-          <meta
-            name="viewport"
-            content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover"
-          />
-          <meta name="description" content={post.frontmatter.description} />
-          <meta property="og:url" content={site.siteMetadata.siteUrl} />
-          <meta property="og:type" content="website" />
-          <meta property="og:locale" content={site.siteMetadata.locale} />
-          <meta property="og:site_name" content={site.siteMetadata.title} />
-          <meta
-            property="og:image"
-            content={`${site.siteMetadata.siteUrl}/${siteIcon}`}
-          />
-          <meta property="og:image:width" content="512" />
-          <meta property="og:image:height" content="512" />
-          <meta name="twitter:card" content={post.frontmatter.description} />
-          <meta name="twitter:site" content={site.siteMetadata.twitter} />
-        </Helmet>
+        <SEO
+          title={defaultTitle}
+          canonical={post.frontmatter.canonical}
+          slug={post.frontmatter.slug}
+          date={post.frontmatter.date}
+          dateMod={post.frontmatter.dateModified}
+          tags={post.frontmatter.tags}
+          featuredImage={post.frontmatter.image}
+        />
 
         <Header />
         <div>
@@ -134,6 +117,7 @@ export const query = graphql`
       frontmatter {
         author
         date(formatString: "MMMM DD, YYYY")
+        dateModified(formatString: "MMMM DD, YYYY")
         description
         image {
           childImageSharp {
@@ -148,6 +132,7 @@ export const query = graphql`
         tags
         imageAlt
         imageTitle
+        canonical
       }
       id
     }
@@ -155,8 +140,11 @@ export const query = graphql`
       siteMetadata {
         siteUrl
         title
-        twitter
+        socialLinks {
+          twitter
+        }
         locale
+        websiteDescription
       }
     }
   }

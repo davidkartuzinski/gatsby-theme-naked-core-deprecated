@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import SiteMetaData from "../components/site-metadata"
+import SEO from "../components/SEO"
 
 import { IoIosFolder } from "react-icons/io"
 
@@ -29,7 +29,7 @@ const CategoriesPage = ({
   const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
   return (
     <div>
-      <SiteMetaData />
+      <SEO />
       <div>
         {" "}
         You are here:

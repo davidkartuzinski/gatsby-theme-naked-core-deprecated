@@ -1,16 +1,45 @@
 module.exports = {
   siteMetadata: {
     title: `1001 Tea Facts`,
-    description: `Discover 1001 Tea Facts and discover the spiritual and healthy ways of tea. Discover how you can choose the right tea for your needs and wants.`,
+    logo: `./src/images/1001teafactslogo.png`,
+    websiteDescription: `Discover 1001 Tea Facts and discover the spiritual and healthy ways of tea. Welcome to the wonderful world of Tea. Discover the practical sides to consuming tea for you and your loved ones.`,
     author: `David Kartuzinski`,
     siteUrl: `https://1001teafacts.com`,
+    legalName: `1001 Tea Facts`,
     newsletterHeadline: `Sign up and get exclusive content delivered to your inbox`,
     newsletterTagLine: `Aside from exclusive content, get occasional deals, new product alerts, and tea-related news. No spam. Just occasional emails for stuff you probably want to get.`,
     newsletterButtonText: `Sign up now`,
     newsletterPrivacyText: `We promise to make the best content possible and to keep your email safely with only us. You can unsusbcribe easily at any time.`,
     newsletterPrivacyReminder: `Strict No Spam Policy. No Sharing of your data - EVER!`,
-    twitter: `1001_teafacts`,
-    locale: `en`,
+    // twitter: `1001_teafacts`,
+    locale: `en-US`,
+    textDirection: `ltr`,
+    socialLinks: {
+      twitter: "https://twitter.com/1001_teafacts",
+      instagram: "https://www.instagram.com/official1001teafacts/",
+      pinterest: "https://www.pinterest.com/official1001teafacts",
+      facebook: "https://www.facebook.com/official1001teafacts/",
+    },
+    googleAnalyticsID: "UA-149846841-1",
+    themeColor: "#90c665",
+    backgroundColor: "#543622",
+    siteRss: "/rss.xml",
+    social: {
+      facebook: "official1001teafacts",
+      twitter: "@1001_teafacts",
+      twitterAuthor: "",
+    },
+    address: {
+      city: "Paris",
+      region: "Ile de France",
+      country: "France",
+      zipCode: "75015",
+    },
+    contact: {
+      email: "david@1001teafact.com",
+      phone: "",
+    },
+    foundingDate: "2019",
   },
   plugins: [
     {
@@ -25,7 +54,7 @@ module.exports = {
         // useAutoGen: required 'true' to use autogen
         useAutoGen: true,
         // autoGenHomeLabel: optional 'Home' is default
-        autoGenHomeLabel: `HOME`,
+        autoGenHomeLabel: `Home`,
         // exlude: optional, include to overwrite these default excluded pages
         exclude: [
           `/dev-404-page`,
@@ -36,8 +65,8 @@ module.exports = {
         // crumbLabelUpdates: optional, update specific crumbLabels in the path
         crumbLabelUpdates: [
           {
-            pathname: "/book",
-            crumbLabel: "Books",
+            // pathname: "/book",
+            // crumbLabel: "Books",
             crumbStyle: { color: "blue" },
             crumbActiveStyle: { color: "red" },
           },

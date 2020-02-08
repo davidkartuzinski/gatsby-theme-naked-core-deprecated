@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import SiteMetaData from "../components/site-metadata"
+import SEO from "../components/SEO"
 
 import { IoIosFolder } from "react-icons/io"
 import { Link, graphql } from "gatsby"
@@ -23,7 +23,7 @@ const Categories = ({ data, pageContext, location }) => {
 
   return (
     <div>
-      <SiteMetaData />
+      <SEO />
 
       <div>
         {" "}
