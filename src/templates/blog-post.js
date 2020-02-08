@@ -9,7 +9,6 @@ import Categories from "../components/categories"
 import TalkYardComments from "../components/talkYardComments"
 import Header from "../components/header"
 import SEO from "../components/SEO"
-// import siteIcon from "../images/icon.png"
 import Aside from "../components/aside"
 import { Link } from "gatsby"
 import {
@@ -31,21 +30,20 @@ const BlogPost = ({ data, pageContext, location }) => {
     breadcrumb: { crumbs },
   } = pageContext
 
-  const defaultTitle = `${post.frontmatter.title} | '' ` // Will be blank if not set
-
   const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
 
   return (
     <div>
       <div>
         <SEO
-          title={defaultTitle}
+          title={post.frontmatter.title}
           canonical={post.frontmatter.canonical}
           slug={post.frontmatter.slug}
+          description={post.frontmatter.description}
           date={post.frontmatter.date}
-          dateMod={post.frontmatter.dateModified}
+          dateModified={post.frontmatter.dateModified}
           tags={post.frontmatter.tags}
-          featuredImage={post.frontmatter.image}
+          image={post.frontmatter.image.publicURL}
         />
 
         <Header />
@@ -125,6 +123,7 @@ export const query = graphql`
               ...GatsbyImageSharpFluid
             }
           }
+          publicURL
         }
         slug
         title

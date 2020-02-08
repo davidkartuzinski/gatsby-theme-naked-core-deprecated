@@ -11,16 +11,10 @@ import kebabCase from "lodash/kebabCase"
 import { Link, graphql } from "gatsby"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
-const TagsPage = ({
-  data: {
-    allMdx: { group },
-    site: {
-      siteMetadata: { title },
-    },
-  },
-  pageContext,
-  location,
-}) => {
+const TagsPage = ({ data, pageContext, location }) => {
+  const site = data.site
+  const group = data.allMdx.group
+
   const {
     breadcrumb: { crumbs },
   } = pageContext
@@ -28,7 +22,16 @@ const TagsPage = ({
   const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
   return (
     <div>
-      <SEO />
+      <SEO
+        title={"1001 Tea Facts Tags"}
+        canonical={"tags"}
+        description={"The Tags Page for 1001 Tea Facts"}
+        date={""}
+        dateModified={""}
+        // tags={undefined}
+        image={site.siteMetadata.logo}
+        slug={"tags"}
+      />
       <div>
         <div>
           {" "}
@@ -76,11 +79,14 @@ TagsPage.propTypes = {
 
 export default TagsPage
 
-export const pageQuery = graphql`
+export const query = graphql`
   query {
     site {
       siteMetadata {
         title
+        siteUrl
+        websiteDescription
+        logo
       }
     }
     allMdx(limit: 2000) {

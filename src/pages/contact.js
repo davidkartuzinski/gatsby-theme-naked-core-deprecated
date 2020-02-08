@@ -4,7 +4,8 @@ import SEO from "../components/SEO"
 
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
-export default ({ pageContext, location }) => {
+const Contact = ({ data, pageContext, location }) => {
+  const site = data.site
   const {
     breadcrumb: { crumbs },
   } = pageContext
@@ -13,7 +14,16 @@ export default ({ pageContext, location }) => {
 
   return (
     <>
-      <SEO />
+      <SEO
+        title={"1001 Tea Facts Contact Page"}
+        canonical={"contact"}
+        description={"The Contact Page for 1001 Tea Facts"}
+        date={""}
+        dateModified={""}
+        // tags={undefined}
+        image={site.siteMetadata.logo}
+        slug={"contact"}
+      />
 
       <div>
         {" "}
@@ -28,3 +38,16 @@ export default ({ pageContext, location }) => {
     </>
   )
 }
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        siteUrl
+        websiteDescription
+        logo
+      }
+    }
+  }
+`
+export default Contact

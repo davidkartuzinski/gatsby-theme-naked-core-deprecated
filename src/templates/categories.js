@@ -8,6 +8,8 @@ import { Link, graphql } from "gatsby"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
 const Categories = ({ data, pageContext, location }) => {
+  const site = data.site
+
   const {
     category,
     breadcrumb: { crumbs },
@@ -23,7 +25,16 @@ const Categories = ({ data, pageContext, location }) => {
 
   return (
     <div>
-      <SEO />
+      <SEO
+        title={`1001 Tea Facts ${customCrumbLabel} Category Page`}
+        canonical={"blog"}
+        description={`A single ${customCrumbLabel} Category Page for 1001 Tea Facts`}
+        date={""}
+        dateModified={""}
+        // tags={undefined}
+        image={site.siteMetadata.logo}
+        slug={"blog"}
+      />
 
       <div>
         {" "}
@@ -98,6 +109,13 @@ export const pageQuery = graphql`
             slug
           }
         }
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
+        websiteDescription
+        logo
       }
     }
   }

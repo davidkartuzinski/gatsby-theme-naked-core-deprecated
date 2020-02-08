@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `1001 Tea Facts`,
-    logo: `./src/images/1001teafactslogo.png`,
+    logo: `1001teafactslogo.png`,
     websiteDescription: `Discover 1001 Tea Facts and discover the spiritual and healthy ways of tea. Welcome to the wonderful world of Tea. Discover the practical sides to consuming tea for you and your loved ones.`,
     author: `David Kartuzinski`,
     siteUrl: `https://1001teafacts.com`,

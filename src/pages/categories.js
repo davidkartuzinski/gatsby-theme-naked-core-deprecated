@@ -12,16 +12,9 @@ import { Link, graphql } from "gatsby"
 
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
-const CategoriesPage = ({
-  data: {
-    allMdx: { group },
-    site: {
-      siteMetadata: { title },
-    },
-  },
-  pageContext,
-  location,
-}) => {
+const CategoriesPage = ({ data, pageContext, location }) => {
+  const group = data.allMdx.group
+  const site = data.site
   const {
     breadcrumb: { crumbs },
   } = pageContext
@@ -29,7 +22,16 @@ const CategoriesPage = ({
   const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
   return (
     <div>
-      <SEO />
+      <SEO
+        title={"1001 Tea Facts Categories"}
+        canonical={"categories"}
+        description={"The Categories Page for 1001 Tea Facts"}
+        date={""}
+        dateModified={""}
+        // tags={undefined}
+        image={site.siteMetadata.logo}
+        slug={"categories"}
+      />
       <div>
         {" "}
         You are here:
@@ -82,6 +84,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
+        websiteDescription
+        logo
       }
     }
     allMdx(limit: 2000) {

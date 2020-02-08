@@ -3,14 +3,27 @@ import SEO from "../components/SEO"
 
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
-export default ({ pageContext }) => {
+const Home = ({ data, pageContext }) => {
+  const site = data.site
+
   const {
     breadcrumb: { crumbs },
   } = pageContext
 
   return (
     <>
-      <SEO />
+      <SEO
+        title={"1001 Tea Facts Home Page"}
+        canonical={"/"}
+        description={
+          "Discover 1001 Tea Facts and discover the spiritual and healthy ways of tea. Welcome to the wonderful world of Tea. Discover the practical sides to consuming tea for you and your loved ones."
+        }
+        date={""}
+        dateModified={""}
+        // tags={undefined}
+        image={site.siteMetadata.logo}
+        slug={"blog"}
+      />
 
       <div>
         {" "}
@@ -22,3 +35,17 @@ export default ({ pageContext }) => {
     </>
   )
 }
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        siteUrl
+        websiteDescription
+        logo
+      }
+    }
+  }
+`
+
+export default Home

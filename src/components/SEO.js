@@ -8,7 +8,7 @@ function SEO({
   canonical,
   description,
   date,
-  dateMod,
+  dateModified,
   tags,
   image,
   slug,
@@ -23,6 +23,7 @@ function SEO({
             textDirection
             siteUrl
             author
+            locale
             social {
               twitter
               twitterAuthor
@@ -60,22 +61,39 @@ function SEO({
         />
       )}
       {/* Open Graph https://ogp.me/ https://developers.facebook.com/docs/sharing/webmasters/ */}
-      <meta property="og:url" content={canonical} />
+
+      {canonical && (
+        <meta
+          property="og:url"
+          content={`${site.siteMetadata.siteUrl}/${canonical} `}
+        />
+      )}
+      {!canonical && (
+        <meta
+          property="og:url"
+          content={`${site.siteMetadata.siteUrl}/${slug}`}
+        />
+      )}
+
       <meta property="og:type" content="article" />
-      <meta property="og:title" content={title || site.siteMetadata.title} />
-      <meta
-        property="og:description"
-        content={description || site.siteMetadata.websiteDescription}
-      />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
       <meta property="og:site_name" content={site.siteMetadata.title} />
       <meta property="og:locale" content={site.siteMetadata.locale} />
       <meta property="article:published_time" content={date} />
-      <meta property="article:modified_time" content={dateMod} />
-      {tags.map((keyword, i) => (
-        <meta property="article:tag" content={keyword} key={i} />
-      ))}
+
+      <meta property="article:modified_time" content={dateModified} />
+
+      {tags &&
+        tags.map((tag, i) => (
+          <meta property="article:tag" content={tag} key={i} />
+        ))}
+
       <meta property="article:author" content={site.siteMetadata.author} />
-      <meta property="og:image" content={image} />
+      <meta
+        property="og:image"
+        content={`${site.siteMetadata.siteUrl}/${image}`}
+      />
     </Helmet>
   )
 }

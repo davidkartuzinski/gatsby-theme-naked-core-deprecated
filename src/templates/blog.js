@@ -25,7 +25,17 @@ const BlogList = ({ data, pageContext, location }) => {
   return (
     <div>
       <div>
-        <SEO />
+        <SEO
+          title={"1001 Tea Facts Blog"}
+          canonical={"blog"}
+          description={"The Blog Page for 1001 Tea Facts"}
+          date={""}
+          dateModified={""}
+          // tags={undefined}
+          image={site.siteMetadata.logo}
+          slug={"blog"}
+        />
+
         <Header />
 
         <div>
@@ -108,6 +118,7 @@ export const query = graphql`
       siteMetadata {
         siteUrl
         websiteDescription
+        logo
       }
     }
   }

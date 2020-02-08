@@ -10,7 +10,7 @@ import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 const Tags = ({ pageContext, data, location }) => {
   // console.log("location -> ", location)
   // console.log(typeof location)
-
+  const site = data.site
   const { tag } = pageContext
 
   // console.log("pageContext -> ", pageContext)
@@ -36,7 +36,16 @@ const Tags = ({ pageContext, data, location }) => {
 
   return (
     <div>
-      <SEO />
+      <SEO
+        title={`1001 Tea Facts ${customCrumbLabel} Tag Page`}
+        canonical={"blog"}
+        description={`A single ${customCrumbLabel} Tag Page for 1001 Tea Facts`}
+        date={""}
+        dateModified={""}
+        // tags={undefined}
+        image={site.siteMetadata.logo}
+        slug={"blog"}
+      />
       <h1>
         <IoIosPricetags />
         {tagHeader}
@@ -108,6 +117,13 @@ export const pageQuery = graphql`
             slug
           }
         }
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
+        websiteDescription
+        logo
       }
     }
   }
