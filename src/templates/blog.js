@@ -20,7 +20,7 @@ const BlogList = ({ data, pageContext, location }) => {
 
   const [, , preCrumbLabel] = location.pathname.split("/")
 
-  const customCrumbLabel = "page-" + preCrumbLabel
+  const customCrumbLabel = preCrumbLabel
 
   return (
     <div>
@@ -31,11 +31,9 @@ const BlogList = ({ data, pageContext, location }) => {
           description={"The Blog Page for 1001 Tea Facts"}
           date={""}
           dateModified={""}
-          // tags={undefined}
           image={site.siteMetadata.logo}
           slug={"blog"}
         />
-
         <Header />
 
         <div>

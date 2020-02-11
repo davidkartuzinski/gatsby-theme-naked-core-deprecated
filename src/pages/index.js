@@ -20,9 +20,8 @@ const Home = ({ data, pageContext }) => {
         }
         date={""}
         dateModified={""}
-        // tags={undefined}
         image={site.siteMetadata.logo}
-        slug={"blog"}
+        slug={"/"}
       />
 
       <div>

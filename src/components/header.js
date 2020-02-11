@@ -1,27 +1,26 @@
 import React from "react"
-import { StaticQuery } from "gatsby"
-import { graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Search from "./search"
 
-const Header = () => (
-  <>
-    <StaticQuery
-      query={graphql`
-        query SearchIndexQuery {
-          siteSearchIndex {
-            index
-          }
+const Header = () => {
+  const data = useStaticQuery(
+    graphql`
+      query SearchIndexQuery {
+        siteSearchIndex {
+          index
         }
-      `}
-      render={data => (
-        <header>
-          <Search searchIndex={data.siteSearchIndex.index} />
-        </header>
-      )}
-    />
-    <p>Header</p>
-  </>
-)
+      }
+    `
+  )
+  return (
+    <>
+      <header>
+        <Search searchIndex={data.siteSearchIndex.index} />
+      </header>
+      <p>Header</p>
+    </>
+  )
+}
 
 export default Header

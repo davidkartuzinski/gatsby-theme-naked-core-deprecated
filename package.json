@@ -18,7 +18,6 @@
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.3.0",
     "@mdx-js/mdx": "^1.5.5",
     "@mdx-js/react": "^1.5.5",
-    "@researchgate/react-structured-data": "^1.1.0",
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.19.7",
     "gatsby-awesome-pagination": "^0.3.5",
@@ -49,7 +48,9 @@
     "react-icons": "^3.9.0",
     "react-share": "^4.0.1",
     "react-slugify": "^2.0.1",
-    "styled-components": "^5.0.0"
+    "react-structured-data": "0.0.14",
+    "styled-components": "^5.0.0",
+    "word-counting": "^1.1.2"
   },
   "devDependencies": {
     "prettier": "^1.19.1"

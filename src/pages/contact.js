@@ -20,7 +20,6 @@ const Contact = ({ data, pageContext, location }) => {
         description={"The Contact Page for 1001 Tea Facts"}
         date={""}
         dateModified={""}
-        // tags={undefined}
         image={site.siteMetadata.logo}
         slug={"contact"}
       />

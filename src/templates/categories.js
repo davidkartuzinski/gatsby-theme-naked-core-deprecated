@@ -26,14 +26,13 @@ const Categories = ({ data, pageContext, location }) => {
   return (
     <div>
       <SEO
-        title={`1001 Tea Facts ${customCrumbLabel} Category Page`}
-        canonical={"blog"}
-        description={`A single ${customCrumbLabel} Category Page for 1001 Tea Facts`}
+        title={"1001 Tea Facts Categories"}
+        canonical={"categories"}
+        description={"The Categories Page for 1001 Tea Facts"}
         date={""}
         dateModified={""}
-        // tags={undefined}
         image={site.siteMetadata.logo}
-        slug={"blog"}
+        slug={"categories"}
       />
 
       <div>

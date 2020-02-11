@@ -37,14 +37,13 @@ const Tags = ({ pageContext, data, location }) => {
   return (
     <div>
       <SEO
-        title={`1001 Tea Facts ${customCrumbLabel} Tag Page`}
-        canonical={"blog"}
-        description={`A single ${customCrumbLabel} Tag Page for 1001 Tea Facts`}
+        title={"1001 Tea Facts Tags"}
+        canonical={"tags"}
+        description={"The Tags Page for 1001 Tea Facts"}
         date={""}
         dateModified={""}
-        // tags={undefined}
         image={site.siteMetadata.logo}
-        slug={"blog"}
+        slug={"tags"}
       />
       <h1>
         <IoIosPricetags />

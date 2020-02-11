@@ -43,7 +43,10 @@ const BlogPost = ({ data, pageContext, location }) => {
           date={post.frontmatter.date}
           dateModified={post.frontmatter.dateModified}
           tags={post.frontmatter.tags}
+          categories={post.frontmatter.categories}
           image={post.frontmatter.image.publicURL}
+          headline={post.frontmatter.title}
+          articleBody={post.rawBody}
         />
 
         <Header />
@@ -112,6 +115,7 @@ export const query = graphql`
         slug
       }
       body
+      rawBody
       frontmatter {
         author
         date(formatString: "MMMM DD, YYYY")

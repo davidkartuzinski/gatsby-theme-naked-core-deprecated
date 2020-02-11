@@ -28,7 +28,6 @@ const TagsPage = ({ data, pageContext, location }) => {
         description={"The Tags Page for 1001 Tea Facts"}
         date={""}
         dateModified={""}
-        // tags={undefined}
         image={site.siteMetadata.logo}
         slug={"tags"}
       />
