@@ -210,6 +210,7 @@ SEO.propTypes = {
   tags: PropTypes.object,
   image: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
+  categories: PropTypes.object,
   headline: PropTypes.string,
   articleBody: PropTypes.string,
 }

@@ -19,6 +19,7 @@ import {
 } from "react-icons/io"
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import Moment from "react-moment"
 
 const BlogPost = ({ data, pageContext, location }) => {
   const post = data.mdx
@@ -68,7 +69,9 @@ const BlogPost = ({ data, pageContext, location }) => {
         />
 
         <p>
-          <IoMdCalendar /> {post.frontmatter.date}, written by <IoIosPerson />
+          <IoMdCalendar />{" "}
+          <Moment format="MMMM DD, YYYY">{post.frontmatter.date}</Moment>,
+          written by <IoIosPerson />
           {post.frontmatter.author}
         </p>
         <AffiliateDisclaimer />
@@ -118,8 +121,8 @@ export const query = graphql`
       rawBody
       frontmatter {
         author
-        date(formatString: "MMMM DD, YYYY")
-        dateModified(formatString: "MMMM DD, YYYY")
+        date
+        dateModified
         description
         image {
           childImageSharp {

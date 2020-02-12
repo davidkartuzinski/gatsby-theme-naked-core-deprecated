@@ -6,8 +6,10 @@ import Aside from "../components/aside"
 import SocialShare from "../components/social-share"
 import SEO from "../components/SEO"
 import PostPreview from "../components/post-preview"
+
 import PageNavigation from "../components/page-navigation"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import Moment from "react-moment"
 
 const BlogList = ({ data, pageContext, location }) => {
   const posts = data.posts
@@ -54,7 +56,11 @@ const BlogList = ({ data, pageContext, location }) => {
             imageAlt={post.node.frontmatter.imageAlt}
             imageTitle={post.node.frontmatter.imageTitle}
             title={post.node.frontmatter.title}
-            date={post.node.frontmatter.date}
+            date={
+              <Moment format="MMMM DD, YYYY">
+                {post.node.frontmatter.date}
+              </Moment>
+            }
             author={post.node.frontmatter.author}
             cats={post.node.frontmatter.categories}
             tags={post.node.frontmatter.tags}
@@ -90,7 +96,7 @@ export const query = graphql`
           }
           frontmatter {
             slug
-            date(formatString: "MMMM DD, YYYY")
+            date
             description
             image {
               childImageSharp {
