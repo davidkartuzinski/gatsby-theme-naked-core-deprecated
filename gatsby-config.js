@@ -147,8 +147,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `TeaFacts`,
-        short_name: `TeaFacts`,
+        name: `GatsbyThemeNaked`,
+        short_name: `GatsbyNakedTheme`,
         start_url: `/`,
         background_color: `#90c665`,
         theme_color: `#90c665`,
@@ -198,33 +198,9 @@ module.exports = {
     {
       resolve: `gatsby-source-instagram-all`,
       options: {
-        access_token: "17406723570.1677ed0.e1b51a7da4ab4e0094db3cb8c679c9f3",
+        access_token: "225244348.1677ed0.eacf7b3822fd4019bd62a96b38bccc6a",
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `1001 Tea Facts`,
-        short_name: `1001TeaFacts`,
-        icons: [
-          {
-            src: `/favicons/android-chrome-192x192.png`,
-            sizes: `192x192`,
-            type: `image/png`,
-          },
-          {
-            src: `/favicons/android-chrome-512x512.png`,
-            sizes: `512x512`,
-            type: `image/png`,
-          },
-        ],
-        start_url: `/`,
-        background_color: `#fffffa`,
-        theme_color: `#90c665`,
-        display: `standalone`,
-      },
-    },
-
     `gatsby-plugin-advanced-sitemap`,
     {
       resolve: "gatsby-plugin-robots-txt",
