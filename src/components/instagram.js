@@ -1,51 +1,16 @@
 import React from "react"
 import Image from "gatsby-image"
-import { graphql, useStaticQuery } from "gatsby"
-// import { IoLogoInstagram } from "react-icons/io"
+import useInstagram from "../hooks/use-instagram"
 
 const Instagram = () => {
-  const { instagram } = useStaticQuery(
-    graphql`
-      query {
-        instagram: allInstagramContent {
-          edges {
-            node {
-              caption {
-                text
-              }
-              localImage {
-                childImageSharp {
-                  fluid(maxHeight: 500, maxWidth: 500, quality: 50) {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
-                }
-              }
-              id
-              images {
-                standard_resolution {
-                  url
-                }
-              }
-            }
-          }
-        }
-      }
-    `
-  )
-
+  const instaPhotos = useInstagram()
   return (
     <div>
-      {instagram.edges.map(photo => {
+      {instaPhotos.map(photo => {
         return (
           <div>
-            <a
-              key={photo.node.id}
-              href={`${photo.node.images.standard_resolution.url}`}
-            >
-              <Image
-                fluid={photo.node.localImage.childImageSharp.fluid}
-                alt={photo.node.caption.text}
-              />
+            <a key={photo.id} href={photo.link}>
+              <Image fluid={photo.fluid} alt={photo.caption.text} />
             </a>
           </div>
         )
