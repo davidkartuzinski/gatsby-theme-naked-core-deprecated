@@ -11,10 +11,14 @@ import PageNavigation from "../components/page-navigation"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import { DateTime } from "luxon"
 
+import { useSiteMetadata } from "../hooks/useSiteMetadata"
+
 const BlogList = ({ data, pageContext, location }) => {
+  const { siteUrl, logo } = useSiteMetadata()
+
   const posts = data.posts
-  const site = data.site
-  const shareUrl = `${site.siteMetadata.siteUrl}/blog`
+
+  const shareUrl = `${siteUrl}/blog`
 
   const {
     breadcrumb: { crumbs },
@@ -33,7 +37,7 @@ const BlogList = ({ data, pageContext, location }) => {
           description={"The Blog Page for 1001 Tea Facts"}
           date={""}
           dateModified={""}
-          image={site.siteMetadata.logo}
+          image={logo}
           slug={"blog"}
         />
         <Header />
@@ -50,7 +54,6 @@ const BlogList = ({ data, pageContext, location }) => {
         <h1>Blog Posts</h1>
 
         {posts.edges.map(post => {
-          console.log(post.node.frontmatter.date)
           let formattedDate = DateTime.fromISO(
             post.node.frontmatter.date
           ).toFormat("MMMM dd yyyy")
@@ -119,13 +122,6 @@ export const query = graphql`
             slug
           }
         }
-      }
-    }
-    site {
-      siteMetadata {
-        siteUrl
-        websiteDescription
-        logo
       }
     }
   }

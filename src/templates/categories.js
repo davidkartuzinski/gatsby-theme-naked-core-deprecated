@@ -6,9 +6,10 @@ import { IoIosFolder } from "react-icons/io"
 import { Link, graphql } from "gatsby"
 
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import { useSiteMetadata } from "../hooks/useSiteMetadata"
 
 const Categories = ({ data, pageContext, location }) => {
-  const site = data.site
+  const { logo } = useSiteMetadata()
 
   const {
     category,
@@ -18,8 +19,6 @@ const Categories = ({ data, pageContext, location }) => {
   const categoryHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${category}"`
-
-  // const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
 
   const [, , customCrumbLabel] = location.pathname.split("/")
 
@@ -31,7 +30,7 @@ const Categories = ({ data, pageContext, location }) => {
         description={"The Categories Page for 1001 Tea Facts"}
         date={""}
         dateModified={""}
-        image={site.siteMetadata.logo}
+        image={logo}
         slug={"categories"}
       />
 
@@ -60,7 +59,6 @@ const Categories = ({ data, pageContext, location }) => {
           )
         })}
       </ul>
-      {/* Links to a page that does not exist quite yet... */}
       <Link to="/categories">All categories</Link>
     </div>
   )

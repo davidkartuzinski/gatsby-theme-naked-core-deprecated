@@ -1,11 +1,11 @@
 import React from "react"
 import SEO from "../components/SEO"
-import { graphql } from "gatsby"
+import { useSiteMetadata } from "../hooks/useSiteMetadata"
 
 // import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
 const NotFoundPage = ({ pageContext, location, data }) => {
-  const site = data.site
+  const { logo } = useSiteMetadata()
   // const {
   //   breadcrumb: { crumbs },
   // } = pageContext
@@ -20,7 +20,7 @@ const NotFoundPage = ({ pageContext, location, data }) => {
         description={"The 404 Error / Not Found Page for 1001 Tea Facts"}
         date={""}
         dateModified={""}
-        image={site.siteMetadata.logo}
+        image={logo}
         slug={"404"}
       />
       <div>
@@ -37,17 +37,5 @@ const NotFoundPage = ({ pageContext, location, data }) => {
     </div>
   )
 }
-
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        siteUrl
-        websiteDescription
-        logo
-      }
-    }
-  }
-`
 
 export default NotFoundPage

@@ -1,11 +1,11 @@
 import React from "react"
 import SEO from "../components/SEO"
-import { graphql } from "gatsby"
+import { useSiteMetadata } from "../hooks/useSiteMetadata"
 
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
-const Home = ({ data, pageContext }) => {
-  const site = data.site
+const Home = ({ pageContext }) => {
+  const { logo } = useSiteMetadata()
 
   const {
     breadcrumb: { crumbs },
@@ -21,7 +21,7 @@ const Home = ({ data, pageContext }) => {
         }
         date={""}
         dateModified={""}
-        image={site.siteMetadata.logo}
+        image={logo}
         slug={"/"}
       />
 
@@ -35,17 +35,5 @@ const Home = ({ data, pageContext }) => {
     </>
   )
 }
-
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        siteUrl
-        websiteDescription
-        logo
-      }
-    }
-  }
-`
 
 export default Home

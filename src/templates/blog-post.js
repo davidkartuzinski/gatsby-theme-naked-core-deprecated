@@ -20,10 +20,14 @@ import {
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
+import { useSiteMetadata } from "../hooks/useSiteMetadata"
+
 const BlogPost = ({ data, pageContext, location }) => {
+  const { siteUrl } = useSiteMetadata()
+
   const post = data.mdx
-  const site = data.site
-  const shareUrl = `${site.siteMetadata.siteUrl}/${post.frontmatter.slug}`
+
+  const shareUrl = `${siteUrl}/${post.frontmatter.slug}`
   const {
     next,
     previous,
@@ -138,17 +142,6 @@ export const query = graphql`
         canonical
       }
       id
-    }
-    site {
-      siteMetadata {
-        siteUrl
-        title
-        socialLinks {
-          twitter
-        }
-        locale
-        websiteDescription
-      }
     }
   }
 `

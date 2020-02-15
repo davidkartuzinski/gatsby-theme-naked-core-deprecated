@@ -8,13 +8,17 @@ import { IoIosFolder } from "react-icons/io"
 import kebabCase from "lodash/kebabCase"
 
 // Components
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
+
+import { useSiteMetadata } from "../hooks/useSiteMetadata"
+import { useAllMdx } from "../hooks/useAllMdx"
 
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
 const CategoriesPage = ({ data, pageContext, location }) => {
-  const group = data.allMdx.group
-  const site = data.site
+  const { logo } = useSiteMetadata()
+  const { categories } = useAllMdx()
+
   const {
     breadcrumb: { crumbs },
   } = pageContext
@@ -28,7 +32,7 @@ const CategoriesPage = ({ data, pageContext, location }) => {
         description={"The Categories Page for 1001 Tea Facts"}
         date={""}
         dateModified={""}
-        image={site.siteMetadata.logo}
+        image={logo}
         slug={"categories"}
       />
       <div>
@@ -45,7 +49,7 @@ const CategoriesPage = ({ data, pageContext, location }) => {
           <IoIosFolder /> Categories
         </h1>
         <ul>
-          {group.map(category => (
+          {categories.map(category => (
             <li key={category.fieldValue}>
               <Link to={`/categories/${kebabCase(category.fieldValue)}/`}>
                 {category.fieldValue} ({category.totalCount})
@@ -77,22 +81,3 @@ CategoriesPage.propTypes = {
 }
 
 export default CategoriesPage
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        siteUrl
-        websiteDescription
-        logo
-      }
-    }
-    allMdx(limit: 2000) {
-      group(field: frontmatter___categories) {
-        fieldValue
-        totalCount
-      }
-    }
-  }
-`

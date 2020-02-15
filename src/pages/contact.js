@@ -1,12 +1,12 @@
 import React from "react"
 import ContactForm from "../components/contactForm"
 import SEO from "../components/SEO"
-import { graphql } from "gatsby"
+import { useSiteMetadata } from "../hooks/useSiteMetadata"
 
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
-const Contact = ({ data, pageContext, location }) => {
-  const site = data.site
+const Contact = ({ pageContext, location }) => {
+  const { logo } = useSiteMetadata()
   const {
     breadcrumb: { crumbs },
   } = pageContext
@@ -21,7 +21,7 @@ const Contact = ({ data, pageContext, location }) => {
         description={"The Contact Page for 1001 Tea Facts"}
         date={""}
         dateModified={""}
-        image={site.siteMetadata.logo}
+        image={logo}
         slug={"contact"}
       />
 
@@ -39,15 +39,4 @@ const Contact = ({ data, pageContext, location }) => {
   )
 }
 
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        siteUrl
-        websiteDescription
-        logo
-      }
-    }
-  }
-`
 export default Contact

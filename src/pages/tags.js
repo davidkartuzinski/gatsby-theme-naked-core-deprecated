@@ -8,12 +8,15 @@ import kebabCase from "lodash/kebabCase"
 
 // Components
 
-import { Link, graphql } from "gatsby"
+import { useSiteMetadata } from "../hooks/useSiteMetadata"
+import { useAllMdx } from "../hooks/useAllMdx"
+
+import { Link } from "gatsby"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
-const TagsPage = ({ data, pageContext, location }) => {
-  const site = data.site
-  const group = data.allMdx.group
+const TagsPage = ({ pageContext, location }) => {
+  const { logo } = useSiteMetadata()
+  const { tags } = useAllMdx()
 
   const {
     breadcrumb: { crumbs },
@@ -28,7 +31,7 @@ const TagsPage = ({ data, pageContext, location }) => {
         description={"The Tags Page for 1001 Tea Facts"}
         date={""}
         dateModified={""}
-        image={site.siteMetadata.logo}
+        image={logo}
         slug={"tags"}
       />
       <div>
@@ -46,7 +49,7 @@ const TagsPage = ({ data, pageContext, location }) => {
           Tags
         </h1>
         <ul>
-          {group.map(tag => (
+          {tags.map(tag => (
             <li key={tag.fieldValue}>
               <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
                 {tag.fieldValue} ({tag.totalCount})
@@ -77,22 +80,3 @@ TagsPage.propTypes = {
 }
 
 export default TagsPage
-
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        siteUrl
-        websiteDescription
-        logo
-      }
-    }
-    allMdx(limit: 2000) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
-      }
-    }
-  }
-`

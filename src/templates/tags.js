@@ -6,15 +6,11 @@ import { IoIosPricetags } from "react-icons/io"
 
 import { Link, graphql } from "gatsby"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import { useSiteMetadata } from "../hooks/useSiteMetadata"
 
 const Tags = ({ pageContext, data, location }) => {
-  // console.log("location -> ", location)
-  // console.log(typeof location)
-  const site = data.site
+  const { logo } = useSiteMetadata()
   const { tag } = pageContext
-
-  // console.log("pageContext -> ", pageContext)
-  // console.log(typeof pageContext)
 
   const { edges, totalCount } = data.allMdx
 
@@ -26,13 +22,7 @@ const Tags = ({ pageContext, data, location }) => {
     breadcrumb: { crumbs },
   } = pageContext
 
-  // console.log("crumbs ->", crumbs)
-  // console.log(typeof crumbs)
   const [, , customCrumbLabel] = location.pathname.split("/")
-
-  // const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
-  // console.log("location.pathname ->", location.pathname)
-  // console.log(typeof location.pathname)
 
   return (
     <div>
@@ -42,7 +32,7 @@ const Tags = ({ pageContext, data, location }) => {
         description={"The Tags Page for 1001 Tea Facts"}
         date={""}
         dateModified={""}
-        image={site.siteMetadata.logo}
+        image={logo}
         slug={"tags"}
       />
       <h1>
@@ -116,13 +106,6 @@ export const pageQuery = graphql`
             slug
           }
         }
-      }
-    }
-    site {
-      siteMetadata {
-        siteUrl
-        websiteDescription
-        logo
       }
     }
   }
