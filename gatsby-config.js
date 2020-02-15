@@ -43,12 +43,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        // add any options here
-      },
-    },
-    {
       resolve: `gatsby-plugin-breadcrumb`,
       options: {
         // useAutoGen: required 'true' to use autogen

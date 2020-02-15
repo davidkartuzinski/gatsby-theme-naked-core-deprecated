@@ -1,7 +1,5 @@
 import React from "react"
-import Input from "../components/global/input"
-import TextArea from "../components/global/textArea"
-import Button from "../components/global/button"
+
 import { IoIosPerson } from "react-icons/io"
 import { IoIosMail } from "react-icons/io"
 import { IoMdBook } from "react-icons/io"
@@ -30,33 +28,33 @@ export default class ContactForm extends React.Component {
       >
         <label htmlFor="name">
           <IoIosPerson /> Name
-          <Input type="text" name="name" id="name" />
+          <input type="text" name="name" id="name" />
         </label>
         <label htmlFor="email">
           <IoIosMail /> Email
-          <Input type="email" name="email" id="email" />
+          <input type="email" name="email" id="email" />
         </label>
         <label htmlFor="subject">
           <IoMdBook /> Subject
-          <Input type="text" name="subject" id="subject" />
+          <input type="text" name="subject" id="subject" />
         </label>
         <label htmlFor="message">
           <IoIosBrush />
           Message
-          <TextArea name="message" id="message" rows="5" />
+          <textArea name="message" id="message" rows="5" />
         </label>
         <label htmlFor="reset">
-          <Input type="reset" name="reset" value="Clear" />
+          <input type="reset" name="reset" value="Clear" />
         </label>
         {status === "SUCCESS" ? (
           <p>
             <IoIosRocket /> Thanks!
           </p>
         ) : (
-          <Button>
+          <button>
             <IoIosSend />
             Submit
-          </Button>
+          </button>
         )}
         {status === "ERROR" && (
           <p>

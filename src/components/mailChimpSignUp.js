@@ -1,35 +1,6 @@
 import React from "react"
 import addToMailchimp from "gatsby-plugin-mailchimp"
-import Button from "../components/global/button"
-import Input from "../components/global/input"
-import styled from "styled-components"
 import { IoIosMail, IoIosSend, IoIosLeaf } from "react-icons/io"
-
-const Section = styled.section`
-  background-color: #111;
-  padding: 1rem;
-  color: white;
-  margin-bottom: 2rem;
-  span {
-    color: grey;
-  }
-  p {
-    margin: 0;
-    text-align: center;
-  }
-  label {
-    padding-bottom: 0.25rem;
-    display: block;
-  }
-  h3 {
-    text-align: center;
-    color: grey;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    margin: 0;
-    font-weight: bold;
-  }
-`
 
 // https://github.com/benjaminhoffman/gatsby-plugin-mailchimp/blob/master/examples/gatsby-v2/src/pages/index.js
 
@@ -71,7 +42,7 @@ export default class MailChimpComponent extends React.Component {
   render() {
     return (
       <>
-        <Section className="form-section">
+        <section className="form-section">
           <h3 className="form-h3">
             Sign up and get exclusive content delivered to your inbox
           </h3>
@@ -84,7 +55,7 @@ export default class MailChimpComponent extends React.Component {
             <form className="form-form" onSubmit={this._handleSubmit}>
               <label className="form-label" htmlFor="email">
                 <IoIosMail /> Email<span>*</span>
-                <Input
+                <input
                   type="email"
                   onChange={this._handleChange}
                   placeholder="Your Email Address"
@@ -99,10 +70,10 @@ export default class MailChimpComponent extends React.Component {
                 email safely with only us. You can unsusbcribe easily at any
                 time.
               </p>
-              <Button type="submit">
+              <button type="submit">
                 <IoIosSend />
                 Sign up now
-              </Button>
+              </button>
               <p className="form-p">
                 <small>
                   <IoIosLeaf />
@@ -111,7 +82,7 @@ export default class MailChimpComponent extends React.Component {
               </p>
             </form>
           </div>
-        </Section>
+        </section>
       </>
     )
   }
