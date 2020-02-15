@@ -19,7 +19,6 @@ import {
 } from "react-icons/io"
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
-import Moment from "react-moment"
 
 const BlogPost = ({ data, pageContext, location }) => {
   const post = data.mdx
@@ -69,9 +68,7 @@ const BlogPost = ({ data, pageContext, location }) => {
         />
 
         <p>
-          <IoMdCalendar />{" "}
-          <Moment format="MMMM DD, YYYY">{post.frontmatter.date}</Moment>,
-          written by <IoIosPerson />
+          <IoMdCalendar /> {post.frontmatter.date}, written by <IoIosPerson />
           {post.frontmatter.author}
         </p>
         <AffiliateDisclaimer />

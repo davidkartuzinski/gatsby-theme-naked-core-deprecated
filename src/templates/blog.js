@@ -9,7 +9,7 @@ import PostPreview from "../components/post-preview"
 
 import PageNavigation from "../components/page-navigation"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
-import Moment from "react-moment"
+import { DateTime } from "luxon"
 
 const BlogList = ({ data, pageContext, location }) => {
   const posts = data.posts
@@ -49,23 +49,26 @@ const BlogList = ({ data, pageContext, location }) => {
         </div>
         <h1>Blog Posts</h1>
 
-        {posts.edges.map(post => (
-          <PostPreview
-            slug={post.node.fields.slug}
-            image={post.node.frontmatter.image.childImageSharp.fixed}
-            imageAlt={post.node.frontmatter.imageAlt}
-            imageTitle={post.node.frontmatter.imageTitle}
-            title={post.node.frontmatter.title}
-            date={
-              <Moment format="MMMM DD, YYYY">
-                {post.node.frontmatter.date}
-              </Moment>
-            }
-            author={post.node.frontmatter.author}
-            cats={post.node.frontmatter.categories}
-            tags={post.node.frontmatter.tags}
-          />
-        ))}
+        {posts.edges.map(post => {
+          console.log(post.node.frontmatter.date)
+          let formattedDate = DateTime.fromISO(
+            post.node.frontmatter.date
+          ).toFormat("MMMM dd yyyy")
+
+          return (
+            <PostPreview
+              slug={post.node.fields.slug}
+              image={post.node.frontmatter.image.childImageSharp.fixed}
+              imageAlt={post.node.frontmatter.imageAlt}
+              imageTitle={post.node.frontmatter.imageTitle}
+              title={post.node.frontmatter.title}
+              date={formattedDate}
+              author={post.node.frontmatter.author}
+              cats={post.node.frontmatter.categories}
+              tags={post.node.frontmatter.tags}
+            />
+          )
+        })}
 
         <PageNavigation pageContext={pageContext} />
         <SocialShare shareUrl={shareUrl} title="1001 Tea Facts Blog" />

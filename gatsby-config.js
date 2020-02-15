@@ -154,8 +154,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `1001 Tea Facts`,
-        short_name: `1001 Tea Facts`,
+        name: `TeaFacts`,
+        short_name: `TeaFacts`,
         start_url: `/`,
         background_color: `#90c665`,
         theme_color: `#90c665`,
@@ -163,8 +163,11 @@ module.exports = {
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: `standalone`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        crossOrigin: `use-credentials`,
+        theme_color_in_head: false, // This will avoid adding theme-color meta tag.
       },
     },
+    `gatsby-plugin-offline`,
     {
       resolve: "gatsby-plugin-mailchimp",
       options: {
@@ -205,7 +208,30 @@ module.exports = {
         access_token: "17406723570.1677ed0.e1b51a7da4ab4e0094db3cb8c679c9f3",
       },
     },
-    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `1001 Tea Facts`,
+        short_name: `1001TeaFacts`,
+        icons: [
+          {
+            src: `/favicons/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/favicons/android-chrome-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
+        start_url: `/`,
+        background_color: `#fffffa`,
+        theme_color: `#90c665`,
+        display: `standalone`,
+      },
+    },
+
     `gatsby-plugin-advanced-sitemap`,
     {
       resolve: "gatsby-plugin-robots-txt",
@@ -249,3 +275,8 @@ module.exports = {
 // WebSite, Organization, BlogPosting, VideoObject, BreadCrumbs
 
 // https://search.google.com/structured-data/testing-tool/u/0/#url=kdworld.com.tw
+
+// 1. Keep Gatsby up to date
+// 2. Control what you are returning with filters in the graphql queiries
+// 3. Control the image type graphql fragments with size breakpoints, image-sharp for the different image points to not generate image thumbnails that users will never use.
+// 4. Deployment - Amplify - Gatsby Builds Cloudplatform

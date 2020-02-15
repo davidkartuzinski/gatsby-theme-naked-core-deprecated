@@ -1,6 +1,7 @@
 import React from "react"
 import ContactForm from "../components/contactForm"
 import SEO from "../components/SEO"
+import { graphql } from "gatsby"
 
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 

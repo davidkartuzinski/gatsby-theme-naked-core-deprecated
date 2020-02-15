@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Moment from "react-moment"
 
 const LatestPosts = () => {
   const data = useStaticQuery(
@@ -32,8 +31,7 @@ const LatestPosts = () => {
   const ListItems = data.posts.edges.map(post => (
     <li>
       <Link to={post.node.frontmatter.slug}>{post.node.frontmatter.title}</Link>{" "}
-      <br />-{" "}
-      <Moment format="MMMM DD, YYYY">{post.node.frontmatter.date}</Moment>
+      <br />- {post.node.frontmatter.date}
     </li>
   ))
 
