@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Search from "../search"
+import Search from "../optional/search"
 
 const Header = () => {
   const data = useStaticQuery(

@@ -4,15 +4,15 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/structure/layout"
 
-import SocialShare from "../components/social-share"
-import SEO from "../components/SEO"
-import PostPreview from "../components/post-preview"
+import SocialShare from "../components/optional/social-share"
+import SEO from "../components/core/seo"
+import PostPreview from "../components/core/post-preview"
 
-import PageNavigation from "../components/page-navigation"
+import PageNavigation from "../components/core/page-navigation"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import { DateTime } from "luxon"
 
-import { useSiteMetadata } from "../hooks/useSiteMetadata"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const BlogList = ({ data, pageContext, location }) => {
   const { siteUrl, logo } = useSiteMetadata()

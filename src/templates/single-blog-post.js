@@ -1,14 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/structure/layout"
-import AffiliateDisclaimer from "../components/affiliateDisclaimer"
-import ResponsiveImage from "../components/responsiveImage"
-import SocialShare from "../components/social-share"
-import MailChimpSignUp from "../components/mailChimpSignUp"
-import Tags from "../components/tags"
-import Categories from "../components/categories"
-import TalkYardComments from "../components/talkYardComments"
-import SEO from "../components/SEO"
+import AffiliateDisclaimer from "../components/optional/affiliate-disclaimer"
+import ResponsiveImage from "../components/responsive-image"
+import SocialShare from "../components/optional/social-share"
+import MailChimpSignUp from "../components/optional/mailchimp-sign-up"
+import Tags from "../components/core/tags"
+import Categories from "../components/core/categories"
+import TalkYardComments from "../components/optional/talkyard-comments"
+import SEO from "../components/core/seo"
 import { Link } from "gatsby"
 import {
   IoMdCalendar,
@@ -19,7 +19,7 @@ import {
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
-import { useSiteMetadata } from "../hooks/useSiteMetadata"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const BlogPost = ({ data, pageContext, location }) => {
   const { siteUrl } = useSiteMetadata()

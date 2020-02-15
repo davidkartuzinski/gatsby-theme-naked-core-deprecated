@@ -1,13 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
-import SEO from "../components/SEO"
+import SEO from "../components/core/seo"
 import Layout from "../components/structure/layout"
 
 import { IoIosFolder } from "react-icons/io"
 import { Link, graphql } from "gatsby"
 
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
-import { useSiteMetadata } from "../hooks/useSiteMetadata"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const Categories = ({ data, pageContext, location }) => {
   const { logo } = useSiteMetadata()

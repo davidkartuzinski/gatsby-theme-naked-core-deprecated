@@ -1,8 +1,8 @@
 import React from "react"
 import Layout from "../components/structure/layout"
-import ContactForm from "../components/contactForm"
-import SEO from "../components/SEO"
-import { useSiteMetadata } from "../hooks/useSiteMetadata"
+import ContactForm from "../components/contact-form"
+import SEO from "../components/core/seo"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 

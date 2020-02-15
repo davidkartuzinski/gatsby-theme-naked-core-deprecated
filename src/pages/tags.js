@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { IoIosPricetags } from "react-icons/io"
-import SEO from "../components/SEO"
+import SEO from "../components/core/seo"
 import Layout from "../components/structure/layout"
 
 // Utilities
@@ -9,8 +9,8 @@ import kebabCase from "lodash/kebabCase"
 
 // Components
 
-import { useSiteMetadata } from "../hooks/useSiteMetadata"
-import { useAllMdx } from "../hooks/useAllMdx"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
+import { useAllMdx } from "../hooks/use-all-mdx"
 
 import { Link } from "gatsby"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"

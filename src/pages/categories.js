@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Layout from "../components/structure/layout"
-import SEO from "../components/SEO"
+import SEO from "../components/core/seo"
 
 import { IoIosFolder } from "react-icons/io"
 
@@ -11,8 +11,8 @@ import kebabCase from "lodash/kebabCase"
 // Components
 import { Link } from "gatsby"
 
-import { useSiteMetadata } from "../hooks/useSiteMetadata"
-import { useAllMdx } from "../hooks/useAllMdx"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
+import { useAllMdx } from "../hooks/use-all-mdx"
 
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 

@@ -1,7 +1,7 @@
 import React from "react"
-import SEO from "../components/SEO"
+import SEO from "../components/core/seo"
 import Layout from "../components/structure/layout"
-import { useSiteMetadata } from "../hooks/useSiteMetadata"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 // import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
