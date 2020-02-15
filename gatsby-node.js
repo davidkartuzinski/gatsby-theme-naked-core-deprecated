@@ -20,10 +20,9 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   // create variable to use for each type of templates
-  const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
-  const tagTemplate = path.resolve(`./src/templates/tags.js`)
-  const categoriesTemplate = path.resolve(`./src/templates/categories.js`)
-  // const blogListTemplate = path.resolve(`./src/templates/blog.js`)
+  const blogPostTemplate = path.resolve(`./src/templates/single-blog-post.js`)
+  const tagTemplate = path.resolve(`./src/templates/single-tag.js`)
+  const categoryTemplate = path.resolve(`./src/templates/single-category.js`)
 
   const result = await graphql(`
     query {
@@ -123,7 +122,7 @@ exports.createPages = async ({ graphql, actions }) => {
   categories.forEach(category => {
     createPage({
       path: `/categories/${_.kebabCase(category.fieldValue)}/`,
-      component: categoriesTemplate,
+      component: categoryTemplate,
       context: {
         category: category.fieldValue,
       },

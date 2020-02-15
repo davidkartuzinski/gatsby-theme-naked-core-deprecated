@@ -1,5 +1,6 @@
 import React from "react"
 import SEO from "../components/SEO"
+import Layout from "../components/structure/layout"
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
@@ -12,7 +13,7 @@ const Home = ({ pageContext }) => {
   } = pageContext
 
   return (
-    <>
+    <Layout>
       <SEO
         title={"1001 Tea Facts Home Page"}
         canonical={"/"}
@@ -32,7 +33,7 @@ const Home = ({ pageContext }) => {
       </div>
 
       <div>Hello world!</div>
-    </>
+    </Layout>
   )
 }
 

@@ -1,8 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
-import Header from "../components/header"
-import Aside from "../components/aside"
+
+import Layout from "../components/structure/layout"
+
 import SocialShare from "../components/social-share"
 import SEO from "../components/SEO"
 import PostPreview from "../components/post-preview"
@@ -31,52 +32,51 @@ const BlogList = ({ data, pageContext, location }) => {
   return (
     <div>
       <div>
-        <SEO
-          title={"1001 Tea Facts Blog"}
-          canonical={"blog"}
-          description={"The Blog Page for 1001 Tea Facts"}
-          date={""}
-          dateModified={""}
-          image={logo}
-          slug={"blog"}
-        />
-        <Header />
-
-        <div>
-          {" "}
-          You are here:
-          <Breadcrumb
-            crumbs={crumbs}
-            crumbSeparator=" > "
-            crumbLabel={customCrumbLabel}
+        <Layout>
+          <SEO
+            title={"1001 Tea Facts Blog"}
+            canonical={"blog"}
+            description={"The Blog Page for 1001 Tea Facts"}
+            date={""}
+            dateModified={""}
+            image={logo}
+            slug={"blog"}
           />
-        </div>
-        <h1>Blog Posts</h1>
 
-        {posts.edges.map(post => {
-          let formattedDate = DateTime.fromISO(
-            post.node.frontmatter.date
-          ).toFormat("MMMM dd yyyy")
-
-          return (
-            <PostPreview
-              slug={post.node.fields.slug}
-              image={post.node.frontmatter.image.childImageSharp.fixed}
-              imageAlt={post.node.frontmatter.imageAlt}
-              imageTitle={post.node.frontmatter.imageTitle}
-              title={post.node.frontmatter.title}
-              date={formattedDate}
-              author={post.node.frontmatter.author}
-              cats={post.node.frontmatter.categories}
-              tags={post.node.frontmatter.tags}
+          <div>
+            {" "}
+            You are here:
+            <Breadcrumb
+              crumbs={crumbs}
+              crumbSeparator=" > "
+              crumbLabel={customCrumbLabel}
             />
-          )
-        })}
+          </div>
+          <h1>Blog Posts</h1>
 
-        <PageNavigation pageContext={pageContext} />
-        <SocialShare shareUrl={shareUrl} title="1001 Tea Facts Blog" />
+          {posts.edges.map(post => {
+            let formattedDate = DateTime.fromISO(
+              post.node.frontmatter.date
+            ).toFormat("MMMM dd yyyy")
 
-        <Aside />
+            return (
+              <PostPreview
+                slug={post.node.fields.slug}
+                image={post.node.frontmatter.image.childImageSharp.fixed}
+                imageAlt={post.node.frontmatter.imageAlt}
+                imageTitle={post.node.frontmatter.imageTitle}
+                title={post.node.frontmatter.title}
+                date={formattedDate}
+                author={post.node.frontmatter.author}
+                cats={post.node.frontmatter.categories}
+                tags={post.node.frontmatter.tags}
+              />
+            )
+          })}
+
+          <PageNavigation pageContext={pageContext} />
+          <SocialShare shareUrl={shareUrl} title="1001 Tea Facts Blog" />
+        </Layout>
       </div>
     </div>
   )

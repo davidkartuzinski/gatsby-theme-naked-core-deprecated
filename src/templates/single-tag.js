@@ -1,38 +1,45 @@
 import React from "react"
 import PropTypes from "prop-types"
+import Layout from "../components/structure/layout"
 import SEO from "../components/SEO"
 
-import { IoIosFolder } from "react-icons/io"
-import { Link, graphql } from "gatsby"
+import { IoIosPricetags } from "react-icons/io"
 
+import { Link, graphql } from "gatsby"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 
-const Categories = ({ data, pageContext, location }) => {
+const Tags = ({ pageContext, data, location }) => {
   const { logo } = useSiteMetadata()
+  const { tag } = pageContext
+
+  const { edges, totalCount } = data.allMdx
+
+  const tagHeader = `${totalCount} post${
+    totalCount === 1 ? "" : "s"
+  } tagged with "${tag}"`
 
   const {
-    category,
     breadcrumb: { crumbs },
   } = pageContext
-  const { edges, totalCount } = data.allMdx
-  const categoryHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
-  } tagged with "${category}"`
 
   const [, , customCrumbLabel] = location.pathname.split("/")
 
   return (
-    <div>
+    <Layout>
       <SEO
-        title={"1001 Tea Facts Categories"}
-        canonical={"categories"}
-        description={"The Categories Page for 1001 Tea Facts"}
+        title={"1001 Tea Facts Tags"}
+        canonical={"tags"}
+        description={"The Tags Page for 1001 Tea Facts"}
         date={""}
         dateModified={""}
         image={logo}
-        slug={"categories"}
+        slug={"tags"}
       />
+      <h1>
+        <IoIosPricetags />
+        {tagHeader}
+      </h1>
 
       <div>
         {" "}
@@ -43,11 +50,6 @@ const Categories = ({ data, pageContext, location }) => {
           crumbLabel={customCrumbLabel}
         />
       </div>
-
-      <h1>
-        <IoIosFolder />
-        {categoryHeader}
-      </h1>
       <ul>
         {edges.map(({ node }) => {
           const { slug } = node.fields
@@ -59,14 +61,14 @@ const Categories = ({ data, pageContext, location }) => {
           )
         })}
       </ul>
-      <Link to="/categories">All categories</Link>
-    </div>
+      <Link to="/tags">See all tags</Link>
+    </Layout>
   )
 }
 
-Categories.propTypes = {
+Tags.propTypes = {
   pageContext: PropTypes.shape({
-    category: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
   }),
   data: PropTypes.shape({
     allMdx: PropTypes.shape({
@@ -87,32 +89,24 @@ Categories.propTypes = {
   }),
 }
 
-export default Categories
+export default Tags
 export const pageQuery = graphql`
-  query($category: String) {
+  query($tag: String) {
     allMdx(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { categories: { in: [$category] } } }
+      filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount
       edges {
         node {
           frontmatter {
-            slug
             title
           }
           fields {
             slug
           }
         }
-      }
-    }
-    site {
-      siteMetadata {
-        siteUrl
-        websiteDescription
-        logo
       }
     }
   }

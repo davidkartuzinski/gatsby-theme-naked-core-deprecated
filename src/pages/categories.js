@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import Layout from "../components/structure/layout"
 import SEO from "../components/SEO"
 
 import { IoIosFolder } from "react-icons/io"
@@ -25,7 +26,7 @@ const CategoriesPage = ({ data, pageContext, location }) => {
 
   const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
   return (
-    <div>
+    <Layout>
       <SEO
         title={"1001 Tea Facts Categories"}
         canonical={"categories"}
@@ -58,7 +59,7 @@ const CategoriesPage = ({ data, pageContext, location }) => {
           ))}
         </ul>
       </div>
-    </div>
+    </Layout>
   )
 }
 

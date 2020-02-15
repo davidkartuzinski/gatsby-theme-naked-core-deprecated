@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { IoIosPricetags } from "react-icons/io"
 import SEO from "../components/SEO"
+import Layout from "../components/structure/layout"
 
 // Utilities
 import kebabCase from "lodash/kebabCase"
@@ -24,7 +25,7 @@ const TagsPage = ({ pageContext, location }) => {
 
   const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
   return (
-    <div>
+    <Layout>
       <SEO
         title={"1001 Tea Facts Tags"}
         canonical={"tags"}
@@ -58,7 +59,7 @@ const TagsPage = ({ pageContext, location }) => {
           ))}
         </ul>
       </div>
-    </div>
+    </Layout>
   )
 }
 TagsPage.propTypes = {

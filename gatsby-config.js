@@ -121,8 +121,8 @@ module.exports = {
       options: {
         extensions: [`.mdx`],
         defaultLayouts: {
-          posts: require.resolve("./src/templates/blog-post.js"),
-          default: require.resolve("./src/templates/blog-post.js"),
+          posts: require.resolve("./src/templates/single-blog-post.js"),
+          default: require.resolve("./src/templates/single-blog-post.js"),
         },
         gatsbyRemarkPlugins: [
           {

@@ -1,4 +1,5 @@
 import React from "react"
+import Layout from "../components/structure/layout"
 import ContactForm from "../components/contactForm"
 import SEO from "../components/SEO"
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
@@ -14,7 +15,7 @@ const Contact = ({ pageContext, location }) => {
   const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
 
   return (
-    <>
+    <Layout>
       <SEO
         title={"1001 Tea Facts Contact Page"}
         canonical={"contact"}
@@ -35,7 +36,7 @@ const Contact = ({ pageContext, location }) => {
         />
       </div>
       <ContactForm />
-    </>
+    </Layout>
   )
 }
 

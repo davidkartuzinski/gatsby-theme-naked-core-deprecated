@@ -1,5 +1,6 @@
 import React from "react"
 import SEO from "../components/SEO"
+import Layout from "../components/structure/layout"
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 
 // import { Breadcrumb } from "gatsby-plugin-breadcrumb"
@@ -13,7 +14,7 @@ const NotFoundPage = ({ pageContext, location, data }) => {
   // const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
 
   return (
-    <div>
+    <Layout>
       <SEO
         title={"404 - 1001 Tea Facts"}
         canonical={"404"}
@@ -34,7 +35,7 @@ const NotFoundPage = ({ pageContext, location, data }) => {
       </div>
       <h1>Oops 404 - NOT FOUND</h1>
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    </div>
+    </Layout>
   )
 }
 
