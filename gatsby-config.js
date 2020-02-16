@@ -144,18 +144,7 @@ module.exports = {
         plugins: [`gatsby-remark-images`],
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `GatsbyJS`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
-        background_color: `#f7f0eb`,
-        theme_color: `#a2466c`,
-        display: `standalone`,
-      },
-    },
-    `gatsby-plugin-offline`,
+
     {
       resolve: "gatsby-plugin-mailchimp",
       options: {
@@ -205,6 +194,18 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `GatsbyJS`,
+        short_name: `GatsbyJS`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 }
 
