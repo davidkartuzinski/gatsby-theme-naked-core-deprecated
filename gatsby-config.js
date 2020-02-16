@@ -147,17 +147,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `GatsbyThemeNaked`,
-        short_name: `GatsbyNakedTheme`,
+        name: `GatsbyJS`,
+        short_name: `GatsbyJS`,
         start_url: `/`,
-        background_color: `#90c665`,
-        theme_color: `#90c665`,
-        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
-        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
         display: `standalone`,
-        icon: `src/images/icon.png`, // This path is relative to the root of the site.
-        crossOrigin: `use-credentials`,
-        theme_color_in_head: false, // This will avoid adding theme-color meta tag.
       },
     },
     `gatsby-plugin-offline`,
