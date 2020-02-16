@@ -124,15 +124,15 @@ const SEO = ({
       <link
         rel="mask-icon"
         href="/favicons/safari-pinned-tab.svg"
-        color="#90c665"
+        color="#F3824A"
       ></link>
       <link
         rel="mask-icon"
         href="/favicons/safari-pinned-tab.svg"
-        color="#90c665"
+        color="#F3824A"
       ></link>
-      <meta name="msapplication-TileColor" content="#90c665" />
-      <meta name="theme-color" content="##90c665"></meta>
+      <meta name="msapplication-TileColor" content="#F3824A" />
+      <meta name="theme-color" content="##F3824A"></meta>
       {/* Open Graph https://ogp.me/ https://developers.facebook.com/docs/sharing/webmasters/ */}
       <meta property="og:locale" content={site.siteMetadata.locale} />
       <meta property="og:site_name" content={site.siteMetadata.title} />

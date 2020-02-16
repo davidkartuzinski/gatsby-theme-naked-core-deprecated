@@ -1,3 +1,11 @@
+:root {
+  --accent-color: #f3824a;
+  --dark-accent-color: #55433b;
+  --grey-color: #dfe0df;
+  --white-color: #fff7f0;
+  --black-color: #040404;
+}
+
 html {
 }
 a {

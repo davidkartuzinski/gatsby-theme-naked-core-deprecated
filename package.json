@@ -1,7 +1,7 @@
 {
-  "name": "official1001teafacts",
+  "name": "gatsbythemenaked",
   "private": true,
-  "description": "Gatsby Theme for 1001 Tea Facts",
+  "description": "Gatsby Theme Naked",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -55,9 +55,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/davidkartuzinski/gatsby-theme-naked"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/davidkartuzinski/gatsby-theme-naked/issues"
   }
 }

@@ -6,7 +6,7 @@ import { useSiteMetadata } from "../hooks/use-site-metadata"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
 const Home = ({ pageContext }) => {
-  const { logo } = useSiteMetadata()
+  const { logo, title, websiteDescription } = useSiteMetadata()
 
   const {
     breadcrumb: { crumbs },
@@ -15,11 +15,9 @@ const Home = ({ pageContext }) => {
   return (
     <Layout>
       <SEO
-        title={"1001 Tea Facts Home Page"}
+        title={`${title} Home Page`}
         canonical={"/"}
-        description={
-          "Discover 1001 Tea Facts and discover the spiritual and healthy ways of tea. Welcome to the wonderful world of Tea. Discover the practical sides to consuming tea for you and your loved ones."
-        }
+        description={websiteDescription}
         date={""}
         dateModified={""}
         image={logo}

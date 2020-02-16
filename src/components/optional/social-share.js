@@ -7,8 +7,10 @@ import {
   TwitterIcon,
   EmailIcon,
 } from "react-share"
+import { useSiteMetadata } from "../../hooks/use-site-metadata"
 
 const SocialShare = props => {
+  const { title } = useSiteMetadata()
   return (
     <>
       <FacebookShareButton
@@ -26,7 +28,7 @@ const SocialShare = props => {
       <EmailShareButton
         url={props.shareUrl}
         subject={props.title}
-        body="1001 Tea Facts"
+        body={title}
         className=""
       >
         <EmailIcon size={48} round={false} />

@@ -16,7 +16,7 @@ import { Link } from "gatsby"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
 const TagsPage = ({ pageContext, location }) => {
-  const { logo } = useSiteMetadata()
+  const { logo, title } = useSiteMetadata()
   const { tags } = useAllMdx()
 
   const {
@@ -27,9 +27,9 @@ const TagsPage = ({ pageContext, location }) => {
   return (
     <Layout>
       <SEO
-        title={"1001 Tea Facts Tags"}
+        title={`${title} Tags`}
         canonical={"tags"}
-        description={"The Tags Page for 1001 Tea Facts"}
+        description={`The Tags Page for ${title}`}
         date={""}
         dateModified={""}
         image={logo}

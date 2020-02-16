@@ -1,16 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: `Gatsby Theme Naked`,
-    logo: `1001teafactslogo.png`,
-    websiteDescription: `This theme is called Naked because I didn't tie you to any one type of CSS implementation. At this point you just need to add CSS and you're good to go.`,
+    logo: `naked-logo.png`,
+    websiteDescription: `If HTML is the structure, and JavaScript the action, then CSS is the clothing. You just need to add CSS and content. This is the Gatsby Theme Naked. Just like what you wear in life, what your site wears is very personal. CSS in Js, check! No problem. CSS Modules, check! No Problem. Styled component libraries of different flavors? Check! No problem.`,
     author: `David Kartuzinski`,
     siteUrl: `https://gatsby-theme-naked.netlify.com/`,
     legalName: `A Gatsby Theme`,
-    newsletterHeadline: `Sign up and get exclusive content delivered to your inbox`,
-    newsletterTagLine: `Aside from exclusive content, get occasional deals, new product alerts, and tea-related news. No spam. Just occasional emails for stuff you probably want to get.`,
-    newsletterButtonText: `Sign up now`,
-    newsletterPrivacyText: `We promise to make the best content possible and to keep your email safely with only us. You can unsusbcribe easily at any time.`,
-    newsletterPrivacyReminder: `Strict No Spam Policy. No Sharing of your data - EVER!`,
     locale: `en-US`,
     textDirection: `ltr`,
     socialLinks: {
@@ -20,8 +15,8 @@ module.exports = {
       facebook: "https://www.facebook.com/kaidawei",
     },
     googleAnalyticsID: "UA-158642528-1",
-    themeColor: "#90c665",
-    backgroundColor: "#543622",
+    themeColor: "#F3824A",
+    backgroundColor: "#FFF7F0",
     siteRss: "/rss.xml",
     social: {
       facebook: "kaidawei",
@@ -149,13 +144,14 @@ module.exports = {
       resolve: "gatsby-plugin-mailchimp",
       options: {
         endpoint:
-          "https://kaidawei.us3.list-manage.com/subscribe/post?u=b96fce7934d3d67838002705e&amp;id=87c55442ce", // add your MC list endpoint here; see instructions below
+          "https://kaidawei.us3.list-manage.com/subscribe/post?u=b96fce7934d3d67838002705e&amp;id=87c55442ce", // add your MailChimp list endpoint here; see instructions below
       },
     },
     {
       resolve: "@debiki/gatsby-plugin-talkyard",
       options: {
-        talkyardServerUrl: "https://comments-for-1001teafacts-com.talkyard.net",
+        talkyardServerUrl:
+          "https://comments-for-gatsby-theme-naked-netlify-com.talkyard.net/",
       },
     },
     {
@@ -189,19 +185,20 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://1001teafacts.com",
-        sitemap: "https://www.1001teafacts.com/sitemap.xml",
+        host: "https://gatsby-theme-naked.netlify.com/",
+        sitemap: "https://gatsby-theme-naked.netlify.com/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
+    // https://manifest-validator.appspot.com/
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `GatsbyJS`,
-        short_name: `GatsbyJS`,
+        name: `GatsbyThemeNaked`,
+        short_name: `NakedTheme`,
         start_url: `/`,
-        background_color: `#f7f0eb`,
-        theme_color: `#a2466c`,
+        background_color: `#FFF7F0`,
+        theme_color: `#F3824A`,
         display: `standalone`,
       },
     },

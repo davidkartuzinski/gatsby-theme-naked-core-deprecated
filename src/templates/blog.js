@@ -15,7 +15,7 @@ import { DateTime } from "luxon"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const BlogList = ({ data, pageContext, location }) => {
-  const { siteUrl, logo } = useSiteMetadata()
+  const { siteUrl, logo, title } = useSiteMetadata()
 
   const posts = data.posts
 
@@ -34,9 +34,9 @@ const BlogList = ({ data, pageContext, location }) => {
       <div>
         <Layout>
           <SEO
-            title={"1001 Tea Facts Blog"}
+            title={`${title}| Blog`}
             canonical={"blog"}
-            description={"The Blog Page for 1001 Tea Facts"}
+            description={`The Blog Page for ${title}`}
             date={""}
             dateModified={""}
             image={logo}
@@ -75,7 +75,7 @@ const BlogList = ({ data, pageContext, location }) => {
           })}
 
           <PageNavigation pageContext={pageContext} />
-          <SocialShare shareUrl={shareUrl} title="1001 Tea Facts Blog" />
+          <SocialShare shareUrl={shareUrl} title={title} />
         </Layout>
       </div>
     </div>

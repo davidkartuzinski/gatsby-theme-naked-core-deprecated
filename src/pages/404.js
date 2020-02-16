@@ -6,7 +6,7 @@ import { useSiteMetadata } from "../hooks/use-site-metadata"
 // import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
 const NotFoundPage = ({ pageContext, location, data }) => {
-  const { logo } = useSiteMetadata()
+  const { logo, title } = useSiteMetadata()
   // const {
   //   breadcrumb: { crumbs },
   // } = pageContext
@@ -16,9 +16,9 @@ const NotFoundPage = ({ pageContext, location, data }) => {
   return (
     <Layout>
       <SEO
-        title={"404 - 1001 Tea Facts"}
+        title={`404 - ${title}`}
         canonical={"404"}
-        description={"The 404 Error / Not Found Page for 1001 Tea Facts"}
+        description={`The 404 Error / Not Found Page for ${title}`}
         date={""}
         dateModified={""}
         image={logo}

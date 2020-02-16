@@ -16,8 +16,8 @@ import { useAllMdx } from "../hooks/use-all-mdx"
 
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
-const CategoriesPage = ({ data, pageContext, location }) => {
-  const { logo } = useSiteMetadata()
+const CategoriesPage = ({ pageContext, location }) => {
+  const { logo, title } = useSiteMetadata()
   const { categories } = useAllMdx()
 
   const {
@@ -28,9 +28,9 @@ const CategoriesPage = ({ data, pageContext, location }) => {
   return (
     <Layout>
       <SEO
-        title={"1001 Tea Facts Categories"}
+        title={`${title} Categories`}
         canonical={"categories"}
-        description={"The Categories Page for 1001 Tea Facts"}
+        description={`The Categories Page for ${title}`}
         date={""}
         dateModified={""}
         image={logo}

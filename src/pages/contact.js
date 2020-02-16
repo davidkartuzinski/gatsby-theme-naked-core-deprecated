@@ -7,7 +7,7 @@ import { useSiteMetadata } from "../hooks/use-site-metadata"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
 const Contact = ({ pageContext, location }) => {
-  const { logo } = useSiteMetadata()
+  const { logo, title } = useSiteMetadata()
   const {
     breadcrumb: { crumbs },
   } = pageContext
@@ -17,9 +17,9 @@ const Contact = ({ pageContext, location }) => {
   return (
     <Layout>
       <SEO
-        title={"1001 Tea Facts Contact Page"}
+        title={`${title} Contact Page`}
         canonical={"contact"}
-        description={"The Contact Page for 1001 Tea Facts"}
+        description={`The Contact Page for ${title}`}
         date={""}
         dateModified={""}
         image={logo}
