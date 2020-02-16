@@ -9,6 +9,11 @@ export const useSiteMetadata = () => {
             siteUrl
             logo
             title
+            menuLinks {
+              id
+              name
+              link
+            }
           }
         }
       }

@@ -1,3 +1,11 @@
+/******************************************
+There are two sections of this global.css style sheet.  1. Are global styles and 2. Temporary styles that you can delete to replace with a Styled Component Library. 
+
+In fact, all these styles could be deleted, but things like Fonts and other global styles will need to be addressed. 
+*******************************************/
+
+/****** CSS Custom Variable for Color Scheme ******/
+
 :root {
   --accent-color: #f3824a;
   --dark-accent-color: #55433b;
@@ -8,6 +16,10 @@
 
 html {
 }
+
+body {
+}
+
 a {
 }
 
@@ -106,3 +118,125 @@ https://coolors.co/
 
 
 */
+
+/****************************************************************
+   The follow CSS Styles can be deleted IF you want to replace them using Styled Components or a Styled Components Library. Please note that it is NOT always necessary to delete them, but this is optional. Otherwise, you can go ahead and modify the CSS styles below as you wish.
+****************************************************************/
+
+/************************************************
+   Header Styles NOTE: We are use a React Hamburger for the Navigation. Therefore, this header is for desktop layout, mostly.
+************************************************/
+
+header {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+header ul {
+  display: flex;
+}
+
+header .menu,
+header .social-follow-me {
+  display: none;
+}
+
+header .search {
+  padding-top: 20px;
+}
+
+@media (min-width: 768px) {
+  header .menu,
+  header .social-follow-me {
+    display: flex;
+  }
+
+  header .menu li,
+  header .social-follow-me li {
+    padding: 0 10px;
+    list-style-type: none;
+  }
+
+  header .menu li a {
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+/**** MOBILE MENU ***/
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  display: block;
+  position: fixed;
+  width: 32px;
+  height: 28px;
+  right: 36px;
+  top: 36px;
+}
+
+@media (min-width: 768px) {
+  .bm-burger-button {
+    display: none;
+  }
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: var(--black-color);
+}
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: var(--accent-color);
+}
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+/* Color/shape of close button cross */
+.bm-cross {
+  background: var(--black-color);
+}
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+/* General sidebar styles */
+.bm-menu {
+  background: var(--white-color);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: var(--white-color);
+}
+/* Wrapper for item list */
+.bm-item-list {
+  color: var(--black-color);
+  padding: 0.8em;
+}
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5rem 0;
+}
+.bm-item:hover,
+.bm-item:active {
+  color: var(--accent-color);
+}
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}

@@ -1,26 +1,49 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Theme Naked`,
+    title: `Gatsby Naked Theme`,
     logo: `naked-logo.png`,
     websiteDescription: `If HTML is the structure, and JavaScript the action, then CSS is the clothing. You just need to add CSS and content. This is the Gatsby Theme Naked. Just like what you wear in life, what your site wears is very personal. CSS in Js, check! No problem. CSS Modules, check! No Problem. Styled component libraries of different flavors? Check! No problem.`,
+    menuLinks: [
+      {
+        id: 1,
+        name: "home",
+        link: "/",
+      },
+      {
+        id: 2,
+        name: "blog",
+        link: "/blog",
+      },
+      {
+        id: 3,
+        name: "tutorials",
+        link: "/tutorials",
+      },
+      {
+        id: 4,
+        name: "contact",
+        link: "/contact",
+      },
+    ],
     author: `David Kartuzinski`,
     siteUrl: `https://gatsby-theme-naked.netlify.com/`,
-    legalName: `A Gatsby Theme`,
+    legalName: `A Gatsby Naked Theme`,
     locale: `en-US`,
     textDirection: `ltr`,
     socialLinks: {
-      twitter: "https://twitter.com/kai_dawei",
-      instagram: "https://www.instagram.com/kaidawei/",
-      pinterest: "https://www.pinterest.fr/dkartuzinski/",
-      facebook: "https://www.facebook.com/kaidawei",
+      twitter: "https://twitter.com/NakedGatsby",
+      instagram: "https://www.instagram.com/nakedgatsby/",
+      pinterest: "#",
+      facebook: "#",
     },
+
     googleAnalyticsID: "UA-158642528-1",
     themeColor: "#F3824A",
     backgroundColor: "#FFF7F0",
     siteRss: "/rss.xml",
     social: {
-      facebook: "kaidawei",
-      twitter: "@kai_dawei",
+      facebook: "",
+      twitter: "@NakedGatsby",
       twitterAuthor: "",
     },
     address: {
@@ -30,7 +53,7 @@ module.exports = {
       zipCode: "75015",
     },
     contact: {
-      email: "david@1kaidawei.me",
+      email: "david@kaidawei.me",
       phone: "",
     },
     foundingDate: "2019",
@@ -178,7 +201,7 @@ module.exports = {
     {
       resolve: `gatsby-source-instagram-all`,
       options: {
-        access_token: "225244348.1677ed0.eacf7b3822fd4019bd62a96b38bccc6a",
+        access_token: "29925131442.1677ed0.ed375ff25eae45c4867b30955d3ec304",
       },
     },
     `gatsby-plugin-advanced-sitemap`,

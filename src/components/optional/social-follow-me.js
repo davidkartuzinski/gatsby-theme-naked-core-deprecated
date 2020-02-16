@@ -33,32 +33,28 @@ const SocialFollowMe = () => {
   } = data.site.siteMetadata.socialLinks
 
   return (
-    <div>
-      <h3>Follow Us</h3>
-
-      <ul>
-        <li>
-          <a href={facebook} title="Follow Us on Facebook">
-            <IoLogoFacebook size="50" />
-          </a>
-        </li>
-        <li>
-          <a href={instagram} title="Follow Us on Instagram">
-            <IoLogoInstagram size="50" />
-          </a>
-        </li>
-        <li>
-          <a href={pinterest} title="Follow Us on Pinterest">
-            <IoLogoPinterest size="50" />
-          </a>
-        </li>
-        <li>
-          <a href={twitter} title="Follow Us on Twitter">
-            <IoLogoTwitter size="50" />
-          </a>
-        </li>
-      </ul>
-    </div>
+    <ul className="social-follow-me">
+      <li>
+        <a href={facebook} title="Follow Us on Facebook">
+          <IoLogoFacebook size="50" />
+        </a>
+      </li>
+      <li>
+        <a href={instagram} title="Follow Us on Instagram">
+          <IoLogoInstagram size="50" />
+        </a>
+      </li>
+      <li>
+        <a href={pinterest} title="Follow Us on Pinterest">
+          <IoLogoPinterest size="50" />
+        </a>
+      </li>
+      <li>
+        <a href={twitter} title="Follow Us on Twitter">
+          <IoLogoTwitter size="50" />
+        </a>
+      </li>
+    </ul>
   )
 }
 

@@ -1,7 +1,11 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
+import Menu from "../core/menu"
+import Logo from "../core/logo"
 import Search from "../optional/search"
+import FollowMe from "../optional/social-follow-me"
+import MobileMenu from "../optional/mobile-menu.js"
 
 const Header = () => {
   const data = useStaticQuery(
@@ -15,9 +19,12 @@ const Header = () => {
   )
   return (
     <>
+      <MobileMenu />
       <header>
+        <Logo />
+        <Menu />
         <Search searchIndex={data.siteSearchIndex.index} />
-        <p>Header</p>
+        <FollowMe />
       </header>
     </>
   )
