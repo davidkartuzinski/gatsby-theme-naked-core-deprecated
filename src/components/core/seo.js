@@ -126,7 +126,6 @@ const SEO = ({
         href="/favicons/safari-pinned-tab.svg"
         color="#90c665"
       ></link>
-      <link rel="manifest" href="/favicons/site.webmanifest"></link>
       <link
         rel="mask-icon"
         href="/favicons/safari-pinned-tab.svg"
