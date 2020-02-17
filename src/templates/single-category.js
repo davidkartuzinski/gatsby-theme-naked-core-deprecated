@@ -33,6 +33,8 @@ const Categories = ({ data, pageContext, location }) => {
         dateModified={""}
         image={logo}
         slug={"categories"}
+        crumbs={crumbs}
+        crumbLabel={customCrumbLabel}
       />
 
       <nav>

@@ -35,6 +35,7 @@ const CategoriesPage = ({ pageContext, location }) => {
         dateModified={""}
         image={logo}
         slug={"categories"}
+        crumbs={crumbs}
       />
       <nav>
         {" "}

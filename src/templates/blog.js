@@ -41,6 +41,7 @@ const BlogList = ({ data, pageContext, location }) => {
             dateModified={""}
             image={logo}
             slug={"blog"}
+            crumbs={crumbs}
           />
 
           <nav>

@@ -35,6 +35,7 @@ const Tags = ({ pageContext, data, location }) => {
         dateModified={""}
         image={logo}
         slug={"tags"}
+        crumbs={crumbs}
       />
 
       <nav>

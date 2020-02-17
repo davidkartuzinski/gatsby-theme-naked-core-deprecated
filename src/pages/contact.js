@@ -24,6 +24,7 @@ const Contact = ({ pageContext, location }) => {
         dateModified={""}
         image={logo}
         slug={"contact"}
+        crumbs={crumbs}
       />
 
       <nav>

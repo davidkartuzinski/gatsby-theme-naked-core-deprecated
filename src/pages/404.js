@@ -23,6 +23,7 @@ const NotFoundPage = ({ pageContext, location, data }) => {
         dateModified={""}
         image={logo}
         slug={"404"}
+        // crumbs={crumbs}
       />
       <nav>
         {" "}

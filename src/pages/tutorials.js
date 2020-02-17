@@ -22,6 +22,7 @@ const Home = ({ pageContext }) => {
         dateModified={""}
         image={logo}
         slug={"/"}
+        crumbs={crumbs}
       />
 
       <nav>
