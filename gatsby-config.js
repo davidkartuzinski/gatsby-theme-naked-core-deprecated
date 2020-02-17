@@ -91,6 +91,12 @@ module.exports = {
         // usePathPrefix: '/blog',
       },
     },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     // Reminder (https://github.com/gatsbyjs/gatsby/issues/15486#issuecomment-509405867)
     {
