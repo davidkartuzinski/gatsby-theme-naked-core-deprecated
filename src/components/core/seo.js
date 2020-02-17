@@ -227,7 +227,7 @@ const SEO = ({
 
       {tags && (
         <script type="application/ld+json">
-          {JSON.stringify(schemaArticle)}
+          {JSON.stringify(schemaArticle, schemaBreadcrumbs)}
         </script>
       )}
 

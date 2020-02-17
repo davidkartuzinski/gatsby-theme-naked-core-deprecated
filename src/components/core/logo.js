@@ -5,7 +5,11 @@ import { graphql, useStaticQuery } from "gatsby"
 const Logo = () => {
   const data = useStaticQuery(query)
 
-  return <Img fixed={data.logo.childImageSharp.fixed} alt="logo for website" />
+  return (
+    <a href="/">
+      <Img fixed={data.logo.childImageSharp.fixed} alt="logo for website" />
+    </a>
+  )
 }
 
 const query = graphql`
