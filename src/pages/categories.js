@@ -36,7 +36,7 @@ const CategoriesPage = ({ pageContext, location }) => {
         image={logo}
         slug={"categories"}
       />
-      <div>
+      <nav>
         {" "}
         You are here:
         <Breadcrumb
@@ -44,20 +44,24 @@ const CategoriesPage = ({ pageContext, location }) => {
           crumbSeparator=""
           crumbLabel={customCrumbLabel}
         />
-      </div>
+      </nav>
       <div>
-        <h1>
-          <IoIosFolder /> Categories
-        </h1>
-        <ul>
-          {categories.map(category => (
-            <li key={category.fieldValue}>
-              <Link to={`/categories/${kebabCase(category.fieldValue)}/`}>
-                {category.fieldValue} ({category.totalCount})
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <article>
+          <header>
+            <h1>
+              <IoIosFolder /> Categories
+            </h1>
+          </header>
+          <ul>
+            {categories.map(category => (
+              <li key={category.fieldValue}>
+                <Link to={`/categories/${kebabCase(category.fieldValue)}/`}>
+                  {category.fieldValue} ({category.totalCount})
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </article>
       </div>
     </Layout>
   )

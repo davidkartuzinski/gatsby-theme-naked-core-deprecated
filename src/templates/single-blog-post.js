@@ -18,6 +18,7 @@ import {
 } from "react-icons/io"
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import Bio from "../components/optional/bio"
 
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
@@ -49,9 +50,11 @@ const BlogPost = ({ data, pageContext, location }) => {
         image={post.frontmatter.image.publicURL}
         headline={post.frontmatter.title}
         articleBody={post.rawBody}
+        crumbs={crumbs}
+        crumbLabel={customCrumbLabel}
       />
 
-      <div>
+      <nav>
         {" "}
         You are here:
         <Breadcrumb
@@ -59,27 +62,33 @@ const BlogPost = ({ data, pageContext, location }) => {
           crumbSeparator=""
           crumbLabel={customCrumbLabel}
         />
-      </div>
-      <h1>{post.frontmatter.title}</h1>
+      </nav>
+      <article>
+        <header>
+          <h1>{post.frontmatter.title}</h1>
 
-      <ResponsiveImage
-        fluid={post.frontmatter.image.childImageSharp.fluid}
-        title={post.frontmatter.imageTitle}
-        alt={post.frontmatter.imageAlt}
-      />
+          <ResponsiveImage
+            fluid={post.frontmatter.image.childImageSharp.fluid}
+            title={post.frontmatter.imageTitle}
+            alt={post.frontmatter.imageAlt}
+          />
 
-      <p>
-        <IoMdCalendar /> {post.frontmatter.date}, written by <IoIosPerson />
-        {post.frontmatter.author}
-      </p>
-      <AffiliateDisclaimer />
-      <MDXRenderer>{post.body}</MDXRenderer>
+          <p>
+            <IoMdCalendar /> {post.frontmatter.date}, written by <IoIosPerson />
+            {post.frontmatter.author}
+          </p>
+        </header>
+
+        <AffiliateDisclaimer />
+        <MDXRenderer>{post.body}</MDXRenderer>
+      </article>
+      <Bio />
       <SocialShare shareUrl={shareUrl} title={post.frontmatter.description} />
       <MailChimpSignUp />
       <Categories categories={data.mdx.frontmatter.categories} />
       <Tags tags={data.mdx.frontmatter.tags} />
 
-      <div>
+      <nav>
         {previous && (
           <Link to={previous.frontmatter.slug} style={{ maxWidth: "25%" }}>
             <strong>
@@ -99,7 +108,7 @@ const BlogPost = ({ data, pageContext, location }) => {
             {next.frontmatter.title}
           </Link>
         )}
-      </div>
+      </nav>
       <TalkYardComments />
     </Layout>
   )

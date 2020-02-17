@@ -16,6 +16,8 @@ const SEO = ({
   categories,
   headline,
   articleBody,
+  crumbs,
+  customCrumbLabel,
 }) => {
   const { site } = useStaticQuery(
     graphql`
@@ -84,6 +86,38 @@ const SEO = ({
     wordCount: `${tags &&
       wordsCounter(articleBody, { isHtml: true }).wordsCount}`,
     articleBody: articleBody,
+  }
+
+  // https://schema.org/BreadcrumbList
+
+  let schemaBreadcrumbs = [{}]
+
+  function createBreadCrumbsSchema(crumbs) {
+    let breadCrumbSchema = [{}]
+
+    for (let i = 0; i < crumbs.length; i++) {
+      let schema = [
+        {
+          "@type": "ListItem",
+          position: i + 1,
+          item: {
+            "@id": crumbs[i].pathname,
+            name: crumbs[i].crumbLabel,
+          },
+        },
+      ]
+      breadCrumbSchema.push(schema)
+    }
+    breadCrumbSchema.shift(0)
+    schemaBreadcrumbs = {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [breadCrumbSchema],
+    }
+  }
+
+  if (crumbs) {
+    createBreadCrumbsSchema(crumbs)
   }
 
   return (
@@ -194,6 +228,12 @@ const SEO = ({
       {tags && (
         <script type="application/ld+json">
           {JSON.stringify(schemaArticle)}
+        </script>
+      )}
+
+      {schemaBreadcrumbs && (
+        <script type="application/ld+json">
+          {JSON.stringify(schemaBreadcrumbs)}
         </script>
       )}
     </Helmet>

@@ -36,12 +36,8 @@ const Tags = ({ pageContext, data, location }) => {
         image={logo}
         slug={"tags"}
       />
-      <h1>
-        <IoIosPricetags />
-        {tagHeader}
-      </h1>
 
-      <div>
+      <nav>
         {" "}
         You are here:
         <Breadcrumb
@@ -49,19 +45,27 @@ const Tags = ({ pageContext, data, location }) => {
           crumbSeparator=" > "
           crumbLabel={customCrumbLabel}
         />
-      </div>
-      <ul>
-        {edges.map(({ node }) => {
-          const { slug } = node.fields
-          const { title } = node.frontmatter
-          return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
-            </li>
-          )
-        })}
-      </ul>
-      <Link to="/tags">See all tags</Link>
+      </nav>
+      <article>
+        <header>
+          <h1>
+            <IoIosPricetags />
+            {tagHeader}
+          </h1>
+        </header>
+        <ul>
+          {edges.map(({ node }) => {
+            const { slug } = node.fields
+            const { title } = node.frontmatter
+            return (
+              <li key={slug}>
+                <Link to={slug}>{title}</Link>
+              </li>
+            )
+          })}
+        </ul>
+        <Link to="/tags">See all tags</Link>
+      </article>
     </Layout>
   )
 }

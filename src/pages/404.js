@@ -24,7 +24,7 @@ const NotFoundPage = ({ pageContext, location, data }) => {
         image={logo}
         slug={"404"}
       />
-      <div>
+      <nav>
         {" "}
         You are here:
         {/* <Breadcrumb
@@ -32,9 +32,13 @@ const NotFoundPage = ({ pageContext, location, data }) => {
           crumbSeparator=""
           crumbLabel={customCrumbLabel}
         /> */}
-      </div>
-      <h1>Oops 404 - NOT FOUND</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      </nav>
+      <article>
+        <header>
+          <h1>Oops 404 - NOT FOUND</h1>
+        </header>
+        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      </article>
     </Layout>
   )
 }

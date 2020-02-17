@@ -24,13 +24,14 @@ const Home = ({ pageContext }) => {
         slug={"/"}
       />
 
-      <div>
+      <nav>
         {" "}
         You are here:
         <Breadcrumb crumbs={crumbs} crumbSeparator="" crumbLabel="Tutorials" />
-      </div>
-
-      <div>Tutorials</div>
+      </nav>
+      <article>
+        <div>Tutorials</div>
+      </article>
     </Layout>
   )
 }

@@ -23,14 +23,17 @@ const Home = ({ pageContext }) => {
         image={logo}
         slug={"/"}
       />
-
-      <div>
+      <nav>
         {" "}
         You are here:
         <Breadcrumb crumbs={crumbs} crumbSeparator="" crumbLabel="Home" />
-      </div>
-
-      <div>Hello world!</div>
+      </nav>
+      <article>
+        <header>
+          <h1>The Gatsby Theme Naked</h1>
+        </header>
+        <p>The Main Article goes here.</p>
+      </article>
     </Layout>
   )
 }

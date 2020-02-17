@@ -26,7 +26,7 @@ const Contact = ({ pageContext, location }) => {
         slug={"contact"}
       />
 
-      <div>
+      <nav>
         {" "}
         You are here:
         <Breadcrumb
@@ -34,8 +34,13 @@ const Contact = ({ pageContext, location }) => {
           crumbSeparator=""
           crumbLabel={customCrumbLabel}
         />
-      </div>
-      <ContactForm />
+      </nav>
+      <article>
+        <header>
+          <h1>Contact Us</h1>
+        </header>
+        <ContactForm />
+      </article>
     </Layout>
   )
 }

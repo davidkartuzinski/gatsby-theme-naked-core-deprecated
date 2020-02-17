@@ -23,6 +23,20 @@ body {
 a {
 }
 
+/***** for image caption in the markdown 
+http://sparkandshine.net/en/insert-images-with-captions-in-markdown/
+
+!["dominating_sets_example2"](http://sparkandshine.net/wordpress/wp-content/uploads/2016/02/dominating_sets_example2.png)
+*Fig. 2: The minimum dominating set of a graph*
+
+****/
+.gatsby-resp-image-wrapper + em {
+  font-style: normal;
+  display: inherit;
+  text-align: center;
+  font-size: 90%;
+}
+
 /* PRISMJS */
 /* https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/ */
 /**

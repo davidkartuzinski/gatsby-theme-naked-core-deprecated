@@ -36,7 +36,7 @@ const TagsPage = ({ pageContext, location }) => {
         slug={"tags"}
       />
       <div>
-        <div>
+        <nav>
           {" "}
           You are here:
           <Breadcrumb
@@ -44,20 +44,25 @@ const TagsPage = ({ pageContext, location }) => {
             crumbSeparator=""
             crumbLabel={customCrumbLabel}
           />
-        </div>
-        <h1>
-          <IoIosPricetags />
-          Tags
-        </h1>
-        <ul>
-          {tags.map(tag => (
-            <li key={tag.fieldValue}>
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                {tag.fieldValue} ({tag.totalCount})
-              </Link>
-            </li>
-          ))}
-        </ul>
+        </nav>
+
+        <article>
+          <header>
+            <h1>
+              <IoIosPricetags />
+              Tags
+            </h1>
+          </header>
+          <ul>
+            {tags.map(tag => (
+              <li key={tag.fieldValue}>
+                <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                  {tag.fieldValue} ({tag.totalCount})
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </article>
       </div>
     </Layout>
   )

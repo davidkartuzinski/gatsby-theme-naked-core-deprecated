@@ -43,7 +43,7 @@ const BlogList = ({ data, pageContext, location }) => {
             slug={"blog"}
           />
 
-          <div>
+          <nav>
             {" "}
             You are here:
             <Breadcrumb
@@ -51,29 +51,34 @@ const BlogList = ({ data, pageContext, location }) => {
               crumbSeparator=" > "
               crumbLabel={customCrumbLabel}
             />
-          </div>
-          <h1>Blog Posts</h1>
+          </nav>
+          <article>
+            <header>
+              <h1>Blog Posts</h1>
+            </header>
 
-          {posts.edges.map(post => {
-            let formattedDate = DateTime.fromISO(
-              post.node.frontmatter.date
-            ).toFormat("MMMM dd yyyy")
+            {posts.edges.map(post => {
+              let formattedDate = DateTime.fromISO(
+                post.node.frontmatter.date
+              ).toFormat("MMMM dd yyyy")
 
-            return (
-              <PostPreview
-                slug={post.node.fields.slug}
-                image={post.node.frontmatter.image.childImageSharp.fixed}
-                imageAlt={post.node.frontmatter.imageAlt}
-                imageTitle={post.node.frontmatter.imageTitle}
-                title={post.node.frontmatter.title}
-                date={formattedDate}
-                author={post.node.frontmatter.author}
-                cats={post.node.frontmatter.categories}
-                tags={post.node.frontmatter.tags}
-              />
-            )
-          })}
-
+              return (
+                <article>
+                  <PostPreview
+                    slug={post.node.fields.slug}
+                    image={post.node.frontmatter.image.childImageSharp.fixed}
+                    imageAlt={post.node.frontmatter.imageAlt}
+                    imageTitle={post.node.frontmatter.imageTitle}
+                    title={post.node.frontmatter.title}
+                    date={formattedDate}
+                    author={post.node.frontmatter.author}
+                    cats={post.node.frontmatter.categories}
+                    tags={post.node.frontmatter.tags}
+                  />
+                </article>
+              )
+            })}
+          </article>
           <PageNavigation pageContext={pageContext} />
           <SocialShare shareUrl={shareUrl} title={title} />
         </Layout>
