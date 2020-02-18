@@ -10,7 +10,7 @@ import PostPreview from "../components/core/post-preview"
 
 import PageNavigation from "../components/core/page-navigation"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
-import { DateTime } from "luxon"
+import Moment from "react-moment"
 
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
@@ -59,10 +59,6 @@ const BlogList = ({ data, pageContext, location }) => {
             </header>
 
             {posts.edges.map(post => {
-              let formattedDate = DateTime.fromISO(
-                post.node.frontmatter.date
-              ).toFormat("MMMM dd yyyy")
-
               return (
                 <article>
                   <PostPreview
@@ -71,7 +67,13 @@ const BlogList = ({ data, pageContext, location }) => {
                     imageAlt={post.node.frontmatter.imageAlt}
                     imageTitle={post.node.frontmatter.imageTitle}
                     title={post.node.frontmatter.title}
-                    date={formattedDate}
+                    date={
+                      <Moment
+                        date={post.node.frontmatter.date}
+                        format="MMMM DD, YYYY"
+                        withTitle
+                      />
+                    }
                     author={post.node.frontmatter.author}
                     cats={post.node.frontmatter.categories}
                     tags={post.node.frontmatter.tags}

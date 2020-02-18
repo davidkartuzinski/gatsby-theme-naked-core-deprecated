@@ -20,6 +20,7 @@ const PostPreview = ({
   imageTitle,
   title,
   date,
+
   author,
   excerpt,
   cats,

@@ -141,7 +141,7 @@ https://coolors.co/
    Header Styles NOTE: We are use a React Hamburger for the Navigation. Therefore, this header is for desktop layout, mostly.
 ************************************************/
 
-header {
+.top-header {
   display: flex;
   flex-direction: row;
   padding: 1rem;
@@ -150,32 +150,32 @@ header {
   flex-wrap: wrap;
 }
 
-header ul {
+.top-header ul {
   display: flex;
 }
 
-header .menu,
-header .social-follow-me {
+.top-header .menu,
+.top-header .social-follow-me {
   display: none;
 }
 
-header .search {
+.top-header .search {
   padding-top: 20px;
 }
 
 @media (min-width: 768px) {
-  header .menu,
-  header .social-follow-me {
+  .top-header .menu,
+  .top-header .social-follow-me {
     display: flex;
   }
 
-  header .menu li,
-  header .social-follow-me li {
+  .top-header .menu li,
+  .top-header .social-follow-me li {
     padding: 0 10px;
     list-style-type: none;
   }
 
-  header .menu li a {
+  .top-header .menu li a {
     text-decoration: none;
     text-transform: uppercase;
   }

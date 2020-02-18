@@ -19,6 +19,7 @@ import {
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import Bio from "../components/optional/bio"
+import Moment from "react-moment"
 
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
@@ -71,10 +72,17 @@ const BlogPost = ({ data, pageContext, location }) => {
             fluid={post.frontmatter.image.childImageSharp.fluid}
             title={post.frontmatter.imageTitle}
             alt={post.frontmatter.imageAlt}
+            figcaption={post.frontmatter.imageFigcaption}
           />
 
           <p>
-            <IoMdCalendar /> {post.frontmatter.date}, written by <IoIosPerson />
+            <IoMdCalendar />{" "}
+            <Moment
+              date={post.frontmatter.date}
+              format="MMMM DD, YYYY"
+              withTitle
+            />
+            , written by <IoIosPerson />
             {post.frontmatter.author}
           </p>
         </header>
@@ -143,6 +151,7 @@ export const query = graphql`
         tags
         imageAlt
         imageTitle
+        imageFigcaption
         canonical
       }
       id

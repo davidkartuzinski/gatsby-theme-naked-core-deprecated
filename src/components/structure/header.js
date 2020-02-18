@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <>
       <MobileMenu />
-      <header>
+      <header className="top-header">
         <Logo />
         <Menu />
         <Search searchIndex={data.siteSearchIndex.index} />
