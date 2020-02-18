@@ -10,7 +10,12 @@ export default props => {
 
   return (
     <figure>
-      <Image fluid={props.fluid} alt={props.alt} title={props.title} />
+      <Image
+        className={props.imageClassName}
+        fluid={props.fluid}
+        alt={props.alt}
+        title={props.title}
+      />
       <figcaption>{figCaption}</figcaption>
     </figure>
   )

@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import wordsCounter from "word-counting"
+import CookieBannerCookieHub from "../optional/cookie-hub"
 
 const SEO = ({
   title,
@@ -17,7 +18,6 @@ const SEO = ({
   headline,
   articleBody,
   crumbs,
-  customCrumbLabel,
 }) => {
   const { site } = useStaticQuery(
     graphql`
@@ -35,6 +35,8 @@ const SEO = ({
               twitter
               twitterAuthor
             }
+            googleTrackingId
+            cookieHubId
           }
         }
       }
@@ -121,122 +123,133 @@ const SEO = ({
   }
 
   return (
-    <Helmet>
-      {/* https://www.advancedwebranking.com/blog/meta-tags-important-in-seo/   https://metatags.io/*/}
-      <html lang={site.siteMetadata.locale} />
-      {canonical && (
-        <link
-          rel="canonical"
-          href={`${site.siteMetadata.siteUrl}/${canonical} `}
-        />
-      )}
-      {!canonical && (
-        <link rel="canonical" href={`${site.siteMetadata.siteUrl}/${slug}`} />
-      )}
-      <title>
-        {title} | {site.siteMetadata.title}
-      </title>
-      <meta name="description" content={description} />
-      <meta
-        name="image"
-        content={`${site.siteMetadata.siteUrl}/${site.siteMetadata.logo}`}
-      />
-      <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/favicons/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/favicons/favicon-16x16.png"
-      />
-      {/* https://realfavicongenerator.net/ https://brodieclark.com/4-faq-schema-filtering-commandments/ */}
-      <link
-        rel="mask-icon"
-        href="/favicons/safari-pinned-tab.svg"
-        color="#F3824A"
-      ></link>
-      <link
-        rel="mask-icon"
-        href="/favicons/safari-pinned-tab.svg"
-        color="#F3824A"
-      ></link>
-      <meta name="msapplication-TileColor" content="#F3824A" />
-      <meta name="theme-color" content="##F3824A"></meta>
-      {/* Open Graph https://ogp.me/ https://developers.facebook.com/docs/sharing/webmasters/ */}
-      <meta property="og:locale" content={site.siteMetadata.locale} />
-      <meta property="og:site_name" content={site.siteMetadata.title} />
-      {canonical && (
+    <>
+      <Helmet>
+        {/* https://www.advancedwebranking.com/blog/meta-tags-important-in-seo/   https://metatags.io/*/}
+        <html lang={site.siteMetadata.locale} />
+        {canonical && (
+          <link
+            rel="canonical"
+            href={`${site.siteMetadata.siteUrl}/${canonical} `}
+          />
+        )}
+        {!canonical && (
+          <link rel="canonical" href={`${site.siteMetadata.siteUrl}/${slug}`} />
+        )}
+        <title>
+          {title} | {site.siteMetadata.title}
+        </title>
+        <meta name="description" content={description} />
         <meta
-          property="og:url"
-          content={`${site.siteMetadata.siteUrl}/${canonical} `}
-        />
-      )}
-      {!canonical && (
-        <meta
-          property="og:url"
-          content={`${site.siteMetadata.siteUrl}/${slug}`}
-        />
-      )}
-      {/* Only "articles" have tags, so check and make an article ... */}
-      <meta property="og:type" content={tags ? "article" : "website"} />
-
-      {tags && <meta property="article:published_time" content={date} />}
-      {tags && <meta property="article:modified_time" content={dateModified} />}
-      {tags &&
-        tags.map((tag, i) => (
-          <meta property="article:tag" content={tag} key={i} />
-        ))}
-
-      {tags && (
-        <meta property="article:author" content={site.siteMetadata.author} />
-      )}
-      {tags && (
-        <meta
-          property="og:image"
-          content={`${site.siteMetadata.siteUrl}/${image}`}
-        />
-      )}
-      {!tags && (
-        <meta
-          property="og:image"
+          name="image"
           content={`${site.siteMetadata.siteUrl}/${site.siteMetadata.logo}`}
         />
-      )}
-      {/* Twitter Graph - https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started */}
-      <meta name="twitter:card" content="summary"></meta>
-      <meta name="robots" content="index, follow"></meta>
-      {site.siteMetadata.social.twitter && (
-        <meta name="twitter:site" content={site.siteMetadata.social.twitter} />
-      )}
-      {site.siteMetadata.social.twitterAuthor && (
-        <meta
-          name="twitter:creator"
-          content={site.siteMetadata.social.twitterAuthor}
+        <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicons/favicon-32x32.png"
         />
-      )}
-      {!tags && (
-        <script type="application/ld+json">
-          {JSON.stringify(schemaWebPage)}
-        </script>
-      )}
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicons/favicon-16x16.png"
+        />
+        {/* https://realfavicongenerator.net/ https://brodieclark.com/4-faq-schema-filtering-commandments/ */}
+        <link
+          rel="mask-icon"
+          href="/favicons/safari-pinned-tab.svg"
+          color="#F3824A"
+        ></link>
+        <link
+          rel="mask-icon"
+          href="/favicons/safari-pinned-tab.svg"
+          color="#F3824A"
+        ></link>
+        <meta name="msapplication-TileColor" content="#F3824A" />
+        <meta name="theme-color" content="##F3824A"></meta>
+        {/* Open Graph https://ogp.me/ https://developers.facebook.com/docs/sharing/webmasters/ */}
+        <meta property="og:locale" content={site.siteMetadata.locale} />
+        <meta property="og:site_name" content={site.siteMetadata.title} />
+        {canonical && (
+          <meta
+            property="og:url"
+            content={`${site.siteMetadata.siteUrl}/${canonical} `}
+          />
+        )}
+        {!canonical && (
+          <meta
+            property="og:url"
+            content={`${site.siteMetadata.siteUrl}/${slug}`}
+          />
+        )}
+        {/* Only "articles" have tags, so check and make an article ... */}
+        <meta property="og:type" content={tags ? "article" : "website"} />
 
-      {tags && (
-        <script type="application/ld+json">
-          {JSON.stringify(schemaArticle, schemaBreadcrumbs)}
-        </script>
-      )}
+        {tags && <meta property="article:published_time" content={date} />}
+        {tags && (
+          <meta property="article:modified_time" content={dateModified} />
+        )}
+        {tags &&
+          tags.map((tag, i) => (
+            <meta property="article:tag" content={tag} key={i} />
+          ))}
 
-      {schemaBreadcrumbs && (
-        <script type="application/ld+json">
-          {JSON.stringify(schemaBreadcrumbs)}
-        </script>
-      )}
-    </Helmet>
+        {tags && (
+          <meta property="article:author" content={site.siteMetadata.author} />
+        )}
+        {tags && (
+          <meta
+            property="og:image"
+            content={`${site.siteMetadata.siteUrl}/${image}`}
+          />
+        )}
+        {!tags && (
+          <meta
+            property="og:image"
+            content={`${site.siteMetadata.siteUrl}/${site.siteMetadata.logo}`}
+          />
+        )}
+        {/* Twitter Graph - https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started */}
+        <meta name="twitter:card" content="summary"></meta>
+        <meta name="robots" content="index, follow"></meta>
+        {site.siteMetadata.social.twitter && (
+          <meta
+            name="twitter:site"
+            content={site.siteMetadata.social.twitter}
+          />
+        )}
+        {site.siteMetadata.social.twitterAuthor && (
+          <meta
+            name="twitter:creator"
+            content={site.siteMetadata.social.twitterAuthor}
+          />
+        )}
+        {!tags && (
+          <script type="application/ld+json">
+            {JSON.stringify(schemaWebPage)}
+          </script>
+        )}
+
+        {tags && (
+          <script type="application/ld+json">
+            {JSON.stringify(schemaArticle, schemaBreadcrumbs)}
+          </script>
+        )}
+
+        {schemaBreadcrumbs && (
+          <script type="application/ld+json">
+            {JSON.stringify(schemaBreadcrumbs)}
+          </script>
+        )}
+      </Helmet>
+      <CookieBannerCookieHub
+        googleTrackingId={site.siteMetadata.googleTrackingId}
+        cookieHubId={site.siteMetadata.cookieHubId}
+      />
+    </>
   )
 }
 

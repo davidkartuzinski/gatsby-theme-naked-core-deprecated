@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/structure/layout"
 import AffiliateDisclaimer from "../components/optional/affiliate-disclaimer"
-import ResponsiveImage from "../components/responsive-image"
+import ResponsiveImage from "../components/core/responsive-image"
 import SocialShare from "../components/optional/social-share"
 import MailChimpSignUp from "../components/optional/mailchimp-sign-up"
 import Tags from "../components/core/tags"
@@ -70,11 +70,10 @@ const BlogPost = ({ data, pageContext, location }) => {
 
           <ResponsiveImage
             fluid={post.frontmatter.image.childImageSharp.fluid}
-            title={post.frontmatter.imageTitle}
             alt={post.frontmatter.imageAlt}
             figcaption={post.frontmatter.imageFigcaption}
+            imageClassName={post.frontmatter.imageClassName}
           />
-
           <p>
             <IoMdCalendar />{" "}
             <Moment

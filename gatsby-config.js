@@ -39,7 +39,7 @@ module.exports = {
       facebook: "#",
     },
 
-    googleAnalyticsID: "UA-158642528-1",
+    // googleAnalyticsID: "UA-158642528-1",
     themeColor: "#F3824A",
     backgroundColor: "#FFF7F0",
     siteRss: "/rss.xml",
@@ -59,6 +59,8 @@ module.exports = {
       phone: "",
     },
     foundingDate: "2019",
+    googleTrackingId: "UA-158642528-1",
+    cookieHubId: "77974473",
   },
   plugins: [
     {
