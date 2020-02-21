@@ -7,7 +7,7 @@ funstonTheme.bodyColor = "#040404"
 // https://www.gatsbyjs.org/docs/typography-js/
 funstonTheme.overrideThemeStyles = () => ({
   a: {
-    color: "#f3824a",
+    color: "#55433b",
   },
 })
 
