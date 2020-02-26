@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import slugify from "react-slugify"
-import { IoIosPricetags } from "react-icons/io"
+import { TagsIcon } from "./icons"
 
 export default props => {
   // data.markdownRemark.frontmatter.tags
@@ -15,7 +15,7 @@ export default props => {
   return (
     <>
       <h3>
-        <IoIosPricetags />
+        <TagsIcon />
         {tagHeader}
       </h3>
       <ul>

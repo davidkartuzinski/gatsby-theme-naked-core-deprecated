@@ -3,6 +3,7 @@ import Image from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 
 import { useSiteMetadata } from "../../hooks/use-site-metadata"
+import { AuthorIcon } from "../core/icons"
 
 const Bio = () => {
   const { author, contact, authorIntro } = useSiteMetadata()
@@ -16,9 +17,12 @@ const Bio = () => {
         alt="Author Image"
       />
       <address>
-        By <a href={`mailto:${contact}`}>{author}</a>
+        By{" "}
+        <a href={`mailto:${contact}`}>
+          <AuthorIcon /> {author}
+        </a>
       </address>
-      <p>{authorIntro}</p>
+      <p>{authorIntro} </p>
     </div>
   )
 }

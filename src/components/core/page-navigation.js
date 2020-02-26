@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
+import { PreviousPageIcon, NextPageIcon } from "./icons"
 
 const PageNavigation = ({ pageContext }) => {
   const { previousPagePath, nextPagePath } = pageContext
@@ -11,14 +11,14 @@ const PageNavigation = ({ pageContext }) => {
       {previousPagePath && (
         <span>
           <Link to={previousPagePath}>
-            <IoIosArrowBack /> Previous
+            <PreviousPageIcon /> Previous
           </Link>
         </span>
       )}
       {nextPagePath && (
         <span>
           <Link to={nextPagePath}>
-            Next <IoIosArrowForward />
+            Next <NextPageIcon />
           </Link>
         </span>
       )}

@@ -10,12 +10,14 @@ import Categories from "../components/core/categories"
 import TalkYardComments from "../components/optional/talkyard-comments"
 import SEO from "../components/core/seo"
 import { Link } from "gatsby"
+
 import {
-  IoMdCalendar,
-  IoIosPerson,
-  IoIosArrowBack,
-  IoIosArrowForward,
-} from "react-icons/io"
+  PreviousPageIcon,
+  NextPageIcon,
+  AuthorIcon,
+  PublishDateIcon,
+} from "../components/core/icons"
+
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 import NakedBreadcrumb from "../components/core/breadcrumb"
 import Bio from "../components/optional/bio"
@@ -68,13 +70,13 @@ const BlogPost = ({ data, pageContext, location }) => {
             imageClassName={post.frontmatter.imageClassName}
           />
           <p>
-            <IoMdCalendar />{" "}
+            <PublishDateIcon />{" "}
             <Moment
               date={post.frontmatter.date}
               format="MMMM DD, YYYY"
               withTitle
             />
-            , written by <IoIosPerson />
+            , written by <AuthorIcon />
             {post.frontmatter.author}
           </p>
         </header>
@@ -92,7 +94,7 @@ const BlogPost = ({ data, pageContext, location }) => {
         {previous && (
           <Link to={previous.frontmatter.slug} style={{ maxWidth: "25%" }}>
             <strong>
-              <IoIosArrowBack />
+              <PreviousPageIcon />
               Previous Article
             </strong>{" "}
             <br />
@@ -102,7 +104,7 @@ const BlogPost = ({ data, pageContext, location }) => {
         {next && (
           <Link to={next.frontmatter.slug} style={{ maxWidth: "25%" }}>
             <strong>
-              Next Article <IoIosArrowForward />
+              Next Article <NextPageIcon />
             </strong>{" "}
             <br />
             {next.frontmatter.title}

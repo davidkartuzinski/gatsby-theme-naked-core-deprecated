@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import Layout from "../components/structure/layout"
 import SEO from "../components/core/seo"
 
-import { IoIosPricetags } from "react-icons/io"
+import { TagsIcon } from "../components/core/icons.js"
 
 import { Link, graphql } from "gatsby"
 import NakedBreadcrumb from "../components/core/breadcrumb"
@@ -38,19 +38,12 @@ const Tags = ({ pageContext, data, location }) => {
         crumbs={crumbs}
       />
 
-      <nav>
-        {" "}
-        You are here:
-        <NakedBreadcrumb
-          crumbs={crumbs}
-          crumbSeparator=" > "
-          crumbLabel={customCrumbLabel}
-        />
-      </nav>
+      <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
+
       <article>
         <header>
           <h1>
-            <IoIosPricetags />
+            <TagsIcon />
             {tagHeader}
           </h1>
         </header>

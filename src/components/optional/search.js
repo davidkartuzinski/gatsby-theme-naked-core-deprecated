@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Index } from "elasticlunr"
 import { Link } from "gatsby"
-import { IoIosSearch } from "react-icons/io"
+import { SearchIcon } from "../core/icons"
 import slugify from "react-slugify"
 
 // Search component
@@ -18,7 +18,7 @@ export default class Search extends Component {
     return (
       <div className="search">
         <label htmlFor="search-field">
-          Search <IoIosSearch />
+          Search <SearchIcon />
           <input
             type="text"
             value={this.state.query}

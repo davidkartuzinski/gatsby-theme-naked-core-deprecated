@@ -1,10 +1,11 @@
 import React from "react"
+
 import {
-  IoLogoFacebook,
-  IoLogoInstagram,
-  IoLogoPinterest,
-  IoLogoTwitter,
-} from "react-icons/io"
+  FacebookIcon,
+  InstagramIcon,
+  PinterestIcon,
+  TwitterIcon,
+} from "../core/icons"
 import { useStaticQuery, graphql } from "gatsby"
 
 const SocialFollowMe = () => {
@@ -36,22 +37,22 @@ const SocialFollowMe = () => {
     <ul className="social-follow-me">
       <li>
         <a href={facebook} title="Follow Us on Facebook">
-          <IoLogoFacebook size="50" />
+          <FacebookIcon size="50" />
         </a>
       </li>
       <li>
         <a href={instagram} title="Follow Us on Instagram">
-          <IoLogoInstagram size="50" />
+          <InstagramIcon size="50" />
         </a>
       </li>
       <li>
         <a href={pinterest} title="Follow Us on Pinterest">
-          <IoLogoPinterest size="50" />
+          <PinterestIcon size="50" />
         </a>
       </li>
       <li>
         <a href={twitter} title="Follow Us on Twitter">
-          <IoLogoTwitter size="50" />
+          <TwitterIcon size="50" />
         </a>
       </li>
     </ul>

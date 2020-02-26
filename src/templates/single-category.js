@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import SEO from "../components/core/seo"
 import Layout from "../components/structure/layout"
 
-import { IoIosFolder } from "react-icons/io"
+import { CategoriesIcon } from "../components/core/icons.js"
 import { Link, graphql } from "gatsby"
 
 import NakedBreadcrumb from "../components/core/breadcrumb"
@@ -37,15 +37,12 @@ const Categories = ({ data, pageContext, location }) => {
         crumbLabel={customCrumbLabel}
       />
 
-      <nav>
-        {" "}
-        You are here:
-        <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
-      </nav>
+      <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
+
       <article>
         <header>
           <h1>
-            <IoIosFolder />
+            <CategoriesIcon />
             {categoryHeader}
           </h1>
         </header>

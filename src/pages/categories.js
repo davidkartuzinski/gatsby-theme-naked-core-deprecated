@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import Layout from "../components/structure/layout"
 import SEO from "../components/core/seo"
 
-import { IoIosFolder } from "react-icons/io"
+import { CategoriesIcon } from "../components/core/icons.js"
 
 // Utilities
 import kebabCase from "lodash/kebabCase"
@@ -44,7 +44,7 @@ const CategoriesPage = ({ pageContext, location }) => {
         <article>
           <header>
             <h1>
-              <IoIosFolder /> Categories
+              <CategoriesIcon /> Categories
             </h1>
           </header>
           <ul>

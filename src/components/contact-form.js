@@ -1,13 +1,14 @@
 import React from "react"
 
-import { IoIosPerson } from "react-icons/io"
-import { IoIosMail } from "react-icons/io"
-import { IoMdBook } from "react-icons/io"
-import { IoIosBrush } from "react-icons/io"
-import { IoIosSend } from "react-icons/io"
-
-import { IoIosRocket } from "react-icons/io"
-import { IoIosNuclear } from "react-icons/io"
+import {
+  EnterEmailIcon,
+  EnterSubjectIcon,
+  EnterMessageIcon,
+  SendMailIcon,
+  SuccessIcon,
+  ErrorIcon,
+  AuthorIcon,
+} from "./core/icons"
 
 export default class ContactForm extends React.Component {
   constructor(props) {
@@ -27,20 +28,19 @@ export default class ContactForm extends React.Component {
         method="POST"
       >
         <label htmlFor="name">
-          <IoIosPerson /> Name
+          <AuthorIcon /> Name
           <input type="text" name="name" id="name" />
         </label>
         <label htmlFor="email">
-          <IoIosMail /> Email
+          <EnterEmailIcon /> Email
           <input type="email" name="email" id="email" />
         </label>
         <label htmlFor="subject">
-          <IoMdBook /> Subject
+          <EnterSubjectIcon /> Subject
           <input type="text" name="subject" id="subject" />
         </label>
         <label htmlFor="message">
-          <IoIosBrush />
-          Message
+          <EnterMessageIcon /> /> Message
           <textArea name="message" id="message" rows="5" />
         </label>
         <label htmlFor="reset">
@@ -48,17 +48,17 @@ export default class ContactForm extends React.Component {
         </label>
         {status === "SUCCESS" ? (
           <p>
-            <IoIosRocket /> Thanks!
+            <SuccessIcon /> Thanks!
           </p>
         ) : (
           <button>
-            <IoIosSend />
+            <SendMailIcon />
             Submit
           </button>
         )}
         {status === "ERROR" && (
           <p>
-            <IoIosNuclear /> Ooops! There was an error.
+            <ErrorIcon /> Ooops! There was an error.
           </p>
         )}
       </form>

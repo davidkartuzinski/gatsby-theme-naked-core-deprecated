@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { IoIosPricetags } from "react-icons/io"
+import { TagsIcon } from "../components/core/icons.js"
 import SEO from "../components/core/seo"
 import Layout from "../components/structure/layout"
 
@@ -42,7 +42,7 @@ const TagsPage = ({ pageContext, location }) => {
         <article>
           <header>
             <h1>
-              <IoIosPricetags />
+              <TagsIcon />
               Tags
             </h1>
           </header>

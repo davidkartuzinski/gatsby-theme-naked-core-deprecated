@@ -1,10 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import slugify from "react-slugify"
-import { IoIosFolder } from "react-icons/io"
+import { CategoriesIcon } from "./icons"
 
 export default props => {
-  // data.markdownRemark.frontmatter.categories
   const categories = props.categories
   const categoryCount = categories.length
 
@@ -15,7 +14,7 @@ export default props => {
   return (
     <>
       <h3>
-        <IoIosFolder /> {categoryHeader}
+        <CategoriesIcon /> {categoryHeader}
       </h3>
       <ul>
         {categories.map(category => {

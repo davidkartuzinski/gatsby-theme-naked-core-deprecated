@@ -1,6 +1,7 @@
 import React from "react"
 import addToMailchimp from "gatsby-plugin-mailchimp"
-import { IoIosMail, IoIosSend, IoIosLeaf } from "react-icons/io"
+
+import { AlertIcon, SendMailIcon, EnterEmailIcon } from "../core/icons"
 
 // https://github.com/benjaminhoffman/gatsby-plugin-mailchimp/blob/master/examples/gatsby-v2/src/pages/index.js
 
@@ -54,7 +55,7 @@ export default class MailChimpComponent extends React.Component {
           <div>
             <form className="form-form" onSubmit={this._handleSubmit}>
               <label className="form-label" htmlFor="email">
-                <IoIosMail /> Email<span>*</span>
+                <EnterEmailIcon /> Email<span>*</span>
                 <input
                   type="email"
                   onChange={this._handleChange}
@@ -71,12 +72,12 @@ export default class MailChimpComponent extends React.Component {
                 time.
               </p>
               <button type="submit">
-                <IoIosSend />
+                <SendMailIcon />
                 Sign up now
               </button>
               <p className="form-p">
                 <small>
-                  <IoIosLeaf />
+                  <AlertIcon />
                   Strict No Spam Policy. No Sharing of your data - EVER!
                 </small>
               </p>

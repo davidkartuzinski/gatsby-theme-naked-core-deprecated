@@ -2,13 +2,14 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
+
 import {
-  IoIosArrowDropright,
-  IoIosFolder,
-  IoIosPricetags,
-  IoMdCalendar,
-  IoIosPerson,
-} from "react-icons/io"
+  ReadNextIcon,
+  CategoriesIcon,
+  TagsIcon,
+  PublishDateIcon,
+  AuthorIcon,
+} from "./icons"
 
 // Utilities
 import kebabCase from "lodash/kebabCase"
@@ -20,7 +21,6 @@ const PostPreview = ({
   imageTitle,
   title,
   date,
-
   author,
   excerpt,
   cats,
@@ -34,16 +34,17 @@ const PostPreview = ({
       <h2>{title}</h2>
     </Link>
     <span>
-      <IoMdCalendar /> Published on {date}, written by <IoIosPerson /> {author}
+      <PublishDateIcon /> Published on {date}, written by <AuthorIcon />{" "}
+      {author}
     </span>
 
     <p>{excerpt}</p>
     <Link to={slug}>
-      Read the rest <IoIosArrowDropright />
+      Read the rest <ReadNextIcon />
     </Link>
 
     <h3>
-      <IoIosFolder /> Blog Post Categories
+      <CategoriesIcon /> Blog Post Categories
     </h3>
     <ul>
       {cats.map(cat => (
@@ -53,7 +54,7 @@ const PostPreview = ({
       ))}
     </ul>
     <h3>
-      <IoIosPricetags />
+      <TagsIcon />
       Blog Post tags
     </h3>
     <ul>
