@@ -6,7 +6,7 @@ import Layout from "../components/structure/layout"
 import { IoIosFolder } from "react-icons/io"
 import { Link, graphql } from "gatsby"
 
-import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import NakedBreadcrumb from "../components/core/breadcrumb"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const Categories = ({ data, pageContext, location }) => {
@@ -40,11 +40,7 @@ const Categories = ({ data, pageContext, location }) => {
       <nav>
         {" "}
         You are here:
-        <Breadcrumb
-          crumbs={crumbs}
-          crumbSeparator=" > "
-          crumbLabel={customCrumbLabel}
-        />
+        <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
       </nav>
       <article>
         <header>

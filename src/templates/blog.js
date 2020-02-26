@@ -9,7 +9,7 @@ import SEO from "../components/core/seo"
 import PostPreview from "../components/core/post-preview"
 
 import PageNavigation from "../components/core/page-navigation"
-import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import NakedBreadcrumb from "../components/core/breadcrumb"
 import Moment from "react-moment"
 
 import { useSiteMetadata } from "../hooks/use-site-metadata"
@@ -44,15 +44,8 @@ const BlogList = ({ data, pageContext, location }) => {
             crumbs={crumbs}
           />
 
-          <nav>
-            {" "}
-            You are here:
-            <Breadcrumb
-              crumbs={crumbs}
-              crumbSeparator=" > "
-              crumbLabel={customCrumbLabel}
-            />
-          </nav>
+          <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
+
           <article>
             <header>
               <h1>Blog Posts</h1>

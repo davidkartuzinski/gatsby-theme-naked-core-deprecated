@@ -14,7 +14,7 @@ import { Link } from "gatsby"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import { useAllMdx } from "../hooks/use-all-mdx"
 
-import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import NakedBreadcrumb from "../components/core/breadcrumb"
 
 const CategoriesPage = ({ pageContext, location }) => {
   const { logo, title } = useSiteMetadata()
@@ -37,15 +37,9 @@ const CategoriesPage = ({ pageContext, location }) => {
         slug={"categories"}
         crumbs={crumbs}
       />
-      <nav>
-        {" "}
-        You are here:
-        <Breadcrumb
-          crumbs={crumbs}
-          crumbSeparator=""
-          crumbLabel={customCrumbLabel}
-        />
-      </nav>
+
+      <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
+
       <div>
         <article>
           <header>

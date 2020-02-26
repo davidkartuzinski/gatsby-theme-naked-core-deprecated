@@ -66,31 +66,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-breadcrumb`,
       options: {
-        // useAutoGen: required 'true' to use autogen
         useAutoGen: true,
-        // autoGenHomeLabel: optional 'Home' is default
         autoGenHomeLabel: `Home`,
-        // exlude: optional, include to overwrite these default excluded pages
         exclude: [
           `/dev-404-page`,
           `/404`,
           `/404.html`,
           `/offline-plugin-app-shell-fallback`,
         ],
-        // crumbLabelUpdates: optional, update specific crumbLabels in the path
-        crumbLabelUpdates: [
-          {
-            // pathname: "/book",
-            // crumbLabel: "Books",
-            crumbStyle: { color: "blue" },
-            crumbActiveStyle: { color: "red" },
-          },
-        ],
-        // optional: switch to className styling
-        // see `useClassNames example with `AutoGen` below
+        crumbLabelUpdates: [],
+
         useClassNames: true,
-        // optional: if you are using path prefix
-        // usePathPrefix: '/blog',
       },
     },
     {

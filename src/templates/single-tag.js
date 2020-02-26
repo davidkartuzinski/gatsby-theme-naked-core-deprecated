@@ -6,7 +6,7 @@ import SEO from "../components/core/seo"
 import { IoIosPricetags } from "react-icons/io"
 
 import { Link, graphql } from "gatsby"
-import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import NakedBreadcrumb from "../components/core/breadcrumb"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const Tags = ({ pageContext, data, location }) => {
@@ -41,7 +41,7 @@ const Tags = ({ pageContext, data, location }) => {
       <nav>
         {" "}
         You are here:
-        <Breadcrumb
+        <NakedBreadcrumb
           crumbs={crumbs}
           crumbSeparator=" > "
           crumbLabel={customCrumbLabel}

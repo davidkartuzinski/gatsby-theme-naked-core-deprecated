@@ -3,7 +3,7 @@ import SEO from "../components/core/seo"
 import Layout from "../components/structure/layout"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
-import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import NakedBreadcrumb from "../components/core/breadcrumb"
 
 const Home = ({ pageContext }) => {
   const { logo, title, websiteDescription } = useSiteMetadata()
@@ -25,11 +25,8 @@ const Home = ({ pageContext }) => {
         crumbs={crumbs}
       />
 
-      <nav>
-        {" "}
-        You are here:
-        <Breadcrumb crumbs={crumbs} crumbSeparator="" crumbLabel="Tutorials" />
-      </nav>
+      <NakedBreadcrumb crumbs={crumbs} crumbLabel="Tutorials" />
+
       <article>
         <div>Tutorials</div>
       </article>

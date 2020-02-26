@@ -4,7 +4,7 @@ import ContactForm from "../components/contact-form"
 import SEO from "../components/core/seo"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
-import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import NakedBreadcrumb from "../components/core/breadcrumb"
 
 const Contact = ({ pageContext, location }) => {
   const { logo, title } = useSiteMetadata()
@@ -27,15 +27,8 @@ const Contact = ({ pageContext, location }) => {
         crumbs={crumbs}
       />
 
-      <nav>
-        {" "}
-        You are here:
-        <Breadcrumb
-          crumbs={crumbs}
-          crumbSeparator=""
-          crumbLabel={customCrumbLabel}
-        />
-      </nav>
+      <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
+
       <article>
         <header>
           <h1>Contact Us</h1>

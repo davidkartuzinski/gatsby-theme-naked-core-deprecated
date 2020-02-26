@@ -17,7 +17,7 @@ import {
   IoIosArrowForward,
 } from "react-icons/io"
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
-import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import NakedBreadcrumb from "../components/core/breadcrumb"
 import Bio from "../components/optional/bio"
 import Moment from "react-moment"
 
@@ -55,15 +55,8 @@ const BlogPost = ({ data, pageContext, location }) => {
         crumbLabel={customCrumbLabel}
       />
 
-      <nav>
-        {" "}
-        You are here:
-        <Breadcrumb
-          crumbs={crumbs}
-          crumbSeparator=""
-          crumbLabel={customCrumbLabel}
-        />
-      </nav>
+      <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
+
       <article>
         <header>
           <h1>{post.frontmatter.title}</h1>
