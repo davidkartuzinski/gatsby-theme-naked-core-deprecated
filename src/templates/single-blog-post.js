@@ -1,10 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/structure/layout"
-import AffiliateDisclaimer from "../components/optional/affiliate-disclaimer"
+import SiteWideMessage from "../components/widgets/sitewide-message"
 import ResponsiveImage from "../components/core/responsive-image"
 import SocialShare from "../components/optional/social-share"
-import MailChimpSignUp from "../components/optional/mailchimp-sign-up"
+import MailChimpSignUp from "../components/widgets/mailchimp-sign-up"
 import Tags from "../components/core/tags"
 import Categories from "../components/core/categories"
 import TalkYardComments from "../components/optional/talkyard-comments"
@@ -20,7 +20,7 @@ import {
 
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 import NakedBreadcrumb from "../components/core/breadcrumb"
-import Bio from "../components/optional/bio"
+import Bio from "../components/widgets/bio"
 import Moment from "react-moment"
 
 import { useSiteMetadata } from "../hooks/use-site-metadata"
@@ -81,7 +81,7 @@ const BlogPost = ({ data, pageContext, location }) => {
           </p>
         </header>
 
-        <AffiliateDisclaimer />
+        <SiteWideMessage />
         <MDXRenderer>{post.body}</MDXRenderer>
       </article>
       <Bio />

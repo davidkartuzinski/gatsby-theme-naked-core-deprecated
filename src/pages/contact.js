@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/structure/layout"
-import ContactForm from "../components/contact-form"
+import ContactForm from "../components/optional/contact-form"
 import SEO from "../components/core/seo"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 

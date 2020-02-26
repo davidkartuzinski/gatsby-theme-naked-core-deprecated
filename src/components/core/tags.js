@@ -4,7 +4,6 @@ import slugify from "react-slugify"
 import { TagsIcon } from "./icons"
 
 export default props => {
-  // data.markdownRemark.frontmatter.tags
   const tags = props.tags
   const tagCount = tags.length
 

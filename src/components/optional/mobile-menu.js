@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { elastic as Menu } from "react-burger-menu"
 import { useSiteMetadata } from "../../hooks/use-site-metadata"
 
-import FollowMe from "../optional/social-follow-me"
+import FollowMe from "../widgets/social-follow-me"
 
 const MobileMenu = () => {
   const { menuLinks } = useSiteMetadata()

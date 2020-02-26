@@ -8,7 +8,7 @@ import {
   SuccessIcon,
   ErrorIcon,
   AuthorIcon,
-} from "./core/icons"
+} from "../core/icons"
 
 export default class ContactForm extends React.Component {
   constructor(props) {

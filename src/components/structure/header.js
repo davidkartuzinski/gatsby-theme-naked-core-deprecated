@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Menu from "../core/menu"
 import Logo from "../core/logo"
 import Search from "../optional/search"
-import FollowMe from "../optional/social-follow-me"
+import FollowMe from "../widgets/social-follow-me"
 import MobileMenu from "../optional/mobile-menu.js"
 
 const Header = () => {
