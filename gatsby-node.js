@@ -20,9 +20,11 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   // create variable to use for each type of templates
-  const blogPostTemplate = path.resolve(`./src/templates/single-blog-post.js`)
-  const tagTemplate = path.resolve(`./src/templates/single-tag.js`)
-  const categoryTemplate = path.resolve(`./src/templates/single-category.js`)
+  const blogPostTemplate = require.resolve(
+    `./src/templates/single-blog-post.js`
+  )
+  const tagTemplate = require.resolve(`./src/templates/single-tag.js`)
+  const categoryTemplate = require.resolve(`./src/templates/single-category.js`)
 
   const result = await graphql(`
     query {
