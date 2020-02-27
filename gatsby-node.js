@@ -18,6 +18,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
+
+  // create variable to use for each type of templates
   const blogPostTemplate = require.resolve(
     `./src/templates/single-blog-post.js`
   )
@@ -79,9 +81,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const posts = result.data.postsRemark.edges
   posts.forEach(({ node, next, previous }) => {
     createPage({
-      path: "/blog" + node.fields.slug,
+      path: node.fields.slug,
       component: blogPostTemplate,
       context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
         slug: node.fields.slug,
 
         // https://toripugh.com/blog/gatsby-blog--next-and-previous-links

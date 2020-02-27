@@ -119,9 +119,6 @@ export const query = graphql`
             categories
             author
           }
-          fields {
-            slug
-          }
         }
       }
     }
