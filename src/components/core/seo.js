@@ -259,12 +259,13 @@ SEO.propTypes = {
   description: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   dateModified: PropTypes.string,
-  tags: PropTypes.object,
+  tags: PropTypes.array,
   image: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
-  categories: PropTypes.object,
+  categories: PropTypes.array,
   headline: PropTypes.string,
   articleBody: PropTypes.string,
+  crumbs: PropTypes.array.isRequired,
 }
 
 export default SEO

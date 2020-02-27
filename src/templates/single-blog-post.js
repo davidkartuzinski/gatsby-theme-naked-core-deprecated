@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import PropTypes from "prop-types"
 import Layout from "../components/structure/layout"
 import SiteWideMessage from "../components/widgets/sitewide-message"
 import ResponsiveImage from "../components/core/responsive-image"
@@ -38,6 +39,8 @@ const BlogPost = ({ data, pageContext, location }) => {
   } = pageContext
 
   const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
+
+  console.log(typeof post.frontmatter.tags)
 
   return (
     <Layout>
@@ -120,6 +123,11 @@ const BlogPost = ({ data, pageContext, location }) => {
       <TalkYardComments />
     </Layout>
   )
+}
+
+BlogPost.propTypes = {
+  data: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired,
 }
 
 export default BlogPost

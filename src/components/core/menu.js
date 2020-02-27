@@ -8,13 +8,21 @@ const Menu = () => {
     <li key={link.id}>
       <Link
         // activeStyle={}
+        activeClassName="active" // style in your CSS
         to={`${link.link}/`}
       >
         {link.name}
       </Link>
     </li>
   ))
-  return <ul className="menu">{menuLiItems}</ul>
+  return (
+    <nav aria-labelledby="mainmenulabel">
+      <h2 id="mainmenulabel" className="sr-only">
+        Main Menu
+      </h2>
+      <ul className="menu">{menuLiItems}</ul>
+    </nav>
+  )
 }
 
 export default Menu

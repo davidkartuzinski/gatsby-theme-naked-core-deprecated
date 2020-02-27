@@ -5,18 +5,17 @@ import useInstagram from "../../hooks/use-instagram"
 const Instagram = () => {
   const instaPhotos = useInstagram()
   return (
-    <div>
-      {instaPhotos.map(photo => {
+    <ul>
+      {instaPhotos.map((photo, index) => {
         return (
-          <div>
-            <a key={photo.id} href={photo.link}>
+          <li key={index}>
+            <a href={photo.link}>
               <Image fluid={photo.fluid} alt={photo.caption.text} />
             </a>
-          </div>
+          </li>
         )
       })}
-      <p>Instagram</p>
-    </div>
+    </ul>
   )
 }
 

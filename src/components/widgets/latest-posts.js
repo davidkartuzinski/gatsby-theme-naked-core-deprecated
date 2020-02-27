@@ -10,6 +10,7 @@ const LatestPosts = () => {
         posts: allMdx {
           edges {
             node {
+              id
               fields {
                 slug
               }
@@ -31,11 +32,11 @@ const LatestPosts = () => {
   )
   const { author } = data.site.siteMetadata
   const ListItems = data.posts.edges.map(post => (
-    <li>
+    <li key={post.node.id}>
       <Link to={"/blog/" + post.node.frontmatter.slug}>
         {post.node.frontmatter.title}
       </Link>{" "}
-      <address class="author">
+      <address className="author">
         written by <AuthorIcon /> {author}
       </address>
       <Moment

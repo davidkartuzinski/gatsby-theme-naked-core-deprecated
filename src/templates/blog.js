@@ -51,9 +51,9 @@ const BlogList = ({ data, pageContext, location }) => {
               <h1>Blog Posts</h1>
             </header>
 
-            {posts.edges.map(post => {
+            {posts.edges.map((post, index) => {
               return (
-                <article>
+                <article key={index}>
                   <PostPreview
                     slug={post.node.fields.slug}
                     image={post.node.frontmatter.image.childImageSharp.fixed}

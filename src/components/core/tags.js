@@ -18,12 +18,12 @@ export default props => {
         {tagHeader}
       </h3>
       <ul>
-        {tags.map(tag => {
+        {tags.map((tag, index) => {
           let tagSlug = slugify(tag)
           let tagUrl = `/tags/${tagSlug}`
 
           return (
-            <li key="tag.id">
+            <li key={index}>
               <Link to={tagUrl}>{tag}</Link>
             </li>
           )

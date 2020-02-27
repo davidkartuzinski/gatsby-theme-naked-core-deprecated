@@ -1,10 +1,18 @@
-/******************************************
-There are two sections of this global.css style sheet.  1. Are global styles and 2. Temporary styles that you can delete to replace with a Styled Component Library. 
+/****
+**
+** There are two sections of this global.css style sheet.  1. Are global styles and 2. Optional or    ** Plugin specific styles 
+** that you can delete to replace with, for example with styled-components or emotion. 
+**
+** In fact, all these styles could be deleted, but things like Fonts and other global styles will need ** to be addressed. 
+****/
 
-In fact, all these styles could be deleted, but things like Fonts and other global styles will need to be addressed. 
-*******************************************/
+/****
+**  
+** Global styles
+** 
+****/
 
-/****** CSS Custom Variable for Color Scheme ******/
+/**** CSS Custom Variable for Color Scheme ****/
 
 :root {
   --accent-color: #f3824a;
@@ -14,35 +22,206 @@ In fact, all these styles could be deleted, but things like Fonts and other glob
   --black-color: #040404;
 }
 
-html {
-}
-
-body {
-}
-
-a {
-}
-
-/***** for image caption in the markdown 
-http://sparkandshine.net/en/insert-images-with-captions-in-markdown/
-
-!["dominating_sets_example2"](http://sparkandshine.net/wordpress/wp-content/uploads/2016/02/dominating_sets_example2.png)
-*Fig. 2: The minimum dominating set of a graph*
-
+/**** Accessible .visually-hidden class 
+**
+** WARNING: If you delete these, your website will self-destruct.
+**
 ****/
-.gatsby-resp-image-wrapper + em {
-  font-style: normal;
-  display: inherit;
-  text-align: center;
-  font-size: 90%;
+
+/* https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html */
+/* ie9+ */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
-/* PRISMJS */
-/* https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/ */
-/**
- * Add back the container background-color, border-radius, padding, margin
- * and overflow that we removed from <pre>.
- */
+/****
+**  
+** Optional or Plugin specific styles
+** 
+****/
+
+/**** 
+** 
+** BEGINNING OF BREADCRUMBS STYLING 
+**
+****/
+
+.breadcrumb__list {
+  display: flex;
+}
+
+.breadcrumb__list__item {
+  margin: 0 0.5rem 0 2rem;
+  list-style: none;
+}
+
+.breadcrumb__list__item a {
+  padding-left: 0.25rem;
+  text-decoration: none;
+}
+
+.breadcrumb__link__active {
+  font-weight: 900;
+  font-size: 105%;
+}
+
+/****
+**  END OF BREADCRUMBS STYLING
+****/
+
+/**** 
+** 
+** BEGINNING OF REACT BURGER MENU STYLING | | https://github.com/negomi/react-burger-menu#styling
+**
+** You can move this to a styled-component, emotion component or css module.  This code goes with
+** the react-burger-menu and can be safely deleted if you choose to not use the library.
+**
+****/
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  display: block;
+  position: fixed;
+  width: 32px;
+  height: 28px;
+  right: 36px;
+  top: 36px;
+}
+
+@media (min-width: 950px) {
+  .bm-burger-button {
+    display: none;
+  }
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: var(--black-color);
+}
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: var(--accent-color);
+}
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+/* Color/shape of close button cross */
+.bm-cross {
+  background: var(--black-color);
+}
+/*
+  Sidebar wrapper styles
+  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+  */
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+/* General sidebar styles */
+.bm-menu {
+  background: var(--white-color);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: var(--white-color);
+}
+/* Wrapper for item list */
+.bm-item-list {
+  color: var(--black-color);
+  padding: 0.8em;
+}
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5rem 0;
+}
+.bm-item:hover,
+.bm-item:active {
+  color: var(--accent-color);
+}
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/****
+**  END OF REACT BURGER MENU STYLING
+****/
+
+/****
+**
+** Header Styles NOTE: We are using react-burger-menu for the Navigation. Therefore, these header     ** styles consider that, and if you are not using react-burger-menu, you can delete these and style the ** menu any way you want. 
+**
+****/
+
+.top-header {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.top-header ul {
+  display: flex;
+}
+
+.top-header .menu,
+.top-header .social-follow-me,
+.top-header .search {
+  display: none;
+}
+
+.top-header .search {
+  padding-top: 20px;
+}
+
+@media (min-width: 950px) {
+  .top-header .menu,
+  .top-header .social-follow-me {
+    display: flex;
+  }
+
+  .top-header .search {
+    display: inline-block;
+  }
+
+  .top-header .menu li,
+  .top-header .social-follow-me li {
+    padding: 0 10px;
+    list-style-type: none;
+  }
+
+  .top-header .menu li a {
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+/****
+**  END OF HEADER STYLES
+****/
+
+/****
+**
+** PRISMJS Styles NOTE: https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/ 
+**
+****/
+
+/* Add back the container background-color, border-radius, padding, margin and overflow that we removed from <pre>. */
 .gatsby-highlight {
   background-color: #fdf6e3;
   border-radius: 0.3em;
@@ -51,13 +230,12 @@ http://sparkandshine.net/en/insert-images-with-captions-in-markdown/
   overflow: auto;
 }
 
-/**
-   * Remove the default PrismJS theme background-color, border-radius, margin,
+/* Remove the default PrismJS theme background-color, border-radius, margin,
    * padding and overflow.
    * 1. Make the element just wide enough to fit its content.
    * 2. Always fill the visible space in .gatsby-highlight.
-   * 3. Adjust the position of the line numbers
-   */
+   * 3. Adjust the position of the line numbers */
+
 .gatsby-highlight pre[class*="language-"] {
   background-color: transparent;
   margin: 0;
@@ -67,18 +245,13 @@ http://sparkandshine.net/en/insert-images-with-captions-in-markdown/
   min-width: 100%; /* 2 */
 }
 
-/**
- * If you already use line highlighting
- */
-
+/* If you already use line highlighting */
 /* Adjust the position of the line numbers */
 .gatsby-highlight pre[class*="language-"].line-numbers {
   padding-left: 2.8em;
 }
 
-/**
-   * If you only want to use line numbering
-   */
+/* If you only want to use line numbering */
 
 .gatsby-highlight {
   background-color: #fdf6e3;
@@ -115,142 +288,6 @@ http://sparkandshine.net/en/insert-images-with-captions-in-markdown/
   content: attr(data-prompt);
 }
 
-/* Notes:
-
-Libraries: 
-
-https://redd.gitbook.io/atomic-layout/
-https://ant.design/
-https://bulma.io/
-https://chakra-ui.com/
-https://react-bootstrap.github.io/
-
-
-Tools: 
-https://coolors.co/
-
-
-
-*/
-
-/****************************************************************
-   The follow CSS Styles can be deleted IF you want to replace them using Styled Components or a Styled Components Library. Please note that it is NOT always necessary to delete them, but this is optional. Otherwise, you can go ahead and modify the CSS styles below as you wish.
-****************************************************************/
-
-/************************************************
-   Header Styles NOTE: We are use a React Hamburger for the Navigation. Therefore, this header is for desktop layout, mostly.
-************************************************/
-
-.top-header {
-  display: flex;
-  flex-direction: row;
-  padding: 1rem;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
-.top-header ul {
-  display: flex;
-}
-
-.top-header .menu,
-.top-header .social-follow-me {
-  display: none;
-}
-
-.top-header .search {
-  padding-top: 20px;
-}
-
-@media (min-width: 768px) {
-  .top-header .menu,
-  .top-header .social-follow-me {
-    display: flex;
-  }
-
-  .top-header .menu li,
-  .top-header .social-follow-me li {
-    padding: 0 10px;
-    list-style-type: none;
-  }
-
-  .top-header .menu li a {
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-}
-
-/**** MOBILE MENU ***/
-
-/* Position and sizing of burger button */
-.bm-burger-button {
-  display: block;
-  position: fixed;
-  width: 32px;
-  height: 28px;
-  right: 36px;
-  top: 36px;
-}
-
-@media (min-width: 768px) {
-  .bm-burger-button {
-    display: none;
-  }
-}
-
-/* Color/shape of burger icon bars */
-.bm-burger-bars {
-  background: var(--black-color);
-}
-/* Color/shape of burger icon bars on hover*/
-.bm-burger-bars-hover {
-  background: var(--accent-color);
-}
-/* Position and sizing of clickable cross button */
-.bm-cross-button {
-  height: 24px;
-  width: 24px;
-}
-/* Color/shape of close button cross */
-.bm-cross {
-  background: var(--black-color);
-}
-/*
-Sidebar wrapper styles
-Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-*/
-.bm-menu-wrap {
-  position: fixed;
-  height: 100%;
-}
-/* General sidebar styles */
-.bm-menu {
-  background: var(--white-color);
-  padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
-}
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-  fill: var(--white-color);
-}
-/* Wrapper for item list */
-.bm-item-list {
-  color: var(--black-color);
-  padding: 0.8em;
-}
-/* Individual item */
-.bm-item {
-  display: inline-block;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 0.5rem 0;
-}
-.bm-item:hover,
-.bm-item:active {
-  color: var(--accent-color);
-}
-/* Styling of overlay */
-.bm-overlay {
-  background: rgba(0, 0, 0, 0.6);
-}
+/****
+**  END OF PRISMJS STYLES
+****/

@@ -17,11 +17,11 @@ export default props => {
         <CategoriesIcon /> {categoryHeader}
       </h3>
       <ul>
-        {categories.map(category => {
+        {categories.map((category, index) => {
           let categorySlug = slugify(category)
           let categoryUrl = `/categories/${categorySlug}`
           return (
-            <li key="category.id">
+            <li key={index}>
               <Link to={categoryUrl}>{category}</Link>
             </li>
           )

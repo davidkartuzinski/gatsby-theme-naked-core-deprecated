@@ -48,11 +48,11 @@ const Tags = ({ pageContext, data, location }) => {
           </h1>
         </header>
         <ul>
-          {edges.map(({ node }) => {
+          {edges.map(({ node }, index) => {
             const { slug } = node.fields
             const { title } = node.frontmatter
             return (
-              <li key={slug}>
+              <li key={index}>
                 <Link to={"/blog/" + slug}>{title}</Link>
               </li>
             )

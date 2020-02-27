@@ -68,25 +68,16 @@ const PostPreview = ({
 )
 
 PostPreview.propTypes = {
-  image: PropTypes.string.isRequired,
-  imageAlt: PropTypes.string.isRequired,
-  imageTitle: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
+  imageAlt: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
+  date: PropTypes.object.isRequired,
+  figcaption: PropTypes.string,
   author: PropTypes.string.isRequired,
-  cats: PropTypes.objectOf(
-    PropTypes.shape({
-      fieldValue: PropTypes.string.isRequired,
-      totalCount: PropTypes.number.isRequired,
-    })
-  ).isRequired,
-  tags: PropTypes.objectOf(
-    PropTypes.shape({
-      fieldValue: PropTypes.string.isRequired,
-      totalCount: PropTypes.number.isRequired,
-    })
-  ).isRequired,
+  excerpt: PropTypes.string,
+  cats: PropTypes.array.isRequired,
+  tags: PropTypes.array.isRequired,
 }
 
 export default PostPreview
