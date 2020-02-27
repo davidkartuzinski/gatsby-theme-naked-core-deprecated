@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 export const useAllMdx = () => {
   const { allMdx } = useStaticQuery(
     graphql`
-      query SITE_ALLMDX_QUERY {
+      query Site_AllMdx_Query {
         allMdx(limit: 2000) {
           tags: group(field: frontmatter___tags) {
             fieldValue

@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from "gatsby"
 
 const useInstagram = () => {
   const data = useStaticQuery(graphql`
-    query {
+    query All_Instagram_Query {
       allInstagramContent(limit: 9) {
         nodes {
           id

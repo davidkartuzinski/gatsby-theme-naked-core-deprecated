@@ -11,7 +11,7 @@ const Header = () => {
   const data = useStaticQuery(
     graphql`
       query SearchIndexQuery {
-        siteSearchIndex {
+        search: siteSearchIndex {
           index
         }
       }
@@ -23,7 +23,7 @@ const Header = () => {
       <header className="top-header">
         <Logo />
         <Menu />
-        <Search searchIndex={data.siteSearchIndex.index} />
+        <Search searchIndex={data.search.index} />
         <FollowMe />
       </header>
     </>

@@ -13,7 +13,7 @@ const SocialFollowMe = () => {
     graphql`
       query SocialFollowMe {
         site {
-          siteMetadata {
+          socialMedia: siteMetadata {
             socialLinks {
               facebook
               instagram
@@ -31,7 +31,7 @@ const SocialFollowMe = () => {
     instagram,
     pinterest,
     twitter,
-  } = data.site.siteMetadata.socialLinks
+  } = data.site.socialMedia.socialLinks
 
   return (
     <ul className="social-follow-me">

@@ -7,7 +7,7 @@ const LatestPosts = () => {
   const data = useStaticQuery(
     graphql`
       query LatestPosts {
-        posts: allMdx {
+        latestPosts: allMdx {
           edges {
             node {
               id
@@ -31,7 +31,7 @@ const LatestPosts = () => {
     `
   )
   const { author } = data.site.siteMetadata
-  const ListItems = data.posts.edges.map(post => (
+  const ListItems = data.latestPosts.edges.map(post => (
     <li key={post.node.id}>
       <Link to={"/blog/" + post.node.frontmatter.slug}>
         {post.node.frontmatter.title}
