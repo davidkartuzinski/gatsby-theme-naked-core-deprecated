@@ -52,7 +52,7 @@ const Categories = ({ data, pageContext, location }) => {
             const { title } = node.frontmatter
             return (
               <li key={slug}>
-                <Link to={slug}>{title}</Link>
+                <Link to={"/blog/" + slug}>{title}</Link>
               </li>
             )
           })}

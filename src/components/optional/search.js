@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Index } from "elasticlunr"
 import { Link } from "gatsby"
 import { SearchIcon } from "../core/icons"
-import slugify from "react-slugify"
+// import slugify from "react-slugify"
 
 // Search component
 export default class Search extends Component {
@@ -29,10 +29,11 @@ export default class Search extends Component {
         </label>
         <ul>
           {this.state.results.map(page => {
-            let searchSlug = slugify(page.title)
+            // let searchSlug = slugify(page.title)
+            let searchSlug = page.slug
             return (
               <li key={page.id}>
-                <Link to={"/" + searchSlug}>{page.title}</Link>
+                <Link to={"/blog/" + searchSlug}>{page.title}</Link>
                 {": " + page.tags.join(`,`)}
               </li>
             )

@@ -27,10 +27,10 @@ const PostPreview = ({
   tags,
 }) => (
   <div>
-    <Link to={slug}>
+    <Link to={"/blog/" + slug}>
       <Image fixed={image} alt={imageAlt} title={imageTitle} />
     </Link>
-    <Link to={slug}>
+    <Link to={"/blog/" + slug}>
       <h2>{title}</h2>
     </Link>
     <span>
@@ -39,7 +39,7 @@ const PostPreview = ({
     </span>
 
     <p>{excerpt}</p>
-    <Link to={slug}>
+    <Link to={"/blog/" + slug}>
       Read the rest <ReadNextIcon />
     </Link>
 

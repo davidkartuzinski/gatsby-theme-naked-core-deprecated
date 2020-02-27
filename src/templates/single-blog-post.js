@@ -92,20 +92,26 @@ const BlogPost = ({ data, pageContext, location }) => {
 
       <nav>
         {previous && (
-          <Link to={previous.frontmatter.slug} style={{ maxWidth: "25%" }}>
+          <Link
+            to={"/blog/" + previous.frontmatter.slug}
+            style={{ maxWidth: "25%" }}
+          >
             <strong>
               <PreviousPageIcon />
               Previous Article
-            </strong>{" "}
+            </strong>
             <br />
             {previous.frontmatter.title}
           </Link>
         )}
         {next && (
-          <Link to={next.frontmatter.slug} style={{ maxWidth: "25%" }}>
+          <Link
+            to={"/blog/" + next.frontmatter.slug}
+            style={{ maxWidth: "25%" }}
+          >
             <strong>
               Next Article <NextPageIcon />
-            </strong>{" "}
+            </strong>
             <br />
             {next.frontmatter.title}
           </Link>
