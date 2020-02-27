@@ -179,7 +179,14 @@ module.exports = {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
         // Fields to index
-        fields: [`title`, `tags`, `description`, `categories`, `excerpt`],
+        fields: [
+          `title`,
+          `tags`,
+          `description`,
+          `categories`,
+          `excerpt`,
+          `slug`,
+        ],
         // How to resolve each field`s value for a supported node type
         resolvers: {
           // For any node of type MarkdownRemark, list how to resolve the fields` values
@@ -190,6 +197,7 @@ module.exports = {
             categories: node => node.frontmatter.categories,
             path: node => node.frontmatter.path,
             excerpt: node => node.excerpt,
+            slug: node => node.frontmatter.slug,
           },
         },
         // Optional filter to limit indexed nodes

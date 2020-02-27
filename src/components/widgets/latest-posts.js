@@ -32,7 +32,9 @@ const LatestPosts = () => {
   const { author } = data.site.siteMetadata
   const ListItems = data.posts.edges.map(post => (
     <li>
-      <Link to={post.node.frontmatter.slug}>{post.node.frontmatter.title}</Link>{" "}
+      <Link to={"/blog/" + post.node.frontmatter.slug}>
+        {post.node.frontmatter.title}
+      </Link>{" "}
       <address class="author">
         written by <AuthorIcon /> {author}
       </address>
