@@ -10,20 +10,24 @@ const Bio = () => {
   const data = useStaticQuery(query)
 
   return (
-    <div>
+    <aside>
       <h3>Bio</h3>
-      <Image
-        fixed={data.authorImage.childImageSharp.fixed}
-        alt="Author Image"
-      />
-      <address>
-        By{" "}
-        <a href={`mailto:${contact}`}>
+      <figure>
+        <Image
+          fixed={data.authorImage.childImageSharp.fixed}
+          alt="Author Image"
+        />
+        <figcaption>{author}</figcaption>
+      </figure>
+      <address className="author">
+        written by{" "}
+        <a href={`mailto:${contact.email}`}>
           <AuthorIcon /> {author}
         </a>
       </address>
+
       <p>{authorIntro} </p>
-    </div>
+    </aside>
   )
 }
 

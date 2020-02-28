@@ -1,14 +1,13 @@
 import React from "react"
-
 import {
+  AuthorIcon,
   EnterEmailIcon,
   EnterSubjectIcon,
   EnterMessageIcon,
   SendMailIcon,
   SuccessIcon,
   ErrorIcon,
-  AuthorIcon,
-} from "../core/icons"
+} from "../core/icons.js"
 
 export default class ContactForm extends React.Component {
   constructor(props) {
@@ -31,17 +30,18 @@ export default class ContactForm extends React.Component {
           <AuthorIcon /> Name
           <input type="text" name="name" id="name" />
         </label>
-        <label htmlFor="email">
+        <label htmlFor="contact-email">
           <EnterEmailIcon /> Email
-          <input type="email" name="email" id="email" />
+          <input type="email" name="email" id="contact-email" />
         </label>
         <label htmlFor="subject">
           <EnterSubjectIcon /> Subject
           <input type="text" name="subject" id="subject" />
         </label>
         <label htmlFor="message">
-          <EnterMessageIcon /> /> Message
-          <textArea name="message" id="message" rows="5" />
+          <EnterMessageIcon />
+          Message
+          <textarea name="message" id="message" rows="5" />
         </label>
         <label htmlFor="reset">
           <input type="reset" name="reset" value="Clear" />
@@ -51,7 +51,7 @@ export default class ContactForm extends React.Component {
             <SuccessIcon /> Thanks!
           </p>
         ) : (
-          <button>
+          <button aria-label="submit" type="submit">
             <SendMailIcon />
             Submit
           </button>

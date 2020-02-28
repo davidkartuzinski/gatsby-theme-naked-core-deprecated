@@ -40,8 +40,6 @@ const BlogPost = ({ data, pageContext, location }) => {
 
   const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
 
-  console.log(typeof post.frontmatter.tags)
-
   return (
     <Layout>
       <SEO

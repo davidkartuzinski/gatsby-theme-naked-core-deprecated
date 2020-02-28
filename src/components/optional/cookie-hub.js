@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 
 // https://github.com/100Shapes/gatsby-plugin-cookiehub/issues/3#issuecomment-570931890
@@ -75,6 +76,11 @@ const CookieBannerCookieHub = ({ googleTrackingId, cookieHubId }) => {
       ]}
     />
   )
+}
+
+CookieBannerCookieHub.propTypes = {
+  googleTrackingId: PropTypes.string.isRequired,
+  cookieHubId: PropTypes.string.isRequired,
 }
 
 export default CookieBannerCookieHub

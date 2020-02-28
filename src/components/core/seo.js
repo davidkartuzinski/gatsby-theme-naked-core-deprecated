@@ -43,15 +43,26 @@ const SEO = ({
     `
   )
 
+  const siteUrl = site.siteMetadata.siteUrl
+  const siteNameTitle = site.siteMetadata.title
+  const websiteDescription = site.siteMetadata.websiteDescription
+  const author = site.siteMetadata.author
+  const logo = site.siteMetadata.logo
+  const locale = site.siteMetadata.locale
+  const twitter = site.siteMetadata.social.twitter
+  const twitterAuthor = site.siteMetadata.twitterAuthor
+  const googleTrackingId = site.siteMetadata.googleTrackingId
+  const cookieHubId = site.siteMetadata.cookieHubId
+
   const schemaWebPage = {
     "@context": "http://schema.org",
-    "@id": `${site.siteMetadata.siteUrl}/${slug}`,
+    "@id": `${siteUrl}/${slug}`,
     "@type": "WebPage",
-    name: site.siteMetadata.title,
-    description: site.siteMetadata.websiteDescription,
+    name: siteNameTitle,
+    description: websiteDescription,
     publisher: {
       type: "blog",
-      "@id": site.siteMetadata.siteUrl,
+      "@id": siteUrl,
     },
     license: "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US",
   }
@@ -59,7 +70,7 @@ const SEO = ({
   const schemaArticle = {
     "@context": "http://schema.org",
     "@type": "Article",
-    author: site.siteMetadata.author,
+    author: author,
     datePublished: date,
     datemodified: dateModified,
     mainEntityOfPage: "True",
@@ -68,16 +79,16 @@ const SEO = ({
     articleSection: `${categories && categories.slice(1, 2)}`,
     image: {
       "@type": "imageObject",
-      url: `${site.siteMetadata.siteUrl}/${image}`,
+      url: `${siteUrl}/${image}`,
       height: "600",
       width: "800",
     },
     publisher: {
       "@type": "Organization",
-      name: site.siteMetadata.title,
+      name: siteNameTitle,
       logo: {
         "@type": "imageObject",
-        url: `${site.siteMetadata.siteUrl}/${site.siteMetadata.logo}`,
+        url: `${siteUrl}/${logo}`,
       },
     },
     wordCount: `${tags &&
@@ -121,24 +132,16 @@ const SEO = ({
     <>
       <Helmet>
         {/* https://www.advancedwebranking.com/blog/meta-tags-important-in-seo/   https://metatags.io/*/}
-        <html lang={site.siteMetadata.locale} />
+        <html lang={locale} />
         {canonical && (
-          <link
-            rel="canonical"
-            href={`${site.siteMetadata.siteUrl}/${canonical} `}
-          />
+          <link rel="canonical" href={`${siteUrl}/${canonical} `} />
         )}
-        {!canonical && (
-          <link rel="canonical" href={`${site.siteMetadata.siteUrl}/${slug}`} />
-        )}
+        {!canonical && <link rel="canonical" href={`${siteUrl}/${slug}`} />}
         <title>
-          {title} | {site.siteMetadata.title}
+          {title} | {siteNameTitle}
         </title>
         <meta name="description" content={description} />
-        <meta
-          name="image"
-          content={`${site.siteMetadata.siteUrl}/${site.siteMetadata.logo}`}
-        />
+        <meta name="image" content={`${siteUrl}/${logo}`} />
         <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
         <link
           rel="icon"
@@ -166,19 +169,13 @@ const SEO = ({
         <meta name="msapplication-TileColor" content="#F3824A" />
         <meta name="theme-color" content="##F3824A"></meta>
         {/* Open Graph https://ogp.me/ https://developers.facebook.com/docs/sharing/webmasters/ */}
-        <meta property="og:locale" content={site.siteMetadata.locale} />
-        <meta property="og:site_name" content={site.siteMetadata.title} />
+        <meta property="og:locale" content={locale} />
+        <meta property="og:site_name" content={siteNameTitle} />
         {canonical && (
-          <meta
-            property="og:url"
-            content={`${site.siteMetadata.siteUrl}/${canonical} `}
-          />
+          <meta property="og:url" content={`${siteUrl}/${canonical} `} />
         )}
         {!canonical && (
-          <meta
-            property="og:url"
-            content={`${site.siteMetadata.siteUrl}/${slug}`}
-          />
+          <meta property="og:url" content={`${siteUrl}/${slug}`} />
         )}
         {/* Only "articles" have tags, so check and make an article ... */}
         <meta property="og:type" content={tags ? "article" : "website"} />
@@ -192,35 +189,15 @@ const SEO = ({
             <meta property="article:tag" content={tag} key={i} />
           ))}
 
-        {tags && (
-          <meta property="article:author" content={site.siteMetadata.author} />
-        )}
-        {tags && (
-          <meta
-            property="og:image"
-            content={`${site.siteMetadata.siteUrl}/${image}`}
-          />
-        )}
-        {!tags && (
-          <meta
-            property="og:image"
-            content={`${site.siteMetadata.siteUrl}/${site.siteMetadata.logo}`}
-          />
-        )}
+        {tags && <meta property="article:author" content={author} />}
+        {tags && <meta property="og:image" content={`${siteUrl}/${image}`} />}
+        {!tags && <meta property="og:image" content={`${siteUrl}/${logo}`} />}
         {/* Twitter Graph - https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started */}
         <meta name="twitter:card" content="summary"></meta>
         <meta name="robots" content="index, follow"></meta>
-        {site.siteMetadata.social.twitter && (
-          <meta
-            name="twitter:site"
-            content={site.siteMetadata.social.twitter}
-          />
-        )}
-        {site.siteMetadata.social.twitterAuthor && (
-          <meta
-            name="twitter:creator"
-            content={site.siteMetadata.social.twitterAuthor}
-          />
+        {twitter && <meta name="twitter:site" content={twitter} />}
+        {twitterAuthor && (
+          <meta name="twitter:creator" content={twitterAuthor} />
         )}
         {!tags && (
           <script type="application/ld+json">
@@ -241,8 +218,8 @@ const SEO = ({
         )}
       </Helmet>
       <CookieBannerCookieHub
-        googleTrackingId={site.siteMetadata.googleTrackingId}
-        cookieHubId={site.siteMetadata.cookieHubId}
+        googleTrackingId={googleTrackingId}
+        cookieHubId={cookieHubId}
       />
     </>
   )

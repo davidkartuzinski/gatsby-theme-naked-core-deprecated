@@ -42,49 +42,43 @@ export default class MailChimpComponent extends React.Component {
 
   render() {
     return (
-      <>
-        <section className="form-section">
-          <h3 className="form-h3">
-            Sign up and get exclusive content delivered to your inbox
-          </h3>
-          <p className="form-p">
-            Aside from exclusive content, get occasional deals, new product
-            alerts, and tea-related news. No spam. Just occasional emails for
-            stuff you probably want to get.
-          </p>
-          <div>
-            <form className="form-form" onSubmit={this._handleSubmit}>
-              <label className="form-label" htmlFor="email">
-                <EnterEmailIcon /> Email<span>*</span>
-                <input
-                  type="email"
-                  onChange={this._handleChange}
-                  placeholder="Your Email Address"
-                  name="email"
-                  id="email"
-                  pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-                  required
-                />
-              </label>
-              <p className="form-p">
-                We promise to make the best content possible and to keep your
-                email safely with only us. You can unsusbcribe easily at any
-                time.
-              </p>
-              <button type="submit">
-                <SendMailIcon />
-                Sign up now
-              </button>
-              <p className="form-p">
-                <small>
-                  <AlertIcon />
-                  Strict No Spam Policy. No Sharing of your data - EVER!
-                </small>
-              </p>
-            </form>
-          </div>
-        </section>
-      </>
+      <section>
+        <h3>Sign up and get exclusive content delivered to your inbox</h3>
+        <p>
+          Aside from exclusive content, get occasional deals, new product
+          alerts, and tea-related news. No spam. Just occasional emails for
+          stuff you probably want to get.
+        </p>
+        <small>
+          We promise to make the best content possible and to keep your email
+          safely with only us. You can unsusbcribe easily at any time.
+        </small>
+
+        <form onSubmit={this._handleSubmit}>
+          <label htmlFor="email">
+            <EnterEmailIcon /> Email<span>*</span>
+            <input
+              type="email"
+              onChange={this._handleChange}
+              placeholder="Your Email Address"
+              name="email"
+              id="email"
+              pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+              required
+            />
+          </label>
+
+          <button aria-label="submit" type="submit">
+            <SendMailIcon />
+            Sign up now
+          </button>
+        </form>
+
+        <small>
+          <AlertIcon />
+          Strict No Spam Policy. No Sharing of your data - EVER!
+        </small>
+      </section>
     )
   }
 }
