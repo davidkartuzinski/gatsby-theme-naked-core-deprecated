@@ -19,7 +19,7 @@ export default props => {
       <ul>
         {categories.map((category, index) => {
           let categorySlug = slugify(category)
-          let categoryUrl = `/categories/${categorySlug}`
+          let categoryUrl = `/categories/${categorySlug}/`
           return (
             <li key={index}>
               <Link to={categoryUrl}>{category}</Link>

@@ -20,7 +20,7 @@ export default props => {
       <ul>
         {tags.map((tag, index) => {
           let tagSlug = slugify(tag)
-          let tagUrl = `/tags/${tagSlug}`
+          let tagUrl = `/tags/${tagSlug}/`
 
           return (
             <li key={index}>

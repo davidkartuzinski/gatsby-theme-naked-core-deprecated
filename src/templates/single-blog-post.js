@@ -96,7 +96,7 @@ const BlogPost = ({ data, pageContext, location }) => {
       <nav>
         {previous && (
           <Link
-            to={"/blog/" + previous.frontmatter.slug}
+            to={"/blog/" + previous.frontmatter.slug + "/"}
             style={{ maxWidth: "25%" }}
           >
             <strong>
@@ -109,7 +109,7 @@ const BlogPost = ({ data, pageContext, location }) => {
         )}
         {next && (
           <Link
-            to={"/blog/" + next.frontmatter.slug}
+            to={"/blog/" + next.frontmatter.slug + "/"}
             style={{ maxWidth: "25%" }}
           >
             <strong>
