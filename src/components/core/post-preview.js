@@ -1,5 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
+import Moment from "react-moment"
+import kebabCase from "lodash/kebabCase"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
 
@@ -11,44 +13,43 @@ import {
   AuthorIcon,
 } from "./icons"
 
-// Utilities
-import kebabCase from "lodash/kebabCase"
-
 const PostPreview = ({
   slug,
   image,
   imageAlt,
-  imageTitle,
   title,
   date,
+  figcaption,
   author,
   excerpt,
   cats,
   tags,
 }) => (
   <div>
-    <Link to={"/blog/" + slug}>
-      <Image fixed={image} alt={imageAlt} title={imageTitle} />
-    </Link>
+    <figure>
+      <Link to={"/blog/" + slug}>
+        <Image fixed={image} alt={imageAlt} />
+      </Link>
+      <figcaption>{figcaption}</figcaption>
+    </figure>
     <Link to={"/blog/" + slug}>
       <h2>{title}</h2>
     </Link>
-    <span>
-      <PublishDateIcon /> Published on {date}, written by <AuthorIcon />{" "}
-      {author}
-    </span>
-
+    <address className="author">
+      written by <AuthorIcon /> {author}
+    </address>
+    <PublishDateIcon /> Published on{" "}
+    <Moment date={date} format="MMMM DD, YYYY" withTitle />
     <p>{excerpt}</p>
     <Link to={"/blog/" + slug}>
       Read the rest <ReadNextIcon />
     </Link>
-
     <h3>
       <CategoriesIcon /> Blog Post Categories
     </h3>
     <ul>
-      {cats.map(cat => (
-        <li key={cat}>
+      {cats.map((cat, index) => (
+        <li key={index}>
           <Link to={`/categories/${kebabCase(cat)}/`}>{cat}</Link>
         </li>
       ))}
@@ -58,8 +59,8 @@ const PostPreview = ({
       Blog Post tags
     </h3>
     <ul>
-      {tags.map(tag => (
-        <li key={tag}>
+      {tags.map((tag, index) => (
+        <li key={index}>
           <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
         </li>
       ))}

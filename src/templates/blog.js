@@ -59,6 +59,7 @@ const BlogList = ({ data, pageContext, location }) => {
                     image={post.node.frontmatter.image.childImageSharp.fixed}
                     imageAlt={post.node.frontmatter.imageAlt}
                     imageTitle={post.node.frontmatter.imageTitle}
+                    figcaption={post.node.frontmatter.imageFigcaption}
                     title={post.node.frontmatter.title}
                     date={
                       <Moment
@@ -116,6 +117,7 @@ export const query = graphql`
             tags
             imageTitle
             imageAlt
+            imageFigcaption
             categories
             author
           }

@@ -1,22 +1,32 @@
 import React from "react"
+import PropTypes from "prop-types"
 import Image from "gatsby-image"
 
-export default props => {
+const ResponsiveImage = ({ fluid, alt, figcaption, imageClassName }) => {
   let figCaption
 
-  if (props.figcaption) {
-    figCaption = props.figcaption
+  if (figcaption) {
+    figCaption = figcaption
   }
 
   return (
     <figure>
       <Image
-        className={props.imageClassName}
-        fluid={props.fluid}
-        alt={props.alt}
-        title={props.title}
+        fluid={fluid}
+        alt={alt}
+        figcaption={figCaption}
+        imageClassName={imageClassName}
       />
       <figcaption>{figCaption}</figcaption>
     </figure>
   )
 }
+
+ResponsiveImage.propTypes = {
+  fluid: PropTypes.object.isRequired,
+  alt: PropTypes.string.isRequired,
+  figcaption: PropTypes.string.isRequired,
+  imageClassName: PropTypes.string,
+}
+
+export default ResponsiveImage

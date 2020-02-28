@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import { AuthorIcon } from "../core/icons"
+import { AuthorIcon, PublishDateIcon } from "../core/icons"
 import Moment from "react-moment"
 
 const LatestPosts = () => {
@@ -31,6 +31,7 @@ const LatestPosts = () => {
     `
   )
   const { author } = data.site.siteMetadata
+
   const ListItems = data.latestPosts.edges.map(post => (
     <li key={post.node.id}>
       <Link to={"/blog/" + post.node.frontmatter.slug + "/"}>
@@ -39,6 +40,7 @@ const LatestPosts = () => {
       <address className="author">
         written by <AuthorIcon /> {author}
       </address>
+      <PublishDateIcon /> Published on{" "}
       <Moment
         date={post.node.frontmatter.date}
         format="MMMM DD, YYYY"

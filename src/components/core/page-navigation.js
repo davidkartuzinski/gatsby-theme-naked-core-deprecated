@@ -10,7 +10,7 @@ const PageNavigation = ({ pageContext }) => {
     <div>
       {previousPagePath && (
         <span>
-          <Link to={`${previousPagePath}`}>
+          <Link to={`${previousPagePath}/`}>
             <PreviousPageIcon /> Previous
           </Link>
         </span>

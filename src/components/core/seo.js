@@ -21,7 +21,7 @@ const SEO = ({
 }) => {
   const { site } = useStaticQuery(
     graphql`
-      query {
+      query SEO {
         site {
           siteMetadata {
             logo
@@ -43,11 +43,6 @@ const SEO = ({
     `
   )
 
-  // console.log(wordsCounter(articleBody, { isHtml: true }).wordsCount)
-
-  // https://search.google.com/structured-data/testing-tool/u/0/
-  // https://github.com/LekoArts/portfolio/blob/40f8fc5f93a50556a83dd1539ed34983643814d7/src/components/SEO.jsx#L87
-  // https://xoocode.com/json-ld-code-examples/webpage/
   const schemaWebPage = {
     "@context": "http://schema.org",
     "@id": `${site.siteMetadata.siteUrl}/${slug}`,
