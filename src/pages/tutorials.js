@@ -1,11 +1,12 @@
 import React from "react"
+import PropTypes from "prop-types"
 import SEO from "../components/core/seo"
 import Layout from "../components/structure/layout"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 import NakedBreadcrumb from "../components/core/breadcrumb"
 
-const Home = ({ pageContext }) => {
+const Tutorials = ({ pageContext }) => {
   const { logo, title, websiteDescription } = useSiteMetadata()
 
   const {
@@ -28,10 +29,16 @@ const Home = ({ pageContext }) => {
       <NakedBreadcrumb crumbs={crumbs} crumbLabel="Tutorials" />
 
       <article>
-        <div>Tutorials</div>
+        <header>
+          <h1>Tutorials</h1>
+        </header>
       </article>
     </Layout>
   )
 }
 
-export default Home
+Tutorials.propTypes = {
+  pageContext: PropTypes.object.isRequired,
+}
+
+export default Tutorials

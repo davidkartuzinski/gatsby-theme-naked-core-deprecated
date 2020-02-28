@@ -1,20 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
+import Moment from "react-moment"
 import { graphql } from "gatsby"
-
 import Layout from "../components/structure/layout"
-
 import SocialShare from "../components/optional/social-share"
 import SEO from "../components/core/seo"
 import PostPreview from "../components/core/post-preview"
-
 import PageNavigation from "../components/core/page-navigation"
 import NakedBreadcrumb from "../components/core/breadcrumb"
-import Moment from "react-moment"
-
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
-const BlogList = ({ data, pageContext, location }) => {
+const BlogRoll = ({ data, pageContext, location }) => {
   const { siteUrl, logo, title } = useSiteMetadata()
 
   const posts = data.posts
@@ -30,61 +26,57 @@ const BlogList = ({ data, pageContext, location }) => {
   const customCrumbLabel = preCrumbLabel
 
   return (
-    <div>
-      <div>
-        <Layout>
-          <SEO
-            title={`${title}| Blog`}
-            canonical={"blog"}
-            description={`The Blog Page for ${title}`}
-            date={""}
-            dateModified={""}
-            image={logo}
-            slug={"blog"}
-            crumbs={crumbs}
-          />
+    <Layout>
+      <SEO
+        title={`${title}| Blog`}
+        canonical={"blog"}
+        description={`The Blog Page for ${title}`}
+        date={""}
+        dateModified={""}
+        image={logo}
+        slug={"blog"}
+        crumbs={crumbs}
+      />
 
-          <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
+      <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
-          <article>
-            <header>
-              <h1>Blog Posts</h1>
-            </header>
+      <article>
+        <header>
+          <h1>Blog Posts</h1>
+        </header>
 
-            {posts.edges.map((post, index) => {
-              return (
-                <article key={index}>
-                  <PostPreview
-                    slug={post.node.fields.slug}
-                    image={post.node.frontmatter.image.childImageSharp.fixed}
-                    imageAlt={post.node.frontmatter.imageAlt}
-                    imageTitle={post.node.frontmatter.imageTitle}
-                    figcaption={post.node.frontmatter.imageFigcaption}
-                    title={post.node.frontmatter.title}
-                    date={
-                      <Moment
-                        date={post.node.frontmatter.date}
-                        format="MMMM DD, YYYY"
-                        withTitle
-                      />
-                    }
-                    author={post.node.frontmatter.author}
-                    cats={post.node.frontmatter.categories}
-                    tags={post.node.frontmatter.tags}
+        {posts.edges.map((post, index) => {
+          return (
+            <article key={index}>
+              <PostPreview
+                slug={post.node.fields.slug}
+                image={post.node.frontmatter.image.childImageSharp.fixed}
+                imageAlt={post.node.frontmatter.imageAlt}
+                imageTitle={post.node.frontmatter.imageTitle}
+                figcaption={post.node.frontmatter.imageFigcaption}
+                title={post.node.frontmatter.title}
+                date={
+                  <Moment
+                    date={post.node.frontmatter.date}
+                    format="MMMM DD, YYYY"
+                    withTitle
                   />
-                </article>
-              )
-            })}
-          </article>
-          <PageNavigation pageContext={pageContext} />
-          <SocialShare shareUrl={shareUrl} title={title} />
-        </Layout>
-      </div>
-    </div>
+                }
+                author={post.node.frontmatter.author}
+                cats={post.node.frontmatter.categories}
+                tags={post.node.frontmatter.tags}
+              />
+            </article>
+          )
+        })}
+      </article>
+      <PageNavigation pageContext={pageContext} />
+      <SocialShare shareUrl={shareUrl} title={title} />
+    </Layout>
   )
 }
 
-BlogList.propTypes = {
+BlogRoll.propTypes = {
   data: PropTypes.object.isRequired,
   pageContext: PropTypes.object.isRequired,
 }
@@ -129,4 +121,4 @@ export const query = graphql`
     }
   }
 `
-export default BlogList
+export default BlogRoll

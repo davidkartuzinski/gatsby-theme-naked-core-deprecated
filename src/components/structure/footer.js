@@ -4,7 +4,6 @@ const Footer = () => {
   return (
     <footer>
       <div>
-        {" "}
         <p>Here will go the widgets and stuff</p>
         <p>Here will go the widgets and stuff</p>
         <p>Here will go the widgets and stuff</p>

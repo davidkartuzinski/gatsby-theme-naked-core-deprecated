@@ -1,7 +1,14 @@
 {
   "name": "gatsbythemenakedcore",
   "private": true,
-  "description": "Gatsby Theme Naked Core",
+  "description": "Core Theme Files for the Gatsby Theme Naked",
+  "keywords": [
+    "Gatsby",
+    "Theme",
+    "React",
+    "Gatsbyjs"
+  ],
+  "author": "David Kartuzinski",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -10,8 +17,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   },
   "dependencies": {
     "@debiki/gatsby-plugin-talkyard": "^0.5.8",
@@ -20,12 +26,10 @@
     "@mdx-js/react": "^1.5.5",
     "gatsby": "^2.19.17",
     "gatsby-awesome-pagination": "^0.3.5",
-    "gatsby-cli": "^2.9.0",
     "gatsby-image": "^2.2.41",
     "gatsby-paginate": "^1.1.1",
     "gatsby-plugin-advanced-sitemap": "^1.5.1",
     "gatsby-plugin-breadcrumb": "^9.0.1",
-    "gatsby-plugin-flexsearch": "^1.0.3",
     "gatsby-plugin-mailchimp": "^5.1.2",
     "gatsby-plugin-manifest": "^2.2.41",
     "gatsby-plugin-mdx": "^1.0.73",
@@ -41,8 +45,10 @@
     "gatsby-source-instagram-all": "^2.0.5",
     "gatsby-transformer-remark": "^2.6.51",
     "gatsby-transformer-sharp": "^2.3.14",
+    "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "prismjs": "^1.19.0",
+    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-burger-menu": "^2.6.13",
     "react-dom": "^16.12.0",
@@ -51,7 +57,6 @@
     "react-moment": "^0.9.7",
     "react-share": "^4.0.1",
     "react-slugify": "^2.0.1",
-    "react-structured-data": "0.0.14",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",
     "typography-theme-funston": "^0.16.19",

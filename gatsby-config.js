@@ -61,6 +61,11 @@ module.exports = {
     foundingDate: "2019",
     googleTrackingId: "UA-158642528-1",
     cookieHubId: "77974473",
+    sitewideMessage: `Gatsby Theme Naked may contain paid advertising and contextual
+    affiliate links. Companies may pay (at no cost to you) commissions for the
+    sale of products linked in a post. I partner with brands and products that I
+    am passionate about and appreciate your support in making this blog
+    possible!`,
   },
   plugins: [
     {

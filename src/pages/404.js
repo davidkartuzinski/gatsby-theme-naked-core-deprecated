@@ -1,17 +1,17 @@
 import React from "react"
+import PropTypes from "prop-types"
 import SEO from "../components/core/seo"
 import Layout from "../components/structure/layout"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
+import NakedBreadcrumb from "../components/core/breadcrumb"
 
-// import { Breadcrumb } from "gatsby-plugin-breadcrumb"
-
-const NotFoundPage = ({ pageContext, location, data }) => {
+const NotFoundPage = ({ pageContext, location }) => {
   const { logo, title } = useSiteMetadata()
-  // const {
-  //   breadcrumb: { crumbs },
-  // } = pageContext
+  const {
+    breadcrumb: { crumbs },
+  } = pageContext
 
-  // const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
+  const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
 
   return (
     <Layout>
@@ -23,17 +23,11 @@ const NotFoundPage = ({ pageContext, location, data }) => {
         dateModified={""}
         image={logo}
         slug={"404"}
-        // crumbs={crumbs}
+        crumbs={crumbs}
       />
-      <nav>
-        {" "}
-        You are here:
-        {/* <Breadcrumb
-          crumbs={crumbs}
-          crumbSeparator=""
-          crumbLabel={customCrumbLabel}
-        /> */}
-      </nav>
+
+      <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
+
       <article>
         <header>
           <h1>Oops 404 - NOT FOUND</h1>
@@ -42,6 +36,11 @@ const NotFoundPage = ({ pageContext, location, data }) => {
       </article>
     </Layout>
   )
+}
+
+NotFoundPage.propTypes = {
+  pageContext: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 }
 
 export default NotFoundPage

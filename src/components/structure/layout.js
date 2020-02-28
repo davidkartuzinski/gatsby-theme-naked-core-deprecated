@@ -4,8 +4,6 @@ import Header from "./header"
 import Footer from "./footer"
 import Aside from "./aside"
 
-// https://blog.teamtreehouse.com/use-html5-sectioning-elements
-
 const Layout = ({ children }) => {
   return (
     <div id="outer-container">

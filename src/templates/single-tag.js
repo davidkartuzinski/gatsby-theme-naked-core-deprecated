@@ -1,11 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { Link, graphql } from "gatsby"
 import Layout from "../components/structure/layout"
 import SEO from "../components/core/seo"
-
 import { TagsIcon } from "../components/core/icons.js"
-
-import { Link, graphql } from "gatsby"
 import NakedBreadcrumb from "../components/core/breadcrumb"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
@@ -88,6 +86,7 @@ Tags.propTypes = {
 }
 
 export default Tags
+
 export const pageQuery = graphql`
   query($tag: String) {
     allMdx(

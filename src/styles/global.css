@@ -166,7 +166,7 @@
 **
 ****/
 
-.top-header {
+.page-header {
   display: flex;
   flex-direction: row;
   padding: 1rem;
@@ -175,37 +175,37 @@
   flex-wrap: wrap;
 }
 
-.top-header ul {
+.page-header ul {
   display: flex;
 }
 
-.top-header .menu,
-.top-header .social-follow-me,
-.top-header .search {
+.page-header .menu,
+.page-header ul,
+.page-header .search {
   display: none;
 }
 
-.top-header .search {
+.page-header .search {
   padding-top: 20px;
 }
 
 @media (min-width: 950px) {
-  .top-header .menu,
-  .top-header .social-follow-me {
+  .page-header .menu,
+  .page-header ul {
     display: flex;
   }
 
-  .top-header .search {
+  .page-header .search {
     display: inline-block;
   }
 
-  .top-header .menu li,
-  .top-header .social-follow-me li {
+  .page-header .menu li,
+  .page-header ul li {
     padding: 0 10px;
     list-style-type: none;
   }
 
-  .top-header .menu li a {
+  .page-header .menu li a {
     text-decoration: none;
     text-transform: uppercase;
   }

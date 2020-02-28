@@ -1,28 +1,25 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
+import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 import PropTypes from "prop-types"
+import Moment from "react-moment"
 import Layout from "../components/structure/layout"
-import SiteWideMessage from "../components/widgets/sitewide-message"
-import ResponsiveImage from "../components/core/responsive-image"
-import SocialShare from "../components/optional/social-share"
-import MailChimpSignUp from "../components/widgets/mailchimp-sign-up"
 import Tags from "../components/core/tags"
 import Categories from "../components/core/categories"
-import TalkYardComments from "../components/optional/talkyard-comments"
+import ResponsiveImage from "../components/core/responsive-image"
 import SEO from "../components/core/seo"
-import { Link } from "gatsby"
-
 import {
   PreviousPageIcon,
   NextPageIcon,
   AuthorIcon,
   PublishDateIcon,
 } from "../components/core/icons"
-
-import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 import NakedBreadcrumb from "../components/core/breadcrumb"
+import SocialShare from "../components/optional/social-share"
+import TalkYardComments from "../components/optional/talkyard-comments"
+import SiteWideMessage from "../components/widgets/sitewide-message"
+import MailChimpSignUp from "../components/widgets/mailchimp-sign-up"
 import Bio from "../components/widgets/bio"
-import Moment from "react-moment"
 
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
@@ -32,12 +29,12 @@ const BlogPost = ({ data, pageContext, location }) => {
   const post = data.mdx
 
   const shareUrl = `${siteUrl}/${post.frontmatter.slug}`
+
   const {
     next,
     previous,
     breadcrumb: { crumbs },
   } = pageContext
-
   const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
 
   return (
@@ -85,11 +82,13 @@ const BlogPost = ({ data, pageContext, location }) => {
         <SiteWideMessage />
         <MDXRenderer>{post.body}</MDXRenderer>
       </article>
-      <Bio />
-      <SocialShare shareUrl={shareUrl} title={post.frontmatter.description} />
-      <MailChimpSignUp />
-      <Categories categories={data.mdx.frontmatter.categories} />
-      <Tags tags={data.mdx.frontmatter.tags} />
+      <section>
+        <Bio />
+        <SocialShare shareUrl={shareUrl} title={post.frontmatter.description} />
+        <MailChimpSignUp />
+        <Categories categories={data.mdx.frontmatter.categories} />
+        <Tags tags={data.mdx.frontmatter.tags} />
+      </section>
 
       <nav>
         {previous && (

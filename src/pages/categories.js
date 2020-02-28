@@ -1,19 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Layout from "../components/structure/layout"
-import SEO from "../components/core/seo"
-
-import { CategoriesIcon } from "../components/core/icons.js"
-
-// Utilities
 import kebabCase from "lodash/kebabCase"
-
-// Components
 import { Link } from "gatsby"
-
+import SEO from "../components/core/seo"
+import { CategoriesIcon } from "../components/core/icons.js"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import { useAllMdx } from "../hooks/use-all-mdx"
-
+import Layout from "../components/structure/layout"
 import NakedBreadcrumb from "../components/core/breadcrumb"
 
 const CategoriesPage = ({ pageContext, location }) => {
@@ -40,24 +33,22 @@ const CategoriesPage = ({ pageContext, location }) => {
 
       <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
-      <div>
-        <article>
-          <header>
-            <h1>
-              <CategoriesIcon /> Categories
-            </h1>
-          </header>
-          <ul>
-            {categories.map(category => (
-              <li key={category.fieldValue}>
-                <Link to={`/categories/${kebabCase(category.fieldValue)}`}>
-                  {category.fieldValue} ({category.totalCount})
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </article>
-      </div>
+      <article>
+        <header>
+          <h1>
+            <CategoriesIcon /> Categories
+          </h1>
+        </header>
+        <ul>
+          {categories.map(category => (
+            <li key={category.fieldValue}>
+              <Link to={`/categories/${kebabCase(category.fieldValue)}`}>
+                {category.fieldValue} ({category.totalCount})
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </article>
     </Layout>
   )
 }

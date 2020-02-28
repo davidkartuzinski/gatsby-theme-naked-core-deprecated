@@ -1,5 +1,4 @@
 import React from "react"
-
 import {
   FacebookIcon,
   InstagramIcon,
@@ -34,7 +33,7 @@ const SocialFollowMe = () => {
   } = data.site.socialMedia.socialLinks
 
   return (
-    <ul className="social-follow-me">
+    <ul>
       <li>
         <a href={facebook} title="Follow Us on Facebook">
           <FacebookIcon size="50" />

@@ -1,18 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
+import kebabCase from "lodash/kebabCase"
+import { Link } from "gatsby"
 import { TagsIcon } from "../components/core/icons.js"
 import SEO from "../components/core/seo"
 import Layout from "../components/structure/layout"
-
-// Utilities
-import kebabCase from "lodash/kebabCase"
-
-// Components
-
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import { useAllMdx } from "../hooks/use-all-mdx"
-
-import { Link } from "gatsby"
 import NakedBreadcrumb from "../components/core/breadcrumb"
 
 const TagsPage = ({ pageContext, location }) => {
@@ -36,30 +30,30 @@ const TagsPage = ({ pageContext, location }) => {
         slug={"tags"}
         crumbs={crumbs}
       />
-      <div>
-        <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
-        <article>
-          <header>
-            <h1>
-              <TagsIcon />
-              Tags
-            </h1>
-          </header>
-          <ul>
-            {tags.map(tag => (
-              <li key={tag.fieldValue}>
-                <Link to={`/tags/${kebabCase(tag.fieldValue)}`}>
-                  {tag.fieldValue} ({tag.totalCount})
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </article>
-      </div>
+      <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
+
+      <article>
+        <header>
+          <h1>
+            <TagsIcon />
+            Tags
+          </h1>
+        </header>
+        <ul>
+          {tags.map(tag => (
+            <li key={tag.fieldValue}>
+              <Link to={`/tags/${kebabCase(tag.fieldValue)}`}>
+                {tag.fieldValue} ({tag.totalCount})
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </article>
     </Layout>
   )
 }
+
 TagsPage.propTypes = {
   data: PropTypes.shape({
     allMdx: PropTypes.shape({

@@ -1,6 +1,6 @@
-import React from "react";
-import { Breadcrumb } from "gatsby-plugin-breadcrumb";
-import PropTypes from "prop-types";
+import React from "react"
+import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import PropTypes from "prop-types"
 
 const NakedBreadcrumb = ({ crumblabel, crumbs }) => {
   return (
@@ -12,17 +12,17 @@ const NakedBreadcrumb = ({ crumblabel, crumbs }) => {
         crumbLabel={crumblabel}
       />
     </nav>
-  );
-};
+  )
+}
 
 NakedBreadcrumb.propTypes = {
   crumbLabel: PropTypes.string.isRequired,
   crumbs: PropTypes.arrayOf(
     PropTypes.shape({
       pathname: PropTypes.string.isRequired,
-      crumbLabel: PropTypes.string.isRequired
+      crumbLabel: PropTypes.string.isRequired,
     })
-  ).isRequired
-};
+  ).isRequired,
+}
 
-export default NakedBreadcrumb;
+export default NakedBreadcrumb

@@ -1,12 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
-import SEO from "../components/core/seo"
-import Layout from "../components/structure/layout"
-
-import { CategoriesIcon } from "../components/core/icons.js"
 import { Link, graphql } from "gatsby"
-
+import Layout from "../components/structure/layout"
+import SEO from "../components/core/seo"
 import NakedBreadcrumb from "../components/core/breadcrumb"
+import { CategoriesIcon } from "../components/core/icons.js"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const Categories = ({ data, pageContext, location }) => {
@@ -87,6 +85,7 @@ Categories.propTypes = {
 }
 
 export default Categories
+
 export const pageQuery = graphql`
   query($category: String) {
     allMdx(

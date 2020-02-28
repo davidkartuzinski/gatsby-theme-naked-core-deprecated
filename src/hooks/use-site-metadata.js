@@ -21,6 +21,7 @@ export const useSiteMetadata = () => {
             contact {
               email
             }
+            sitewideMessage
           }
         }
       }
