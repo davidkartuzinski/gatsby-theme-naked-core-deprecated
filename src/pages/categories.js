@@ -50,7 +50,7 @@ const CategoriesPage = ({ pageContext, location }) => {
           <ul>
             {categories.map(category => (
               <li key={category.fieldValue}>
-                <Link to={`/categories/${kebabCase(category.fieldValue)}/`}>
+                <Link to={`/categories/${kebabCase(category.fieldValue)}`}>
                   {category.fieldValue} ({category.totalCount})
                 </Link>
               </li>

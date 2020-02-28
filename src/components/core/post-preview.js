@@ -50,7 +50,7 @@ const PostPreview = ({
     <ul>
       {cats.map((cat, index) => (
         <li key={index}>
-          <Link to={`/categories/${kebabCase(cat)}/`}>{cat}</Link>
+          <Link to={`/categories/${kebabCase(cat)}`}>{cat}</Link>
         </li>
       ))}
     </ul>
@@ -61,7 +61,7 @@ const PostPreview = ({
     <ul>
       {tags.map((tag, index) => (
         <li key={index}>
-          <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+          <Link to={`/tags/${kebabCase(tag)}`}>{tag}</Link>
         </li>
       ))}
     </ul>

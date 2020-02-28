@@ -31,7 +31,7 @@ export default class Search extends Component {
             let searchSlug = page.slug
             return (
               <li key={page.id}>
-                <Link to={"/blog/" + searchSlug + "/"}>{page.title}</Link>
+                <Link to={"/blog/" + searchSlug}>{page.title}</Link>
                 {": " + page.tags.join(`,`)}
               </li>
             )

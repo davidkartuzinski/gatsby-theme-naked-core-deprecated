@@ -9,7 +9,7 @@ const MobileMenu = () => {
   const { menuLinks } = useSiteMetadata()
 
   const menuLiItems = menuLinks.map(link => (
-    <Link key={link.id} to={`${link.link}/`}>
+    <Link key={link.id} to={`${link.link}`}>
       {link.name}
     </Link>
   ))

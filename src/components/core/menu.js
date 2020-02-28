@@ -9,7 +9,7 @@ const Menu = () => {
       <Link
         // activeStyle={}
         activeClassName="active" // style in your CSS
-        to={`${link.link}/`}
+        to={`${link.link}`}
       >
         {link.name}
       </Link>

@@ -7,7 +7,10 @@ const { paginate } = require(`gatsby-awesome-pagination`)
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `Mdx`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    const slug = createFilePath({ node, getNode, basePath: `pages` }).replace(
+      /\/$/,
+      ""
+    )
     createNodeField({
       node,
       name: `slug`,
@@ -110,7 +113,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // make the tag pages
   tags.forEach(tag => {
     createPage({
-      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      path: `/tags/${_.kebabCase(tag.fieldValue)}`,
       component: tagTemplate,
       context: {
         tag: tag.fieldValue,
@@ -123,7 +126,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // make the category pages
   categories.forEach(category => {
     createPage({
-      path: `/categories/${_.kebabCase(category.fieldValue)}/`,
+      path: `/categories/${_.kebabCase(category.fieldValue)}`,
       component: categoryTemplate,
       context: {
         category: category.fieldValue,

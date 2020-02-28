@@ -49,7 +49,7 @@ const TagsPage = ({ pageContext, location }) => {
           <ul>
             {tags.map(tag => (
               <li key={tag.fieldValue}>
-                <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                <Link to={`/tags/${kebabCase(tag.fieldValue)}`}>
                   {tag.fieldValue} ({tag.totalCount})
                 </Link>
               </li>
