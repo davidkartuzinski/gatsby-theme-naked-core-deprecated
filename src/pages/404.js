@@ -5,13 +5,8 @@ import Layout from "../components/structure/layout"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import NakedBreadcrumb from "../components/core/breadcrumb"
 
-const NotFoundPage = ({ pageContext, location }) => {
+const NotFoundPage = () => {
   const { logo, title } = useSiteMetadata()
-  const {
-    breadcrumb: { crumbs },
-  } = pageContext
-
-  const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
 
   return (
     <Layout>
@@ -23,10 +18,7 @@ const NotFoundPage = ({ pageContext, location }) => {
         dateModified={""}
         image={logo}
         slug={"404"}
-        crumbs={crumbs}
       />
-
-      <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
       <article>
         <header>

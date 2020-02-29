@@ -44,7 +44,7 @@
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-source-instagram-all": "^2.0.5",
     "gatsby-transformer-remark": "^2.6.51",
-    "gatsby-transformer-sharp": "^2.3.14",
+    "gatsby-transformer-sharp": "^2.3.16",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "prismjs": "^1.19.0",
