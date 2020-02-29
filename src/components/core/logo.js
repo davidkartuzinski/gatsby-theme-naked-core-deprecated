@@ -1,14 +1,14 @@
 import React from "react"
 import Image from "gatsby-image"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 
 const Logo = () => {
   const data = useStaticQuery(query)
 
   return (
-    <a href="/">
+    <Link to="/">
       <Image fixed={data.logo.childImageSharp.fixed} alt="logo for website" />
-    </a>
+    </Link>
   )
 }
 

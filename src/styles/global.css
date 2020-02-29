@@ -41,10 +41,50 @@
 }
 
 /****
+**  END OF ACCESSIBILITY FOCUSED STYLES
+****/
+
+/****
 **  
 ** Optional or Plugin specific styles
 ** 
 ****/
+
+/** BASIC STRUCTURE STYLES THAT CAN BE DELETED, REPLACED OR USED IN OTHER PLACES **/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl {
+  margin: 0 5% 1.4rem;
+}
+
+blockquote {
+  background: var(--white-color);
+  border-left: 10px solid var(--grey-color);
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: var(--accent-color);
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+hr {
+  background-color: var(--accent-color);
+}
 
 /**** 
 ** 
@@ -52,17 +92,35 @@
 **
 ****/
 
+.breadcrumbs__container {
+  padding: 1rem;
+  margin-bottom: 2rem;
+  min-height: 8rem;
+}
+
+.breadcrumb__title {
+  margin-bottom: 0;
+}
+
 .breadcrumb__list {
+  margin: 0;
+  margin-top: calc(1.4rem / 2);
   display: flex;
+  flex-wrap: wrap;
 }
 
 .breadcrumb__list__item {
-  margin: 0 0.5rem 0 2rem;
+  margin-bottom: calc(1.4rem / 2);
   list-style: none;
+  text-transform: capitalize;
+}
+
+.breadcrumb__separator {
+  margin-bottom: calc(1.4rem / 2);
+  padding: 0 0.5rem;
 }
 
 .breadcrumb__list__item a {
-  padding-left: 0.25rem;
   text-decoration: none;
 }
 
@@ -130,6 +188,16 @@
   background: var(--white-color);
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
+}
+.bm-menu ul {
+  margin-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.bm-menu li {
+  list-style-type: none;
 }
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
@@ -217,6 +285,59 @@
 
 /****
 **
+** MAIN DIV STYLES NOTE: Look for subsections. These are the styles for the Main div including the ASIDE.
+**
+****/
+
+figcaption {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+article header p {
+  display: flex;
+  flex-direction: column;
+}
+
+/****
+**  END MAIN DIV STYLES
+****/
+
+/****
+**
+** WIDGETS STYLES NOTE: Look for subsections. These are the styles for individual widget, as needed.
+**
+****/
+
+/**** START sitewide-message.js STYLES ****/
+
+.sitewide-message {
+  background-color: var(--grey-color);
+  padding: 5%;
+  margin: 1rem 0;
+}
+
+/**** END sitewide-message.js STYLES ****/
+
+/**** START bio.js STYLES ****/
+
+.bio ul {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 0;
+}
+.bio ul li {
+  list-style: none;
+}
+
+/**** END bio.js STYLES ****/
+
+/****
+**  END WIDGETS STYLES
+****/
+
+/****
+**
 ** PRISMJS Styles NOTE: https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/ 
 **
 ****/
@@ -225,11 +346,10 @@
 .gatsby-highlight {
   background-color: #fdf6e3;
   border-radius: 0.3em;
-  margin: 0.5em 0;
+  margin: 0.5em 1rem 1.5rem !important; /* fix from solar styles */
   padding: 1em;
   overflow: auto;
 }
-
 /* Remove the default PrismJS theme background-color, border-radius, margin,
    * padding and overflow.
    * 1. Make the element just wide enough to fit its content.
@@ -286,6 +406,13 @@
 
 .command-line-prompt > span[data-prompt]:before {
   content: attr(data-prompt);
+}
+
+/* fix the font-size given by the solar theme.*/
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-size: 0.85rem !important;
 }
 
 /****

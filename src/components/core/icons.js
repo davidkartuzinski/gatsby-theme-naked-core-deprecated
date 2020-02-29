@@ -15,6 +15,8 @@ import {
   IoLogoInstagram,
   IoLogoPinterest,
   IoLogoTwitter,
+  IoLogoGithub,
+  IoLogoLinkedin,
   IoMdAlert,
   IoMdBook,
   IoMdCalendar,
@@ -44,5 +46,7 @@ export const FacebookIcon = IoLogoFacebook
 export const InstagramIcon = IoLogoInstagram
 export const PinterestIcon = IoLogoPinterest
 export const TwitterIcon = IoLogoTwitter
+export const GithubIcon = IoLogoGithub
+export const LinkedInIcon = IoLogoLinkedin
 
 // Add your icon exports here, after importing them from the library

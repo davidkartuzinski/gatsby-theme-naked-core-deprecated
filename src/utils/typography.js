@@ -9,6 +9,11 @@ funstonTheme.overrideThemeStyles = () => ({
   a: {
     color: "#55433b",
   },
+  table: {
+    marginLeft: "5%",
+    marginRight: "5%",
+    width: "90%",
+  },
 })
 
 const typography = new Typography(funstonTheme)

@@ -4,14 +4,14 @@ import PropTypes from "prop-types"
 
 const NakedBreadcrumb = ({ crumblabel, crumbs }) => {
   return (
-    <nav aria-label="Breadcrumb">
+    <div className="breadcrumbs__container">
       <Breadcrumb
         crumbs={crumbs}
         title="You are here: "
         crumbSeparator=" > "
         crumbLabel={crumblabel}
       />
-    </nav>
+    </div>
   )
 }
 

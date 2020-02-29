@@ -30,6 +30,7 @@
     "gatsby-paginate": "^1.1.1",
     "gatsby-plugin-advanced-sitemap": "^1.5.1",
     "gatsby-plugin-breadcrumb": "^9.0.1",
+    "gatsby-plugin-catch-links": "^2.1.26",
     "gatsby-plugin-mailchimp": "^5.1.2",
     "gatsby-plugin-manifest": "^2.2.41",
     "gatsby-plugin-mdx": "^1.0.73",

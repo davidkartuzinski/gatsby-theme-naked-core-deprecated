@@ -67,20 +67,32 @@ const BlogPost = ({ data, pageContext, location }) => {
             figcaption={post.frontmatter.imageFigcaption}
             imageClassName={post.frontmatter.imageClassName}
           />
+
           <p>
-            <PublishDateIcon />{" "}
-            <Moment
-              date={post.frontmatter.date}
-              format="MMMM DD, YYYY"
-              withTitle
-            />
-            , written by <AuthorIcon />
-            {post.frontmatter.author}
+            <span>
+              <PublishDateIcon />{" "}
+              <Moment
+                date={post.frontmatter.date}
+                format="MMMM DD, YYYY"
+                withTitle
+              />
+              , written by
+            </span>
+            <span>
+              <AuthorIcon /> {post.frontmatter.author}
+            </span>
           </p>
         </header>
 
         <SiteWideMessage />
-        <MDXRenderer>{post.body}</MDXRenderer>
+        <div className="article__body">
+        <MDXRenderer>
+          
+          {post.body}
+       
+          </MDXRenderer>
+          </div>
+          
       </article>
       <section>
         <Bio />

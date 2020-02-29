@@ -46,7 +46,6 @@ module.exports = {
     social: {
       facebook: "",
       twitter: "@NakedGatsby",
-      twitterAuthor: "",
     },
     address: {
       city: "Paris",
@@ -57,6 +56,9 @@ module.exports = {
     contact: {
       email: "david@kaidawei.me",
       phone: "",
+      twitter: "https://twitter.com/kai_dawei",
+      linkedin: "https://www.linkedin.com/in/kaidawei/",
+      github: "https://github.com/davidkartuzinski/",
     },
     foundingDate: "2019",
     googleTrackingId: "UA-158642528-1",
@@ -128,6 +130,7 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
+    `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -237,67 +240,3 @@ module.exports = {
     `gatsby-plugin-offline`,
   ],
 }
-
-// SEO needs: https://moz.com/blog/seo-2020
-// 1. Titles, metas, headers, image alts, site speed, robots.txt, sitemaps, UX, analytics
-// 2. Schema Mark-up, breadcrumbs, FAQ Schema, News schema, Business info
-// 3. Research what matters for your industry
-// 4. E-A-T Google Factors ?? // BERT   // Searcher Intent
-// 5. Favicons
-// 6. Entity and Topical integration - part of the keyword buckets
-// 7. Featured Snippets (how to do)
-// 8. Invest in visuals
-// 9. Cultivate engagement with comments
-// 10. Repurpose Content
-// 11. Prune and / or improve thin / low quality pages
-// 12. Customer insigts - https://sparktoro.com/
-// 13. Find Keyword opportunities in Google Search Console //facets by google
-// 14. target link-intent keyword ____ facts, ____ statistics, to naturally build links
-// 15. Provide unique research w/ visuals
-
-// Schema - Courses, Video if using, Learning Resources at Schema.org
-// Internal Linking is a big deal for SEO.
-// Alt Tags and Descriptions on images - blank alt tags for cosmetic images
-// https://www.searchenginejournal.com/technical-seo/in-depth-audit/
-
-// LINKS: https://moz.com/blog/nofollow-sponsored-ugc
-// Link attribution can be done in three ways: "nofollow", "sponsored", and "ugc"
-// You can use the new attributes in combination with each other. For example, rel="nofollow sponsored ugc" is valid.
-// Paid links must either use the nofollow or sponsored attribute (either alone or in combination.) Simply using "ugc" on paid links could presumably lead to a penalty.
-// <a href="https://example.com">Trusted Site</a>  <---  Regular Link
-// <a href="https://example.com" rel="sponsored">Affiliate Link</a> <--- Paid or Sponsored Link
-// <a href="https://example.com rel="ugc"">my site</a> <--- User Generated Link like in Comments
-// <a href="https://example.com rel="nofollow">Shady Link or competitor</a> <--- No Follow Link
-
-// Structured data schema.org
-// https://www.youtube.com/watch?v=xQeRA-Ojq5c
-// https://developers.google.com/search/docs/guides/sd-policies
-// https://jsonld.com/blog/
-// custom HTML
-// A recipe page with both recipe text and an accompanying video. Mark the text and video separately with schema.org/Recipe and schema.org/VideoObject respectively.
-//A category page listing several different products (or recipes, videos, or any other type). Each entity should be marked up using the relevant schema.org type, such as schema.org/Product for product category pages. However, if one item is marked, all items should be marked. Also, unless this is a carousel page, the marked items should not link out to separate details pages.
-
-// A video play page with related videos embedded in a separate section on the page. In this case, mark up the main video and related videos individually.
-
-// Some Datatype
-// WebSite, Organization, BlogPosting, VideoObject, BreadCrumbs
-
-// https://search.google.com/structured-data/testing-tool/u/0/#url=kdworld.com.tw
-
-// 1. Keep Gatsby up to date
-// 2. Control what you are returning with filters in the graphql queiries
-// 3. Control the image type graphql fragments with size breakpoints, image-sharp for the different image points to not generate image thumbnails that users will never use.
-// 4. Deployment - Amplify - Gatsby Builds Cloudplatform
-
-// https://www.remove.bg/pricing Remove Background Tool
-// https://type-scale.com/ Type Scale
-// https://undraw.co/search for images
-// https://snook.ca/archives/html_and_css/font-size-with-rem for using REM
-// https://www.favicon-generator.org/ Favicon Generator
-// https://mycolor.space/?hex=%23F3824A&sub=1%20%3C---%20Natural%20Palette - Color Palettes
-// https://css-tricks.com/box-sizing/
-// https://systemfontstack.com/
-
-// http://www.heropatterns.com/
-// https://blog.hootsuite.com/free-stock-videos-sites/
-// http://www.productontology.org/

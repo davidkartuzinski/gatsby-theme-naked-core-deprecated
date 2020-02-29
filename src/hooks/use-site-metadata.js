@@ -20,6 +20,9 @@ export const useSiteMetadata = () => {
             authorImage
             contact {
               email
+              twitter
+              linkedin
+              github
             }
             sitewideMessage
           }

@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { elastic as Menu } from "react-burger-menu"
+import { push as Menu } from "react-burger-menu"
 import { useSiteMetadata } from "../../hooks/use-site-metadata"
 
 import FollowMe from "../widgets/social-follow-me"

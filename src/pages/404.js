@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import SEO from "../components/core/seo"
 import Layout from "../components/structure/layout"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import NakedBreadcrumb from "../components/core/breadcrumb"
 
 const NotFoundPage = () => {
   const { logo, title } = useSiteMetadata()
