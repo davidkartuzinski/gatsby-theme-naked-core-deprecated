@@ -46,6 +46,7 @@ module.exports = {
     social: {
       facebook: "",
       twitter: "@NakedGatsby",
+      twitterAuthor: "",
     },
     address: {
       city: "Paris",
