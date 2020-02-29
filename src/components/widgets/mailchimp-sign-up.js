@@ -55,14 +55,13 @@ export default class MailChimpComponent extends React.Component {
         </small>
 
         <form onSubmit={this._handleSubmit}>
-          <label htmlFor="email">
+          <label htmlFor="mailChimpemail">
             <EnterEmailIcon /> Email<span>*</span>
             <input
               type="email"
               onChange={this._handleChange}
               placeholder="Your Email Address"
-              name="email"
-              id="email"
+              name="mailChimpemail"
               pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
               required
             />

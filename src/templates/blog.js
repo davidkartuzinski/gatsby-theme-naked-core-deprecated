@@ -21,9 +21,7 @@ const BlogRoll = ({ data, pageContext, location }) => {
     breadcrumb: { crumbs },
   } = pageContext
 
-  const [, , preCrumbLabel] = location.pathname.split("/")
-
-  const customCrumbLabel = preCrumbLabel
+  const customCrumbLabel = "/"
 
   return (
     <Layout>

@@ -25,7 +25,7 @@ const PostPreview = ({
   cats,
   tags,
 }) => (
-  <div>
+  <>
     <figure>
       <Link to={"/blog/" + slug}>
         <Image fixed={image} alt={imageAlt} />
@@ -65,7 +65,7 @@ const PostPreview = ({
         </li>
       ))}
     </ul>
-  </div>
+  </>
 )
 
 PostPreview.propTypes = {
