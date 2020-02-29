@@ -86,17 +86,13 @@ const BlogPost = ({ data, pageContext, location }) => {
 
         <SiteWideMessage />
         <div className="article__body">
-        <MDXRenderer>
-          
-          {post.body}
-       
-          </MDXRenderer>
-          </div>
-          
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </div>
       </article>
       <section>
-        <Bio />
         <SocialShare shareUrl={shareUrl} title={post.frontmatter.description} />
+        <Bio />
+
         <MailChimpSignUp />
         <Categories categories={data.mdx.frontmatter.categories} />
         <Tags tags={data.mdx.frontmatter.tags} />

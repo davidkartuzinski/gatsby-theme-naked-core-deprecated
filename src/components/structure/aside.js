@@ -10,11 +10,11 @@ const Aside = () => {
   return (
     <>
       <aside>
+        <MailChimpSignUp />
         <Bio />
         <SocialFollowMe />
-        <MailChimpSignUp />
-        <Instagram />
         <LatestPosts />
+        <Instagram />
       </aside>
     </>
   )

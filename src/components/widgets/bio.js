@@ -28,22 +28,22 @@ const Bio = () => {
       <ul>
         <li>
           <a href={contact.twitter} title="Follow the author on Twitter">
-            <TwitterIcon size="25" />
+            <TwitterIcon size="25" style={{ color: "#00ACEE" }} />
           </a>
         </li>
         <li>
           <a href={contact.linkedin} title="Follow the author on LinkedIn">
-            <LinkedInIcon size="25" />
+            <LinkedInIcon size="25" style={{ color: "#0072b1" }} />
           </a>
         </li>
         <li>
           <a href={contact.github} title="Follow the author on GitHub">
-            <GithubIcon size="25" />
+            <GithubIcon size="25" style={{ color: "#333" }} />
           </a>
         </li>
         <li>
           <a href={`mailto:${contact.email}`} title="Follow Us on Twitter">
-            <EnterEmailIcon size="25" />
+            <EnterEmailIcon size="25" style={{ color: "#f3824a" }} />
           </a>
         </li>
       </ul>

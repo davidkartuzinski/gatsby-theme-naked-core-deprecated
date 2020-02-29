@@ -33,28 +33,31 @@ const SocialFollowMe = () => {
   } = data.site.socialMedia.socialLinks
 
   return (
-    <ul>
-      <li>
-        <a href={facebook} title="Follow Us on Facebook">
-          <FacebookIcon size="50" />
-        </a>
-      </li>
-      <li>
-        <a href={instagram} title="Follow Us on Instagram">
-          <InstagramIcon size="50" />
-        </a>
-      </li>
-      <li>
-        <a href={pinterest} title="Follow Us on Pinterest">
-          <PinterestIcon size="50" />
-        </a>
-      </li>
-      <li>
-        <a href={twitter} title="Follow Us on Twitter">
-          <TwitterIcon size="50" />
-        </a>
-      </li>
-    </ul>
+    <div className="social-follow-me">
+      <h3>Follow Us</h3>
+      <ul>
+        <li>
+          <a href={facebook} title="Follow Us on Facebook">
+            <FacebookIcon size="50" style={{ color: "#3B5998" }} />
+          </a>
+        </li>
+        <li>
+          <a href={instagram} title="Follow Us on Instagram">
+            <InstagramIcon size="50" style={{ color: "#d6249f" }} />
+          </a>
+        </li>
+        <li>
+          <a href={pinterest} title="Follow Us on Pinterest">
+            <PinterestIcon size="50" style={{ color: "#c8232c" }} />
+          </a>
+        </li>
+        <li>
+          <a href={twitter} title="Follow Us on Twitter">
+            <TwitterIcon size="50" style={{ color: "#00ACEE" }} />
+          </a>
+        </li>
+      </ul>
+    </div>
   )
 }
 

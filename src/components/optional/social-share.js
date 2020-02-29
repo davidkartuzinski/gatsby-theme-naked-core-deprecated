@@ -13,29 +13,44 @@ const SocialShare = props => {
   const { title } = useSiteMetadata()
 
   return (
-    <>
-      <FacebookShareButton url={props.shareUrl} quote={props.title} hashtag="">
-        <FacebookIcon size={48} />
-      </FacebookShareButton>
+    <div className="social-share">
+      <h3>Share this post</h3>
 
-      <TwitterShareButton
-        url={props.shareUrl}
-        title={props.title}
-        via=""
-        hashtag=""
-      >
-        <TwitterIcon size={48} />
-      </TwitterShareButton>
+      <ul>
+        <li>
+          <FacebookShareButton
+            url={props.shareUrl}
+            quote={props.title}
+            hashtag=""
+          >
+            <FacebookIcon size={48} style={{ color: "#3B5998" }} />
+          </FacebookShareButton>
+        </li>
 
-      <EmailShareButton
-        url={props.shareUrl}
-        subject={props.title}
-        body={title}
-        separator=" "
-      >
-        <EnterEmailIcon size={48} />
-      </EmailShareButton>
-    </>
+        <li>
+          <TwitterShareButton
+            url={props.shareUrl}
+            title={props.title}
+            via=""
+            hashtag=""
+          >
+            <TwitterIcon size={48} style={{ color: "#00ACEE" }} />
+          </TwitterShareButton>
+        </li>
+
+        <li>
+          <EmailShareButton
+            url={props.shareUrl}
+            subject={props.title}
+            body={title}
+            separator=" "
+          >
+            <EnterEmailIcon size={48} style={{ color: "#f3824a" }} />
+          </EmailShareButton>
+        </li>
+      </ul>
+      <hr />
+    </div>
   )
 }
 

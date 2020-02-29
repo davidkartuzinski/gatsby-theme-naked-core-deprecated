@@ -16,6 +16,7 @@
 
 :root {
   --accent-color: #f3824a;
+  --accent-color-shade: #c2683b;
   --dark-accent-color: #55433b;
   --grey-color: #dfe0df;
   --white-color: #fff7f0;
@@ -86,6 +87,29 @@ hr {
   background-color: var(--accent-color);
 }
 
+button {
+  margin: 20px 10px 20px 10px;
+  display: block;
+  text-align: center;
+  padding: 12px 20px 12px 20px;
+  border-radius: 3px;
+  border: none;
+}
+
+input {
+  margin: 20px 10px 20px 10px;
+  display: block;
+  text-align: left;
+  padding: 12px 20px 12px 20px;
+  border-radius: 3px;
+  border: none;
+}
+
+small {
+  margin-bottom: calc(1.4rem / 2);
+  display: block;
+}
+
 /**** 
 ** 
 ** BEGINNING OF BREADCRUMBS STYLING 
@@ -94,7 +118,7 @@ hr {
 
 .breadcrumbs__container {
   padding: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: calc(1.4rem / 2);
   min-height: 8rem;
 }
 
@@ -331,6 +355,94 @@ article header p {
 }
 
 /**** END bio.js STYLES ****/
+
+/**** START social-follow-me.js STYLES ****/
+
+.social-follow-me {
+  padding: 1rem 0;
+}
+
+.social-follow-me ul {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 0;
+}
+
+.social-follow-me ul li {
+  list-style: none;
+}
+
+/**** END social-follow-me.js STYLES ****/
+
+/**** START social-share.js STYLES ****/
+
+.social-share {
+  padding: 1rem 0;
+}
+
+.social-share ul {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 0;
+}
+
+.social-share ul li {
+  list-style: none;
+}
+
+.social-share button {
+  color: var(--accent-color);
+}
+
+/**** END social-share.js STYLES ****/
+
+/**** START mailchimp-sign-up.js STYLES ****/
+
+.mailchimp-sign-up {
+  padding: 1rem 1rem 1rem;
+  background-color: var(--dark-accent-color);
+  color: var(--white-color);
+  margin-bottom: calc(1.4rem / 2);
+}
+
+.mailchimp-sign-up h3 {
+  color: var(--white-color);
+}
+.mailchimp-sign-up form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 8rem;
+  margin-top: 2rem;
+}
+
+.mailchimp-input {
+  color: var(--dark-accent-color);
+  background-color: var(--white-color);
+}
+
+.mailchimp-input:focus {
+  color: var(--black-color);
+  background-color: var(--white-color);
+}
+
+.mailchimp-button {
+  color: var(--white-color);
+  background-color: var(--accent-color);
+  cursor: pointer;
+}
+
+.mailchimp-button:hover {
+  color: var(--white-color);
+  background-color: var(--accent-color-shade);
+  cursor: pointer;
+}
+
+.mailchimp-button:active {
+  background-color: var(--accent-color);
+  box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.3);
+}
+/**** END mailchimp-sign-up.js STYLES ****/
 
 /****
 **  END WIDGETS STYLES

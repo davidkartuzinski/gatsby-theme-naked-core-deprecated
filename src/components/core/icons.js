@@ -42,11 +42,11 @@ export const ErrorIcon = IoIosNuclear
 
 export const SearchIcon = IoIosSearch
 
-export const FacebookIcon = IoLogoFacebook
-export const InstagramIcon = IoLogoInstagram
-export const PinterestIcon = IoLogoPinterest
-export const TwitterIcon = IoLogoTwitter
-export const GithubIcon = IoLogoGithub
-export const LinkedInIcon = IoLogoLinkedin
+export const FacebookIcon = IoLogoFacebook // Facebook Blue #3B5998
+export const InstagramIcon = IoLogoInstagram // Instagram #d6249f
+export const PinterestIcon = IoLogoPinterest // Pinterest Red #c8232C
+export const TwitterIcon = IoLogoTwitter // Twitter Blue #00ACEE
+export const GithubIcon = IoLogoGithub // Github Black #333
+export const LinkedInIcon = IoLogoLinkedin // LinkedIn Blue #0072b1
 
 // Add your icon exports here, after importing them from the library

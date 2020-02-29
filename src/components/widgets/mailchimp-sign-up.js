@@ -42,11 +42,11 @@ export default class MailChimpComponent extends React.Component {
 
   render() {
     return (
-      <section>
+      <div className="mailchimp-sign-up">
         <h3>Sign up and get exclusive content delivered to your inbox</h3>
         <p>
-          Aside from exclusive content, get occasional deals, new product
-          alerts, and tea-related news. No spam. Just occasional emails for
+          You get exclusive content including occasional updates, new module and
+          themes alerts, and GatsbyJs news. No spam. Just occasional emails for
           stuff you probably want to get.
         </p>
         <small>
@@ -55,19 +55,24 @@ export default class MailChimpComponent extends React.Component {
         </small>
 
         <form onSubmit={this._handleSubmit}>
-          <label htmlFor="mailChimpemail">
+          <label htmlFor="email">
             <EnterEmailIcon /> Email<span>*</span>
-            <input
-              type="email"
-              onChange={this._handleChange}
-              placeholder="Your Email Address"
-              name="mailChimpemail"
-              pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-              required
-            />
           </label>
+          <input
+            type="email"
+            onChange={this._handleChange}
+            placeholder="Your Email Address"
+            name="email"
+            className="mailchimp-input"
+            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+            required
+          />
 
-          <button aria-label="submit" type="submit">
+          <button
+            aria-label="submit"
+            type="submit"
+            className="mailchimp-button"
+          >
             <SendMailIcon />
             Sign up now
           </button>
@@ -77,7 +82,7 @@ export default class MailChimpComponent extends React.Component {
           <AlertIcon />
           Strict No Spam Policy. No Sharing of your data - EVER!
         </small>
-      </section>
+      </div>
     )
   }
 }
