@@ -6,9 +6,9 @@ import { useSiteMetadata } from "../../hooks/use-site-metadata"
 const SitewideMessage = () => {
   const { sitewideMessage } = useSiteMetadata()
   return (
-    <aside class="sitewide-message">
+    <section class="sitewide-message">
       <AlertIcon /> {sitewideMessage}
-    </aside>
+    </section>
   )
 }
 

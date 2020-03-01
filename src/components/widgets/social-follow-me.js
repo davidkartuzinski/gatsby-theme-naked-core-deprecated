@@ -34,26 +34,26 @@ const SocialFollowMe = () => {
 
   return (
     <div className="social-follow-me">
-      <h3>Follow Us</h3>
+      <h3 className="sr-only">Follow Us</h3>
       <ul>
         <li>
           <a href={facebook} title="Follow Us on Facebook">
-            <FacebookIcon size="50" style={{ color: "#3B5998" }} />
+            <FacebookIcon size="40" style={{ color: "#3B5998" }} />
           </a>
         </li>
         <li>
           <a href={instagram} title="Follow Us on Instagram">
-            <InstagramIcon size="50" style={{ color: "#d6249f" }} />
+            <InstagramIcon size="40" style={{ color: "#d6249f" }} />
           </a>
         </li>
         <li>
           <a href={pinterest} title="Follow Us on Pinterest">
-            <PinterestIcon size="50" style={{ color: "#c8232c" }} />
+            <PinterestIcon size="40" style={{ color: "#c8232c" }} />
           </a>
         </li>
         <li>
           <a href={twitter} title="Follow Us on Twitter">
-            <TwitterIcon size="50" style={{ color: "#00ACEE" }} />
+            <TwitterIcon size="40" style={{ color: "#00ACEE" }} />
           </a>
         </li>
       </ul>

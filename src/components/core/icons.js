@@ -10,6 +10,7 @@ import {
   IoIosPricetags,
   IoIosRocket,
   IoIosSearch,
+  IoMdMenu,
   IoIosSend,
   IoLogoFacebook,
   IoLogoInstagram,
@@ -41,6 +42,7 @@ export const SuccessIcon = IoIosRocket
 export const ErrorIcon = IoIosNuclear
 
 export const SearchIcon = IoIosSearch
+export const HamburgerMenuIcon = IoMdMenu
 
 export const FacebookIcon = IoLogoFacebook // Facebook Blue #3B5998
 export const InstagramIcon = IoLogoInstagram // Instagram #d6249f

@@ -16,27 +16,32 @@ export default class Search extends Component {
   render() {
     return (
       <div className="search">
-        <label htmlFor="search-field">
-          Search <SearchIcon />
-          <input
-            type="text"
-            value={this.state.query}
-            onChange={this.search}
-            name="search-field"
-            id="search-field"
-          />
-        </label>
-        <ul>
-          {this.state.results.map(page => {
-            let searchSlug = page.slug
-            return (
-              <li key={page.id}>
-                <Link to={"/blog/" + searchSlug}>{page.title}</Link>
-                {": " + page.tags.join(`,`)}
-              </li>
-            )
-          })}
-        </ul>
+        <div className="search-box">
+          <label htmlFor="search-field">
+            <input
+              type="text"
+              value={this.state.query}
+              onChange={this.search}
+              name="search-field"
+              id="search-field"
+              placeholder={`Search `}
+            />
+          </label>
+          <SearchIcon size="40" />
+        </div>
+        <div className="search-results">
+          <ul>
+            {this.state.results.map(page => {
+              let searchSlug = page.slug
+              return (
+                <li key={page.id}>
+                  <Link to={"/blog/" + searchSlug}>{page.title}</Link>
+                  {": " + page.tags.join(`,`)}
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       </div>
     )
   }

@@ -6,14 +6,12 @@ import Aside from "./aside"
 
 const Layout = ({ children }) => {
   return (
-    <div id="outer-container">
+    <>
       <Header />
-      <main id="page-wrap">
-        {children}
-        <Aside />
-      </main>
+      <main>{children}</main>
+      <Aside />
       <Footer />
-    </div>
+    </>
   )
 }
 export default Layout

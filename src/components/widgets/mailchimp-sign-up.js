@@ -43,7 +43,7 @@ export default class MailChimpComponent extends React.Component {
   render() {
     return (
       <div className="mailchimp-sign-up">
-        <h3>Sign up and get exclusive content delivered to your inbox</h3>
+        <h2>Sign up and get exclusive content delivered to your inbox</h2>
         <p>
           You get exclusive content including occasional updates, new module and
           themes alerts, and GatsbyJs news. No spam. Just occasional emails for
@@ -57,16 +57,16 @@ export default class MailChimpComponent extends React.Component {
         <form onSubmit={this._handleSubmit}>
           <label htmlFor="email">
             <EnterEmailIcon /> Email<span>*</span>
+            <input
+              type="email"
+              onChange={this._handleChange}
+              placeholder="Your Email Address"
+              name="email"
+              className="mailchimp-input"
+              pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+              required
+            />
           </label>
-          <input
-            type="email"
-            onChange={this._handleChange}
-            placeholder="Your Email Address"
-            name="email"
-            className="email mailchimp-input"
-            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-            required
-          />
 
           <button
             aria-label="submit"

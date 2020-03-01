@@ -14,11 +14,11 @@ const Bio = () => {
   const data = useStaticQuery(query)
 
   return (
-    <aside class="bio">
+    <section class="bio">
       <h3>Bio</h3>
       <figure>
         <Image
-          fixed={data.authorImage.childImageSharp.fixed}
+          fluid={data.authorImage.childImageSharp.fluid}
           alt="Author Image"
         />
         <figcaption>{author}</figcaption>
@@ -48,7 +48,7 @@ const Bio = () => {
         </li>
       </ul>
       <hr />
-    </aside>
+    </section>
   )
 }
 
@@ -59,8 +59,8 @@ const query = graphql`
     authorImage: file(relativePath: { eq: "david-kartuzinski.jpg" }) {
       relativePath
       childImageSharp {
-        fixed(height: 360, width: 360) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

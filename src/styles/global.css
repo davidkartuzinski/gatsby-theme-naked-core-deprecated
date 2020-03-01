@@ -162,149 +162,29 @@ small {
 **  END OF BREADCRUMBS STYLING
 ****/
 
-/**** 
-** 
-** BEGINNING OF REACT BURGER MENU STYLING | | https://github.com/negomi/react-burger-menu#styling
-**
-** You can move this to a styled-component, emotion component or css module.  This code goes with
-** the react-burger-menu and can be safely deleted if you choose to not use the library.
-**
-****/
-
-/* Position and sizing of burger button */
-.bm-burger-button {
-  display: block;
-  position: fixed;
-  width: 32px;
-  height: 28px;
-  right: 36px;
-  top: 36px;
-}
-
-@media (min-width: 950px) {
-  .bm-burger-button {
-    display: none;
-  }
-}
-
-/* Color/shape of burger icon bars */
-.bm-burger-bars {
-  background: var(--black-color);
-}
-/* Color/shape of burger icon bars on hover*/
-.bm-burger-bars-hover {
-  background: var(--accent-color);
-}
-/* Position and sizing of clickable cross button */
-.bm-cross-button {
-  height: 24px;
-  width: 24px;
-}
-/* Color/shape of close button cross */
-.bm-cross {
-  background: var(--black-color);
-}
-/*
-  Sidebar wrapper styles
-  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-  */
-.bm-menu-wrap {
-  position: fixed;
-  height: 100%;
-}
-/* General sidebar styles */
-.bm-menu {
-  background: var(--white-color);
-  padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
-}
-.bm-menu ul {
-  margin-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-
-.bm-menu li {
-  list-style-type: none;
-}
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-  fill: var(--white-color);
-}
-/* Wrapper for item list */
-.bm-item-list {
-  color: var(--black-color);
-  padding: 0.8em;
-}
-/* Individual item */
-.bm-item {
-  display: inline-block;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 0.5rem 0;
-}
-.bm-item:hover,
-.bm-item:active {
-  color: var(--accent-color);
-}
-/* Styling of overlay */
-.bm-overlay {
-  background: rgba(0, 0, 0, 0.6);
-}
-
-/****
-**  END OF REACT BURGER MENU STYLING
-****/
-
 /****
 **
-** Header Styles NOTE: We are using react-burger-menu for the Navigation. Therefore, these header     ** styles consider that, and if you are not using react-burger-menu, you can delete these and style the ** menu any way you want. 
+** Header Styles 
 **
 ****/
 
 .page-header {
+  background-color: var(--white-color);
+  opacity: 0.95;
+  position: fixed;
+  z-index: 999;
   display: flex;
-  flex-direction: row;
-  padding: 1rem;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  flex-direction: column;
+  border-bottom: 1px solid var(--accent-color);
+  width: 100vw;
 }
 
-.page-header ul {
-  display: flex;
-}
-
-.page-header .menu,
-.page-header ul,
-.page-header .search {
-  display: none;
-}
-
-.page-header .search {
-  padding-top: 20px;
-}
-
-@media (min-width: 950px) {
-  .page-header .menu,
-  .page-header ul {
-    display: flex;
-  }
-
-  .page-header .search {
-    display: inline-block;
-  }
-
-  .page-header .menu li,
-  .page-header ul li {
-    padding: 0 10px;
-    list-style-type: none;
-  }
-
-  .page-header .menu li a {
-    text-decoration: none;
-    text-transform: uppercase;
+@media (min-width: 768px) {
+  .page-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
   }
 }
 
@@ -314,18 +194,224 @@ small {
 
 /****
 **
+** TOP .logo STYLES 
+**
+****/
+
+.logo {
+  flex-basis: auto;
+  margin: 0;
+  align-self: center;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    align-self: flex-start;
+  }
+}
+
+/****
+**  END OF TOP .logo STYLES
+****/
+
+/****
+**
+** TOP .main-menu STYLES 
+**
+****/
+
+.main-menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  z-index: 999;
+  justify-content: space-around;
+}
+
+.main-menu nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  background-color: var(--white-color);
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.menu {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+  height: 100vh;
+}
+
+.menu li {
+  list-style-type: none;
+  padding: 0.5rem 1rem;
+}
+
+.menu li a {
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+.nav-toggle {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 0250ms ease-in-out 250ms;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .main-menu {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .main-menu nav {
+    position: static;
+    width: 45vw;
+    background-color: var(--white-color);
+    transition: transform 400ms ease-in-out;
+    transform: scale(1, 1);
+    transform-origin: top;
+    border-bottom: none;
+  }
+
+  .menu {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    text-transform: capitalize;
+    height: auto;
+  }
+
+  .nav-toggle-label {
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+  }
+
+  .menu li,
+  .menu li {
+    padding: 0 10px;
+    list-style-type: none;
+  }
+
+  .menu li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    opacity: 1;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: var(--black-color);
+    font-weight: 900;
+  }
+
+  .menu li a:active {
+    text-decoration: underline;
+    color: var(--accent-color-shade);
+    font-weight: 900;
+  }
+}
+
+/****
+**  END OF .main-menu STYLES
+****/
+
+/****
+**
+** TOP .search STYLES 
+**
+****/
+.search {
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  .search {
+    display: flex;
+    flex-direction: column;
+  }
+  .search-box {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .search ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search .search-box {
+    align-content: flex-end;
+  }
+
+  .search input {
+    margin: 0;
+  }
+  .search-results {
+    position: absolute;
+    top: 101%;
+    background-color: var(--white-color);
+    transition: transform 400ms ease-in-out;
+    transform: scale(1, 1);
+    transform-origin: top;
+    border-bottom: none;
+  }
+  .search-results ul {
+    padding: 1rem;
+    margin: 0;
+  }
+  .search-results li {
+    list-style-type: none;
+  }
+}
+/****
+**  END OF TOP .search STYLES
+****/
+
+/****
+**
 ** MAIN DIV STYLES NOTE: Look for subsections. These are the styles for the Main div including the ASIDE.
 **
 ****/
+
+main {
+  padding-top: 100px;
+}
 
 figcaption {
   text-align: center;
   padding: 0.5rem;
 }
 
-article header p {
-  display: flex;
-  flex-direction: column;
+@media (min-width: 768px) {
+  main {
+    padding-top: 150px;
+  }
 }
 
 /****
@@ -363,10 +449,6 @@ article header p {
 
 /**** START social-follow-me.js STYLES ****/
 
-.social-follow-me {
-  padding: 1rem 0;
-}
-
 .social-follow-me ul {
   display: flex;
   justify-content: space-around;
@@ -377,28 +459,49 @@ article header p {
   list-style: none;
 }
 
-/**** END social-follow-me.js STYLES ****/
-
-/**** START social-share.js STYLES ****/
-
-.social-share {
-  padding: 1rem 0;
-}
-
-.social-share ul {
-  display: flex;
-  justify-content: space-around;
-  margin-left: 0;
-}
-
-.social-share ul li {
-  list-style: none;
-}
-
 .social-share button {
   color: var(--accent-color);
 }
 
+.social-follow-me li,
+.social-follow-me ul li {
+  padding: 0 10px;
+  list-style-type: none;
+}
+
+header .social-follow-me {
+  display: none;
+}
+
+@media (min-width: 1500px) {
+  header .social-follow-me {
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+  header .social-follow-me ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+  }
+
+  header .social-follow-me ul li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  header .social-share button {
+    color: var(--accent-color);
+  }
+
+  header .social-follow-me li,
+  header .social-follow-me ul li {
+    padding: 0 10px;
+    list-style-type: none;
+  }
+}
 /**** END social-share.js STYLES ****/
 
 /**** START mailchimp-sign-up.js STYLES ****/

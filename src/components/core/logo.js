@@ -6,9 +6,11 @@ const Logo = () => {
   const data = useStaticQuery(query)
 
   return (
-    <Link to="/">
-      <Image fixed={data.logo.childImageSharp.fixed} alt="logo for website" />
-    </Link>
+    <div className="logo">
+      <Link to="/">
+        <Image fixed={data.logo.childImageSharp.fixed} alt="logo for website" />
+      </Link>
+    </div>
   )
 }
 
