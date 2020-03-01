@@ -25,13 +25,15 @@ const Menu = () => {
         aria-controls="nav-toggle"
       >
         <HamburgerMenuIcon size="35" />
-        <input
-          type="checkbox"
-          id="nav-toggle"
-          class="nav-toggle"
-          name="nav-toggle-label"
-        />
       </label>
+
+      <input
+        type="checkbox"
+        id="nav-toggle"
+        class="nav-toggle"
+        name="nav-toggle-label"
+      />
+
       <nav aria-label="Main menu">
         <h2 id="mainmenulabel" className="sr-only">
           Main Menu
