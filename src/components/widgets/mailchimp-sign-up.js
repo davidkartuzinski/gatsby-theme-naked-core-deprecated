@@ -63,7 +63,7 @@ export default class MailChimpComponent extends React.Component {
             onChange={this._handleChange}
             placeholder="Your Email Address"
             name="email"
-            className="mailchimp-input"
+            className="email mailchimp-input"
             pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
             required
           />

@@ -18,8 +18,6 @@ import NakedBreadcrumb from "../components/core/breadcrumb"
 import SocialShare from "../components/optional/social-share"
 import TalkYardComments from "../components/optional/talkyard-comments"
 import SiteWideMessage from "../components/widgets/sitewide-message"
-import MailChimpSignUp from "../components/widgets/mailchimp-sign-up"
-import Bio from "../components/widgets/bio"
 
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
@@ -91,9 +89,7 @@ const BlogPost = ({ data, pageContext, location }) => {
       </article>
       <section>
         <SocialShare shareUrl={shareUrl} title={post.frontmatter.description} />
-        <Bio />
 
-        <MailChimpSignUp />
         <Categories categories={data.mdx.frontmatter.categories} />
         <Tags tags={data.mdx.frontmatter.tags} />
       </section>

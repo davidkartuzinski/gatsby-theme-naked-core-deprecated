@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import wordsCounter from "word-counting"
-import CookieBannerCookieHub from "../optional/cookie-hub"
 
 const SEO = ({
   title,
@@ -35,8 +34,6 @@ const SEO = ({
               twitter
               twitterAuthor
             }
-            googleTrackingId
-            cookieHubId
           }
         }
       }
@@ -51,8 +48,6 @@ const SEO = ({
   const locale = site.siteMetadata.locale
   const twitter = site.siteMetadata.social.twitter
   const twitterAuthor = site.siteMetadata.twitterAuthor
-  const googleTrackingId = site.siteMetadata.googleTrackingId
-  const cookieHubId = site.siteMetadata.cookieHubId
 
   const schemaWebPage = {
     "@context": "http://schema.org",
@@ -217,10 +212,6 @@ const SEO = ({
           </script>
         )}
       </Helmet>
-      <CookieBannerCookieHub
-        googleTrackingId={googleTrackingId}
-        cookieHubId={cookieHubId}
-      />
     </>
   )
 }
