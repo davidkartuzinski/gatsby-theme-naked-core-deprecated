@@ -14,9 +14,11 @@ const SocialShare = props => {
 
   return (
     <div className="social-share">
-      <h3>Share this post</h3>
-
+      <h3 className="sr-only">Share this post</h3>
       <ul>
+        <li>
+          <span className="h3">Share this post:</span>
+        </li>
         <li>
           <FacebookShareButton
             url={props.shareUrl}
@@ -49,7 +51,6 @@ const SocialShare = props => {
           </EmailShareButton>
         </li>
       </ul>
-      <hr />
     </div>
   )
 }

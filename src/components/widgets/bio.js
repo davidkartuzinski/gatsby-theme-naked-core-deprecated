@@ -14,7 +14,7 @@ const Bio = () => {
   const data = useStaticQuery(query)
 
   return (
-    <section class="bio">
+    <section className="bio">
       <h3>Bio</h3>
       <figure>
         <Image
@@ -47,7 +47,6 @@ const Bio = () => {
           </a>
         </li>
       </ul>
-      <hr />
     </section>
   )
 }

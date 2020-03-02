@@ -6,13 +6,15 @@ import LatestPosts from "../widgets/latest-posts"
 import SocialFollowMe from "../widgets/social-follow-me"
 import Bio from "../widgets/bio"
 
-const Aside = () => {
+const Aside = ({ children }) => {
   return (
     <>
       <aside>
+        {children}
+        <SocialFollowMe />
         <MailChimpSignUp />
         <Bio />
-        <SocialFollowMe />
+
         <LatestPosts />
         <Instagram />
       </aside>

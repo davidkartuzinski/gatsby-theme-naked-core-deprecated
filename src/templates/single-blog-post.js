@@ -4,6 +4,7 @@ import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 import PropTypes from "prop-types"
 import Moment from "react-moment"
 import Layout from "../components/structure/layout"
+import Aside from "../components/structure/aside"
 import Tags from "../components/core/tags"
 import Categories from "../components/core/categories"
 import ResponsiveImage from "../components/core/responsive-image"
@@ -87,14 +88,12 @@ const BlogPost = ({ data, pageContext, location }) => {
           <MDXRenderer>{post.body}</MDXRenderer>
         </div>
       </article>
-      <section>
-        <SocialShare shareUrl={shareUrl} title={post.frontmatter.description} />
+      <section></section>
 
-        <Categories categories={data.mdx.frontmatter.categories} />
-        <Tags tags={data.mdx.frontmatter.tags} />
-      </section>
-
-      <nav>
+      <nav
+        className="previous-next-post-nav"
+        aria-label="Previous post or next post"
+      >
         {previous && (
           <Link
             to={"/blog/" + previous.frontmatter.slug}
@@ -121,6 +120,12 @@ const BlogPost = ({ data, pageContext, location }) => {
           </Link>
         )}
       </nav>
+      <Aside>
+        <SocialShare shareUrl={shareUrl} title={post.frontmatter.description} />
+
+        <Categories categories={data.mdx.frontmatter.categories} />
+        <Tags tags={data.mdx.frontmatter.tags} />
+      </Aside>
       <TalkYardComments />
     </Layout>
   )

@@ -20,7 +20,7 @@ const Menu = () => {
     <div className="main-menu">
       <label
         htmlFor="nav-toggle"
-        class="nav-toggle-label"
+        className="nav-toggle-label"
         aria-haspopup="true"
         aria-controls="nav-toggle"
       >
@@ -30,7 +30,7 @@ const Menu = () => {
       <input
         type="checkbox"
         id="nav-toggle"
-        class="nav-toggle"
+        className="nav-toggle"
         name="nav-toggle-label"
       />
 

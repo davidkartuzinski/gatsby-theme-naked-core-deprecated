@@ -179,6 +179,7 @@ module.exports = {
       options: {
         talkyardServerUrl:
           "https://comments-for-gatsby-theme-naked-netlify-com.talkyard.net/",
+        talkyardDebug: false,
       },
     },
     {

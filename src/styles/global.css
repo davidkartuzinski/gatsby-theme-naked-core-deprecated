@@ -47,6 +47,31 @@
 
 /****
 **  
+** FONT STYLES - DELETE THESE IF YOU USE TYPOGRAPHY.JS
+** 
+****/
+
+.h3 {
+  margin: 0 5% 1.4rem;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 1.4rem;
+  color: #55433b;
+  font-family: "Patua One", sans-serif;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  font-size: 1.31951rem;
+  line-height: 1.1;
+}
+
+/****
+**  END OF FONT STYLES
+****/
+
+/****
+**  
 ** Optional or Plugin specific styles
 ** 
 ****/
@@ -175,7 +200,6 @@ small {
   z-index: 999;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid var(--accent-color);
   width: 100vw;
 }
 
@@ -202,6 +226,8 @@ small {
   flex-basis: auto;
   margin: 0;
   align-self: center;
+  height: 75px;
+  width: 180px;
 }
 
 @media (min-width: 768px) {
@@ -395,6 +421,43 @@ small {
 
 /****
 **
+** tags and categories on pages/posts STYLES
+**
+****/
+
+.categories-on-page,
+.tags-on-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.categories-on-page ul,
+.tags-on-page ul {
+  padding: 0;
+  margin: 0;
+}
+
+.categories-on-page ul li,
+.tags-on-page ul li {
+  list-style-type: none;
+  border-bottom: 1px solid var(--grey-color);
+  padding: 0.25rem 0 0.75rem 0;
+}
+
+.categories-on-page ul li a,
+.tags-on-page ul li a {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+/****
+** END OF tags and categories on pages/posts STYLES
+****/
+
+/****
+**
 ** MAIN DIV STYLES NOTE: Look for subsections. These are the styles for the Main div including the ASIDE.
 **
 ****/
@@ -412,6 +475,20 @@ figcaption {
   main {
     padding-top: 150px;
   }
+}
+
+aside {
+  background-color: var(--white-color);
+  display: grid;
+}
+
+aside h3 {
+  text-align: center;
+}
+
+aside section {
+  border-bottom: 3px dotted #55433b;
+  margin-bottom: calc(1.4rem / 2);
 }
 
 /****
@@ -436,6 +513,10 @@ figcaption {
 
 /**** START bio.js STYLES ****/
 
+.bio {
+  background-color: var(--white-color);
+}
+
 .bio ul {
   display: flex;
   justify-content: space-around;
@@ -445,7 +526,29 @@ figcaption {
   list-style: none;
 }
 
+.bio figure {
+  width: 100%;
+}
+
 /**** END bio.js STYLES ****/
+
+/**** start social-share.js STYLES ****/
+
+.social-share ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.social-share ul li {
+  list-style: none;
+}
+
+.social-share ul li span {
+  line-height: 3.2;
+  margin: 0;
+}
+
+/**** END social-share STYLES ****/
 
 /**** START social-follow-me.js STYLES ****/
 
@@ -504,6 +607,14 @@ header .social-follow-me {
 }
 /**** END social-share.js STYLES ****/
 
+/**** START latest-posts.js STYLES ****/
+
+.latest-posts li {
+  list-style-type: none;
+}
+
+/**** END latest-posts.js STYLES ****/
+
 /**** START mailchimp-sign-up.js STYLES ****/
 
 .mailchimp-sign-up {
@@ -551,6 +662,20 @@ header .social-follow-me {
   box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.3);
 }
 /**** END mailchimp-sign-up.js STYLES ****/
+
+/**** START instagram.js STYLES ****/
+
+.instagram-widget ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.5rem;
+}
+
+.instagram-widget ul li {
+  list-style-type: none;
+}
+
+/**** END instagram.js STYLES ****/
 
 /****
 **  END WIDGETS STYLES

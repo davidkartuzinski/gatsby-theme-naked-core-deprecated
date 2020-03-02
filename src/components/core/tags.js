@@ -12,7 +12,7 @@ export default props => {
   }   for this post.`
 
   return (
-    <>
+    <section className="tags-on-page">
       <h3>
         <TagsIcon />
         {tagHeader}
@@ -24,12 +24,12 @@ export default props => {
 
           return (
             <li key={index}>
-              <Link to={tagUrl}>{tag}</Link>
+              > <Link to={tagUrl}>{tag}</Link>
             </li>
           )
         })}
       </ul>
       <Link to="/tags">See all tags</Link>
-    </>
+    </section>
   )
 }

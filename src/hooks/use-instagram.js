@@ -15,8 +15,8 @@ const useInstagram = () => {
           link
           localImage {
             childImageSharp {
-              fixed(height: 240, width: 240) {
-                ...GatsbyImageSharpFixed
+              fluid(maxWidth: 350) {
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }

@@ -50,8 +50,8 @@ const LatestPosts = () => {
   ))
 
   return (
-    <section>
-      <h2>Latest Posts</h2>
+    <section className="latest-posts">
+      <h3>Latest Posts</h3>
       <ul>{ListItems}</ul>
     </section>
   )
