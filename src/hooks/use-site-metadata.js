@@ -24,7 +24,6 @@ export const useSiteMetadata = () => {
               linkedin
               github
             }
-            sitewideMessage
           }
         }
       }

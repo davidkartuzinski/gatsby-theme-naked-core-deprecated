@@ -1,0 +1,166 @@
+---
+author :  'David Kartuzinski'
+date :  2020-03-07T00:19:07.773Z
+title : |
+ Web Color Accessibility| Gatsby Theme Naked
+description : |
+ A step-by-step case study for non-designers for choosing a color pallette that follows web color accessibility guidelines. 
+keywords :  
+ - 'web color accessibility'
+---
+
+     
+
+Web Color Accessibility
+=======================
+
+**Web Color Accessibility** includes the concept of being, "[Perceivable](https://www.w3.org/TR/UNDERSTANDING-WCAG20/intro.html)". Part of this, is there must be sufficient color contract and size between elements. Follow along and see the steps I took to bring this theme within the _WCAG Guidelines_.
+
+Imagine, as website developers, that we receive a color palette. A designer hands us a [Figma](https://www.figma.com/) or [Sketch](https://www.sketch.com/) file. Our job is to implement that design, with that color scheme into a component, or web page. Imagine a worse situation, you must come up with a design yourself? This can be a daunting task.
+
+Whether you're implementing a design or creating a design, this is the moment that you must consider web accessibility. It is at this stage, [browser tools for checking accessibility like Axe](https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd), check for and correct violations of the WCAG.
+
+This blog post is for everyone who isn't [Jony Ive](https://en.wikipedia.org/wiki/Jony_Ive), [Erik Kennedy](http://erikdkennedy.com/) or a professional designer.
+
+These are the simple steps I take to create a color scheme and design from scratch. These steps can apply to designs that you are implementing. During this process, as applied to the **Gatsby Theme Naked**, I ensure I follow web accessibility recommendations.
+
+## Start with content and fonts / typography
+
+I find it easier to assign colors working from actual content on a page. This includes choosing fonts, font sizes, rhythm, etc. [Gatsby](https://www.gatsbyjs.org/) makes this easier with a [typography plugin](https://github.com/KyleAMathews/typography.js) and a selection of typography themes. I am using [a theme called Funston](https://github.com/KyleAMathews/typography.js/tree/master/packages/typography-theme-funston).
+
+Using this plugin and a theme does a lot of the work. (I did modify the theme a bit in the \`utils/typography.js\` file.)
+
+## How to create a web color accessible palette?
+
+I create a color scheme by choosing an accent color. I try to find a color that matches the mood of my website or design. (You can see different colors and their meaning and psychology on this website: [color meaning and psychology](https://graf1x.com/color-psychology-emotion-meaning-poster/).)
+
+For example, I chose an orange color. Orange is a color that is inviting and is fun.
+
+The next step is to create a color palette around this initial color. I use the [mycolor.space](https://mycolor.space) website. I know that I want the orange color for call-to-actions and to accentuate links, etc.
+
+I need an off-white color for the background, a gray color and a dark color to balance against the accent color. I pay attention and try to choose colors with good contrast.
+
+My [initial palette](https://mycolor.space/?hex=%23F3824A&sub=1%20%3C---%20Natural%20Palette) uses four colors: #f3824a / orange, #5543b / dark brown, #fff5ea / off white, and #dfe0df / gray. (This is the "Natural Palette" but using the brown color from the "Matching Palette" at the link.)
+
+My starting palette looks like this:  
+<figure><Imagesrc="./initial-color-scheme.png"alt="Initial color scheme including orange, brown, grey and an off-white"className=""/><figcaption> Initial color scheme including orange, brown, grey and an off-white</figcaption></figure>
+
+This color palette works on the website and on the official [Twitter](https://twitter.com/NakedGatsby) and [Instagram](https://www.instagram.com/nakedgatsby) accounts. On a feed, these colors should stand out. Implement the palette with care and follow all the guidelines for web color accessibility.
+
+## How do you have web accessible typography?
+
+The next part is to assign colors to each of the elements that make up a web page. The main content font color and it's background is the first consideration. Consider next, each of the main page sections such as the Header, Aside and Footer. Each of these sections could look different and use the same color scheme. To be web accessible, each of these sections [need to have sufficient contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html).
+
+The details will matter. This includes button colors, button :hover, :active, and :focus states, links, link :hover and :active states, and code blocks and code highlights.
+
+Separate to your main color scheme you have success and error messages, etc. that have their own colors. You may have additional sections. This theme, for example, has a _Sitewide message section_ and an _Email opt in section_. You must check these sections for web accessibility.
+
+## Web color accessibility examples
+
+Below are examples of the process I used to make these three section web accessible.
+
+I used the following web color accessibility tools:
+
+*   [WebAim Contrast Checker](https://webaim.org/resources/contrastchecker)
+*   [LearnUi Design Accessible Color Generator](https://learnui.design/tools/accessible-color-generator.html)
+*   [Axe Chrome Extension](https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd)
+
+### Sitewide Message
+
+The Sitewide Message Section is a section that stands out from the rest of the page. This section should appear different to anyone trying to read the entire page. But the page should stay out of the way of someone skimming the page. It will need a different background color than the main content.
+
+The initial color choices for the site wide message:
+
+*   #dfe0df for background color
+*   #040404 for the font color
+*   Links get the color #55433b, with hover of: #040404
+
+<figure><Imagesrc="./sitewide-before.png"alt="The original sitewide message"className=""/><figcaption>The original sitewide message.</figcaption></figure>
+
+I check the contrast using the WebAim Contrast Checker and get a \*\*pass\*\*.  
+<figure><Imagesrc="./pass-on-sitewide.png"alt="showing that this color combination passed"className=""/><figcaption>Shows that this color combination is accessible with a pass.</figcaption></figure>
+
+### Email List Opt In
+
+(This is a real Email opt in box, by the by. Go and give me your email address, and I will send you updates and articles regarding Gatsby and regarding this theme.)  
+I want the email opt in box to stand out. It is the main general call-to-action on all my pages. I use a whitish on brownish color scheme with a form and an orange button.  
+<figure><Imagesrc="./mailchimp-before.png"alt="this is the mailchimp signup box before making it accessible"className=""/><figcaption> This email signup or opt in box before making it accessible.</figcaption></figure>  
+I happen to know this has an issues. The white text on the orange button is small against the orange. I found the issue with the _WebAim Contrast Checker tool_.
+
+See below:
+
+*   I got a pass using white color #FFF7F0 text on a brown color #55433b background. \[[link](https://webaim.org/resources/contrastchecker/?fcolor=FFF7F0&bcolor=55433B)\]. The issue is that the checker considers 18px font size or above. I increase my font size (for my <small> tags) from 16px to 18px.
+*   I have one input field. The placeholder text color is gray #55433b and the background is white #fff7f0. And this passed. \[link\]. The input has a :focus style; the font color becomes black #040404 and passes. \[[link](https://webaim.org/resources/contrastchecker/?fcolor=040404&bcolor=FFF7F0)\].
+*   The actual orange button on the brown background passes. It passes because it's a large User Interface Component as opposed to typography. \[[link](https://webaim.org/resources/contrastchecker/?fcolor=FF9F2F&bcolor=8E4200)\].
+*   The font color on the orange button is white and it fails. \[[link](https://webaim.org/resources/contrastchecker/?fcolor=FFF7F0&bcolor=FF9F2F)\].
+
+I used the LearnUi Design Color Accessibility tool to get the options of my orange color.
+
+To fix this, use the [LearnUi Design Color Accessibility tool](https://learnui.design/tools/accessible-color-generator.html) to get the options of the orange color.
+
+<figure><Imagesrc="./learnui.design-orange.png"alt="orange color options on learnui.design accessibility tool"className=""/><figcaption> Result of the learnui.design accessibility tool for orange #FF9F2F.</figcaption></figure>
+
+These results show that a darker color is needed to get an acceptable contrast with the orange background. There are two different darker colors in the color scheme; the brown color #55433b and the black color #040404.
+
+The brown color doesn't pass with smaller text \[[link](https://webaim.org/resources/contrastchecker/?fcolor=55433B&bcolor=FF9F2F)\], but the black color passes \[[link](https://webaim.org/resources/contrastchecker/?fcolor=040404&bcolor=FF9F2F)\]. This suits the inactive or native state of the button.
+
+A button has a :hover, :active, and :focus state. The result passes with the following CSS:
+
+\`\`\`
+
+css:root {--accent-color: #d77e00;--accent-color-shade: #8e4200;--dark-accent-color: #55433b;--grey-color: #dfe0df;--white-color: #fff7f0;--black-color: #040404;}  
+.mailchimp-button {color: var(--black-color);background-color: var(--accent-color);cursor: pointer;margin: 0 3% 1.4rem;width: 90%;}  
+.mailchimp-button:hover {color: var(--white-color);background-color: var(--accent-color-shade);cursor: pointer;}  
+.mailchimp-button:active {background-color: var(--accent-color);box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.3);}  
+.mailchimp-button:focus {outline: 2px solid var(--white-color);background-color: var(--accent-color-shade);color: var(--white-color);}
+
+\`\`\`
+
+### You can sign-up to the newsletter and see this in action.  
+  
+The Code Block and Code Highlight
+
+The theme is using the [SolarizedLight theme](https://github.com/PrismJS/prism/blob/1d5047df37aacc900f8270b1c6215028f6988eb1/themes/prism-solarizedlight.css) for PrismJs for Code Blocks and Code Highlighting. The background color of the code block and code highlighting is a pale yellow. #fdf6e3. The font color is #657b83. This sits on a white background.  
+<figure><Imagesrc="./code-editor-block.png"alt="this is the code editor block before making it accessible"className=""/><figcaption>This code editor block before making it accessible.</figcaption></figure>
+
+There isn't the contrast necessary to pass web color accessibility guidelines. Fixing this requires two different steps:
+
+1.  Replacing and importing a new theme with adequate contrast
+2.  Tweaking the CSS to match per the instructions from the [Gatsby Docs and PrismJs](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/).
+
+First, I found a great theme called [A11y Dark](https://github.com/PrismJS/prism-themes/blob/master/themes/prism-a11y-dark.css). The colors are perfect, and pass the Axe Accessibility plugin check. I installed the [Prism themes libary](https://github.com/PrismJS/prism-themes) with \`yarn add prism-themes\`. I replaced the \`require\` statement in the \`gatsby-browser.js\` file.
+
+\`\`\`js
+
+import "./src/styles/global.css"
+
+require("prism-themes/themes/prism-a11y-dark.css")
+
+require("prismjs/plugins/line-numbers/prism-line-numbers.css")
+
+require("prismjs/plugins/command-line/prism-command-line.css")
+
+\`\`\`
+
+Next, I tweaked the CSS that was in the \`global.css\` file. This part of the CSS looks like this:
+
+\`\`\`css
+
+  
+/\* Add back the container background-color, border-radius, padding, margin and overflow that we removed from <pre>. \*/.gatsby-highlight {/\* background-color: #fdf6e3; \*/border-radius: 0.3em;margin: 0.5em 1rem 1.5rem !important; /\* fix from solar styles \*/padding: 1em;overflow: auto;}/\* Remove the default PrismJS theme background-color, border-radius, margin, \* padding and overflow. \* 1. Make the element just wide enough to fit its content. \* 2. Always fill the visible space in .gatsby-highlight. \* 3. Adjust the position of the line numbers \*/  
+.gatsby-highlight pre\[class\*="language-"\] {/\* background-color: transparent; \*/margin: 0;padding: 0;overflow: initial;float: left; /\* 1 \*/min-width: 100%; /\* 2 \*/}  
+/\* If you already use line highlighting \*//\* Adjust the position of the line numbers \*/.gatsby-highlight pre\[class\*="language-"\].line-numbers {padding-left: 2.8em;}  
+/\* If you only want to use line numbering \*/  
+.gatsby-highlight {background-color: #2d2d2d;/\* background-color: #fdf6e3; \*/border-radius: 0.3em;margin: 0.5em 0;padding: 1em;overflow: auto;}  
+.gatsby-highlight pre\[class\*="language-"\].line-numbers {padding: 0;padding-left: 2.8em;overflow: initial;}  
+.command-line-prompt > span:before {color: #999;content: " ";display: block;padding-right: 0.8em;}  
+/\* Prompt for all users \*/.command-line-prompt > span\[data-user\]:before {content: "\[" attr(data-user) "@" attr(data-host) "\] $";}  
+/\* Prompt for root \*/.command-line-prompt > span\[data-user="root"\]:before {content: "\[" attr(data-user) "@" attr(data-host) "\] #";}  
+.command-line-prompt > span\[data-prompt\]:before {content: attr(data-prompt);}  
+/\* fix the font-size given by the solar theme.\*/  
+code\[class\*="language-"\],pre\[class\*="language-"\] {font-size: 0.85rem !important;}
+
+### \`\`\`  
+Summary
+
+In this article there are tools and a method to help you create web color accessible palettes for your website or app.

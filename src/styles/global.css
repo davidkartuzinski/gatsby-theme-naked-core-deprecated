@@ -15,8 +15,8 @@
 /**** CSS Custom Variable for Color Scheme ****/
 
 :root {
-  --accent-color: #f3824a;
-  --accent-color-shade: #c2683b;
+  --accent-color: #d77e00;
+  --accent-color-shade: #8e4200;
   --dark-accent-color: #55433b;
   --grey-color: #dfe0df;
   --white-color: #fff7f0;
@@ -80,7 +80,7 @@
 
 body {
   /* https://beautifuldingbats.com/pattern-generator?share=eyJzaG93Ijp0cnVlLCJzdHlsZSI6ImRvMyIsInNpemUiOjEyLCJjb2xvciI6IiM1NTQzM2IiLCJzZWNvbmRhcnkiOiIjZjM4MjRhIiwiYSI6MSwiYiI6Miwicm90YXRpb24iOjEzMCwiZmlsbCI6IiNmZmY3ZjAifQ , https://meyerweb.com/eric/tools/dencoder/  */
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221000%22%20height%3D%221000%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22pattern%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2040%2040%22%20patternUnits%3D%22userSpaceOnUse%22%20patternTransform%3D%22rotate(130)%22%3E%3Crect%20id%3D%22pattern-background%22%20x%3D%220%22%20y%3D%220%22%20width%3D%221000%22%20height%3D%221000%22%20fill%3D%22%23fff7f0%22%2F%3E%20%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%221%22%20fill%3D%22%2355433b%22%20stroke%3D%22%2355433b%22%20stroke-width%3D%220%22%2F%3E%20%3C!----%3E%20%3C!----%3E%20%20%20%20%3Ccircle%20cx%3D%222%22%20cy%3D%222%22%20r%3D%221%22%20fill%3D%22%23f3824a%22%20stroke%3D%22%23f3824a%22%20stroke-width%3D%220%22%2F%3E%3Ccircle%20cx%3D%2242%22%20cy%3D%222%22%20r%3D%221%22%20fill%3D%22%23f3824a%22%20stroke%3D%22%23f3824a%22%20stroke-width%3D%220%22%2F%3E%3Ccircle%20cx%3D%222%22%20cy%3D%2242%22%20r%3D%221%22%20fill%3D%22%23f3824a%22%20stroke%3D%22%23f3824a%22%20stroke-width%3D%220%22%2F%3E%3Ccircle%20cx%3D%2242%22%20cy%3D%2242%22%20r%3D%221%22%20fill%3D%22%23f3824a%22%20stroke%3D%22%23f3824a%22%20stroke-width%3D%220%22%2F%3E%20%3C!----%3E%20%3C!----%3E%20%20%20%20%3C%2Fpattern%3E%3C%2Fdefs%3E%20%3Crect%20fill%3D%22url(%23pattern)%22%20height%3D%221000%22%20width%3D%221000%22%20y%3D%220%22%20x%3D%220%22%2F%3E%3C%2Fsvg%3E");
+  /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221000%22%20height%3D%221000%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22pattern%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2040%2040%22%20patternUnits%3D%22userSpaceOnUse%22%20patternTransform%3D%22rotate(130)%22%3E%3Crect%20id%3D%22pattern-background%22%20x%3D%220%22%20y%3D%220%22%20width%3D%221000%22%20height%3D%221000%22%20fill%3D%22%23fff7f0%22%2F%3E%20%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%221%22%20fill%3D%22%2355433b%22%20stroke%3D%22%2355433b%22%20stroke-width%3D%220%22%2F%3E%20%3C!----%3E%20%3C!----%3E%20%20%20%20%3Ccircle%20cx%3D%222%22%20cy%3D%222%22%20r%3D%221%22%20fill%3D%22%23f3824a%22%20stroke%3D%22%23f3824a%22%20stroke-width%3D%220%22%2F%3E%3Ccircle%20cx%3D%2242%22%20cy%3D%222%22%20r%3D%221%22%20fill%3D%22%23f3824a%22%20stroke%3D%22%23f3824a%22%20stroke-width%3D%220%22%2F%3E%3Ccircle%20cx%3D%222%22%20cy%3D%2242%22%20r%3D%221%22%20fill%3D%22%23f3824a%22%20stroke%3D%22%23f3824a%22%20stroke-width%3D%220%22%2F%3E%3Ccircle%20cx%3D%2242%22%20cy%3D%2242%22%20r%3D%221%22%20fill%3D%22%23f3824a%22%20stroke%3D%22%23f3824a%22%20stroke-width%3D%220%22%2F%3E%20%3C!----%3E%20%3C!----%3E%20%20%20%20%3C%2Fpattern%3E%3C%2Fdefs%3E%20%3Crect%20fill%3D%22url(%23pattern)%22%20height%3D%221000%22%20width%3D%221000%22%20y%3D%220%22%20x%3D%220%22%2F%3E%3C%2Fsvg%3E"); */
 }
 
 h1,
@@ -401,7 +401,6 @@ small {
   .search-results {
     position: absolute;
     top: 101%;
-    background-color: var(--white-color);
     transition: transform 400ms ease-in-out;
     transform: scale(1, 1);
     transform-origin: top;
@@ -413,6 +412,9 @@ small {
   }
   .search-results li {
     list-style-type: none;
+    background-color: var(--white-color);
+    padding: 1rem;
+    margin: 0;
   }
 }
 /****
@@ -507,6 +509,11 @@ aside section {
   background-color: var(--grey-color);
   padding: 5%;
   margin: 1rem 0;
+}
+
+.sitewide-message p {
+  padding: 0;
+  margin: 0;
 }
 
 /**** END sitewide-message.js STYLES ****/
@@ -622,33 +629,51 @@ header .social-follow-me {
   background-color: var(--dark-accent-color);
   color: var(--white-color);
   margin-bottom: calc(1.4rem / 2);
+  text-align: left;
 }
 
 .mailchimp-sign-up h3 {
   color: var(--white-color);
+  margin-top: 1rem;
+  text-align: left;
 }
+
+.mailchimp-sign-up p,
+.mailchimp-sign-up small {
+  margin: 0 5% 1.4rem;
+}
+
 .mailchimp-sign-up form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 8rem;
-  margin-top: 2rem;
+  margin: 0 5%;
+}
+
+.mailchimp-sign-up form label {
+  margin: 0;
 }
 
 .mailchimp-input {
   color: var(--dark-accent-color);
   background-color: var(--white-color);
+  margin: 0.4rem 3% 0.8rem;
+  width: 90%;
 }
 
 .mailchimp-input:focus {
   color: var(--black-color);
   background-color: var(--white-color);
+  outline: 2px solid var(--accent-color);
+  box-shadow: 2px solid var(--accent-color);
 }
 
 .mailchimp-button {
-  color: var(--white-color);
+  color: var(--black-color);
   background-color: var(--accent-color);
   cursor: pointer;
+  margin: 0 3% 1.4rem;
+  width: 90%;
 }
 
 .mailchimp-button:hover {
@@ -660,6 +685,12 @@ header .social-follow-me {
 .mailchimp-button:active {
   background-color: var(--accent-color);
   box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.3);
+}
+
+.mailchimp-button:focus {
+  outline: 2px solid var(--white-color);
+  background-color: var(--accent-color-shade);
+  color: var(--white-color);
 }
 /**** END mailchimp-sign-up.js STYLES ****/
 
@@ -689,7 +720,7 @@ header .social-follow-me {
 
 /* Add back the container background-color, border-radius, padding, margin and overflow that we removed from <pre>. */
 .gatsby-highlight {
-  background-color: #fdf6e3;
+  /* background-color: #fdf6e3; */
   border-radius: 0.3em;
   margin: 0.5em 1rem 1.5rem !important; /* fix from solar styles */
   padding: 1em;
@@ -702,7 +733,7 @@ header .social-follow-me {
    * 3. Adjust the position of the line numbers */
 
 .gatsby-highlight pre[class*="language-"] {
-  background-color: transparent;
+  /* background-color: transparent; */
   margin: 0;
   padding: 0;
   overflow: initial;
@@ -719,7 +750,8 @@ header .social-follow-me {
 /* If you only want to use line numbering */
 
 .gatsby-highlight {
-  background-color: #fdf6e3;
+  background-color: #2d2d2d;
+  /* background-color: #fdf6e3; */
   border-radius: 0.3em;
   margin: 0.5em 0;
   padding: 1em;

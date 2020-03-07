@@ -164,7 +164,6 @@ export const query = graphql`
         categories
         tags
         imageAlt
-        imageTitle
         imageFigcaption
         canonical
       }

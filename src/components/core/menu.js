@@ -20,9 +20,9 @@ const Menu = () => {
     <div className="main-menu">
       <label
         htmlFor="nav-toggle"
-        className="nav-toggle-label"
         aria-haspopup="true"
         aria-controls="nav-toggle"
+        className="nav-toggle-label"
       >
         <HamburgerMenuIcon size="35" />
       </label>
@@ -31,7 +31,8 @@ const Menu = () => {
         type="checkbox"
         id="nav-toggle"
         className="nav-toggle"
-        name="nav-toggle-label"
+        name="nav-toggle"
+        aria-label="nav-toggle"
       />
 
       <nav aria-label="Main menu">

@@ -1,7 +1,7 @@
 import React from "react"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 
-import { AlertIcon, SendMailIcon, EnterEmailIcon } from "../core/icons"
+import { SendMailIcon, EnterEmailIcon } from "../core/icons"
 
 // https://github.com/benjaminhoffman/gatsby-plugin-mailchimp/blob/master/examples/gatsby-v2/src/pages/index.js
 
@@ -78,10 +78,7 @@ export default class MailChimpComponent extends React.Component {
           </button>
         </form>
 
-        <small>
-          <AlertIcon />
-          Strict No Spam Policy. No Sharing of your data - EVER!
-        </small>
+        <small>Strict No Spam Policy. No Sharing of your data - EVER!</small>
       </div>
     )
   }

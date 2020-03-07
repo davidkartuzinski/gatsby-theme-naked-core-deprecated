@@ -14,6 +14,9 @@ funstonTheme.overrideThemeStyles = () => ({
     marginRight: "5%",
     width: "90%",
   },
+  small: {
+    fontSize: "90%",
+  },
 })
 
 const typography = new Typography(funstonTheme)

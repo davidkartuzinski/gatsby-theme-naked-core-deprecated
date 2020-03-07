@@ -50,7 +50,6 @@ const BlogRoll = ({ data, pageContext, location }) => {
                 slug={post.node.fields.slug}
                 image={post.node.frontmatter.image.childImageSharp.fixed}
                 imageAlt={post.node.frontmatter.imageAlt}
-                imageTitle={post.node.frontmatter.imageTitle}
                 figcaption={post.node.frontmatter.imageFigcaption}
                 title={post.node.frontmatter.title}
                 date={
@@ -105,7 +104,6 @@ export const query = graphql`
             }
             title
             tags
-            imageTitle
             imageAlt
             imageFigcaption
             categories

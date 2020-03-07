@@ -12,7 +12,7 @@ export default props => {
   }   for this post.`
 
   return (
-    <seciton className="categories-on-page">
+    <section className="categories-on-page">
       <h3>
         <CategoriesIcon /> {categoryHeader}
       </h3>
@@ -28,6 +28,6 @@ export default props => {
         })}
       </ul>
       <Link to="/categories">See all categories</Link>
-    </seciton>
+    </section>
   )
 }

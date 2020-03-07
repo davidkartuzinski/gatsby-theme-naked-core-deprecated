@@ -25,6 +25,7 @@ export default class Search extends Component {
               name="search-field"
               id="search-field"
               placeholder={`Search `}
+              aria-label="search-field"
             />
           </label>
           <SearchIcon size="40" />
