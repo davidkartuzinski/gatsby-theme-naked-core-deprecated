@@ -26,7 +26,7 @@ module.exports = {
       },
     ],
     author: `David Kartuzinski`,
-    authorIntro: `David Kartuzinski is a Web Developer who loves open source and loves GatsbyJs. Hire him today for your next project or unfilled job.`,
+    authorIntro: `David Kartuzinski is a Web Developer who loves open source and loves Gatsby.Js. Hire him today for your next project or unfilled job.`,
     authorImage: `david-kartuzinski.jpg`,
     siteUrl: `https://gatsby-theme-naked.netlify.com/`,
     legalName: `A Gatsby Naked Theme`,

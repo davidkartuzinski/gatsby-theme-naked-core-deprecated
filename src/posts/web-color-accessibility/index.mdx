@@ -13,21 +13,21 @@ imageFigcaption: "A tool by Learnui.design for checking color assessibility and 
 canonical: ""
 ---
 
-**Web Color Accessibility** includes the concept of being, "[Perceivable](https://www.w3.org/TR/UNDERSTANDING-WCAG20/intro.html)". Part of this, is there must be sufficient color contract and size between elements. Follow along and see the steps I took to bring this theme within the _WCAG Guidelines_.
+**Web Color Accessibility** includes the concept of being, "[Perceivable](https://www.w3.org/TR/UNDERSTANDING-WCAG20/intro.html)". Part of this, is there must be sufficient color contrast and size between elements. Follow along and see the steps I took to bring this theme within the _WCAG Guidelines_.
 
-Imagine, as website developers, that we receive a color palette. A designer hands us a [Figma](https://www.figma.com/) or [Sketch](https://www.sketch.com/) file. Our job is to implement that design, with that color scheme into a component, or web page. Imagine a worse situation, you must come up with a design yourself? This can be a daunting task.
+Imagine, as website developers, that we receive a color palette. A designer hands us a [Figma](https://www.figma.com/) or [Sketch](https://www.sketch.com/) file. Our job is to implement that design and color scheme into a component, or web page. Imagine a worse situation, you must come up with a design yourself? This can be a daunting task.
 
 Whether you're implementing a design or creating a design, this is the moment that you must consider web accessibility. It is at this stage, [browser tools for checking accessibility like Axe](https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd), check for and correct violations of the WCAG.
 
 This blog post is for everyone who isn't [Jony Ive](https://en.wikipedia.org/wiki/Jony_Ive), [Erik Kennedy](http://erikdkennedy.com/) or a professional designer.
 
-These are the simple steps I take to create a color scheme and design from scratch. These steps can apply to designs that you are implementing. During this process, as applied to the **Gatsby Theme Naked**, I ensure I follow web accessibility recommendations.
+These are the simple steps I take to create a color scheme and design from scratch. These steps can apply to designs that you are implementing. (Note: I am not a professional designer. Some people may huff and puff about how I lay things out below, feel free to follow their undoubtedly superior advise.) During this process, as applied to the **Gatsby Theme Naked**, I ensure I implement web accessibility recommendations.
 
 ## Start with content and fonts / typography
 
 I find it easier to assign colors working from actual content on a page. This includes choosing fonts, font sizes, rhythm, etc. before adding color. [Gatsby](https://www.gatsbyjs.org/) makes this easier with a [typography plugin](https://github.com/KyleAMathews/typography.js) and a selection of typography themes. I am using [a theme called Funston](https://github.com/KyleAMathews/typography.js/tree/master/packages/typography-theme-funston).
 
-Using this plugin and a theme does a lot of the work. (I did modify the theme a bit in the `utils/typography.js` file.)
+This plugin and a theme does a lot of the work. (I did modify the theme a bit in the `utils/typography.js` file.)
 
 ## How to create a web color accessible palette?
 
@@ -64,11 +64,11 @@ The next part is to assign colors to each of the elements that make up a web pag
 
 The details will matter. This includes button colors, button :hover, :active, and :focus states, links, link :hover and :active states, and code blocks and code highlights.
 
-Separate to your main color scheme you have success and error messages, etc. that have their own colors. You may have additional sections. This theme, for example, has a _Sitewide message section_ and an _Email opt in section_. You must check these sections for web accessibility.
+Separate to your main color scheme you have success and error messages, etc. that have their own colors. You may have additional sections. This theme, for example, has a _Text Widget section_ and an _Email opt in section_. You must check these sections for web accessibility.
 
 ## Web color accessibility examples
 
-Below are examples of the process I used to make these three section web accessible.
+Below are examples of the process I used to make these three sections web accessible.
 
 I used the following web color accessibility tools:
 

@@ -46,7 +46,7 @@ export default class MailChimpComponent extends React.Component {
         <h3>Sign up and get exclusive content delivered to your inbox</h3>
         <p>
           You get exclusive content including occasional updates, new module and
-          themes alerts, and GatsbyJs news. No spam. Just occasional emails for
+          themes alerts, and Gatsby.Js news. No spam. Just occasional emails for
           stuff you probably want to get.
         </p>
         <small>
