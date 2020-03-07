@@ -13,12 +13,9 @@ const SocialShare = props => {
   const { title } = useSiteMetadata()
 
   return (
-    <div className="social-share">
-      <h3 className="sr-only">Share this post</h3>
+    <section className="social-share">
+      <h3>Share this post</h3>
       <ul>
-        <li>
-          <span className="h3">Share this post:</span>
-        </li>
         <li>
           <FacebookShareButton
             url={props.shareUrl}
@@ -51,7 +48,7 @@ const SocialShare = props => {
           </EmailShareButton>
         </li>
       </ul>
-    </div>
+    </section>
   )
 }
 

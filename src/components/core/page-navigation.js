@@ -7,22 +7,25 @@ const PageNavigation = ({ pageContext }) => {
   const { previousPagePath, nextPagePath } = pageContext
 
   return (
-    <div>
+    <nav
+      className="previous-next-post-nav"
+      aria-label="Previous post listing or next post listing "
+    >
       {previousPagePath && (
         <span>
           <Link to={`${previousPagePath}`}>
-            <PreviousPageIcon /> Previous
+            <PreviousPageIcon /> Previous Posts
           </Link>
         </span>
       )}
       {nextPagePath && (
         <span>
           <Link to={`${nextPagePath}`}>
-            Next <NextPageIcon />
+            Next Posts <NextPageIcon />
           </Link>
         </span>
       )}
-    </div>
+    </nav>
   )
 }
 

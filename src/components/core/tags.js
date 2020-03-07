@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import slugify from "react-slugify"
-import { TagsIcon } from "./icons"
+import { TagsIcon, NextPageIcon } from "./icons"
 
 export default props => {
   const tags = props.tags
@@ -13,9 +13,8 @@ export default props => {
 
   return (
     <section className="tags-on-page">
-      <h3>
-        <TagsIcon />
-        {tagHeader}
+      <h3 className="h4">
+        <TagsIcon className="tags-icon" /> {tagHeader}
       </h3>
       <ul>
         {tags.map((tag, index) => {
@@ -24,12 +23,14 @@ export default props => {
 
           return (
             <li key={index}>
-              > <Link to={tagUrl}>{tag}</Link>
+              <NextPageIcon /> <Link to={tagUrl}>{tag}</Link>
             </li>
           )
         })}
       </ul>
-      <Link to="/tags">See all tags</Link>
+      <Link className="all-tags" to="/tags">
+        See all tags
+      </Link>
     </section>
   )
 }

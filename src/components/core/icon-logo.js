@@ -2,24 +2,27 @@ import React from "react"
 import Image from "gatsby-image"
 import { graphql, useStaticQuery, Link } from "gatsby"
 
-const Logo = () => {
+const IconLogo = () => {
   const data = useStaticQuery(query)
 
   return (
-    <div className="logo">
+    <div className="icon-logo">
       <Link to="/">
-        <Image fluid={data.logo.childImageSharp.fluid} alt="logo for website" />
+        <Image
+          fluid={data.iconLogo.childImageSharp.fluid}
+          alt="icon logo for website"
+        />
       </Link>
     </div>
   )
 }
 
 const query = graphql`
-  query logo {
-    logo: file(relativePath: { eq: "naked-logo.png" }) {
+  query iconLogo {
+    iconLogo: file(relativePath: { eq: "icon.png" }) {
       relativePath
       childImageSharp {
-        fluid(maxWidth: 180) {
+        fluid(maxWidth: 360) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -27,4 +30,4 @@ const query = graphql`
   }
 `
 
-export default Logo
+export default IconLogo

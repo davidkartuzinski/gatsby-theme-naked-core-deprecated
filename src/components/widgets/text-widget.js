@@ -1,9 +1,9 @@
 import React from "react"
 import { AlertIcon } from "../core/icons"
 
-const SitewideMessage = () => {
+const TextWidget = () => {
   return (
-    <section className="sitewide-message">
+    <section className="text-widget">
       <p>
         {" "}
         <AlertIcon /> **Note:** This theme isn't{" "}
@@ -22,4 +22,4 @@ const SitewideMessage = () => {
   )
 }
 
-export default SitewideMessage
+export default TextWidget

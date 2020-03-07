@@ -7,7 +7,6 @@ const NakedBreadcrumb = ({ crumblabel, crumbs }) => {
     <div className="breadcrumbs__container">
       <Breadcrumb
         crumbs={crumbs}
-        title="You are here: "
         crumbSeparator=" > "
         crumbLabel={crumblabel}
       />

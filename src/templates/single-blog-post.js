@@ -18,7 +18,7 @@ import {
 import NakedBreadcrumb from "../components/core/breadcrumb"
 import SocialShare from "../components/optional/social-share"
 import TalkYardComments from "../components/optional/talkyard-comments"
-import SiteWideMessage from "../components/widgets/sitewide-message"
+import TextWidget from "../components/widgets/text-widget"
 
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
@@ -83,42 +83,48 @@ const BlogPost = ({ data, pageContext, location }) => {
           </p>
         </header>
 
-        <SiteWideMessage />
+        <TextWidget />
         <div className="article__body">
           <MDXRenderer>{post.body}</MDXRenderer>
         </div>
       </article>
-      <section></section>
 
       <nav
         className="previous-next-post-nav"
         aria-label="Previous post or next post"
       >
-        {previous && (
-          <Link
-            to={"/blog/" + previous.frontmatter.slug}
-            style={{ maxWidth: "25%" }}
-          >
-            <strong>
+        <div>
+          {previous ? (
+            <Link to={"/blog/" + previous.frontmatter.slug}>
               <PreviousPageIcon />
-              Previous Article
-            </strong>
-            <br />
-            {previous.frontmatter.title}
-          </Link>
-        )}
-        {next && (
-          <Link
-            to={"/blog/" + next.frontmatter.slug}
-            style={{ maxWidth: "25%" }}
-          >
-            <strong>
-              Next Article <NextPageIcon />
-            </strong>
-            <br />
-            {next.frontmatter.title}
-          </Link>
-        )}
+              <strong>Previous Article</strong>
+              <span className="span-previous">
+                {previous.frontmatter.title}
+              </span>
+              <br />
+            </Link>
+          ) : (
+            <Link to={"/blog/"}>
+              <PreviousPageIcon />
+              <strong>Back to Blog</strong>
+            </Link>
+          )}
+        </div>
+        <div>
+          {next ? (
+            <Link to={"/blog/" + next.frontmatter.slug}>
+              <strong>Next Article</strong>
+              <NextPageIcon />
+              <br />
+              <span className="span-next"> {next.frontmatter.title}</span>
+            </Link>
+          ) : (
+            <Link to={"/blog/"}>
+              <strong>Back to Blog</strong>
+              <NextPageIcon />
+            </Link>
+          )}
+        </div>
       </nav>
       <Aside>
         <SocialShare shareUrl={shareUrl} title={post.frontmatter.description} />

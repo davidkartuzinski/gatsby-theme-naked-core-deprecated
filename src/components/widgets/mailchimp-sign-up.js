@@ -42,7 +42,7 @@ export default class MailChimpComponent extends React.Component {
 
   render() {
     return (
-      <div className="mailchimp-sign-up">
+      <section className="mailchimp-sign-up">
         <h3>Sign up and get exclusive content delivered to your inbox</h3>
         <p>
           You get exclusive content including occasional updates, new module and
@@ -79,7 +79,7 @@ export default class MailChimpComponent extends React.Component {
         </form>
 
         <small>Strict No Spam Policy. No Sharing of your data - EVER!</small>
-      </div>
+      </section>
     )
   }
 }
