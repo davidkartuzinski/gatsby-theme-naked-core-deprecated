@@ -1,9 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Moment from "react-moment"
 import { graphql } from "gatsby"
 import Layout from "../components/structure/layout"
-import SocialShare from "../components/optional/social-share"
+import Aside from "../components/structure/aside"
 import SEO from "../components/core/seo"
 import PostPreview from "../components/core/post-preview"
 import PageNavigation from "../components/core/page-navigation"
@@ -11,11 +10,9 @@ import NakedBreadcrumb from "../components/core/breadcrumb"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const BlogRoll = ({ data, pageContext, location }) => {
-  const { siteUrl, logo, title } = useSiteMetadata()
+  const { logo, title } = useSiteMetadata()
 
   const posts = data.posts
-
-  const shareUrl = `${siteUrl}/blog`
 
   const {
     breadcrumb: { crumbs },
@@ -45,30 +42,24 @@ const BlogRoll = ({ data, pageContext, location }) => {
 
         {posts.edges.map((post, index) => {
           return (
-            <article key={index}>
+            <article key={index} className="inner-article">
               <PostPreview
                 slug={post.node.fields.slug}
-                image={post.node.frontmatter.image.childImageSharp.fixed}
+                image={post.node.frontmatter.image.childImageSharp.fluid}
                 imageAlt={post.node.frontmatter.imageAlt}
                 figcaption={post.node.frontmatter.imageFigcaption}
                 title={post.node.frontmatter.title}
-                date={
-                  <Moment
-                    date={post.node.frontmatter.date}
-                    format="MMMM DD, YYYY"
-                    withTitle
-                  />
-                }
-                author={post.node.frontmatter.author}
-                cats={post.node.frontmatter.categories}
-                tags={post.node.frontmatter.tags}
+                date={post.node.frontmatter.date}
+                excerpt={post.node.frontmatter.description}
               />
             </article>
           )
         })}
+
+        <PageNavigation pageContext={pageContext} />
       </article>
-      <PageNavigation pageContext={pageContext} />
-      <SocialShare shareUrl={shareUrl} title={title} />
+
+      <Aside />
     </Layout>
   )
 }
@@ -87,7 +78,7 @@ export const query = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 150)
+          excerpt(pruneLength: 250)
           fields {
             slug
           }
@@ -97,8 +88,8 @@ export const query = graphql`
             description
             image {
               childImageSharp {
-                fixed(height: 200, width: 320) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 960) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }

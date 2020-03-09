@@ -194,6 +194,9 @@ article li {
 **
 ****/
 
+.breadcrumb {
+  height: 4rem;
+}
 .breadcrumbs__container {
   margin-top: 1rem;
   margin-bottom: 1.5rem;
@@ -562,6 +565,11 @@ article div {
   overflow: hidden;
 }
 
+.inner-article {
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
 aside section {
   margin-bottom: 1.5rem;
 }
@@ -578,8 +586,67 @@ footer div {
   margin: 2rem 0;
 }
 
+footer .privacy {
+  padding: 0 8%;
+}
+
 /****
 **  END MAIN DIV STYLES
+****/
+
+/**** 
+** START page specific styles 
+****/
+
+/*** END BLOG PAGE ***/
+
+.inner-article p {
+  padding: 1.5rem 0;
+  height: 8rem;
+}
+
+.inner-article hr {
+  margin: 1.5rem 0;
+}
+
+.inner-article .categories-icon {
+  vertical-align: top;
+  margin-left: -0.15rem;
+  margin-right: 0.1rem;
+}
+
+.inner-article .tags-icon {
+  vertical-align: top;
+  margin-left: -0.15rem;
+  margin-right: 0.3rem;
+}
+
+.inner-article h3 {
+  text-align: left;
+  padding-left: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.inner-article ul {
+  padding: 0;
+  margin: 0;
+}
+
+.inner-article ul li {
+  list-style-type: none;
+  border-bottom: 1px solid var(--grey-color);
+  padding: 0.25rem 0 0.75rem 0;
+}
+
+.inner-article ul li a {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+/*** END BLOG PAGE ***/
+
+/**** 
+** START page specific styles 
 ****/
 
 /****
@@ -709,7 +776,7 @@ footer div {
 
 .social-follow-me ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-left: 0;
 }
 
@@ -723,12 +790,21 @@ footer div {
 
 .social-follow-me li,
 .social-follow-me ul li {
-  padding: 0 10px;
+  /* padding: 0 10px; */
   list-style-type: none;
 }
 
 header .social-follow-me {
   display: none;
+}
+
+footer .social-follow-me {
+  padding: 0 8%;
+}
+
+footer .h3 {
+  margin: 0 8% 1.5rem 0;
+  text-align: center;
 }
 
 @media (min-width: 1500px) {
@@ -739,7 +815,7 @@ header .social-follow-me {
   }
   header .social-follow-me ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 0;
     margin: 0;
   }

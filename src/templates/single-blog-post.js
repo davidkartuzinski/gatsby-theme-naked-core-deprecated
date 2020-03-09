@@ -69,7 +69,7 @@ const BlogPost = ({ data, pageContext, location }) => {
 
           <p>
             <span>
-              <PublishDateIcon />{" "}
+              <PublishDateIcon /> Published on{" "}
               <Moment
                 date={post.frontmatter.date}
                 format="MMMM DD, YYYY"
