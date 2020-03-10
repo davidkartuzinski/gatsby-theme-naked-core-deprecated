@@ -19,7 +19,7 @@ const PageNavigation = ({ pageContext }) => {
         </span>
       )}
       {nextPagePath && (
-        <span>
+        <span className="nav-next-page-span">
           <Link to={`${nextPagePath}`}>
             Next Posts <NextPageIcon />
           </Link>

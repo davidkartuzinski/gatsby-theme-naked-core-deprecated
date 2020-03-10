@@ -54,81 +54,82 @@ const BlogPost = ({ data, pageContext, location }) => {
         crumbLabel={customCrumbLabel}
       />
 
-      <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
+      <main className="single-blog-post">
+        <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
-      <article>
-        <header>
-          <h1>{post.frontmatter.title}</h1>
+        <article>
+          <header>
+            <h1>{post.frontmatter.title}</h1>
 
-          <ResponsiveImage
-            fluid={post.frontmatter.image.childImageSharp.fluid}
-            alt={post.frontmatter.imageAlt}
-            figcaption={post.frontmatter.imageFigcaption}
-            imageClassName={post.frontmatter.imageClassName}
-          />
+            <ResponsiveImage
+              fluid={post.frontmatter.image.childImageSharp.fluid}
+              alt={post.frontmatter.imageAlt}
+              figcaption={post.frontmatter.imageFigcaption}
+              imageClassName={post.frontmatter.imageClassName}
+            />
 
-          <p>
-            <span>
-              <PublishDateIcon /> Published on{" "}
-              <Moment
-                date={post.frontmatter.date}
-                format="MMMM DD, YYYY"
-                withTitle
-              />
-              , written by
-            </span>
-            <span>
-              <AuthorIcon /> {post.frontmatter.author}
-            </span>
-          </p>
-        </header>
-
-        <TextWidget />
-        <div className="article__body">
-          <MDXRenderer>{post.body}</MDXRenderer>
-        </div>
-      </article>
-
-      <nav
-        className="previous-next-post-nav"
-        aria-label="Previous post or next post"
-      >
-        <div>
-          {previous ? (
-            <Link to={"/blog/" + previous.frontmatter.slug}>
-              <PreviousPageIcon />
-              <strong>Previous Article</strong>
-              <span className="span-previous">
-                {previous.frontmatter.title}
+            <p>
+              <span>
+                <PublishDateIcon /> Published on{" "}
+                <Moment
+                  date={post.frontmatter.date}
+                  format="MMMM DD, YYYY"
+                  withTitle
+                />
+                , written by
               </span>
-              <br />
-            </Link>
-          ) : (
-            <Link to={"/blog/"}>
-              <PreviousPageIcon />
-              <strong>Back to Blog</strong>
-            </Link>
-          )}
-        </div>
-        <div>
-          {next ? (
-            <Link to={"/blog/" + next.frontmatter.slug}>
-              <strong>Next Article</strong>
-              <NextPageIcon />
-              <br />
-              <span className="span-next"> {next.frontmatter.title}</span>
-            </Link>
-          ) : (
-            <Link to={"/blog/"}>
-              <strong>Back to Blog</strong>
-              <NextPageIcon />
-            </Link>
-          )}
-        </div>
-      </nav>
+              <span>
+                <AuthorIcon /> {post.frontmatter.author}
+              </span>
+            </p>
+          </header>
+
+          <TextWidget />
+          <div className="article__body">
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </div>
+        </article>
+
+        <nav
+          className="previous-next-post-nav"
+          aria-label="Previous post or next post"
+        >
+          <div>
+            {previous ? (
+              <Link to={"/blog/" + previous.frontmatter.slug}>
+                <PreviousPageIcon />
+                <strong>Previous Article</strong>
+                <span className="span-previous">
+                  {previous.frontmatter.title}
+                </span>
+                <br />
+              </Link>
+            ) : (
+              <Link to={"/blog/"}>
+                <PreviousPageIcon />
+                <strong>Back to Blog</strong>
+              </Link>
+            )}
+          </div>
+          <div>
+            {next ? (
+              <Link to={"/blog/" + next.frontmatter.slug}>
+                <strong>Next Article</strong>
+                <NextPageIcon />
+                <br />
+                <span className="span-next"> {next.frontmatter.title}</span>
+              </Link>
+            ) : (
+              <Link to={"/blog/"}>
+                <strong>Back to Blog</strong>
+                <NextPageIcon />
+              </Link>
+            )}
+          </div>
+        </nav>
+      </main>
       <Aside>
         <SocialShare shareUrl={shareUrl} title={post.frontmatter.description} />
-
         <Categories categories={data.mdx.frontmatter.categories} />
         <Tags tags={data.mdx.frontmatter.tags} />
       </Aside>

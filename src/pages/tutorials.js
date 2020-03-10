@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import SEO from "../components/core/seo"
 import Layout from "../components/structure/layout"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
+import Aside from "../components/structure/aside"
 
 import NakedBreadcrumb from "../components/core/breadcrumb"
 
@@ -26,13 +27,15 @@ const Tutorials = ({ pageContext }) => {
         crumbs={crumbs}
       />
 
-      <NakedBreadcrumb crumbs={crumbs} crumbLabel="Tutorials" />
-
-      <article>
-        <header>
-          <h1>Tutorials</h1>
-        </header>
-      </article>
+      <main className="page-tutorial">
+        <NakedBreadcrumb crumbs={crumbs} crumbLabel="Tutorials" />
+        <article>
+          <header>
+            <h1>Tutorials</h1>
+          </header>
+        </article>
+      </main>
+      <Aside />
     </Layout>
   )
 }

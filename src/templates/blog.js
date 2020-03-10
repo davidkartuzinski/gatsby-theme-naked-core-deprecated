@@ -33,32 +33,33 @@ const BlogRoll = ({ data, pageContext, location }) => {
         crumbs={crumbs}
       />
 
-      <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
+      <main className="bloglist-page">
+        <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
-      <article>
-        <header>
-          <h1>Blog Posts</h1>
-        </header>
+        <article>
+          <header>
+            <h1>Blog Posts</h1>
+          </header>
 
-        {posts.edges.map((post, index) => {
-          return (
-            <article key={index} className="inner-article">
-              <PostPreview
-                slug={post.node.fields.slug}
-                image={post.node.frontmatter.image.childImageSharp.fluid}
-                imageAlt={post.node.frontmatter.imageAlt}
-                figcaption={post.node.frontmatter.imageFigcaption}
-                title={post.node.frontmatter.title}
-                date={post.node.frontmatter.date}
-                excerpt={post.node.frontmatter.description}
-              />
-            </article>
-          )
-        })}
+          {posts.edges.map((post, index) => {
+            return (
+              <article key={index} className="inner-article">
+                <PostPreview
+                  slug={post.node.fields.slug}
+                  image={post.node.frontmatter.image.childImageSharp.fluid}
+                  imageAlt={post.node.frontmatter.imageAlt}
+                  figcaption={post.node.frontmatter.imageFigcaption}
+                  title={post.node.frontmatter.title}
+                  date={post.node.frontmatter.date}
+                  excerpt={post.node.frontmatter.description}
+                />
+              </article>
+            )
+          })}
 
-        <PageNavigation pageContext={pageContext} />
-      </article>
-
+          <PageNavigation pageContext={pageContext} />
+        </article>
+      </main>
       <Aside />
     </Layout>
   )

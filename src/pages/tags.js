@@ -8,6 +8,7 @@ import Layout from "../components/structure/layout"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import { useAllMdx } from "../hooks/use-all-mdx"
 import NakedBreadcrumb from "../components/core/breadcrumb"
+import Aside from "../components/structure/aside"
 
 const TagsPage = ({ pageContext, location }) => {
   const { logo, title } = useSiteMetadata()
@@ -31,25 +32,28 @@ const TagsPage = ({ pageContext, location }) => {
         crumbs={crumbs}
       />
 
-      <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
+      <main className="page-tags">
+        <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
-      <article>
-        <header>
-          <h1>
-            <TagsIcon />
-            Tags
-          </h1>
-        </header>
-        <ul>
-          {tags.map(tag => (
-            <li key={tag.fieldValue}>
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}`}>
-                {tag.fieldValue} ({tag.totalCount})
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </article>
+        <article>
+          <header>
+            <h1>
+              <TagsIcon />
+              Tags
+            </h1>
+          </header>
+          <ul>
+            {tags.map(tag => (
+              <li key={tag.fieldValue}>
+                <Link to={`/tags/${kebabCase(tag.fieldValue)}`}>
+                  {tag.fieldValue} ({tag.totalCount})
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </article>
+      </main>
+      <Aside />
     </Layout>
   )
 }

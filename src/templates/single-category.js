@@ -6,6 +6,7 @@ import SEO from "../components/core/seo"
 import NakedBreadcrumb from "../components/core/breadcrumb"
 import { CategoriesIcon } from "../components/core/icons.js"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
+import Aside from "../components/structure/aside"
 
 const Categories = ({ data, pageContext, location }) => {
   const { logo, title } = useSiteMetadata()
@@ -35,28 +36,31 @@ const Categories = ({ data, pageContext, location }) => {
         crumbLabel={customCrumbLabel}
       />
 
-      <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
+      <main className="single-category">
+        <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
-      <article>
-        <header>
-          <h1>
-            <CategoriesIcon />
-            {categoryHeader}
-          </h1>
-        </header>
-        <ul>
-          {edges.map(({ node }, index) => {
-            const { slug } = node.fields
-            const { title } = node.frontmatter
-            return (
-              <li key={index}>
-                <Link to={"/blog/" + slug}>{title}</Link>
-              </li>
-            )
-          })}
-        </ul>
-        <Link to="/categories">All categories</Link>
-      </article>
+        <article>
+          <header>
+            <h1>
+              <CategoriesIcon />
+              {categoryHeader}
+            </h1>
+          </header>
+          <ul>
+            {edges.map(({ node }, index) => {
+              const { slug } = node.fields
+              const { title } = node.frontmatter
+              return (
+                <li key={index}>
+                  <Link to={"/blog/" + slug}>{title}</Link>
+                </li>
+              )
+            })}
+          </ul>
+          <Link to="/categories">All categories</Link>
+        </article>
+      </main>
+      <Aside></Aside>
     </Layout>
   )
 }

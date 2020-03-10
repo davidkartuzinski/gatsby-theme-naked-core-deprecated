@@ -8,6 +8,7 @@ import { useSiteMetadata } from "../hooks/use-site-metadata"
 import { useAllMdx } from "../hooks/use-all-mdx"
 import Layout from "../components/structure/layout"
 import NakedBreadcrumb from "../components/core/breadcrumb"
+import Aside from "../components/structure/aside"
 
 const CategoriesPage = ({ pageContext, location }) => {
   const { logo, title } = useSiteMetadata()
@@ -18,6 +19,7 @@ const CategoriesPage = ({ pageContext, location }) => {
   } = pageContext
 
   const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
+
   return (
     <Layout>
       <SEO
@@ -31,24 +33,26 @@ const CategoriesPage = ({ pageContext, location }) => {
         crumbs={crumbs}
       />
 
-      <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
-
-      <article>
-        <header>
-          <h1>
-            <CategoriesIcon /> Categories
-          </h1>
-        </header>
-        <ul>
-          {categories.map(category => (
-            <li key={category.fieldValue}>
-              <Link to={`/categories/${kebabCase(category.fieldValue)}`}>
-                {category.fieldValue} ({category.totalCount})
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </article>
+      <main className="page-categories">
+        <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
+        <article>
+          <header>
+            <h1>
+              <CategoriesIcon /> Categories
+            </h1>
+          </header>
+          <ul>
+            {categories.map(category => (
+              <li key={category.fieldValue}>
+                <Link to={`/categories/${kebabCase(category.fieldValue)}`}>
+                  {category.fieldValue} ({category.totalCount})
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </article>
+      </main>
+      <Aside />
     </Layout>
   )
 }

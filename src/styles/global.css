@@ -661,6 +661,19 @@ footer .privacy {
   color: var(--black-color);
   display: flex;
   flex-direction: column;
+  background-color: var(--grey-color);
+}
+
+.bloglist-page .previous-next-post-nav {
+  min-height: 3rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.bloglist-page .previous-next-post-nav .nav-next-page-span {
+  text-align: right;
 }
 
 .previous-next-post-nav svg {
@@ -670,7 +683,6 @@ footer .privacy {
 .previous-next-post-nav div {
   width: 100%;
   padding: 1rem;
-  background-color: var(--grey-color);
 }
 
 .previous-next-post-nav div:last-child {

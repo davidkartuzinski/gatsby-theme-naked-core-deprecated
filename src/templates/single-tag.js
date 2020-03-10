@@ -6,6 +6,7 @@ import SEO from "../components/core/seo"
 import { TagsIcon } from "../components/core/icons.js"
 import NakedBreadcrumb from "../components/core/breadcrumb"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
+import Aside from "../components/structure/aside"
 
 const Tags = ({ pageContext, data, location }) => {
   const { logo, title } = useSiteMetadata()
@@ -35,29 +36,31 @@ const Tags = ({ pageContext, data, location }) => {
         slug={"tags"}
         crumbs={crumbs}
       />
+      <main className="single-tag">
+        <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
-      <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
-
-      <article>
-        <header>
-          <h1>
-            <TagsIcon />
-            {tagHeader}
-          </h1>
-        </header>
-        <ul>
-          {edges.map(({ node }, index) => {
-            const { slug } = node.fields
-            const { title } = node.frontmatter
-            return (
-              <li key={index}>
-                <Link to={"/blog/" + slug}>{title}</Link>
-              </li>
-            )
-          })}
-        </ul>
-        <Link to="/tags">See all tags</Link>
-      </article>
+        <article>
+          <header>
+            <h1>
+              <TagsIcon />
+              {tagHeader}
+            </h1>
+          </header>
+          <ul>
+            {edges.map(({ node }, index) => {
+              const { slug } = node.fields
+              const { title } = node.frontmatter
+              return (
+                <li key={index}>
+                  <Link to={"/blog/" + slug}>{title}</Link>
+                </li>
+              )
+            })}
+          </ul>
+          <Link to="/tags">See all tags</Link>
+        </article>
+      </main>
+      <Aside />
     </Layout>
   )
 }
