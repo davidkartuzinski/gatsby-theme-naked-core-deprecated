@@ -36,7 +36,7 @@ const Tags = ({ pageContext, data, location }) => {
         slug={"tags"}
         crumbs={crumbs}
       />
-      <main className="single-tag">
+      <main className="single-tag page">
         <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
         <article>

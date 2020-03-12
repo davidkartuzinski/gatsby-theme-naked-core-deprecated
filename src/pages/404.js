@@ -21,7 +21,7 @@ const NotFoundPage = ({ data }) => {
         image={logo}
         slug={"404"}
       />
-      <main className="page-404">
+      <main className="page-404 page">
         <article>
           <header>
             <h1>Oops 404 - Not Found</h1>

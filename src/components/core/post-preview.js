@@ -28,7 +28,7 @@ const PostPreview = ({
     <PublishDateIcon /> Published on{" "}
     <Moment date={date} format="MMMM DD, YYYY" withTitle />
     <p>{excerpt}</p>
-    <Link to={"/blog/" + slug}>
+    <Link to={"/blog/" + slug} aria-label={`Read the rest: ${title} `}>
       Read the rest <ReadNextIcon />
     </Link>
     <hr />

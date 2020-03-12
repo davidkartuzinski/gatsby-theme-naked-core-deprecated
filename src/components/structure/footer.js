@@ -6,7 +6,7 @@ import IconLogo from "../core/icon-logo"
 const Footer = () => {
   return (
     <footer>
-      <section className="footer-widgets">
+      <section className="footer-widgets ">
         <div>
           <IconLogo />
         </div>

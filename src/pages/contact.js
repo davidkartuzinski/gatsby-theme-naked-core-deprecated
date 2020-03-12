@@ -27,7 +27,7 @@ const Contact = ({ pageContext, location }) => {
         slug={"contact"}
         crumbs={crumbs}
       />
-      <main className="page-contact">
+      <main className="page-contact page">
         <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
         <article>

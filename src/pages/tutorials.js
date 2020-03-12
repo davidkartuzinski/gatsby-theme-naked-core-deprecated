@@ -27,7 +27,7 @@ const Tutorials = ({ pageContext }) => {
         crumbs={crumbs}
       />
 
-      <main className="page-tutorial">
+      <main className="page-tutorial page">
         <NakedBreadcrumb crumbs={crumbs} crumbLabel="Tutorials" />
         <article>
           <header>

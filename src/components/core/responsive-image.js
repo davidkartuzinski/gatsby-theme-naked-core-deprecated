@@ -10,7 +10,8 @@ const ResponsiveImage = ({ fluid, alt, figcaption, imageClassName }) => {
   }
 
   return (
-    <figure>
+    // https://www.scottohara.me/blog/2019/01/21/how-do-you-figure.html
+    <figure role="figure" aria-label={figCaption}>
       <Image
         fluid={fluid}
         alt={alt}

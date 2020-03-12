@@ -35,10 +35,7 @@ const Menu = () => {
         aria-label="nav-toggle"
       />
 
-      <nav aria-label="Main menu">
-        <h2 id="mainmenulabel" className="sr-only">
-          Main Menu
-        </h2>
+      <nav id="mainmenulabel" role="navigation" aria-label="Main menu">
         <ul className="menu">{menuLiItems}</ul>
       </nav>
     </div>

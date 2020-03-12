@@ -17,21 +17,21 @@ canonical: ""
 
 Imagine, as website developers, that we receive a color palette. A designer hands us a [Figma](https://www.figma.com/) or [Sketch](https://www.sketch.com/) file. Our job is to implement that design and color scheme into a component, or web page. Imagine a worse situation, you must come up with a design yourself? This can be a daunting task.
 
-Whether you're implementing a design or creating a design, this is the moment that you must consider web accessibility. It is at this stage, [browser tools for checking accessibility like Axe](https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd), check for and correct violations of the WCAG.
+Whether you're implementing a design or creating a design, this is the moment that you must consider web accessibility. It is at this stage, [browser tools for checking accessibility like Axe](https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd), check for issues and then indicate how you should correct violations of the WCAG.
 
-This blog post is for everyone who isn't [Jony Ive](https://en.wikipedia.org/wiki/Jony_Ive), [Erik Kennedy](http://erikdkennedy.com/) or a professional designer.
+This blog post is for everyone who isn't [Jony Ive](https://en.wikipedia.org/wiki/Jony_Ive), [Erik Kennedy](http://erikdkennedy.com/) or a professional designer. (These people know this stuff, so this is for everyone else.)
 
-These are the simple steps I take to create a color scheme and design from scratch. These steps can apply to designs that you are implementing. (Note: I am not a professional designer. Some people may huff and puff about how I lay things out below, feel free to follow their undoubtedly superior advise.) During this process, as applied to the **Gatsby Theme Naked**, I ensure I implement web accessibility recommendations.
+These are the simple steps I take to create a color scheme and design from scratch. These steps can apply to designs that you are implementing. (Note: I am not a professional designer. Some people may huff and puff about how I explain things below. Feel free to follow their undoubtedly superior advise.) During this process, as applied to the **Gatsby Theme Naked Core**, I implement web accessibility recommendations.
 
 ## Start with content and fonts / typography
 
-I find it easier to assign colors working from actual content on a page. This includes choosing fonts, font sizes, rhythm, etc. before adding color. [Gatsby](https://www.gatsbyjs.org/) makes this easier with a [typography plugin](https://github.com/KyleAMathews/typography.js) and a selection of typography themes. I am using [a theme called Funston](https://github.com/KyleAMathews/typography.js/tree/master/packages/typography-theme-funston).
+I find it easier to assign colors working from actual content on a page. This includes choosing fonts, font sizes, rhythm, etc. before adding color. [Gatsby](https://www.gatsbyjs.org/) makes this easier with a [typography plugin](https://github.com/KyleAMathews/typography.js) and a selection of typography themes. I am using [a typography theme called Funston](https://github.com/KyleAMathews/typography.js/tree/master/packages/typography-theme-funston).
 
-This plugin and a theme does a lot of the work. (I did modify the theme a bit in the `utils/typography.js` file.)
+This plugin and a theme do a lot of the work. (I did modify the theme a bit in the `src/utils/typography.js` file.)
 
 ## How to create a web color accessible palette?
 
-I create a color scheme by choosing an accent color. I try to find a color that matches the mood of my website or design. (You can see different colors and their meaning and psychology on this website: [color meaning and psychology](https://graf1x.com/color-psychology-emotion-meaning-poster/).)
+I create a color scheme by choosing an accent color. I try to find a color that matches the desired mood of my website. (You can see different colors and their meaning and psychology on this website: [color meaning and psychology](https://graf1x.com/color-psychology-emotion-meaning-poster/).)
 
 For example, I chose an orange color. Orange is a color that is inviting and is fun.
 
@@ -60,9 +60,9 @@ Implement the palette with care and follow all the guidelines for web color acce
 
 ## How do you have web accessible typography?
 
-The next part is to assign colors to each of the elements that make up a web page. The main content font color and it's background is the first consideration. Consider next, each of the main page sections such as the Header, Aside and Footer. Each of these sections could look different and use the same color scheme. To be web accessible, each of these sections [need to have sufficient contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html).
+The next part is to assign colors to each of the elements that make up a web page. The main content font color and it's background is the first consideration. Consider next, each of the main page sections such as the Header, Aside and Footer. Each of these sections could look different or use the same color scheme. To be web accessible, each of these sections [need to have sufficient contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html).
 
-The details will matter. This includes button colors, button :hover, :active, and :focus states, links, link :hover and :active states, and code blocks and code highlights.
+The details will matter. This includes button colors, button :hover, :active, and :focus states, links, link :hover and :active states, and code blocks and code highlights. Remember, a good rule of thumb is if there is an :hover state, there needs to be a :focus state.
 
 Separate to your main color scheme you have success and error messages, etc. that have their own colors. You may have additional sections. This theme, for example, has a _Text Widget section_ and an _Email opt in section_. You must check these sections for web accessibility.
 
@@ -110,7 +110,7 @@ I check the contrast using the WebAim Contrast Checker and get a **pass**.
 
 ### Email List Opt In
 
-(This is a real Email opt in box, by the by. Go and give me your email address, and I will send you updates and articles regarding Gatsby and regarding this theme.)
+(This is a real Email opt in box, by the by. Go ahead and give me your email address, and I will send you updates and articles regarding Gatsby and regarding this theme.)
 
 I want the email opt in box to stand out. It is the main general call-to-action on all my pages. I use a whitish on brownish color scheme with a form and an orange button.
 
@@ -125,7 +125,7 @@ I want the email opt in box to stand out. It is the main general call-to-action 
   </figcaption>
 </figure>
 
-I happen to know this has an issues. The white text on the orange button is small against the orange. I found the issue with the _WebAim Contrast Checker tool_.
+I happen to know this has an issue. The white text on the orange button is small against the orange. I found the issue with the _WebAim Contrast Checker tool_.
 
 See below:
 
@@ -203,7 +203,7 @@ The theme was using the [SolarizedLight theme](https://github.com/PrismJS/prism/
 There isn't the contrast necessary to pass web color accessibility guidelines. Fixing this requires two different steps:
 
 1.  Replacing and importing a new theme with adequate contrast
-2.  Tweaking the CSS to match per the instructions from the [Gatsby Docs and PrismJs](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/).
+2.  Tweaking the CSS to match as indicated in the instructions from the [Gatsby Docs and PrismJs](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/).
 
 First, I found a great theme called [A11y Dark](https://github.com/PrismJS/prism-themes/blob/master/themes/prism-a11y-dark.css). The colors are perfect, and pass the Axe Accessibility plugin check. I installed the [Prism themes libary](https://github.com/PrismJS/prism-themes) with `yarn add prism-themes`. I replaced the `require` statement in the `gatsby-browser.js` file.
 

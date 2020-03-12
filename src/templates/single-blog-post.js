@@ -54,7 +54,7 @@ const BlogPost = ({ data, pageContext, location }) => {
         crumbLabel={customCrumbLabel}
       />
 
-      <main className="single-blog-post">
+      <main className="single-blog-post post">
         <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
         <article>

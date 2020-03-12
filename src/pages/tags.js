@@ -32,7 +32,7 @@ const TagsPage = ({ pageContext, location }) => {
         crumbs={crumbs}
       />
 
-      <main className="page-tags">
+      <main className="page-tags page">
         <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
         <article>

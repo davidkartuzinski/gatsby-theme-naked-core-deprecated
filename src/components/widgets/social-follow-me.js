@@ -33,8 +33,7 @@ const SocialFollowMe = () => {
   } = data.site.socialMedia.socialLinks
 
   return (
-    <div className="social-follow-me">
-      <h3 className="sr-only">Follow Us</h3>
+    <div className="social-follow-me" aria-label="Follow Us on Social Media">
       <ul>
         <li>
           <a href={facebook} title="Follow Us on Facebook">

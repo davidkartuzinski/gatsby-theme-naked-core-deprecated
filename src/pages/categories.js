@@ -33,7 +33,7 @@ const CategoriesPage = ({ pageContext, location }) => {
         crumbs={crumbs}
       />
 
-      <main className="page-categories">
+      <main className="page-categories page">
         <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
         <article>
           <header>

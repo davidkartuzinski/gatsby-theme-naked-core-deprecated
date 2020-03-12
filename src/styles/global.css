@@ -21,6 +21,8 @@
   --grey-color: #dfe0df;
   --white-color: #fff7f0;
   --black-color: #040404;
+  --success-green: #007c45;
+  --error-red: #c4515c;
 }
 
 /**** Accessible .visually-hidden class 
@@ -149,22 +151,97 @@ hr {
   background-color: var(--accent-color);
 }
 
+a:hover {
+  color: var(--accent-color);
+}
+
 button {
-  margin: 20px 10px 20px 10px;
+  width: 84%;
+  margin-left: 8%;
+  margin-top: 1.5rem;
   display: block;
   text-align: center;
   padding: 12px 20px 12px 20px;
   border-radius: 3px;
+  background-color: var(--accent-color);
+  color: var(--white-color);
   border: none;
 }
 
+button:hover {
+  background-color: var(--grey-color);
+  color: var(--black-color);
+}
+
+button:active {
+  background-color: var(--dark-accent-color);
+  color: var(--white-color);
+}
+
+button:focus {
+  outline: 3px dotted var(--accent-color-shade);
+  outline-offset: 2px;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+form svg {
+  vertical-align: middle;
+  margin-left: -0.2rem;
+  margin-right: 0.2rem;
+}
+
+.success-message,
+.error-message {
+  display: block;
+  min-height: 3rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.success-message {
+  border: solid 2px var(--success-green);
+  color: var(--success-green);
+}
+
+.error-message {
+  border: solid 2px var(--error-red);
+  color: var(--error-red);
+}
+
 input {
-  margin: 20px 10px 20px 10px;
   display: block;
   text-align: left;
   padding: 12px 20px 12px 20px;
   border-radius: 3px;
-  border: none;
+  border-color: var(--black-color);
+  margin-bottom: 1.5rem;
+  width: 84%;
+  margin-left: 8%;
+  font-size: 115%;
+  letter-spacing: 2px;
+}
+
+textarea {
+  width: 84%;
+  margin-left: 8%;
+  display: block;
+  text-align: left;
+  padding: 12px 20px 12px 20px;
+  border-radius: 3px;
+  border-color: var(--black-color);
+}
+
+input:focus,
+textarea:focus {
+  outline: 3px solid var(--accent-color-shade);
+  border-color: transparent;
 }
 
 small {
@@ -187,6 +264,48 @@ article ol {
 article li {
   padding-left: 0.45rem;
 }
+
+.page ul {
+  padding: 0;
+  margin: 0;
+}
+
+.page li {
+  list-style-type: none;
+}
+
+.page section {
+  padding: 3rem;
+  margin: 2rem 0;
+}
+
+.page section div {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.columns-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .columns-3 {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/**** START HOME PAGE pages/index.js SPECIFIC STYLES ****/
+
+.page-home article header div {
+  padding: 1.5rem;
+  background-color: var(--white-color);
+  text-align: center;
+}
+
+/**** END HOME PAGE pages/index.js SPECIFIC STYLES ****/
 
 /**** 
 ** 
@@ -916,6 +1035,7 @@ footer .h3 {
   background-color: var(--white-color);
   margin: 0.4rem 0 0.8rem;
   width: 100%;
+  border: var(--dark-accent-color);
 }
 
 .mailchimp-input:focus {
@@ -931,6 +1051,7 @@ footer .h3 {
   cursor: pointer;
   margin: 0 0 0;
   width: 100%;
+  border: var(--dark-accent-color);
 }
 
 .mailchimp-button:hover {
@@ -945,9 +1066,12 @@ footer .h3 {
 }
 
 .mailchimp-button:focus {
-  outline: 2px solid var(--white-color);
-  background-color: var(--accent-color-shade);
-  color: var(--white-color);
+  outline: 3px dotted var(--white-color);
+  outline-offset: 2px;
+}
+
+button::-moz-focus-inner {
+  border: 0;
 }
 
 .mailchimp-sign-up small:last-of-type {

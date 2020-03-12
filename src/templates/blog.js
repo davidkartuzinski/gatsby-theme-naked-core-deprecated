@@ -33,7 +33,7 @@ const BlogRoll = ({ data, pageContext, location }) => {
         crumbs={crumbs}
       />
 
-      <main className="bloglist-page">
+      <main className="bloglist-page page">
         <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
         <article>

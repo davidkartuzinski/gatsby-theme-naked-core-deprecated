@@ -43,21 +43,24 @@ export default class ContactForm extends React.Component {
           Message
           <textarea name="message" id="message" rows="5" />
         </label>
-        <label htmlFor="reset">
-          <input type="reset" name="reset" value="Clear" />
-        </label>
+
         {status === "SUCCESS" ? (
-          <p>
+          <p className="success-message">
             <SuccessIcon /> Thanks!
           </p>
         ) : (
-          <button aria-label="submit" type="submit">
-            <SendMailIcon />
-            Submit
-          </button>
+          <>
+            <button aria-label="submit" type="reset">
+              Clear
+            </button>
+            <button aria-label="submit" type="submit">
+              <SendMailIcon />
+              Submit
+            </button>
+          </>
         )}
         {status === "ERROR" && (
-          <p>
+          <p className="error-message">
             <ErrorIcon /> Ooops! There was an error.
           </p>
         )}
