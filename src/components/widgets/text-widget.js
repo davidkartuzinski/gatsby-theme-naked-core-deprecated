@@ -14,7 +14,7 @@ const TextWidget = () => {
         , I <strong>invite</strong> critical feedback and it is much
         appreciated. You can always leave an issue{" "}
         <a href="https://github.com/davidkartuzinski/gatsby-theme-naked-core/issues">
-          here
+          in the GitHub repo
         </a>{" "}
         or leave a comment below.
       </p>

@@ -9,7 +9,7 @@ const IconLogo = () => {
     <div className="icon-logo">
       <Link to="/">
         <Image
-          fluid={data.iconLogo.childImageSharp.fluid}
+          fixed={data.iconLogo.childImageSharp.fixed}
           alt="icon logo for website"
         />
       </Link>
@@ -22,8 +22,8 @@ const query = graphql`
     iconLogo: file(relativePath: { eq: "icon.png" }) {
       relativePath
       childImageSharp {
-        fluid(maxWidth: 360) {
-          ...GatsbyImageSharpFluid
+        fixed(width: 280) {
+          ...GatsbyImageSharpFixed
         }
       }
     }

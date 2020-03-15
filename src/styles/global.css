@@ -98,15 +98,6 @@ body {
   /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221000%22%20height%3D%221000%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22pattern%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2040%2040%22%20patternUnits%3D%22userSpaceOnUse%22%20patternTransform%3D%22rotate(130)%22%3E%3Crect%20id%3D%22pattern-background%22%20x%3D%220%22%20y%3D%220%22%20width%3D%221000%22%20height%3D%221000%22%20fill%3D%22%23fff7f0%22%2F%3E%20%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%221%22%20fill%3D%22%2355433b%22%20stroke%3D%22%2355433b%22%20stroke-width%3D%220%22%2F%3E%20%3C!----%3E%20%3C!----%3E%20%20%20%20%3Ccircle%20cx%3D%222%22%20cy%3D%222%22%20r%3D%221%22%20fill%3D%22%23f3824a%22%20stroke%3D%22%23f3824a%22%20stroke-width%3D%220%22%2F%3E%3Ccircle%20cx%3D%2242%22%20cy%3D%222%22%20r%3D%221%22%20fill%3D%22%23f3824a%22%20stroke%3D%22%23f3824a%22%20stroke-width%3D%220%22%2F%3E%3Ccircle%20cx%3D%222%22%20cy%3D%2242%22%20r%3D%221%22%20fill%3D%22%23f3824a%22%20stroke%3D%22%23f3824a%22%20stroke-width%3D%220%22%2F%3E%3Ccircle%20cx%3D%2242%22%20cy%3D%2242%22%20r%3D%221%22%20fill%3D%22%23f3824a%22%20stroke%3D%22%23f3824a%22%20stroke-width%3D%220%22%2F%3E%20%3C!----%3E%20%3C!----%3E%20%20%20%20%3C%2Fpattern%3E%3C%2Fdefs%3E%20%3Crect%20fill%3D%22url(%23pattern)%22%20height%3D%221000%22%20width%3D%221000%22%20y%3D%220%22%20x%3D%220%22%2F%3E%3C%2Fsvg%3E"); */
 }
 
-article h1,
-article h2,
-article h3,
-article h4,
-article h5,
-article h6 {
-  margin-left: 1.1rem;
-}
-
 h1 {
   text-align: center;
 }
@@ -156,16 +147,15 @@ a:hover {
 }
 
 button {
-  width: 84%;
-  margin-left: 8%;
   margin-top: 1.5rem;
   display: block;
   text-align: center;
   padding: 12px 20px 12px 20px;
   border-radius: 3px;
   background-color: var(--accent-color);
-  color: var(--white-color);
+  color: var(--black-color);
   border: none;
+  width: calc(100% - 10px);
 }
 
 button:hover {
@@ -191,10 +181,10 @@ form {
   display: flex;
   flex-direction: column;
 }
+
 form svg {
   vertical-align: middle;
-  margin-left: -0.2rem;
-  margin-right: 0.2rem;
+  margin-left: -1.2rem;
 }
 
 .success-message,
@@ -222,15 +212,13 @@ input {
   border-radius: 3px;
   border-color: var(--black-color);
   margin-bottom: 1.5rem;
-  width: 84%;
-  margin-left: 8%;
+  width: 100%;
   font-size: 115%;
   letter-spacing: 2px;
 }
 
 textarea {
-  width: 84%;
-  margin-left: 8%;
+  width: 100%;
   display: block;
   text-align: left;
   padding: 12px 20px 12px 20px;
@@ -261,8 +249,9 @@ article ol {
   margin-left: 0.8rem;
 }
 
-article li {
-  padding-left: 0.45rem;
+.page > article,
+.post > article {
+  padding: 0 1.5rem;
 }
 
 .page ul {
@@ -274,38 +263,70 @@ article li {
   list-style-type: none;
 }
 
-.page section {
-  padding: 3rem;
-  margin: 2rem 0;
-}
-
 .page section div {
   text-align: center;
+}
+
+.column-1 {
+  background-color: var(--grey-color);
   margin-bottom: 1.5rem;
+  padding: 1.5rem;
+}
+
+.column-1 h2 {
+  text-align: center;
+}
+.column-1 div ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .columns-3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.columns-3 div {
+  margin-bottom: 1.5rem;
+}
+
+.columns-3 h2 {
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   .columns-3 {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 }
 
 /**** START HOME PAGE pages/index.js SPECIFIC STYLES ****/
 
 .page-home article header div {
-  padding: 1.5rem;
   background-color: var(--white-color);
   text-align: center;
 }
 
 /**** END HOME PAGE pages/index.js SPECIFIC STYLES ****/
+
+/**** START CONTACT FORM src/component/optional/contact-form.js SPECIFIC STYLES ****/
+
+.page-contact .contact-form {
+  padding: 0;
+  margin: 0;
+}
+
+.page-contact input,
+.page-contact textarea {
+  width: calc(100% - 10px);
+}
+
+/**** END CONTACT FORM src/component/optional/contact-form.js SPECIFIC STYLES ****/
 
 /**** 
 ** 
@@ -319,7 +340,7 @@ article li {
 .breadcrumbs__container {
   margin-top: 1rem;
   margin-bottom: 1.5rem;
-  padding: 0 8%;
+  padding: 0 1.5rem;
 }
 
 .breadcrumb__title {
@@ -369,6 +390,7 @@ article li {
   flex-direction: column;
   width: 100vw;
   padding: 0.7rem 1rem;
+  grid-area: header;
 }
 
 @media (min-width: 768px) {
@@ -436,7 +458,7 @@ article li {
 }
 
 .menu {
-  padding: 0;
+  padding: 0 1.5rem;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -446,7 +468,7 @@ article li {
 
 .menu li {
   list-style-type: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0;
 }
 
 .menu li a {
@@ -478,6 +500,9 @@ article li {
 }
 
 @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
   .main-menu {
     display: flex;
     flex-direction: row;
@@ -500,12 +525,11 @@ article li {
     flex-direction: row;
     text-transform: capitalize;
     height: auto;
+    justify-content: flex-end;
   }
 
   .nav-toggle-label {
-    position: absolute;
-    right: 1rem;
-    top: 0.5rem;
+    display: none;
   }
 
   .menu li,
@@ -602,7 +626,7 @@ article li {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 0rem 0rem 2rem;
+  padding: 0rem 1.5rem 2rem;
 }
 
 .categories-on-page .categories-icon,
@@ -615,7 +639,7 @@ article li {
 .categories-on-page svg,
 .tags-on-page svg {
   vertical-align: middle;
-  margin-left: -0.4rem;
+  margin-left: -0.3rem;
   margin-right: 0.25rem;
 }
 
@@ -660,8 +684,14 @@ article li {
 **
 ****/
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 main {
   padding: 110px 0 50px;
+  grid-area: content;
 }
 
 figcaption {
@@ -670,14 +700,10 @@ figcaption {
 }
 
 @media (min-width: 768px) {
-  main {
+  main,
+  .page-aside {
     padding-top: 150px;
   }
-}
-
-article,
-aside {
-  padding: 0 8%;
 }
 
 article div {
@@ -689,24 +715,55 @@ article div {
   padding-right: 0%;
 }
 
+.page-aside {
+  grid-area: sidebar;
+}
+
 aside section {
   margin-bottom: 1.5rem;
 }
 
 footer {
   background-color: var(--white-color);
-  padding: 0 8%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
-footer div {
-  margin: 2rem 0;
+.page-footer {
+  grid-area: footer;
+}
+
+.footer-widgets {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 footer .privacy {
-  padding: 0 8%;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .footer-widgets {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  .footer-widgets div {
+    flex-basis: 33%;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+      "header  header  header"
+      "content content sidebar"
+      "footer  footer  footer";
+  }
 }
 
 /****
@@ -801,7 +858,7 @@ footer .privacy {
 
 .previous-next-post-nav div {
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 1.25rem;
 }
 
 .previous-next-post-nav div:last-child {
@@ -833,7 +890,7 @@ footer .privacy {
 
 .text-widget {
   background-color: var(--grey-color);
-  padding: 1rem;
+  padding: 1.5rem;
   margin: 2rem 0;
 }
 
@@ -846,22 +903,22 @@ footer .privacy {
 
 /**** START bio.js STYLES ****/
 
+.bio {
+  padding: 1.5rem;
+  padding-bottom: 0;
+}
+
 .bio p {
   margin-top: 1rem;
 }
 
 .bio ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-left: 0;
 }
 .bio ul li {
   list-style: none;
-}
-
-.bio figure {
-  width: 84%;
-  margin: 0 auto;
 }
 
 .bio img {
@@ -921,7 +978,6 @@ footer .privacy {
 
 .social-follow-me li,
 .social-follow-me ul li {
-  /* padding: 0 10px; */
   list-style-type: none;
 }
 
@@ -930,11 +986,10 @@ header .social-follow-me {
 }
 
 footer .social-follow-me {
-  padding: 0 8%;
+  padding: 0 1.5rem;
 }
 
 footer .h3 {
-  margin: 0 8% 1.5rem 0;
   text-align: center;
 }
 
@@ -971,6 +1026,10 @@ footer .h3 {
 
 /**** START latest-posts.js STYLES ****/
 
+.latest-posts {
+  padding: 1.5rem;
+}
+
 .latest-posts ul {
   margin: 0;
   padding: 0;
@@ -984,12 +1043,12 @@ footer .h3 {
 
 .latest-posts svg {
   vertical-align: middle;
-  margin-left: -1.4rem;
+  margin-left: -1.3rem;
   margin-right: 0.3rem;
 }
 
 .latest-posts .publish-icon {
-  margin-left: -1.1rem;
+  margin-left: 0.25rem;
   margin-right: 0;
   vertical-align: center;
 }
@@ -1008,7 +1067,7 @@ footer .h3 {
 /**** START mailchimp-sign-up.js STYLES ****/
 
 .mailchimp-sign-up {
-  padding: 1rem 1.25rem;
+  padding: 1.5rem 1.5rem;
   background-color: var(--dark-accent-color);
   color: var(--white-color);
   margin-bottom: 1.5rem;
@@ -1082,6 +1141,10 @@ button::-moz-focus-inner {
 
 /**** START instagram.js STYLES ****/
 
+.instagram-widget {
+  padding: 1.5rem;
+}
+
 .instagram-widget ul {
   margin-left: 0;
   display: grid;
@@ -1095,6 +1158,14 @@ button::-moz-focus-inner {
 }
 
 /**** END instagram.js STYLES ****/
+
+/**** START icon-logo.js STYLES ****/
+
+.icon-logo {
+  padding: 1rem;
+}
+
+/**** END icon-logo.js STYLES ****/
 
 /****
 **  END WIDGETS STYLES

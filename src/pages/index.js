@@ -33,7 +33,7 @@ const Home = ({ pageContext, data }) => {
           <header>
             <div>
               <h1>The Gatsby Theme Naked</h1>
-              <h2>Just don't eff it up. Seriously. Don't.</h2>
+              <h2>Just add CSS and Content and go go go!</h2>
               <p>
                 A theme that lets you launch your production ready Gatsby site
                 fast!
@@ -46,6 +46,25 @@ const Home = ({ pageContext, data }) => {
               />
             </div>
           </header>
+          <section className="column-1">
+            <h2>
+              Freedom to use ANY CSS library or Framework, including vanilla
+              CSS!
+            </h2>
+            <div>
+              <ul>
+                <li>Styled Components</li>
+                <li>Emotion</li>
+                <li>Vanilla CSS</li>
+                <li>Theme UI</li>
+                <li>ReactStrap</li>
+                <li>CSS Modules</li>
+                <li>Any CSS in JS</li>
+                <li>Bulma</li>
+                <li>Ant</li>
+              </ul>
+            </div>
+          </section>
 
           <section className="columns-3">
             <div>
@@ -77,6 +96,22 @@ const Home = ({ pageContext, data }) => {
                 <li>Internal Linking done right</li>
               </ul>
               <Link to="/tutorials">Learn SEO best practices</Link>
+            </div>
+          </section>
+
+          <section className="column-1">
+            <h2>CMS's can easily use the hooks! Use any CMS</h2>
+            <div>
+              <ul>
+                <li>WordPress</li>
+                <li>Strapi</li>
+                <li>Ghost</li>
+                <li>Contentful</li>
+                <li>Netlify</li>
+                <li>Sanity.io</li>
+                <li>Prismic</li>
+                <li>DatoCMS</li>
+              </ul>
             </div>
           </section>
         </article>

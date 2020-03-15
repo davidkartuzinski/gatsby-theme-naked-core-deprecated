@@ -9,7 +9,7 @@ import Bio from "../widgets/bio"
 const Aside = ({ children }) => {
   return (
     <>
-      <aside>
+      <aside className="page-aside">
         {children}
 
         <MailChimpSignUp />

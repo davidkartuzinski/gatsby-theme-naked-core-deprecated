@@ -38,7 +38,7 @@ const LatestPosts = () => {
         <strong>{post.node.frontmatter.title}</strong>
       </Link>
       <span>
-        <PublishDateIcon className="publish-icon" /> Published on{" "}
+        <PublishDateIcon className="publish-icon" /> Published on <br />
         <Moment
           date={post.node.frontmatter.date}
           format="MMMM DD, YYYY"

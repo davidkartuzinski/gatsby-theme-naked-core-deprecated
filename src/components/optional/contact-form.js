@@ -21,50 +21,52 @@ export default class ContactForm extends React.Component {
   render() {
     const { status } = this.state
     return (
-      <form
-        onSubmit={this.submitForm}
-        action="https://formspree.io/mdogqyrk"
-        method="POST"
-      >
-        <label htmlFor="name">
-          <AuthorIcon /> Name
-          <input type="text" name="name" id="name" />
-        </label>
-        <label htmlFor="contact-email">
-          <EnterEmailIcon /> Email
-          <input type="email" name="email" id="contact-email" />
-        </label>
-        <label htmlFor="subject">
-          <EnterSubjectIcon /> Subject
-          <input type="text" name="subject" id="subject" />
-        </label>
-        <label htmlFor="message">
-          <EnterMessageIcon />
-          Message
-          <textarea name="message" id="message" rows="5" />
-        </label>
+      <section className="contact-form">
+        <form
+          onSubmit={this.submitForm}
+          action="https://formspree.io/mdogqyrk"
+          method="POST"
+        >
+          <label htmlFor="name">
+            <AuthorIcon /> Name
+            <input type="text" name="name" id="name" />
+          </label>
+          <label htmlFor="contact-email">
+            <EnterEmailIcon /> Email
+            <input type="email" name="email" id="contact-email" />
+          </label>
+          <label htmlFor="subject">
+            <EnterSubjectIcon /> Subject
+            <input type="text" name="subject" id="subject" />
+          </label>
+          <label htmlFor="message">
+            <EnterMessageIcon />
+            Message
+            <textarea name="message" id="message" rows="5" />
+          </label>
 
-        {status === "SUCCESS" ? (
-          <p className="success-message">
-            <SuccessIcon /> Thanks!
-          </p>
-        ) : (
-          <>
-            <button aria-label="submit" type="reset">
-              Clear
-            </button>
-            <button aria-label="submit" type="submit">
-              <SendMailIcon />
-              Submit
-            </button>
-          </>
-        )}
-        {status === "ERROR" && (
-          <p className="error-message">
-            <ErrorIcon /> Ooops! There was an error.
-          </p>
-        )}
-      </form>
+          {status === "SUCCESS" ? (
+            <p className="success-message">
+              <SuccessIcon /> Thanks!
+            </p>
+          ) : (
+            <>
+              <button aria-label="submit" type="reset">
+                Clear
+              </button>
+              <button aria-label="submit" type="submit">
+                <SendMailIcon />
+                Submit
+              </button>
+            </>
+          )}
+          {status === "ERROR" && (
+            <p className="error-message">
+              <ErrorIcon /> Ooops! There was an error.
+            </p>
+          )}
+        </form>
+      </section>
     )
   }
 

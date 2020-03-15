@@ -18,7 +18,7 @@ const Categories = ({ data, pageContext, location }) => {
   const { edges, totalCount } = data.allMdx
   const categoryHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
-  } tagged with "${category}"`
+  } categorized with "${category}"`
 
   const [, , customCrumbLabel] = location.pathname.split("/")
 

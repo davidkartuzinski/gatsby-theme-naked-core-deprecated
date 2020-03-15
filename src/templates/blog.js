@@ -40,7 +40,6 @@ const BlogRoll = ({ data, pageContext, location }) => {
           <header>
             <h1>Blog Posts</h1>
           </header>
-
           {posts.edges.map((post, index) => {
             return (
               <article key={index} className="inner-article">
@@ -57,7 +56,9 @@ const BlogRoll = ({ data, pageContext, location }) => {
             )
           })}
 
-          <PageNavigation pageContext={pageContext} />
+          {pageContext.numberOfPages > 1 && (
+            <PageNavigation pageContext={pageContext} />
+          )}
         </article>
       </main>
       <Aside />
