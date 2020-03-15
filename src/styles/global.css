@@ -297,6 +297,42 @@ article ol {
   text-align: center;
 }
 
+@media (min-width: 568px) {
+  .page-home > article header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--white-color);
+  }
+  .page > article header > div {
+    width: 50%;
+    padding: 1rem;
+    align-self: center;
+  }
+
+  .page > article {
+    min-height: 60vh;
+  }
+}
+
+@media (min-width: 640px) {
+  .page-home > article {
+    padding: 0;
+  }
+  .page-home > article header {
+    padding: 0 5%;
+  }
+  .column-1,
+  .columns-3 {
+    padding: 1.5rem 8%;
+  }
+
+  .bloglist-page > article,
+  .post > article {
+    padding: 1.5rem 8%;
+  }
+}
+
 @media (min-width: 768px) {
   .columns-3 {
     flex-direction: row;
@@ -371,6 +407,12 @@ article ol {
   font-size: 105%;
 }
 
+@media (min-width: 640px) {
+  .breadcrumbs__container {
+    padding: 1.5rem 8%;
+  }
+}
+
 /****
 **  END OF BREADCRUMBS STYLING
 ****/
@@ -389,8 +431,14 @@ article ol {
   display: flex;
   flex-direction: column;
   width: 100vw;
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 1.3rem;
   grid-area: header;
+}
+
+@media (min-width: 640px) {
+  .page-header {
+    padding: 1rem 8%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -499,9 +547,16 @@ article ol {
   top: 1.25rem;
 }
 
-@media (min-width: 768px) {
-}
+@media (min-width: 640px) {
+  .nav-toggle-label {
+    right: 8%;
+    top: 1.5rem;
+  }
 
+  .menu {
+    padding: 0 8%;
+  }
+}
 @media (min-width: 768px) {
   .main-menu {
     display: flex;
@@ -674,6 +729,13 @@ article ol {
   margin-left: 1.1rem;
 }
 
+@media (min-width: 640px) {
+  .categories-on-page,
+  .tags-on-page {
+    padding: 0rem 8% 2rem;
+  }
+}
+
 /****
 ** END OF tags and categories on pages/posts STYLES
 ****/
@@ -743,6 +805,36 @@ footer {
 
 footer .privacy {
   padding: 0 1.5rem;
+}
+
+@media (min-width: 568px) {
+  .footer-widgets {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .footer-widgets > div {
+    width: 50%;
+  }
+
+  .footer-widgets > div:last-child {
+    width: 100%;
+  }
+}
+
+@media (min-width: 640px) {
+  .footer-widgets > div {
+    padding: 1.5rem 5%;
+  }
+
+  .footer-widgets > div:last-child {
+    padding: 1.5rem 8%;
+  }
+
+  footer .privacy {
+    padding: 1.5rem 8%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -908,6 +1000,35 @@ footer .privacy {
   padding-bottom: 0;
 }
 
+@media (min-width: 568px) {
+  .bio {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+      "header header"
+      "image paragraph"
+      "contact contact"
+      "social social";
+  }
+  .bio > h3 {
+    grid-area: header;
+  }
+  .bio > figure {
+    grid-area: image;
+  }
+  .bio > p {
+    grid-area: paragraph;
+    padding: 1rem 1rem;
+  }
+  .bio > h4 {
+    grid-area: contact;
+    text-align: center;
+  }
+  .bio ul {
+    grid-area: social;
+  }
+}
+
 .bio p {
   margin-top: 1rem;
 }
@@ -924,6 +1045,12 @@ footer .privacy {
 .bio img {
   border-radius: 5px;
   margin-bottom: 0;
+}
+
+@media (min-width: 640px) {
+  .bio {
+    padding: 1.5rem 8%;
+  }
 }
 
 /**** END bio.js STYLES ****/
@@ -1035,6 +1162,12 @@ footer .h3 {
   padding: 0;
 }
 
+@media (min-width: 568px) {
+  .latest-posts ul {
+    display: flex;
+  }
+}
+
 .latest-posts li {
   list-style-type: none;
   border-bottom: 1px solid var(--grey-color);
@@ -1060,6 +1193,12 @@ footer .h3 {
 .latest-posts span {
   margin-top: 0.5rem;
   display: inline-block;
+}
+
+@media (min-width: 640px) {
+  .latest-posts {
+    padding: 1.5rem 8%;
+  }
 }
 
 /**** END latest-posts.js STYLES ****/
@@ -1137,6 +1276,12 @@ button::-moz-focus-inner {
   margin-bottom: 0;
 }
 
+@media (min-width: 640px) {
+  .mailchimp-sign-up {
+    padding: 1.5rem 8%;
+  }
+}
+
 /**** END mailchimp-sign-up.js STYLES ****/
 
 /**** START instagram.js STYLES ****/
@@ -1155,6 +1300,12 @@ button::-moz-focus-inner {
 .instagram-widget ul li {
   list-style-type: none;
   margin-bottom: 0;
+}
+
+@media (min-width: 640px) {
+  .instagram-widget {
+    padding: 1.5rem 8%;
+  }
 }
 
 /**** END instagram.js STYLES ****/
