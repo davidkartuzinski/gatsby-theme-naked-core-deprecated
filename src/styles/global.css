@@ -93,11 +93,6 @@
 
 /** BASIC STRUCTURE STYLES THAT CAN BE DELETED, REPLACED OR USED IN OTHER PLACES **/
 
-body {
-  /* https://beautifuldingbats.com/pattern-generator?share=eyJzaG93Ijp0cnVlLCJzdHlsZSI6ImRvMyIsInNpemUiOjEyLCJjb2xvciI6IiM1NTQzM2IiLCJzZWNvbmRhcnkiOiIjZjM4MjRhIiwiYSI6MSwiYiI6Miwicm90YXRpb24iOjEzMCwiZmlsbCI6IiNmZmY3ZjAifQ , https://meyerweb.com/eric/tools/dencoder/  */
-  /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221000%22%20height%3D%221000%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22pattern%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2040%2040%22%20patternUnits%3D%22userSpaceOnUse%22%20patternTransform%3D%22rotate(130)%22%3E%3Crect%20id%3D%22pattern-background%22%20x%3D%220%22%20y%3D%220%22%20width%3D%221000%22%20height%3D%221000%22%20fill%3D%22%23fff7f0%22%2F%3E%20%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%221%22%20fill%3D%22%2355433b%22%20stroke%3D%22%2355433b%22%20stroke-width%3D%220%22%2F%3E%20%3C!----%3E%20%3C!----%3E%20%20%20%20%3Ccircle%20cx%3D%222%22%20cy%3D%222%22%20r%3D%221%22%20fill%3D%22%23f3824a%22%20stroke%3D%22%23f3824a%22%20stroke-width%3D%220%22%2F%3E%3Ccircle%20cx%3D%2242%22%20cy%3D%222%22%20r%3D%221%22%20fill%3D%22%23f3824a%22%20stroke%3D%22%23f3824a%22%20stroke-width%3D%220%22%2F%3E%3Ccircle%20cx%3D%222%22%20cy%3D%2242%22%20r%3D%221%22%20fill%3D%22%23f3824a%22%20stroke%3D%22%23f3824a%22%20stroke-width%3D%220%22%2F%3E%3Ccircle%20cx%3D%2242%22%20cy%3D%2242%22%20r%3D%221%22%20fill%3D%22%23f3824a%22%20stroke%3D%22%23f3824a%22%20stroke-width%3D%220%22%2F%3E%20%3C!----%3E%20%3C!----%3E%20%20%20%20%3C%2Fpattern%3E%3C%2Fdefs%3E%20%3Crect%20fill%3D%22url(%23pattern)%22%20height%3D%221000%22%20width%3D%221000%22%20y%3D%220%22%20x%3D%220%22%2F%3E%3C%2Fsvg%3E"); */
-}
-
 h1 {
   text-align: center;
 }
@@ -316,6 +311,11 @@ article ol {
 }
 
 @media (min-width: 640px) {
+  .page > article,
+  .post > article {
+    padding: 0 8%;
+  }
+
   .page-home > article {
     padding: 0;
   }
@@ -333,11 +333,22 @@ article ol {
   }
 }
 
+@media (min-width: 732px) {
+  button {
+    width: 100%;
+  }
+}
+
 @media (min-width: 768px) {
   .columns-3 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+  }
+
+  .page > article,
+  .post > article {
+    padding: 0 4%;
   }
 }
 
@@ -360,6 +371,22 @@ article ol {
 .page-contact input,
 .page-contact textarea {
   width: calc(100% - 10px);
+}
+
+@media (min-width: 640px) {
+  .page-contact > article {
+    padding: 0 8%;
+  }
+  .page-contact > article header {
+    padding: 0 5%;
+  }
+}
+
+@media (min-width: 732px) {
+  .page-contact input,
+  .page-contact textarea {
+    width: 100%;
+  }
 }
 
 /**** END CONTACT FORM src/component/optional/contact-form.js SPECIFIC STYLES ****/
@@ -410,6 +437,12 @@ article ol {
 @media (min-width: 640px) {
   .breadcrumbs__container {
     padding: 1.5rem 8%;
+  }
+}
+
+@media (min-width: 768px) {
+  .breadcrumbs__container {
+    padding: 1.5rem 4%;
   }
 }
 
@@ -762,9 +795,12 @@ figcaption {
 }
 
 @media (min-width: 768px) {
-  main,
-  .page-aside {
+  main {
     padding-top: 150px;
+  }
+  .page-aside {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -837,14 +873,26 @@ footer .privacy {
   }
 }
 
+@media (min-width: 732px) {
+  .footer-widgets > div {
+    padding: 1.5rem 6%;
+  }
+}
+
 @media (min-width: 768px) {
   .footer-widgets {
     display: flex;
     align-items: center;
     flex-direction: row;
   }
-  .footer-widgets div {
-    flex-basis: 33%;
+  .footer-widgets > div {
+    flex-basis: 50%;
+    padding: 1.5rem 4%;
+  }
+
+  .footer-widgets div:last-child {
+    flex-basis: 100%;
+    padding: 1.5rem 4%;
   }
 
   .wrapper {
@@ -853,7 +901,9 @@ footer .privacy {
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-areas:
       "header  header  header"
-      "content content sidebar"
+      "content content content"
+      "sidebar sidebar  sidebar"
+      "comments comments comments"
       "footer  footer  footer";
   }
 }
@@ -976,6 +1026,19 @@ footer .privacy {
   margin-right: 1.45rem;
 }
 
+@media (min-width: 732px) {
+  .previous-next-post-nav div {
+    width: 100%;
+    padding: 1rem 7%;
+  }
+}
+
+@media (min-width: 768px) {
+  .single-blog-post {
+    grid-area: content;
+  }
+}
+
 /**** END page-navigation.js and single-blog-post.js page navigation STYLES ****/
 
 /**** START text-widget.js STYLES ****/
@@ -1050,6 +1113,25 @@ footer .privacy {
 @media (min-width: 640px) {
   .bio {
     padding: 1.5rem 8%;
+  }
+}
+
+@media (min-width: 732px) {
+  .bio ul {
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 768px) {
+  .bio {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "header"
+      "image"
+      "paragraph"
+      "contact"
+      "social";
+    background-color: var(--white-color);
   }
 }
 
@@ -1201,6 +1283,12 @@ footer .h3 {
   }
 }
 
+@media (min-width: 768px) {
+  .latest-posts ul {
+    flex-direction: column;
+  }
+}
+
 /**** END latest-posts.js STYLES ****/
 
 /**** START mailchimp-sign-up.js STYLES ****/
@@ -1323,6 +1411,10 @@ button::-moz-focus-inner {
 ****/
 
 /**** START talkyard comments STYLES ****/
+
+.talkyard-comments {
+  grid-area: comments;
+}
 
 .talkyard-comments p {
   text-align: center;
