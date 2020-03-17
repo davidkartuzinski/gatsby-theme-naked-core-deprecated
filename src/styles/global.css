@@ -480,6 +480,7 @@ article ol {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    grid-area: header;
   }
 }
 
@@ -769,6 +770,15 @@ article ol {
   }
 }
 
+@media (min-width: 768px) {
+  .categories-on-page {
+    grid-area: cats;
+  }
+  .tags-on-page {
+    grid-area: tags;
+  }
+}
+
 /****
 ** END OF tags and categories on pages/posts STYLES
 ****/
@@ -801,6 +811,11 @@ figcaption {
   .page-aside {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "share share"
+      "tags cats"
+      "mailchimp bio"
+      "latestposts instagram";
   }
 }
 
@@ -1036,6 +1051,7 @@ footer .privacy {
 @media (min-width: 768px) {
   .single-blog-post {
     grid-area: content;
+    width: 100%;
   }
 }
 
@@ -1061,6 +1077,7 @@ footer .privacy {
 .bio {
   padding: 1.5rem;
   padding-bottom: 0;
+  grid-area: bio;
 }
 
 @media (min-width: 568px) {
@@ -1143,6 +1160,7 @@ footer .privacy {
   display: flex;
   flex-direction: column;
   padding: 2rem 0rem;
+  grid-area: share;
 }
 
 .social-share ul {
@@ -1237,8 +1255,8 @@ footer .h3 {
 
 .latest-posts {
   padding: 1.5rem;
+  grid-area: latestposts;
 }
-
 .latest-posts ul {
   margin: 0;
   padding: 0;
@@ -1287,6 +1305,18 @@ footer .h3 {
   .latest-posts ul {
     flex-direction: column;
   }
+
+  .latest-posts svg {
+    vertical-align: top;
+  }
+
+  .latest-posts li a strong {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 25ch;
+    display: inline-block;
+  }
 }
 
 /**** END latest-posts.js STYLES ****/
@@ -1299,6 +1329,7 @@ footer .h3 {
   color: var(--white-color);
   margin-bottom: 1.5rem;
   text-align: left;
+  grid-area: mailchimp;
 }
 
 .mailchimp-sign-up h3 {
@@ -1376,6 +1407,7 @@ button::-moz-focus-inner {
 
 .instagram-widget {
   padding: 1.5rem;
+  grid-area: instagram;
 }
 
 .instagram-widget ul {
