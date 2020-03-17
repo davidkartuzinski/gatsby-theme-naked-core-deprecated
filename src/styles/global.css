@@ -352,6 +352,43 @@ article ol {
   }
 }
 
+@media (min-width: 850px) {
+  .page > article,
+  .post > article {
+    padding: 0 8%;
+  }
+  .page-home > article {
+    padding: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page > article,
+  .post > article {
+    padding: 0 5%;
+  }
+  .page-home > article {
+    padding: 0;
+  }
+
+  .page-home > article header {
+    padding: 1.5rem 3%;
+  }
+  .column-1,
+  .columns-3 {
+    padding: 1.5rem 5%;
+  }
+
+  .columns-3 {
+    justify-content: space-between;
+  }
+
+  .columns-3 div {
+    width: 33%;
+    padding: 0rem 1rem;
+  }
+}
+
 /**** START HOME PAGE pages/index.js SPECIFIC STYLES ****/
 
 .page-home article header div {
@@ -446,6 +483,18 @@ article ol {
   }
 }
 
+@media (min-width: 850px) {
+  .breadcrumbs__container {
+    padding: 1.5rem 8%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .breadcrumbs__container {
+    padding: 1.5rem 5%;
+  }
+}
+
 /****
 **  END OF BREADCRUMBS STYLING
 ****/
@@ -481,6 +530,22 @@ article ol {
     align-items: center;
     padding: 1rem;
     grid-area: header;
+  }
+}
+
+@media (min-width: 850px) {
+  .page-header {
+    padding: 1rem 8%;
+  }
+
+  .menu li:last-of-type {
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-header {
+    padding: 1.5rem 2.5%;
   }
 }
 
@@ -646,6 +711,16 @@ article ol {
   }
 }
 
+@media (min-width: 1024px) {
+  .menu {
+    justify-content: center;
+    margin: 0 0.5rem;
+  }
+  .menu li a {
+    font-size: 1.2rem;
+  }
+}
+
 /****
 **  END OF .main-menu STYLES
 ****/
@@ -659,7 +734,7 @@ article ol {
   display: none;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
   .search {
     display: flex;
     flex-direction: column;
@@ -667,6 +742,12 @@ article ol {
   .search-box {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+    align-content: bottom;
+  }
+
+  .search-box label {
+    display: flex;
   }
 
   .search ul {
@@ -680,10 +761,11 @@ article ol {
 
   .search input {
     margin: 0;
+    width: 75%;
   }
   .search-results {
     position: absolute;
-    top: 101%;
+    top: 84%;
     transition: transform 400ms ease-in-out;
     transform: scale(1, 1);
     transform-origin: top;
@@ -698,6 +780,7 @@ article ol {
     background-color: var(--white-color);
     padding: 1rem;
     margin: 0;
+    border-bottom: 1px solid var(--grey-color);
   }
 }
 /****
@@ -779,6 +862,13 @@ article ol {
   }
 }
 
+@media (min-width: 850px) {
+  .categories-on-page,
+  .tags-on-page {
+    padding: 0rem 16% 2rem;
+  }
+}
+
 /****
 ** END OF tags and categories on pages/posts STYLES
 ****/
@@ -804,21 +894,6 @@ figcaption {
   padding: 0.5rem;
 }
 
-@media (min-width: 768px) {
-  main {
-    padding-top: 150px;
-  }
-  .page-aside {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "share share"
-      "tags cats"
-      "mailchimp bio"
-      "latestposts instagram";
-  }
-}
-
 article div {
   overflow: hidden;
 }
@@ -829,7 +904,7 @@ article div {
 }
 
 .page-aside {
-  grid-area: sidebar;
+  grid-area: widgets;
 }
 
 aside section {
@@ -895,6 +970,19 @@ footer .privacy {
 }
 
 @media (min-width: 768px) {
+  main {
+    padding-top: 150px;
+  }
+
+  .page-aside {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "share share"
+      "tags cats"
+      "mailchimp bio"
+      "latestposts instagram";
+  }
   .footer-widgets {
     display: flex;
     align-items: center;
@@ -917,9 +1005,67 @@ footer .privacy {
     grid-template-areas:
       "header  header  header"
       "content content content"
-      "sidebar sidebar  sidebar"
+      "widgets widgets  widgets"
       "comments comments comments"
       "footer  footer  footer";
+  }
+}
+
+@media (min-width: 850px) {
+  .footer-widgets > div {
+    padding: 6% 6%;
+  }
+
+  .footer-widgets > div:last-child {
+    flex-basis: 100%;
+    padding: 1.5rem 0;
+  }
+  .footer-widgets > div:last-child section {
+    padding: 8%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-widgets {
+    padding: 0 3%;
+    justify-content: space-between;
+  }
+
+  .footer-widgets > div:last-child {
+    flex-basis: 30%;
+    padding: 1.5rem 0;
+  }
+  .footer-widgets > div:last-child section {
+    padding: 5%;
+  }
+
+  .footer-widgets > div {
+    flex-basis: 30%;
+    padding: 0;
+  }
+  .wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "header  header  header"
+      "content content aside"
+      "widgets widgets  widgets"
+      "comments comments comments"
+      "footer  footer  footer";
+  }
+
+  .page-aside {
+    padding-top: 340px;
+    grid-area: aside;
+    grid-template-columns: 1fr;
+    align-content: start;
+    grid-template-areas:
+      "mailchimp"
+      "share"
+      "bio"
+      "latestposts"
+      "tags"
+      "cats"
+      "instagram";
   }
 }
 
@@ -1152,6 +1298,21 @@ footer .privacy {
   }
 }
 
+@media (min-width: 850px) {
+  .bio {
+    padding: 8% 16%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bio {
+    padding: 8% 10%;
+  }
+  .bio p {
+    padding: 0;
+  }
+}
+
 /**** END bio.js STYLES ****/
 
 /**** start social-share.js STYLES ****/
@@ -1319,6 +1480,25 @@ footer .h3 {
   }
 }
 
+@media (min-width: 850px) {
+  .latest-posts {
+    padding: 8% 16%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .latest-posts {
+    padding: 0 5% 0 5%;
+  }
+  .latest-posts li a strong {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 20ch;
+    display: inline-block;
+  }
+}
+
 /**** END latest-posts.js STYLES ****/
 
 /**** START mailchimp-sign-up.js STYLES ****/
@@ -1401,6 +1581,18 @@ button::-moz-focus-inner {
   }
 }
 
+@media (min-width: 850px) {
+  .mailchimp-sign-up {
+    padding: 8% 16%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mailchimp-sign-up {
+    padding: 8% 10%;
+  }
+}
+
 /**** END mailchimp-sign-up.js STYLES ****/
 
 /**** START instagram.js STYLES ****/
@@ -1425,6 +1617,18 @@ button::-moz-focus-inner {
 @media (min-width: 640px) {
   .instagram-widget {
     padding: 1.5rem 8%;
+  }
+}
+
+@media (min-width: 850px) {
+  .instagram-widget {
+    padding: 8% 16%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .instagram-widget {
+    padding: 5% 10%;
   }
 }
 

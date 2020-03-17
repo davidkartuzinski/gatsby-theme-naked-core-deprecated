@@ -18,6 +18,7 @@ export default class Search extends Component {
       <div className="search">
         <div className="search-box">
           <label htmlFor="search-field">
+            <SearchIcon size="40" />
             <input
               type="text"
               value={this.state.query}
@@ -28,7 +29,6 @@ export default class Search extends Component {
               aria-label="search-field"
             />
           </label>
-          <SearchIcon size="40" />
         </div>
         <div className="search-results">
           <ul>

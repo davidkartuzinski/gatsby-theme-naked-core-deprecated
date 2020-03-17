@@ -17,6 +17,21 @@ funstonTheme.overrideThemeStyles = () => ({
   small: {
     fontSize: "90%",
   },
+  "@media (min-width: 732px)": {
+    html: {
+      fontSize: `140%`,
+    },
+  },
+  "@media (min-width: 800px)": {
+    html: {
+      fontSize: `155%`,
+    },
+  },
+  "@media (min-width: 1024px)": {
+    html: {
+      fontSize: `125%`,
+    },
+  },
 })
 
 const typography = new Typography(funstonTheme)
