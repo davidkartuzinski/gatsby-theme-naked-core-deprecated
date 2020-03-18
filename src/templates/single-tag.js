@@ -25,7 +25,7 @@ const Tags = ({ pageContext, data, location }) => {
   const [, , customCrumbLabel] = location.pathname.split("/")
 
   return (
-    <Layout>
+    <Layout pageClass={`single-tag-page`}>
       <SEO
         title={`${title} Tags`}
         canonical={"tags"}
@@ -36,7 +36,7 @@ const Tags = ({ pageContext, data, location }) => {
         slug={"tags"}
         crumbs={crumbs}
       />
-      <main className="single-tag page">
+      <main className="page">
         <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
         <article>

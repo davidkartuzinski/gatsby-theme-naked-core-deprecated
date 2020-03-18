@@ -11,7 +11,7 @@ const NotFoundPage = ({ data }) => {
   const { logo, title } = useSiteMetadata()
 
   return (
-    <Layout>
+    <Layout pageClass={`404-page`}>
       <SEO
         title={`404 - ${title}`}
         canonical={"404"}
@@ -21,7 +21,7 @@ const NotFoundPage = ({ data }) => {
         image={logo}
         slug={"404"}
       />
-      <main className="page-404 page">
+      <main className="page">
         <article>
           <header>
             <h1>Oops 404 - Not Found</h1>

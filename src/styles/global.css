@@ -23,6 +23,7 @@
   --black-color: #040404;
   --success-green: #007c45;
   --error-red: #c4515c;
+  --edges-width: calc((100% - 1280px) / 2);
 }
 
 /**** Accessible .visually-hidden class 
@@ -293,7 +294,7 @@ article ol {
 }
 
 @media (min-width: 568px) {
-  .page-home > article header {
+  .home-page article header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -316,10 +317,10 @@ article ol {
     padding: 0 8%;
   }
 
-  .page-home > article {
+  .home-page main > article {
     padding: 0;
   }
-  .page-home > article header {
+  .home-page main > article header {
     padding: 0 5%;
   }
   .column-1,
@@ -327,7 +328,7 @@ article ol {
     padding: 1.5rem 8%;
   }
 
-  .bloglist-page > article,
+  .blogpage main > article,
   .post > article {
     padding: 1.5rem 8%;
   }
@@ -357,7 +358,7 @@ article ol {
   .post > article {
     padding: 0 8%;
   }
-  .page-home > article {
+  .home-page main > article {
     padding: 0;
   }
 }
@@ -367,11 +368,11 @@ article ol {
   .post > article {
     padding: 0 5%;
   }
-  .page-home > article {
+  .home-page main > article {
     padding: 0;
   }
 
-  .page-home > article header {
+  .home-page main > article header {
     padding: 1.5rem 3%;
   }
   .column-1,
@@ -391,7 +392,7 @@ article ol {
 
 /**** START HOME PAGE pages/index.js SPECIFIC STYLES ****/
 
-.page-home article header div {
+.home-page main article header div {
   background-color: var(--white-color);
   text-align: center;
 }
@@ -400,28 +401,28 @@ article ol {
 
 /**** START CONTACT FORM src/component/optional/contact-form.js SPECIFIC STYLES ****/
 
-.page-contact .contact-form {
+.contact-page .contact-form {
   padding: 0;
   margin: 0;
 }
 
-.page-contact input,
-.page-contact textarea {
+.contact-page input,
+.contact-page textarea {
   width: calc(100% - 10px);
 }
 
 @media (min-width: 640px) {
-  .page-contact > article {
+  .contact-page main > article {
     padding: 0 8%;
   }
-  .page-contact > article header {
+  .contact-page main > article header {
     padding: 0 5%;
   }
 }
 
 @media (min-width: 732px) {
-  .page-contact input,
-  .page-contact textarea {
+  .contact-page input,
+  .contact-page textarea {
     width: 100%;
   }
 }
@@ -515,6 +516,10 @@ article ol {
   width: 100vw;
   padding: 0.7rem 1.3rem;
   grid-area: header;
+}
+
+.page-header img {
+  border: none;
 }
 
 @media (min-width: 640px) {
@@ -1001,13 +1006,22 @@ footer .privacy {
   .wrapper {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "header  header  header"
-      "content content content"
-      "widgets widgets  widgets"
-      "comments comments comments"
-      "footer  footer  footer";
+      "header  header"
+      "content content"
+      "widgets widgets"
+      "comments comments"
+      "footer  footer";
+  }
+  .home-page {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header  header"
+      "content content"
+      "widgets widgets"
+      "comments comments"
+      "footer  footer ";
   }
 }
 
@@ -1053,6 +1067,16 @@ footer .privacy {
       "footer  footer  footer";
   }
 
+  .home-page {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header  header"
+      "content content"
+      "widgets widgets"
+      "comments comments"
+      "footer  footer ";
+  }
+
   .page-aside {
     padding-top: 340px;
     grid-area: aside;
@@ -1066,6 +1090,51 @@ footer .privacy {
       "tags"
       "cats"
       "instagram";
+  }
+
+  .home-page .page-aside {
+    padding-top: 0;
+    grid-area: widgets;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "mailchimp bio"
+      "latestposts instagram"
+      "tags cats";
+  }
+}
+
+@media (min-width: 1140px) {
+  .home-page .page-aside {
+    padding-top: 0;
+    grid-area: widgets;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "mailchimp bio instagram"
+      "latestposts latestposts latestposts";
+  }
+}
+
+@media (min-width: 1280px) {
+  .wrapper {
+    grid-template-columns: var(--edges-width) 1fr 1fr 1fr var(--edges-width);
+    grid-template-areas:
+      ". header  header  header ."
+      ". content content aside ."
+      ". widgets widgets  widgets ."
+      ". comments comments comments. "
+      ". footer  footer  footer .";
+  }
+
+  .home-page {
+    grid-template-columns: var(--edges-width) 1fr 1fr var(--edges-width);
+    grid-template-areas:
+      ". header  header ."
+      ". content content ."
+      ". widgets widgets ."
+      ". comments comments ."
+      ". footer footer .";
   }
 }
 
@@ -1136,6 +1205,16 @@ footer .privacy {
 
 /**** START page-navigation.js and single-blog-post.js page navigation STYLES ****/
 
+.post .article__body img {
+  border: 1px solid var(--black-color);
+}
+.post .article__body .gatsby-resp-image-wrapper {
+  margin: 1.5rem;
+}
+.post header img {
+  border: none;
+}
+
 .previous-next-post-nav {
   color: var(--black-color);
   display: flex;
@@ -1143,7 +1222,7 @@ footer .privacy {
   background-color: var(--grey-color);
 }
 
-.bloglist-page .previous-next-post-nav {
+.blog-page .previous-next-post-nav {
   min-height: 3rem;
   padding: 1rem;
   display: flex;
@@ -1151,7 +1230,7 @@ footer .privacy {
   margin-bottom: 1.5rem;
 }
 
-.bloglist-page .previous-next-post-nav .nav-next-page-span {
+.blog-page .previous-next-post-nav .nav-next-page-span {
   text-align: right;
 }
 
@@ -1195,7 +1274,7 @@ footer .privacy {
 }
 
 @media (min-width: 768px) {
-  .single-blog-post {
+  .single-blog-post-page main {
     grid-area: content;
     width: 100%;
   }
@@ -1224,6 +1303,10 @@ footer .privacy {
   padding: 1.5rem;
   padding-bottom: 0;
   grid-area: bio;
+}
+
+.bio img {
+  border: none;
 }
 
 @media (min-width: 568px) {
@@ -1499,6 +1582,21 @@ footer .h3 {
   }
 }
 
+@media (min-width: 1140px) {
+  .home-page .page-aside .latest-posts ul {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .home-page .page-aside .latest-posts li a strong {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 25ch;
+    display: inline-block;
+  }
+}
+
 /**** END latest-posts.js STYLES ****/
 
 /**** START mailchimp-sign-up.js STYLES ****/
@@ -1602,6 +1700,10 @@ button::-moz-focus-inner {
   grid-area: instagram;
 }
 
+.instagram-widget img {
+  border: none;
+}
+
 .instagram-widget ul {
   margin-left: 0;
   display: grid;
@@ -1638,6 +1740,10 @@ button::-moz-focus-inner {
 
 .icon-logo {
   padding: 1rem;
+}
+
+.icon-logo img {
+  border: none;
 }
 
 /**** END icon-logo.js STYLES ****/

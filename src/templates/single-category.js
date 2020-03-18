@@ -23,7 +23,7 @@ const Categories = ({ data, pageContext, location }) => {
   const [, , customCrumbLabel] = location.pathname.split("/")
 
   return (
-    <Layout>
+    <Layout pageClass={`single-category-page`}>
       <SEO
         title={`${title} Categories`}
         canonical={"categories"}
@@ -36,7 +36,7 @@ const Categories = ({ data, pageContext, location }) => {
         crumbLabel={customCrumbLabel}
       />
 
-      <main className="single-category page">
+      <main className="page">
         <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
         <article>

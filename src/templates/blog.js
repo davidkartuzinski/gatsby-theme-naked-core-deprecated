@@ -21,7 +21,7 @@ const BlogRoll = ({ data, pageContext, location }) => {
   const customCrumbLabel = "/"
 
   return (
-    <Layout>
+    <Layout pageClass={`blog-page`}>
       <SEO
         title={`${title}| Blog`}
         canonical={"blog"}
@@ -33,7 +33,7 @@ const BlogRoll = ({ data, pageContext, location }) => {
         crumbs={crumbs}
       />
 
-      <main className="bloglist-page page">
+      <main className="page">
         <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
         <article>

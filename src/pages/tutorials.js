@@ -15,7 +15,7 @@ const Tutorials = ({ pageContext }) => {
   } = pageContext
 
   return (
-    <Layout>
+    <Layout pageClass={`tutorials-page`}>
       <SEO
         title={`${title} Tutorials Page`}
         canonical={"/"}
@@ -27,7 +27,7 @@ const Tutorials = ({ pageContext }) => {
         crumbs={crumbs}
       />
 
-      <main className="page-tutorial page">
+      <main className="page">
         <NakedBreadcrumb crumbs={crumbs} crumbLabel="Tutorials" />
         <article>
           <header>

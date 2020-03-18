@@ -37,7 +37,7 @@ const BlogPost = ({ data, pageContext, location }) => {
   const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
 
   return (
-    <Layout>
+    <Layout pageClass={`single-blog-post-page`}>
       <SEO
         title={post.frontmatter.title}
         canonical={post.frontmatter.canonical}
@@ -54,7 +54,7 @@ const BlogPost = ({ data, pageContext, location }) => {
         crumbLabel={customCrumbLabel}
       />
 
-      <main className="single-blog-post post">
+      <main className="post">
         <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
         <article>

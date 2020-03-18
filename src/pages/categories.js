@@ -21,7 +21,7 @@ const CategoriesPage = ({ pageContext, location }) => {
   const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
 
   return (
-    <Layout>
+    <Layout pageClass={`categories-page`}>
       <SEO
         title={`${title} Categories`}
         canonical={"categories"}
@@ -33,7 +33,7 @@ const CategoriesPage = ({ pageContext, location }) => {
         crumbs={crumbs}
       />
 
-      <main className="page-categories page">
+      <main className="page">
         <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
         <article>
           <header>

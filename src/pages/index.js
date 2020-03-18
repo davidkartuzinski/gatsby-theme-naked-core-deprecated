@@ -15,7 +15,7 @@ const Home = ({ pageContext, data }) => {
   } = pageContext
 
   return (
-    <Layout>
+    <Layout pageClass={`home-page`}>
       <SEO
         title={`${title} Home Page`}
         canonical={"/"}
@@ -26,7 +26,7 @@ const Home = ({ pageContext, data }) => {
         slug={"/"}
         crumbs={crumbs}
       />
-      <main className="page-home page">
+      <main className="page">
         <NakedBreadcrumb crumbs={crumbs} crumbLabel="Home" />
 
         <article>

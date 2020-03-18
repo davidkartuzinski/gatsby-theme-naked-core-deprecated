@@ -16,7 +16,7 @@ const Contact = ({ pageContext, location }) => {
   const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
 
   return (
-    <Layout>
+    <Layout pageClass={`contact-page`}>
       <SEO
         title={`${title} Contact Page`}
         canonical={"contact"}
@@ -27,7 +27,7 @@ const Contact = ({ pageContext, location }) => {
         slug={"contact"}
         crumbs={crumbs}
       />
-      <main className="page-contact page">
+      <main className="page">
         <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
         <article>

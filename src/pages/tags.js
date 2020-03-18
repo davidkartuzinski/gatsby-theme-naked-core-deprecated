@@ -20,7 +20,7 @@ const TagsPage = ({ pageContext, location }) => {
 
   const customCrumbLabel = location.pathname.toLowerCase().replace("-", " ")
   return (
-    <Layout>
+    <Layout pageClass={`tags-page`}>
       <SEO
         title={`${title} Tags`}
         canonical={"tags"}
@@ -32,7 +32,7 @@ const TagsPage = ({ pageContext, location }) => {
         crumbs={crumbs}
       />
 
-      <main className="page-tags page">
+      <main className="page">
         <NakedBreadcrumb crumbs={crumbs} crumbLabel={customCrumbLabel} />
 
         <article>
