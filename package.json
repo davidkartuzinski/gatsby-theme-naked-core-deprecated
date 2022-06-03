@@ -33,7 +33,7 @@
     "gatsby-plugin-catch-links": "^2.1.26",
     "gatsby-plugin-mailchimp": "^5.1.2",
     "gatsby-plugin-manifest": "^2.2.41",
-    "gatsby-plugin-mdx": "^1.0.73",
+    "gatsby-plugin-mdx": "^2.14.1",
     "gatsby-plugin-offline": "^3.0.34",
     "gatsby-plugin-react-helmet": "^3.1.22",
     "gatsby-plugin-robots-txt": "^1.5.0",
